@@ -2,8 +2,6 @@
 /roadmap.md
 /Last/*
 /Tests/*
-/Document/*
-!/Document/main.pdf
 /.DS_Store
 /__pycache__/*
 /.ipynb_checkpoints/*
