@@ -1,0 +1,5 @@
+{
+    "latex-workshop.intellisense.file.base": "file relative",
+    "latex-workshop.intellisense.update.aggressive.enabled": true,
+    "latex-workshop.bibtex-fields.sort.enabled": true
+}

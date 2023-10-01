@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.9.6)  1 OCT 2023 17:27
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.9.6)  1 OCT 2023 18:03
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -729,31 +729,15 @@ LaTeX Font Info:    Font shape `T1/XCharter-TLF/b/n' will be
 LaTeX Font Info:    Font shape `T1/XCharter-TLF/b/n' will be
 (Font)              scaled to size 12.0pt on input line 22.
 LaTeX Font Info:    Font shape `T1/XCharter-TLF/b/n' will be
-(Font)              scaled to size 10.0pt on input line 24.
-
-
-LaTeX Warning: Reference `alg:fastTwoSum' on page 1 undefined on input line 24.
-
-
-LaTeX Warning: Reference `fig:inversecdfmethod' on page 1 undefined on input line 42.
-
+(Font)              scaled to size 10.0pt on input line 32.
 <./Figures/InverseCDF/histogram.png, id=4, 409.7709pt x 312.2064pt>
 File: ./Figures/InverseCDF/histogram.png Graphic file (type png)
 <use ./Figures/InverseCDF/histogram.png>
 Package pdftex.def Info: ./Figures/InverseCDF/histogram.png  used on input line 46.
 (pdftex.def)             Requested size: 227.62206pt x 173.42429pt.
-
-LaTeX Warning: Reference `fig:inversecdfmethod' on page 1 undefined on input line 47.
-
-[1
+ [1
 
 {/usr/local/texlive/2023/texmf-var/fonts/map/pdftex/updmap/pdftex.map}{/usr/local/texlive/2023/texmf-dist/fonts/enc/dvips/xcharter/xch_rydp4l.enc}{/usr/local/texlive/2023/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc}]
-
-LaTeX Warning: Reference `fig:uniformerrorcdf' on page 2 undefined on input line 51.
-
-
-LaTeX Warning: Reference `fig:exponentialerrorcdf' on page 2 undefined on input line 51.
-
 <./Figures/InverseCDF/uniform_error.png, id=20, 435.0654pt x 331.7193pt>
 File: ./Figures/InverseCDF/uniform_error.png Graphic file (type png)
 <use ./Figures/InverseCDF/uniform_error.png>
@@ -764,81 +748,34 @@ File: ./Figures/InverseCDF/exponential_error.png Graphic file (type png)
 <use ./Figures/InverseCDF/exponential_error.png>
 Package pdftex.def Info: ./Figures/InverseCDF/exponential_error.png  used on input line 62.
 (pdftex.def)             Requested size: 227.62206pt x 173.5529pt.
-[2 <./Figures/InverseCDF/histogram.png> <./Figures/InverseCDF/uniform_error.png>]
-
-LaTeX Warning: Reference `fig:uniformerrorcdf' on page 3 undefined on input line 67.
-
-
-LaTeX Warning: Reference `fig:exponentialerrorcdf' on page 3 undefined on input line 67.
-
-
-LaTeX Warning: Reference `alg:rejectionalg' on page 3 undefined on input line 73.
-
-
-LaTeX Warning: Reference `fig:rejectionhist' on page 3 undefined on input line 103.
-
-[3 <./Figures/InverseCDF/exponential_error.png>]
+ [2 <./Figures/InverseCDF/histogram.png> <./Figures/InverseCDF/uniform_error.png>] [3 <./Figures/InverseCDF/exponential_error.png>]
 <./Figures/AcceptanceRejection/hist.png, id=33, 401.8212pt x 302.0886pt>
 File: ./Figures/AcceptanceRejection/hist.png Graphic file (type png)
 <use ./Figures/AcceptanceRejection/hist.png>
 Package pdftex.def Info: ./Figures/AcceptanceRejection/hist.png  used on input line 107.
 (pdftex.def)             Requested size: 227.62206pt x 171.12749pt.
-
-
-LaTeX Warning: Reference `eq:bimodal' on page 4 undefined on input line 108.
-
-
-LaTeX Warning: Reference `eq:bimodal' on page 4 undefined on input line 108.
-
-
-LaTeX Warning: Reference `fig:rejectionerror' on page 4 undefined on input line 112.
-
 <./Figures/AcceptanceRejection/error_linear_regression.png, id=34, 435.0654pt x 315.8199pt>
 File: ./Figures/AcceptanceRejection/error_linear_regression.png Graphic file (type png)
 <use ./Figures/AcceptanceRejection/error_linear_regression.png>
 Package pdftex.def Info: ./Figures/AcceptanceRejection/error_linear_regression.png  used on input line 116.
 (pdftex.def)             Requested size: 227.62206pt x 165.23447pt.
-
-LaTeX Warning: Reference `fig:rejectionerror' on page 4 undefined on input line 121.
-
-[4 <./Figures/AcceptanceRejection/hist.png> <./Figures/AcceptanceRejection/error_linear_regression.png>]
-
-LaTeX Warning: Reference `fig:verificationlln' on page 5 undefined on input line 136.
-
+ [4 <./Figures/AcceptanceRejection/hist.png> <./Figures/AcceptanceRejection/error_linear_regression.png>]
 <./Figures/LLN/verif.png, id=41, 638.8668pt x 395.3169pt>
 File: ./Figures/LLN/verif.png Graphic file (type png)
 <use ./Figures/LLN/verif.png>
 Package pdftex.def Info: ./Figures/LLN/verif.png  used on input line 140.
 (pdftex.def)             Requested size: 227.62206pt x 140.84818pt.
-
-LaTeX Warning: Reference `fig:verificationlln' on page 5 undefined on input line 145.
-
-
-LaTeX Warning: Reference `fig:verificationllnlog' on page 5 undefined on input line 145.
-
 <./Figures/LLN/verifloglog.png, id=42, 619.3539pt x 398.9304pt>
 File: ./Figures/LLN/verifloglog.png Graphic file (type png)
 <use ./Figures/LLN/verifloglog.png>
 Package pdftex.def Info: ./Figures/LLN/verifloglog.png  used on input line 149.
 (pdftex.def)             Requested size: 227.62206pt x 146.60973pt.
-
-LaTeX Warning: Reference `fig:verificationllnlog' on page 5 undefined on input line 154.
-
-[5 <./Figures/LLN/verif.png> <./Figures/LLN/verifloglog.png>]
-
-LaTeX Warning: Reference `fig:verificationclt' on page 6 undefined on input line 168.
-
+ [5 <./Figures/LLN/verif.png> <./Figures/LLN/verifloglog.png>]
 <./Figures/CLT/verif.png, id=48, 406.1574pt x 328.8285pt>
 File: ./Figures/CLT/verif.png Graphic file (type png)
 <use ./Figures/CLT/verif.png>
 Package pdftex.def Info: ./Figures/CLT/verif.png  used on input line 172.
 (pdftex.def)             Requested size: 227.62206pt x 184.28319pt.
-
-LaTeX Warning: Reference `fig:meanerror' on page 6 undefined on input line 177.
-
-
-LaTeX Warning: Reference `fig:varianceerror' on page 6 undefined on input line 177.
-
 <./Figures/CLT/meanerror.png, id=49, 619.3539pt x 398.9304pt>
 File: ./Figures/CLT/meanerror.png Graphic file (type png)
 <use ./Figures/CLT/meanerror.png>
@@ -849,111 +786,52 @@ File: ./Figures/CLT/varianceerror.png Graphic file (type png)
 <use ./Figures/CLT/varianceerror.png>
 Package pdftex.def Info: ./Figures/CLT/varianceerror.png  used on input line 188.
 (pdftex.def)             Requested size: 227.62206pt x 146.60973pt.
-[6 <./Figures/CLT/verif.png> <./Figures/CLT/meanerror.png>]
-
-LaTeX Warning: Reference `fig:meanerror' on page 7 undefined on input line 193.
-
-
-LaTeX Warning: Reference `fig:varianceerror' on page 7 undefined on input line 193.
-
-/Users/alfonsomateos/Documents/ENPC/PAMS Project/Document/main.tex:213: Undefined control sequence.
-l.213 ... shift to minimizing the variance of \(\X
-                                                  \).
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-[7 <./Figures/CLT/varianceerror.png>]
-
-LaTeX Warning: Reference `eq:directmethod' on page 8 undefined on input line 230.
-
-
-LaTeX Warning: Reference `eq:integralvariancereduction' on page 8 undefined on input line 230.
-
-
-LaTeX Warning: Reference `fig:directmethod' on page 8 undefined on input line 234.
-
+ [6 <./Figures/CLT/verif.png> <./Figures/CLT/meanerror.png>] [7 <./Figures/CLT/varianceerror.png>]
 <./Figures/VarianceReduction/direct.png, id=62, 417.7206pt x 315.8199pt>
 File: ./Figures/VarianceReduction/direct.png Graphic file (type png)
 <use ./Figures/VarianceReduction/direct.png>
 Package pdftex.def Info: ./Figures/VarianceReduction/direct.png  used on input line 238.
 (pdftex.def)             Requested size: 227.62206pt x 172.09192pt.
-
-LaTeX Warning: Reference `eq:controlvariates' on page 8 undefined on input line 256.
-
-
-LaTeX Warning: Reference `fig:controlvariates' on page 8 undefined on input line 256.
-
 <./Figures/VarianceReduction/control.png, id=63, 417.7206pt x 315.8199pt>
 File: ./Figures/VarianceReduction/control.png Graphic file (type png)
 <use ./Figures/VarianceReduction/control.png>
 Package pdftex.def Info: ./Figures/VarianceReduction/control.png  used on input line 260.
 (pdftex.def)             Requested size: 227.62206pt x 172.09192pt.
-[8 <./Figures/VarianceReduction/direct.png>]
-
-LaTeX Warning: Reference `fig:beta42_f' on page 9 undefined on input line 269.
-
+ [8 <./Figures/VarianceReduction/direct.png>]
 <./Figures/VarianceReduction/beta.png, id=68, 409.7709pt x 312.9291pt>
 File: ./Figures/VarianceReduction/beta.png Graphic file (type png)
 <use ./Figures/VarianceReduction/beta.png>
 Package pdftex.def Info: ./Figures/VarianceReduction/beta.png  used on input line 273.
 (pdftex.def)             Requested size: 227.62206pt x 173.82571pt.
-
-LaTeX Warning: Reference `fig:importancesampling' on page 9 undefined on input line 280.
-
 <./Figures/VarianceReduction/importance.png, id=69, 417.7206pt x 315.8199pt>
 File: ./Figures/VarianceReduction/importance.png Graphic file (type png)
 <use ./Figures/VarianceReduction/importance.png>
 Package pdftex.def Info: ./Figures/VarianceReduction/importance.png  used on input line 284.
 (pdftex.def)             Requested size: 227.62206pt x 172.09192pt.
-[9 <./Figures/VarianceReduction/control.png> <./Figures/VarianceReduction/beta.png>]
-
-LaTeX Warning: Reference `fig:stratifiedsampling' on page 10 undefined on input line 291.
-
+ [9 <./Figures/VarianceReduction/control.png> <./Figures/VarianceReduction/beta.png>]
 <./Figures/VarianceReduction/stratified.png, id=75, 417.7206pt x 315.8199pt>
 File: ./Figures/VarianceReduction/stratified.png Graphic file (type png)
 <use ./Figures/VarianceReduction/stratified.png>
 Package pdftex.def Info: ./Figures/VarianceReduction/stratified.png  used on input line 295.
 (pdftex.def)             Requested size: 227.62206pt x 172.09192pt.
-
-LaTeX Warning: Reference `eq:expectedvalueestimate' on page 10 undefined on input line 302.
-
-
-LaTeX Warning: Reference `fig:antitheticvariates' on page 10 undefined on input line 302.
-
 <./Figures/VarianceReduction/antithetic.png, id=76, 417.7206pt x 315.8199pt>
 File: ./Figures/VarianceReduction/antithetic.png Graphic file (type png)
 <use ./Figures/VarianceReduction/antithetic.png>
 Package pdftex.def Info: ./Figures/VarianceReduction/antithetic.png  used on input line 306.
 (pdftex.def)             Requested size: 227.62206pt x 172.09192pt.
-[10 <./Figures/VarianceReduction/importance.png> <./Figures/VarianceReduction/stratified.png>]
-
-LaTeX Warning: Reference `fig:comparisonvariancereduction' on page 11 undefined on input line 313.
-
+ [10 <./Figures/VarianceReduction/importance.png> <./Figures/VarianceReduction/stratified.png>]
 <./Figures/VarianceReduction/comparison.png, id=82, 417.7206pt x 315.8199pt>
 File: ./Figures/VarianceReduction/comparison.png Graphic file (type png)
 <use ./Figures/VarianceReduction/comparison.png>
 Package pdftex.def Info: ./Figures/VarianceReduction/comparison.png  used on input line 317.
 (pdftex.def)             Requested size: 227.62206pt x 172.09192pt.
-[11 <./Figures/VarianceReduction/antithetic.png> <./Figures/VarianceReduction/comparison.png>]
-
-LaTeX Warning: Reference `fig:comparisonvariancereduction2' on page 12 undefined on input line 351.
-
+ [11 <./Figures/VarianceReduction/antithetic.png> <./Figures/VarianceReduction/comparison.png>]
 <./Figures/VarianceReduction/comparisonintegrals.png, id=88, 711.1368pt x 426.393pt>
 File: ./Figures/VarianceReduction/comparisonintegrals.png Graphic file (type png)
 <use ./Figures/VarianceReduction/comparisonintegrals.png>
 Package pdftex.def Info: ./Figures/VarianceReduction/comparisonintegrals.png  used on input line 355.
 (pdftex.def)             Requested size: 227.62206pt x 136.48106pt.
-[12 <./Figures/VarianceReduction/comparisonintegrals.png>] (./main.aux)
-
-LaTeX Warning: There were undefined references.
-
-
-LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
-
- ) 
+ [12 <./Figures/VarianceReduction/comparisonintegrals.png>] (./main.aux) ) 
 Here is how much of TeX's memory you used:
  19774 strings out of 476025
  382335 string characters out of 5790018
@@ -961,9 +839,9 @@ Here is how much of TeX's memory you used:
  39803 multiletter control sequences out of 15000+600000
  566250 words of font info for 79 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 127i,11n,129p,839b,544s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 127i,11n,129p,838b,545s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/local/texlive/2023/texmf-dist/fonts/type1/public/xcharter/XCharter-Bold.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/xcharter/XCharter-Roman.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm7.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/cm-super/sftt1200.pfb>
-Output written on main.pdf (12 pages, 702269 bytes).
+Output written on main.pdf (12 pages, 701519 bytes).
 PDF statistics:
  150 PDF objects out of 1000 (max. 8388607)
  73 compressed objects within 1 object stream
