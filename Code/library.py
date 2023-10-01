@@ -21,7 +21,7 @@ def optimize_envelope(f, START, END):
 
     init_params = [(START + END) / 2, (END - START) / 4]
     bounds = [(START, END), (1e-5, (END - START) / 2)]
-    result = minimize(objective, init_params, bounds=bounds, method='L-BFGS-B')
+    result = minimize(objective, init_params, bounds=bounds, method='Nelder-Mead')
     
     if not result.success:
         raise ValueError("Optimización no exitosa!")
