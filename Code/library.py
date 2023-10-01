@@ -39,14 +39,14 @@ def direct_sampling(function, a, b, iters=1000):
     return estimate
 
 def control_variates(function, a, b, iters=1000):
-    x = np.random.uniform(0, 1, 1000)
+    x = np.random.uniform(0, 1, iters)
     y = function(x)
-    c = np.cov(x, y)[0, 1] / np.var(x)
-    estimate = np.mean(y + c*(0.5 - np.mean(x))) 
+    c = - np.cov(y, x)[0, 1] / np.var(x)
+    estimate = np.mean(y + c*(x - 0.5)) 
     return estimate
 
 def importance_sampling(function, a, b, iters=1000):
-    x_samples = np.linspace(a, b, 10000)
+    x_samples = np.linspace(a, b, iters)
     y_samples = function(x_samples)
     
     mu = np.mean(y_samples)
@@ -65,17 +65,16 @@ def importance_sampling(function, a, b, iters=1000):
     return estimate
 
 def stratified_sampling(function, a, b, iters=1000):
-    estimate = 0
     strata = np.linspace(a, b, iters + 1)
-    for i in range(iters):
-        x = np.random.uniform(strata[i], strata[i + 1])
-        estimate += function(x) / iters
+    x = np.random.uniform(strata[:-1], strata[1:])
+    y = function(x)
+    estimate = np.mean(y)
     return estimate
 
 def antithetic_sampling(function, a, b, iters=1000):
-    estimate = 0
-    for _ in range(iters // 2):
-        u = np.random.uniform(a, b)
-        estimate += (function(u) + function(b - (u - a))) / iters
+    u = np.random.uniform(a, b/2, int(iters / 2))
+    x = np.append(u, (b - u))
+    y = function(x)
+    estimate = np.mean(y)
     return estimate
 
