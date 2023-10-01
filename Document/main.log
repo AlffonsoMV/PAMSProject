@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.9.6)  1 OCT 2023 17:06
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.9.6)  1 OCT 2023 17:27
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -604,7 +604,9 @@ LaTeX Info: Redefining \textulc on input line 49.
 LaTeX Info: Redefining \textsu on input line 712.
 LaTeX Info: Redefining \textde on input line 714.
 LaTeX Info: Redefining \textinf on input line 716.
-) (/usr/local/texlive/2023/texmf-dist/tex/latex/amscls/amsthm.sty
+)
+\c@Question=\count322
+ (/usr/local/texlive/2023/texmf-dist/tex/latex/amscls/amsthm.sty
 Package: amsthm 2020/05/29 v2.20.6
 \thm@style=\toks43
 \thm@bodyfont=\toks44
@@ -616,11 +618,10 @@ Package: amsthm 2020/05/29 v2.20.6
 \thm@headsep=\skip141
 \dth@everypar=\toks48
 )
-\c@theorem=\count322
-\c@definition=\count323
-\c@exercise=\count324
-\c@subexercise=\count325
-\c@Question=\count326
+\c@theorem=\count323
+\c@definition=\count324
+\c@exercise=\count325
+\c@subexercise=\count326
 )
 LaTeX Info: Redefining \oldstylenums on input line 14.
 LaTeX Font Info:    Trying to load font information for T1+XCharter-TLF on input line 14.
