@@ -2,6 +2,8 @@ import numpy as np
 from scipy.stats import norm
 from scipy.optimize import minimize
 
+# SAMPLING
+
 def CDF_Inverse(cdf_inv, n_samples):
     u = np.random.uniform(0, 1, n_samples)
     return cdf_inv(u)
@@ -77,4 +79,16 @@ def antithetic_sampling(function, a, b, iters=1000):
     y = function(x)
     estimate = np.mean(y)
     return estimate
+
+# HAMILTONIAN DYNAMICS
+
+def symplectic_euler(initial_q, initial_p, D, dHdq, dHdp, steps=10000, dt=0.01):
+    q = np.zeros((steps, D))
+    p = np.zeros((steps, D))
+    q[0], p[0] = initial_q, initial_p
+    for i in range(steps-1):
+        for d in range(D):
+            p[i+1][d] = p[i][d] - dt*dHdq[d](q[i][d])
+            q[i+1][d] = q[i][d] + dt*dHdp[d](p[i+1][d])
+    return np.array(q), np.array(p)
 
