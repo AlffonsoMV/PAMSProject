@@ -92,3 +92,20 @@ def symplectic_euler(initial_q, initial_p, D, dHdq, dHdp, steps=10000, dt=0.01):
             q[i+1][d] = q[i][d] + dt*dHdp[d](p[i+1][d])
     return np.array(q), np.array(p)
 
+def stormer_verlet(initial_q, initial_p, D, dHdq, dHdp, steps=10000, dt=0.01):
+    # p(t+1/2) = p(t) - \frac{\Delta t}{2} \nabla_q V(q(t)) \\
+	#	q(t+1) = q(t) + \Delta t M^{-1} p(t+1/2) \\
+	#	p(t+1) = p(t+1/2) - \frac{\Delta t}{2} \nabla_q V(q(t+1))
+    q = np.zeros((steps*2, D))
+    p = np.zeros((steps*2, D))
+    q[0], p[0] = initial_q, initial_p
+    for t in range(0, 2*steps-2, 2):
+        for d in range(D):
+            p[t+1][d] = p[t][d] - dt/2*dHdq[d](q[t][d])
+            q[t+2][d] = q[t][d] + dt*dHdp[d](p[t+1][d])
+            p[t+2][d] = p[t+1][d] - dt/2*dHdq[d](q[t+2][d])
+    # Mask for taking the odd indexes
+    mask = np.arange(steps*2) % 2 == 0
+    print(np.array(q)[mask], np.array(p)[mask])
+    return np.array(q)[mask], np.array(p)[mask]
+
