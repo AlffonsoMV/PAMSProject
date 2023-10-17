@@ -106,6 +106,5 @@ def stormer_verlet(initial_q, initial_p, D, dHdq, dHdp, steps=10000, dt=0.01):
             p[t+2][d] = p[t+1][d] - dt/2*dHdq[d](q[t+2][d])
     # Mask for taking the odd indexes
     mask = np.arange(steps*2) % 2 == 0
-    print(np.array(q)[mask], np.array(p)[mask])
     return np.array(q)[mask], np.array(p)[mask]
 
