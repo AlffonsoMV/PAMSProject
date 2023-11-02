@@ -22,6 +22,6 @@
 \contentsline {subsubsubsection}{\numberline {2.1.5.1}Linear Stability Analysis of the Sympletic Euler Scheme}{25}{subsubsubsection.2.1.5.1}%
 \contentsline {subsubsection}{\numberline {2.1.6}Stormer-Verlet method}{26}{subsubsection.2.1.6}%
 \contentsline {subsubsubsection}{\numberline {2.1.6.1}Linear Stability Analysis of the Verlet Scheme}{28}{subsubsubsection.2.1.6.1}%
-\contentsline {subsection}{\numberline {2.2}Solar system implementation}{29}{subsection.2.2}%
-\contentsline {subsection}{\numberline {2.3}Modeling the Solar System: Gravitational Dynamics}{29}{subsection.2.3}%
-\contentsline {subsection}{\numberline {2.4}Störmer-Verlet Scheme for Gravitational Dynamics}{30}{subsection.2.4}%
+\contentsline {subsection}{\numberline {2.2}Solar System Simulation}{29}{subsection.2.2}%
+\contentsline {subsubsection}{\numberline {2.2.1}Modeling the Solar System: Gravitational Dynamics}{29}{subsubsection.2.2.1}%
+\contentsline {subsubsection}{\numberline {2.2.2}Störmer-Verlet Scheme for Gravitational Dynamics}{30}{subsubsection.2.2.2}%

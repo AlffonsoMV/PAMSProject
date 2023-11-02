@@ -1,19 +1,19 @@
 # Fdb version 4
-["bibtex main"] 1698957170 "main.aux" "main.bbl" "main" 1698957666 0
+["bibtex main"] 1698958049 "main.aux" "main.bbl" "main" 1698958053 0
   "./mybib.bib" 1698955783 579 d0801a77d7b431df8b0a74637a9e1441 ""
   "/usr/local/texlive/2023/texmf-dist/bibtex/bst/base/plain.bst" 1292289607 20613 bd3fbfa9f64872b81ac57a0dd2ed855f ""
-  "main.aux" 1698957663 18964 ac8878521228562dd838a3e2254f15fd "xelatex"
+  "main.aux" 1698958050 18980 aa9559eca099a447309f47ef2a8c48b1 "xelatex"
   (generated)
   "main.bbl"
   "main.blg"
   (rewritten before read)
-["xdvipdfmx"] 1698957663 "main.xdv" "main.pdf" "main" 1698957666 0
-  "main.xdv" 1698957663 509708 85d468012722dd1e55ee54dcefe2d941 "xelatex"
+["xdvipdfmx"] 1698958050 "main.xdv" "main.pdf" "main" 1698958053 0
+  "main.xdv" 1698958050 509560 b2f5f4df4ca003837f35a960ac701db0 "xelatex"
   (generated)
   "main.pdf"
   (rewritten before read)
-["xelatex"] 1698957662 "/Users/alfonsomateos/Documents/ENPC/PAMS Project/Document/main.tex" "main.xdv" "main" 1698957666 0
-  "/Users/alfonsomateos/Documents/ENPC/PAMS Project/Document/main.tex" 1698957662 66350 59f1cf61d5ecc7bc313b006bab13f9a2 ""
+["xelatex"] 1698958049 "/Users/alfonsomateos/Documents/ENPC/PAMS Project/Document/main.tex" "main.xdv" "main" 1698958053 0
+  "/Users/alfonsomateos/Documents/ENPC/PAMS Project/Document/main.tex" 1698958047 66352 2a59d6aa2f3ab59dd5d7e4b31069a507 ""
   "/usr/local/texlive/2023/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/local/texlive/2023/texmf-dist/fonts/tfm/adobe/zapfding/pzdr.tfm" 1136768653 1528 f853c4d1b4e0550255e02831fdc8496f ""
   "/usr/local/texlive/2023/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm" 1246382020 1004 54797486969f23fa377b128694d548df ""
@@ -230,11 +230,11 @@
   "Figures/VarianceReduction/importance.png" 1695817320 24081 07428233a79f3e3154e2dd2c3792d687 ""
   "Figures/VarianceReduction/stratified.png" 1695817335 23118 df24c9602ecc87579256826dfa420c0d ""
   "logo-enpc.eps" 1696975345 586786 2481599d970520a68364592352c92496 ""
-  "main.aux" 1698957663 18964 ac8878521228562dd838a3e2254f15fd "xelatex"
-  "main.bbl" 1698957170 377 d15844e3fd2f67b895a78a802c4210db "bibtex main"
-  "main.out" 1698957663 5833 039e29fb863564d86eb0d8ccedb8157f "xelatex"
-  "main.tex" 1698957662 66350 59f1cf61d5ecc7bc313b006bab13f9a2 ""
-  "main.toc" 1698957663 2743 4b3654cb7ff6075da1d02f0df84c7c07 "xelatex"
+  "main.aux" 1698958050 18980 aa9559eca099a447309f47ef2a8c48b1 "xelatex"
+  "main.bbl" 1698958049 377 d15844e3fd2f67b895a78a802c4210db "bibtex main"
+  "main.out" 1698958050 5833 07c0805257ca06b156e54fb082c1704e "xelatex"
+  "main.tex" 1698958047 66352 2a59d6aa2f3ab59dd5d7e4b31069a507 ""
+  "main.toc" 1698958050 2759 aeedc02702abc105af392fe4ce459a36 "xelatex"
   "structure.tex" 1697910667 8587 8a6f61408ff32dd7a6a26d4afe1e0952 ""
   (generated)
   "main.aux"

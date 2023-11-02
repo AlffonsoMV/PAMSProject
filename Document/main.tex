@@ -1068,13 +1068,13 @@ For stability, we require \( |\lambda_1| \leq 1 \). This translates to the condi
 
 This inequality leads to a tautology so it is always stable. This is consistent with the observed property of the Störmer-Verlet scheme which conserves the energy over time and doesn't let errors gro unboundedly. This, in combination with its second-order accuracy, makes it preferable over the Euler sympletic method for problems modeled by Hamiltonian systems.
 
-\subsection{Solar system implementation}
+\subsection{Solar System Simulation}
 
 In this section, we'll harness the power of Hamiltonian dynamics to craft a simulation of the solar system. We'll adopt the Stormer-Verlet scheme, renowned for its energy-conserving properties, as our primary numerical method.
 
 First of all, let's do a brief introduction to the problem we want to solve. We can see the solar system as a set of \(N\) bodies, each of them with a mass \(m_i\) a position \(q_i\) and a velocity \(v_i\). The position and velocity are vectors in \(\mathbb{R}^2\). The gravitational force between two bodies is given by:
 
-\subsection{Modeling the Solar System: Gravitational Dynamics}
+\subsubsection{Modeling the Solar System: Gravitational Dynamics}
 
 The motion of celestial bodies in the solar system, primarily planets, moons, and the Sun, can be described by Newton's law of universal gravitation. For \(N\) bodies, the gravitational force exerted on the \(i^{th}\) body due to the \(j^{th}\) body is given by:
 
@@ -1114,7 +1114,7 @@ This Hamiltonian can be used to derive the equations of motion using Hamilton's 
 
 In the next section, we'll dive deeper into the implementation details, but this sets up the mathematical foundation for our solar system simulation based on gravitational interactions.
 
-\subsection{Störmer-Verlet Scheme for Gravitational Dynamics}
+\subsubsection{Störmer-Verlet Scheme for Gravitational Dynamics}
 
 Now that we have the Hamiltonian for the system, we can derive use it inside the Störmer-Verlet scheme to derive the equations of motion. The Störmer-Verlet scheme for the \(i^{th}\) body is:
 
