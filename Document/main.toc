@@ -1,0 +1,27 @@
+\contentsline {section}{\numberline {1}Simulation of Random Variables}{2}{section.1}%
+\contentsline {subsection}{\numberline {1.1}Inverse CDF method}{2}{subsection.1.1}%
+\contentsline {subsection}{\numberline {1.2}Rejection Sampling method}{4}{subsection.1.2}%
+\contentsline {subsubsection}{\numberline {1.2.1}Selection of the "enveloping" distribution}{4}{subsubsection.1.2.1}%
+\contentsline {subsubsection}{\numberline {1.2.2}Results of the Rejection Sampling method}{5}{subsubsection.1.2.2}%
+\contentsline {subsection}{\numberline {1.3}Empirical validation of the Law of Large Numbers}{6}{subsection.1.3}%
+\contentsline {subsection}{\numberline {1.4}Empirical Validation of the Central Limit Theorem}{7}{subsection.1.4}%
+\contentsline {subsection}{\numberline {1.5}Variance reduction techniques}{9}{subsection.1.5}%
+\contentsline {subsubsection}{\numberline {1.5.1}Preliminaries}{10}{subsubsection.1.5.1}%
+\contentsline {subsubsection}{\numberline {1.5.2}Control variates}{11}{subsubsection.1.5.2}%
+\contentsline {subsubsection}{\numberline {1.5.3}Importance sampling}{12}{subsubsection.1.5.3}%
+\contentsline {subsubsection}{\numberline {1.5.4}Stratified sampling}{13}{subsubsection.1.5.4}%
+\contentsline {subsubsection}{\numberline {1.5.5}Antithetic variates}{14}{subsubsection.1.5.5}%
+\contentsline {subsubsection}{\numberline {1.5.6}Comparative Review}{14}{subsubsection.1.5.6}%
+\contentsline {section}{\numberline {2}Hamiltonian dynamics}{16}{section.2}%
+\contentsline {subsection}{\numberline {2.1}Symplectic schemes}{18}{subsection.2.1}%
+\contentsline {subsubsection}{\numberline {2.1.1}Analytical solution}{18}{subsubsection.2.1.1}%
+\contentsline {subsubsection}{\numberline {2.1.2}Euler method}{20}{subsubsection.2.1.2}%
+\contentsline {subsubsection}{\numberline {2.1.3}Failure of standard methods}{21}{subsubsection.2.1.3}%
+\contentsline {subsubsection}{\numberline {2.1.4}Constructing Symplectic Schemes}{22}{subsubsection.2.1.4}%
+\contentsline {subsubsection}{\numberline {2.1.5}Symplectic Euler method}{23}{subsubsection.2.1.5}%
+\contentsline {subsubsubsection}{\numberline {2.1.5.1}Linear Stability Analysis of the Sympletic Euler Scheme}{25}{subsubsubsection.2.1.5.1}%
+\contentsline {subsubsection}{\numberline {2.1.6}Stormer-Verlet method}{26}{subsubsection.2.1.6}%
+\contentsline {subsubsubsection}{\numberline {2.1.6.1}Linear Stability Analysis of the Verlet Scheme}{28}{subsubsubsection.2.1.6.1}%
+\contentsline {subsection}{\numberline {2.2}Solar system implementation}{29}{subsection.2.2}%
+\contentsline {subsection}{\numberline {2.3}Modeling the Solar System: Gravitational Dynamics}{29}{subsection.2.3}%
+\contentsline {subsection}{\numberline {2.4}Störmer-Verlet Scheme for Gravitational Dynamics}{30}{subsection.2.4}%
