@@ -1,6 +1,8 @@
 \documentclass{article}
 \usepackage{float}
 \usepackage{multirow}
+\usepackage{booktabs} % For better tables
+\usepackage{array} % For more control over table columns
 \usepackage[T1]{fontenc}
 
 \input{structure.tex} 
@@ -17,9 +19,6 @@
 \master{Mme. Jane Doe}
 \title{PAM's project}
 \date{\today}
-\period{lundi 6 juin 2016 -- samedi 2 juillet 2016}
-\place{Carrefour Champs-sur-Marne}
-\location{Avenue des Pyramides \\ 77420 Champs-sur-Marne}
 
 %-----------------------------------------------------------------------------
 
@@ -103,7 +102,20 @@ So, we can generate a set of random numbers \(U \sim \mathcal{U}(0,1)\) and appl
 	\label{fig:inversecdfmethod}
 \end{figure}
 
-With this picture, we can see that the histogram of the generated random numbers aligns remarkably well with the target distribution, however, we need to make more trials to be sure. We alredy know the theoreticall mean and variance of the exponential distribution, so we can compare them with the mean of the samples while the number of trials increases. The Figure~\ref{fig:uniformerrorcdf} and Figure~\ref{fig:exponentialerrorcdf} shows the error to the theoretical mean as the number of trials increases for the uniform and exponential distribution.
+With this picture, we can see that the histogram of the generated random numbers aligns remarkably well with the target distribution, however, we need to make more trials to be sure. We alredy know the theoreticall mean and variance of the exponential distribution, so we can compare them with the mean of the samples while the number of trials increases.
+
+We define the error as:
+
+\begin{equation*} error = \frac{1}{n}\sum_{i=1}^{n} | x_i - \mu | \end{equation*}
+
+where \(x_i\) is the \(i\)-th random number generated and \(\mu\) is the theoretical mean of the distribution.
+
+Recall that the uniform and exponential means are:
+
+\begin{equation*} \mu_{\mathcal{U}} = \frac{a + b}{2} \end{equation*}
+\begin{equation*} \mu_{\mathcal{E}} = \frac{1}{\lambda} \end{equation*}
+
+The Figure~\ref{fig:uniformerrorcdf} and Figure~\ref{fig:exponentialerrorcdf} shows the error to the theoretical mean as the number of trials increases for the uniform and exponential distribution.
 
 \begin{figure}[H]
 	\centering
@@ -210,7 +222,11 @@ Given our established ability to generate random numbers reflecting specific pro
 	\label{fig:verificationlln}
 \end{figure}
 
-Refining Figure~\ref{fig:verificationlln} to display the absolute error in relation to the mean, and plotting it on a logarithmic scale, yields Figure~\ref{fig:verificationllnlog}.
+Refining Figure~\ref{fig:verificationlln} to display the absolute error in relation to the mean, and plotting it on a logarithmic scale, yields Figure~\ref{fig:verificationllnlog}. So the error is
+
+\begin{equation*} error = \frac{1}{n}\sum_{i=1}^{n} | x_i - \mu | \end{equation*}
+
+where \(x_i\) is the \(i\)-th random number generated and \(\mu\) is the theoretical mean of the distribution.
 
 \begin{figure}[H]
 	\centering
@@ -219,7 +235,7 @@ Refining Figure~\ref{fig:verificationlln} to display the absolute error in relat
 	\label{fig:verificationllnlog}
 \end{figure}
 
-The visual representation in Figure~\ref{fig:verificationllnlog} substantiates that the error indeed diminishes as the number of trials augments, validating the assertion of the Law of Large Numbers that the experimental mean approaches the theoretical mean with an increasing number of observations.
+The visual representation in Figure~\ref{fig:verificationllnlog} substantiates that the error indeed diminishes as the number of trials augments, validating the assertion of the Law of Large Numbers that the experimental mean approaches the theoretical mean with an increasing number of observations. Note that the slope of the regression line is approximately \(-0.5\).
 
 \subsection{Empirical Validation of the Central Limit Theorem}
 
@@ -238,23 +254,33 @@ For illustrative purposes, consider the uniform distribution on \([0,1]\), which
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=0.5\linewidth]{./Figures/CLT/verif.png}
-	\caption{Histogram illustrating the convergence of the means of the uniform distribution}
+	\caption{Histogram illustrating the convergence of the means of the uniform distribution with $n_{samples} = 10000$}
 	\label{fig:verificationclt}
 \end{figure}
 
-In congruence with the methodology espoused in previous sections, we have juxtaposed the empirical mean of the samples with the theoretical mean, progressively augmenting the number of trials. Figure~\ref{fig:meanerror} delineates the deviation from the theoretical mean, and Figure~\ref{fig:varianceerror} represents the deviation from the theoretical variance, both as functions of the number of trials.
+In congruence with the methodology espoused in previous sections, we have juxtaposed the empirical mean of the samples with the theoretical mean, progressively augmenting the number of trials. Figure~\ref{fig:meanerror} delineates the deviation from the theoretical mean, and Figure~\ref{fig:varianceerror} represents the deviation from the theoretical variance, both as functions of the number of trials. Therefore the formula of the deviation is:
+
+\begin{equation*} error_{mean} = \frac{1}{n}\sum_{i=1}^{n} | x_i - \mu | \end{equation*}
+
+where \(x_i\) is the \(i\)-th random number generated and \(\mu\) is the theoretical mean of the distribution.
 
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=0.5\linewidth]{./Figures/CLT/meanerror.png}
-	\caption{Deviation from the theoretical mean as a function of the number of trials. Average of 10000 trials per point.}
+	\caption{Error from the theoretical mean as a function of the number of trials. Average of 10000 trials per point.}
 	\label{fig:meanerror}
 \end{figure}
+
+And for the case of the variance:
+
+\begin{equation*} error_{variance} = \frac{1}{n}\sum_{i=1}^{n} | x_i - \sigma^2 | \end{equation*}
+
+where \(x_i\) is the \(i\)-th random number generated and \(\sigma^2\) is the theoretical variance of the distribution.
 
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=0.5\linewidth]{./Figures/CLT/varianceerror.png}
-	\caption{Deviation from the theoretical variance as a function of the number of trials. Average of 10000 trials per point.}
+	\caption{Error from the theoretical variance as a function of the number of trials. Average of 10000 trials per point.}
 	\label{fig:varianceerror}
 \end{figure}
 
@@ -311,7 +337,11 @@ Since \(f(x) = \frac{1}{b-a}\) for the uniform distribution on \([a,b]\), we can
 
 \begin{equation} \label{eq:directmethodintegral} I = \int_{0}^{1} x^2 \ dx = \mathbb{E}(g(X)) = \int_0^1 x^2 \frac{1}{1-0} \ dx = \frac{1}{3} \end{equation}
 
-So, we only have to generate a set of random numbers \(X \sim \mathcal{U}(0,1)\), apply \(f(x) = x^2\) and get the mean of the sample which is the estimate of the integral. The Figure~\ref{fig:directmethod} shows the error to the theoretical value as the number of trials increases.
+So, we only have to generate a set of random numbers \(X \sim \mathcal{U}(0,1)\), apply \(f(x) = x^2\) and get the mean of the sample which is the estimate of the integral. The Figure~\ref{fig:directmethod} shows the error to the theoretical value as the number of trials increases. The error to the theoretical value is defined as:
+
+\begin{equation*} error = \frac{1}{n}\sum_{i=1}^{n} | x_i - \mu | \end{equation*}
+
+where \(x_i\) is the \(i\)-th random number generated and \(\mu\) is the theoretical mean of the distribution. Note that this formula will be used in all the following sections.
 
 \begin{figure}[H]
 	\centering
@@ -420,7 +450,7 @@ In this case, we have computed that \(\mathrm{Var}(X) \approx 1.108 \cdot 10^{-7
 
 \subsubsection{Antithetic variates}
 
-The Antithetic variates method consists on taking for each random sample, its antithetic, i.e. the symmetric with respect to the mean of the distribution. The idea is that the variance of the mean of the distribution is reduced, since the mean of the antithetic is the same as the mean of the distribution. In our case, we have generated a sample \(\mathcal{U} \sim \mathcal{U}(0,0.5)\) and its antithetic \(mathcal{U}' = \{1 - x \ : \ x \in mathcal{U}\}\). Taking \(X = \mathcal{U} \bigcup \mathcal{U}' \), we can apply Equation \eqref{eq:expectedvalueestimate} to \(f(X)\) to obtain the estimate of the integral. The Figure~\ref{fig:antitheticvariates} shows the error to the theoretical value as the number of trials increases.
+The Antithetic variates method consists on taking for each random sample, its antithetic, i.e. the symmetric with respect to the mean of the distribution. The idea is that the variance of the mean of the distribution is reduced, since the mean of the antithetic is the same as the mean of the distribution. In our case, we have generated a sample \(\mathcal{U} \sim \mathcal{U}(0,0.5)\) and its antithetic \(\mathcal{U}' = \{1 - x \ : \ x \in \mathcal{U}\}\). Taking \(X = \mathcal{U} \bigcup \mathcal{U}' \), we can apply Equation \eqref{eq:expectedvalueestimate} to \(f(X)\) to obtain the estimate of the integral. The Figure~\ref{fig:antitheticvariates} shows the error to the theoretical value as the number of trials increases.
 
 \begin{figure}[H]
 	\centering
@@ -465,7 +495,7 @@ But before moving on to look at more problems, let's look at the comparative tab
 	\end{tabular}
 \end{center}
 
-Analyzing the table, we discern significant disparities in variance between the different sampling methods, accentuating the prominence of stratified sampling, which registers the minimal variance, \(1.107865 \cdot 10^{-7}\). This numerical inferiority in variance corroborates the preliminary observation about its superior convergence rate, offering more stable and reliable estimates. Contrastingly, direct sampling exhibits the maximum variance, revealing its comparative inefficiency and instability in procuring estimates for this specific problem. The remaining methods, while overshadowed by the efficacy of stratified sampling, still exhibit markedly lower variances than direct sampling, with importance sampling making a notable contribution with a variance of \(1.274508 \cdot 10^{-4}\). These numerical insights underscore the necessity to meticulously select the appropriate sampling technique based on the inherent characteristics of the problem at hand, and they hint at the potential benefits of exploring hybrid approaches or enhancements to existing methods to optimize variance reduction.
+Analyzing the table, we discern significant disparities in variance between the different sampling methods, accentuating the prominence of stratified sampling, which registers the minimal variance, \(1.107865 \cdot 10^{-7}\). This numerical inferiority in variance corroborates the preliminary observation about its superior convergence rate, offering more stable and reliable estimates. Stratified sampling outperformed other methods in our study primarily due to its targeted approach of dividing the population into homogeneous strata. This division ensures proportional representation of all subgroups, reducing sampling bias and variance within each stratum. Consequently, it yields more accurate and representative results. Furthermore, by adjusting the sample size within each stratum based on variability, stratified sampling enhances overall efficiency and precision. These methodological strengths contribute to its superior performance in terms of reliability and convergence rates, especially in diverse and complex datasets. Contrastingly, direct sampling exhibits the maximum variance, revealing its comparative inefficiency and instability in procuring estimates for this specific problem. The remaining methods, while overshadowed by the efficacy of stratified sampling, still exhibit markedly lower variances than direct sampling, with importance sampling making a notable contribution with a variance of \(1.274508 \cdot 10^{-4}\). These numerical insights underscore the necessity to meticulously select the appropriate sampling technique based on the inherent characteristics of the problem at hand, and they hint at the potential benefits of exploring hybrid approaches or enhancements to existing methods to optimize variance reduction.
 
 Next, we'll broaden our investigation to a more complex problem, applying the methods we’ve discussed to estimate the following integrals:
 
@@ -495,6 +525,12 @@ Next, we'll broaden our investigation to a more complex problem, applying the me
 \end{equation}
 
 Using these examples, we can now draw comparisons between the methods in a broader context. Figure~\ref{fig:comparisonvariancereduction2} illustrates the error of each method applied to each function.
+
+This error is defined as:
+
+\begin{equation*} error = | \ method(f, a, b, iters) - \int_a^b{f dx} \ | \end{equation*}
+
+where \(method\) is the method we are using, \(f\) is the function we are integrating, \(a\) and \(b\) are the limits of the integral and \(iters\) is the number of iterations we are using, in this case \(iters = 1000\).
 
 \begin{figure}[H]
 \centering
@@ -693,10 +729,13 @@ Substituting these into the general solution and its derivative gives:
 q_0 = A \quad \text{and} \quad v_0 = B \omega
 \]
 
-Thus, if initial conditions are provided, \( A \) and \( B \) can be determined to give the particular solution for the system. For example, if we take \(x_0 = 1\) and \(v_0 = 0\), we get:
+Thus, if initial conditions are provided, \( A \) and \( B \) can be determined to give the particular solution for the system. For example, if we take \(x_0 = 1\) and \(v_0 = 0\), we get that \(A = 1\) and \(B = 0\). Therefore, the solution of the harmonic oscillator is:
 
 \[
-q(t) = \cos(\omega t) = \cos(\sqrt{\frac{k}{m}} t)
+	\begin{cases}
+		q(t) = \cos(\omega t) = \cos(\sqrt{\frac{k}{m}} t) \\
+		p(t) = -m \omega \sin(\omega t) = -\sqrt{km} \sin(\sqrt{\frac{k}{m}} t)
+	\end{cases}
 \]
 
 The Figure~\ref{fig:harmonicoscillator} shows the phase space of the harmonic oscillator with \(k = 1\) and \(m = 1\).
@@ -1068,6 +1107,33 @@ For stability, we require \( |\lambda_1| \leq 1 \). This translates to the condi
 
 This inequality leads to a tautology so it is always stable. This is consistent with the observed property of the Störmer-Verlet scheme which conserves the energy over time and doesn't let errors gro unboundedly. This, in combination with its second-order accuracy, makes it preferable over the Euler sympletic method for problems modeled by Hamiltonian systems.
 
+\subsubsection{Backward Error Analysis}
+
+In this section, we will introduce the backward error analysis. The backward error analysis is a technique to analyze the error of a numerical method. We can define the idea of this technique as: For a given problem \(P(x)\), an exact input \(x\) and an approximate solution \(\hat{x}\), we can define the backward error as the smallest perturbation \(\Delta x\) such that \(P(x + \Delta x) = \hat{x}\). Therefore the formal definitions, extracted with little modifications from \cite{fraysse2018hdr}, is:
+
+\begin{definition}[Backward error]
+	Let \(\hat{x}\) be an approximate solution to the equation \(P(d) = x\). Then the backward error of \(\hat{x}\) is defined by:
+	\[
+		\eta = \min \{ \epsilon : P(x + \Delta x) = \hat{x}, ||\Delta x|| \leq \epsilon \}
+	\]
+\end{definition}
+
+The following Figure~\ref{fig:backwarderror} extracted from \cite{higham2020backwarderror} illustrated the idea of the backward error analysis.
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.5\linewidth]{./Figures/Sympletic/graphic.jpg}
+	\caption{Backward error analysis.}
+	\label{fig:backwarderror}
+\end{figure}
+
+
+
+
+
+
+
+
 \subsection{Solar System Simulation}
 
 In this section, we'll harness the power of Hamiltonian dynamics to craft a simulation of the solar system. We'll adopt the Stormer-Verlet scheme, renowned for its energy-conserving properties, as our primary numerical method.
@@ -1205,8 +1271,48 @@ This is the gradient of the potential energy with respect to the position of the
 	\caption{Potential energy of the part of the solar system.}
 	\label{fig:potentialenergy}
 \end{figure}
+As we could have expected, the Sun has, by far, the most negative potential energy, since it is the body with the highest mass. Also we can observe that the potential energy is negative, which is the expected behaviour of the gravitational potential energy. 
 
-Note that we have used the real masses of the planets and the Sun, and the real distance between them. Therefore, we can see that the simulation is very similar to the real solar system. All of these parameters can be found on the NASA website \cite{nssdc2022planetaryfactsheet}. Also note that for this figure, we have only taken into account Sun, Mercury, Venus, Earth and Mars. This is for illustrative purposes, but the code is prepared to simulate the whole solar system. As we could have expected, the Sun has, by far, the most negative potential energy, since it is the body with the highest mass. Now we are prepared to compute the updates for the momentum and position of each body in the solar system at each time step using the Störmer-Verlet scheme. In the Figure~\ref{fig:solarsystem} we can see the result of the simulation of the solar system using the Störmer-Verlet scheme.
+\subsubsection{Implementation}
+
+First of all, we need to define the parameters of the simulation. The Table~\ref{table:parameters} shows the parameters of the simulation.
+
+\begin{table}[H]
+	\centering
+	\renewcommand{\arraystretch}{1.2} % Adjusts the row height
+	\begin{tabular}{>{\bfseries}l >{\raggedleft}p{3cm} >{\raggedleft\arraybackslash}p{3cm} >{\raggedleft\arraybackslash}p{3cm}}
+	\toprule
+	\textbf{Celestial Body} & \textbf{Mass (Relative to Sun)} & \textbf{Position (AU)} & \textbf{Mean velocity (AU/Year)} \\
+	\midrule
+	Sun       & 1.0000    & 0.000 & 0.00 \\
+	Mercury   & 1.6505e-7 & 0.390 & 9.99 \\
+	Venus     & 2.4335e-6 & 0.720 & 7.38 \\
+	Earth     & 2.9860e-6 & 1.000 & 6.28 \\
+	Mars      & 3.2085e-7 & 1.520 & 5.08 \\
+	Jupiter   & 9.4950e-4 & 5.187 & 2.76 \\
+	\bottomrule
+	\end{tabular}
+	\caption{Data of Celestial Bodies in the Solar System}
+	\label{table:parameters}
+\end{table}
+
+Therefore, the units that we have used are:
+
+\begin{itemize}
+	\item Mass: \(M_{\odot}\) (Solar Mass)
+	\item Distance: AU (Astronomical Unit)
+	\item Time: Earth year
+\end{itemize}
+
+This is because we want to do a simulation of the solar system inside a machine that uses discrete numbers, therefore if we use the SI units, we could get some troubles with the precision of the machine, while if we use the units that we have used, we get numbers that are not too big or too small, so we can get a good precision. Also, using this numbers we get that the gravitational constant is:
+
+\[
+	G = 4 \pi^2 \ \frac{\text{AU}^3}{\text{year}^2 \ M_{\odot}}
+\]
+
+Note that we have used the real masses of the planets and the Sun, and the real distance between them. Therefore, we can see that the simulation is very similar to the real solar system. All of these parameters can be found on the NASA website \cite{nssdc2022planetaryfactsheet}. Now we are prepared to implement the simulation. 
+
+For illustrative purposes, we'll simulate the orbits of the Sun, Mercury, Venus, Earth and Mars. The Figure~\ref{fig:solarsystem} shows the orbits of the planets of the solar system during 365 days and with a time step of 1 day.
 
 \begin{figure}[H]
 	\centering
@@ -1215,20 +1321,82 @@ Note that we have used the real masses of the planets and the Sun, and the real 
 	\label{fig:solarsystem}
 \end{figure}
 
- We can see that the orbits are closed curves, which is the expected behaviour of the planets of the solar system. Also, we can see that the orbits are not perfect circles, which is also the expected behaviour of the planets of the solar system. Now let's see the energy of the system. The Figure~\ref{fig:solarsystemenergy} shows the energy of the system.
+We can see that the orbits are closed curves, which is the expected behaviour of the planets of the solar system. Also, we can see that the orbits are not perfect circles, which is also the expected behaviour of the planets of the solar system. 
+
+Now let's see the energy of the system. The Figure~\ref{fig:solarsystemenergy} shows the energy of the system for the same simulation.
 
 \begin{figure}[H]
 	\centering
-	\includegraphics[width=0.5\linewidth]{./Figures/SolarSystem/energy.png}
+	\includegraphics[width=0.5\linewidth]{./Figures/SolarSystem/energy1.png}
 	\caption{Energy of the simulation of part of the planets of the solar system using the Störmer-Verlet scheme for \(\Delta t = 1\) day and \(T = 365\) days.}
-	\label{fig:solarsystemenergy}
+	\label{fig:solarsystemenergy1}
 \end{figure}
 
-Note that the energy is not a straight line, but the average of the energy is the same, so we can conclude that the energy is conserved over time.
+We can see that the energy is conserved over time, as we wanted for the Hamiltonian dynamics. Note that is not a straight line but the average of the energy is the same and we can see a slight of oscillations that may be repeated in the future if the simulation is done for more time. So, let's do the simulation for 20 years. The Figure~\ref{fig:solarsystemenergy2} shows the energy of the system for the same simulation.
 
-The Störmer-Verlet scheme's success in simulating the solar system, as evidenced by the figures presented, highlights its utility in capturing the dynamics of multi-body systems influenced by gravitational interactions. This method's energy-conserving characteristic is underscored by the stable energy pattern over the simulation duration, making it a suitable choice for long-term celestial body movement prediction. The orbits depicted are consistent with real-world observations, emphasizing that this approach provides a reasonable representation of the solar system's actual dynamics. As with any numerical method, the accuracy and stability of the Störmer-Verlet scheme depend on appropriate time-step selection and initial conditions.
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.5\linewidth]{./Figures/SolarSystem/energy2.png}
+	\caption{Energy of the simulation of part of the planets of the solar system using the Störmer-Verlet scheme for \(\Delta t = 1\) day and \(T = 20\) years.}
+	\label{fig:solarsystemenergy2}
+\end{figure}
+
+As predicted, we can observe that the energy is preserved.
+
+Now that we have the system created and we have seen that the energy is preserved, we can do some experiments. 
+
+\subsubsubsection{Experiment 1: Expanding to the N-Body Problem}
+
+In our initial simulation, as detailed in the referenced table, we included data for Jupiter but did not incorporate it into the actual simulation. This was primarily due to Jupiter's significant distance from the inner planets, which could potentially complicate the visual clarity of our model. However, given Jupiter's substantial mass – the largest among the planets – its inclusion is crucial for a more comprehensive understanding of the solar system's dynamics. This necessitates an expansion of our model to an N-body problem, allowing for the gravitational influence of not just the Sun but also the other planets to be accounted for.
+
+To explore this, we have extended our simulation to include Jupiter, aiming to observe its impact on the orbital paths of the other planets. The updated Figure~\ref{fig:solarsystemjupiter} illustrates the orbits of the solar system's planets over a period of 20 years with a daily time step, now incorporating Jupiter. This addition provides a more realistic and complex representation of the gravitational interplay within our solar system.
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.5\linewidth]{./Figures/SolarSystem/orbitsjupiter.png}
+	\caption{Simulation of the orbits of the planets of the solar system using the Störmer-Verlet scheme for \(\Delta t = 1\) day and \(T = 20\) years, now including Jupiter.}
+	\label{fig:solarsystemjupiter}
+\end{figure}
 
 
+\subsubsubsection{Experiment 2: Using Symplectic Euler Method}
+
+We alredy know that the Störmer-Verlet method performs better than the Euler Symplectic method, but let's see how the solar system behaves using the Euler Sympletic method. The Figure~\ref{fig:solarsystemeuler} shows the orbits of the planets of the solar system using the Euler Symplectic method for \(\Delta t = 1\) day and \(T = 20\) years.
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.5\linewidth]{./Figures/SolarSystem/orbits_euler.png}
+	\caption{Simulation of the orbits of the planets of the solar system using the Euler Sympletic method for \(\Delta t = 1\) day and \(T = 20\) years.}
+	\label{fig:solarsystemeuler}
+\end{figure}
+
+Also we can plot the energy of the system. The Figure~\ref{fig:solarsystemenergyeuler} shows the energy of the system for the same simulation.
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.5\linewidth]{./Figures/SolarSystem/energy_euler.png}
+	\caption{Energy of the simulation of the orbits of the planets of the solar system using the Euler Sympletic method for \(\Delta t = 1\) day and \(T = 20\) years.}
+	\label{fig:solarsystemenergyeuler}
+\end{figure}
+
+Comparing it to the results obtained using the Störmer-Verlet method, again we can see that the first one is better in the following table:
+
+\begin{table}[H]
+	\centering
+	\renewcommand{\arraystretch}{1.2} % Adjusts the row height
+	\begin{tabular}{>{\bfseries}l >{\raggedleft}p{4cm} >{\raggedleft\arraybackslash}p{4cm} >{\raggedleft\arraybackslash}p{3cm}}
+	\toprule
+	\textbf{Method} & $\max{H(x)} - \min{H(x)}$  & $\max{|H(X) - \mathbb{E}(H(X))|}$\\
+	\midrule
+	Symplectic Euler & 7.29e-6 & 3.64e-6  \\
+	Störmer-Verlet   & 2.32e-6 & 1.16e-6 \\
+	\bottomrule
+	\end{tabular}
+	\caption{Data of Celestial Bodies in the Solar System}
+	\label{table:comparison}
+\end{table}
+
+Therefore, in this problem we can conclude that the Störmer-Verlet method is $3.14$ times better in terms of conservation of the Energy than the Euler Sympletic method.
 
 \bibliographystyle{plain}
 \bibliography{mybib.bib}

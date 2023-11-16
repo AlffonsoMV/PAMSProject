@@ -1,19 +1,19 @@
 # Fdb version 4
-["bibtex main"] 1698958049 "main.aux" "main.bbl" "main" 1698958053 0
-  "./mybib.bib" 1698955783 579 d0801a77d7b431df8b0a74637a9e1441 ""
+["bibtex main"] 1700072195 "main.aux" "main.bbl" "main" 1700072886 0
+  "./mybib.bib" 1700072189 1106 8cf7a8ed28f34d23cc70c98c3d55c27d ""
   "/usr/local/texlive/2023/texmf-dist/bibtex/bst/base/plain.bst" 1292289607 20613 bd3fbfa9f64872b81ac57a0dd2ed855f ""
-  "main.aux" 1698958050 18980 aa9559eca099a447309f47ef2a8c48b1 "xelatex"
+  "main.aux" 1700072884 22370 d4d1b0edb7adc72ec779f8505c8600ca "xelatex"
   (generated)
   "main.bbl"
   "main.blg"
   (rewritten before read)
-["xdvipdfmx"] 1698958050 "main.xdv" "main.pdf" "main" 1698958053 0
-  "main.xdv" 1698958050 509560 b2f5f4df4ca003837f35a960ac701db0 "xelatex"
+["xdvipdfmx"] 1700072884 "main.xdv" "main.pdf" "main" 1700072886 0
+  "main.xdv" 1700072884 578544 5322fcce07989cace5c59c684530f8a6 "xelatex"
   (generated)
   "main.pdf"
   (rewritten before read)
-["xelatex"] 1698958049 "/Users/alfonsomateos/Documents/ENPC/PAMS Project/Document/main.tex" "main.xdv" "main" 1698958053 0
-  "/Users/alfonsomateos/Documents/ENPC/PAMS Project/Document/main.tex" 1698958047 66352 2a59d6aa2f3ab59dd5d7e4b31069a507 ""
+["xelatex"] 1700072883 "/Users/alfonsomateos/Documents/ENPC/PAMS Project/Document/main.tex" "main.xdv" "main" 1700072886 0
+  "/Users/alfonsomateos/Documents/ENPC/PAMS Project/Document/main.tex" 1700072883 75187 2ca889ed4fafaa8401fe873877db5957 ""
   "/usr/local/texlive/2023/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/local/texlive/2023/texmf-dist/fonts/tfm/adobe/zapfding/pzdr.tfm" 1136768653 1528 f853c4d1b4e0550255e02831fdc8496f ""
   "/usr/local/texlive/2023/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm" 1246382020 1004 54797486969f23fa377b128694d548df ""
@@ -126,6 +126,7 @@
   "/usr/local/texlive/2023/texmf-dist/tex/latex/base/textcomp.sty" 1654720880 2894 f2f8ee7d4fb94263f9f255fa22cab2d3 ""
   "/usr/local/texlive/2023/texmf-dist/tex/latex/base/ts1cmr.fd" 1667332637 2430 8418b3f1835e588625becbcac4dbce56 ""
   "/usr/local/texlive/2023/texmf-dist/tex/latex/base/tuenc.def" 1654720880 26445 9ed4a9401f29cbb58ef6909cd5aec01f ""
+  "/usr/local/texlive/2023/texmf-dist/tex/latex/booktabs/booktabs.sty" 1579038678 6078 f1cb470c9199e7110a27851508ed7a5c ""
   "/usr/local/texlive/2023/texmf-dist/tex/latex/carlisle/scalefnt.sty" 1137109962 1360 df2086bf924b14b72d6121fe9502fcdb ""
   "/usr/local/texlive/2023/texmf-dist/tex/latex/etoolbox/etoolbox.sty" 1601931149 46845 3b58f70c6e861a13d927bff09d35ecbc ""
   "/usr/local/texlive/2023/texmf-dist/tex/latex/float/float.sty" 1137110151 6749 16d2656a1984957e674b149555f1ea1d ""
@@ -184,6 +185,7 @@
   "/usr/local/texlive/2023/texmf-dist/tex/latex/subfigure/subfigure.sty" 1167176009 15188 91281c7ddbccfa54a8e0c3b56ab5aa72 ""
   "/usr/local/texlive/2023/texmf-dist/tex/latex/titlesec/titlesec.sty" 1625518490 48833 3b7b4cfab1a3d15596bfd3772a77ab65 ""
   "/usr/local/texlive/2023/texmf-dist/tex/latex/todonotes/todonotes.sty" 1675198268 21300 a6e0d5f13b9360f0419aa0d6b30a9c96 ""
+  "/usr/local/texlive/2023/texmf-dist/tex/latex/tools/array.sty" 1667332637 12691 5b542990fe866f3d772f71346cf85b95 ""
   "/usr/local/texlive/2023/texmf-dist/tex/latex/tools/calc.sty" 1654720880 10214 de3e21cfc0eccc98ca7f8dac0ef263d2 ""
   "/usr/local/texlive/2023/texmf-dist/tex/latex/tools/enumerate.sty" 1654720880 3468 46ba9177f0f0a79fe79845d3eebff113 ""
   "/usr/local/texlive/2023/texmf-dist/tex/latex/tools/xspace.sty" 1654720880 4545 4c279ac9292a1be8afa9ab2f1d3299c2 ""
@@ -206,16 +208,21 @@
   "Figures/InverseCDF/exponential_error.png" 1695738594 24202 100005ae962e5beecc698528320ac6fd ""
   "Figures/InverseCDF/histogram.png" 1694527928 10878 b17cf0d8c92c97c6106bc8c8ad55a6c2 ""
   "Figures/InverseCDF/uniform_error.png" 1695738582 21908 2c101fc0da3459efe40566ec867fa0b4 ""
-  "Figures/LLN/verif.png" 1695737574 52451 e0df494cf77130c0d934cc0c2a64f842 ""
-  "Figures/LLN/verifloglog.png" 1695737591 35831 7354c2c9c3d7a4e598be7d6d10617e6f ""
-  "Figures/SolarSystem/energy.png" 1698955930 77175 eb183c264e49df06114d3d87b15a4d80 ""
+  "Figures/LLN/verif.png" 1699820767 40201 790233182dd86d41de133b3a44c8d503 ""
+  "Figures/LLN/verifloglog.png" 1699820778 42244 760c72a52b609d03911f596e6252fb19 ""
+  "Figures/SolarSystem/energy1.png" 1699817945 37305 d99a61cd0c46ceeeac2b03a797a81d7e ""
+  "Figures/SolarSystem/energy2.png" 1699818030 90847 9104ddf57b70fdbcf7a1faa8f16951ce ""
+  "Figures/SolarSystem/energy_euler.png" 1699819777 90413 08d415f97ed397864caa2a4d0d73d668 ""
   "Figures/SolarSystem/gravitationalpotential.png" 1698955914 227290 a77b04c43e335aae2fa78c238f4aa518 ""
-  "Figures/SolarSystem/orbits.png" 1698955894 77764 932140751fc8a955c75308b4c99c1877 ""
+  "Figures/SolarSystem/orbits.png" 1699817625 78786 4ca1342aa116e3f46a1d2a85b936be7d ""
+  "Figures/SolarSystem/orbits_euler.png" 1699819765 56422 461b881d0cd10d5517b6686cb1b29332 ""
+  "Figures/SolarSystem/orbitsjupiter.png" 1699818729 53258 a797467c690f4fc1e9e11a19834a9a1d ""
   "Figures/Sympletic/eulerenergy.png" 1696439022 66087 3ccc2b44bebe28fa08c8251edb5e66dc ""
   "Figures/Sympletic/eulerenergy1.png" 1696951615 23980 bd2b297d8eba7bfd8f3059e80ecef53d ""
   "Figures/Sympletic/eulermaxenergy.png" 1697128281 24256 964113a151c7f5306db382c17b821394 ""
   "Figures/Sympletic/eulerphase.png" 1696439010 25327 6a8778274470ce882736bac956515a68 ""
   "Figures/Sympletic/eulerphase1.png" 1696951466 160253 f2776e5bd0860d2fbcdbec60a7c1e559 ""
+  "Figures/Sympletic/graphic.jpg" 1700069677 19325 8e3acd5e9ae61dda07a118be36601eae ""
   "Figures/Sympletic/maxenergydifference.png" 1697128735 32114 bb79a91b21a2c919c50fd9ac4b6dbf28 ""
   "Figures/Sympletic/phaseanalytics.png" 1696951093 31328 f2fb2a7ad0e4722b2a6fb94908bb157d ""
   "Figures/Sympletic/verletenergy.png" 1696974436 68076 d8b9e24bb21d5ed5dc4526d8f5d1ecc1 ""
@@ -230,11 +237,11 @@
   "Figures/VarianceReduction/importance.png" 1695817320 24081 07428233a79f3e3154e2dd2c3792d687 ""
   "Figures/VarianceReduction/stratified.png" 1695817335 23118 df24c9602ecc87579256826dfa420c0d ""
   "logo-enpc.eps" 1696975345 586786 2481599d970520a68364592352c92496 ""
-  "main.aux" 1698958050 18980 aa9559eca099a447309f47ef2a8c48b1 "xelatex"
-  "main.bbl" 1698958049 377 d15844e3fd2f67b895a78a802c4210db "bibtex main"
-  "main.out" 1698958050 5833 07c0805257ca06b156e54fb082c1704e "xelatex"
-  "main.tex" 1698958047 66352 2a59d6aa2f3ab59dd5d7e4b31069a507 ""
-  "main.toc" 1698958050 2759 aeedc02702abc105af392fe4ce459a36 "xelatex"
+  "main.aux" 1700072884 22370 d4d1b0edb7adc72ec779f8505c8600ca "xelatex"
+  "main.bbl" 1700072195 606 d67034719bd9c79612166a549d5e9f8a "bibtex main"
+  "main.out" 1700072884 6789 def44752ce5e2400a5472c183a928064 "xelatex"
+  "main.tex" 1700072883 75187 2ca889ed4fafaa8401fe873877db5957 ""
+  "main.toc" 1700072884 3213 92bcc8f9003e04103b6e641498d41ca1 "xelatex"
   "structure.tex" 1697910667 8587 8a6f61408ff32dd7a6a26d4afe1e0952 ""
   (generated)
   "main.aux"
