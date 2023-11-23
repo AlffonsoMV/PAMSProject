@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999995 (TeX Live 2023) (preloaded format=xelatex 2023.9.6)  15 NOV 2023 19:28
+This is XeTeX, Version 3.141592653-2.6-0.999995 (TeX Live 2023) (preloaded format=xelatex 2023.9.6)  23 NOV 2023 20:34
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1080,60 +1080,61 @@ Requested font "stmary5" at 5.0pt
 
 ]
 LaTeX Font Info:    Font shape `TU/XCharter(0)/m/n' will be
-(Font)              scaled to size 12.0pt on input line 76.
+(Font)              scaled to size 12.0pt on input line 91.
 Requested font "[XCharter-Roman.otf]/OT:script=latn;language=dflt;+tnum;+lnum;+cv01=0;mapping=tex-text;" at 12.0pt
  -> /usr/local/texlive/2023/texmf-dist/fonts/opentype/public/xcharter/XCharter-Roman.otf
 LaTeX Font Info:    Font shape `TU/XCharter(0)/b/n' will be
-(Font)              scaled to size 12.0pt on input line 76.
+(Font)              scaled to size 12.0pt on input line 91.
 Requested font "[XCharter-Bold.otf]/OT:script=latn;language=dflt;+tnum;+lnum;+cv01=0;mapping=tex-text;" at 12.0pt
  -> /usr/local/texlive/2023/texmf-dist/fonts/opentype/public/xcharter/XCharter-Bold.otf
+ [2]
 File: ./Figures/InverseCDF/histogram.png Graphic file (type bmp)
 <./Figures/InverseCDF/histogram.png>
- [2]
+ [3]
 File: ./Figures/InverseCDF/uniform_error.png Graphic file (type bmp)
 <./Figures/InverseCDF/uniform_error.png>
 File: ./Figures/InverseCDF/exponential_error.png Graphic file (type bmp)
 <./Figures/InverseCDF/exponential_error.png>
- [3] [4]
+ [4]
 LaTeX Font Info:    Font shape `TU/XCharter(0)/m/n' will be
-(Font)              scaled to size 7.0pt on input line 173.
+(Font)              scaled to size 7.0pt on input line 191.
 Requested font "[XCharter-Roman.otf]/OT:script=latn;language=dflt;+tnum;+lnum;+cv01=0;mapping=tex-text;" at 7.0pt
  -> /usr/local/texlive/2023/texmf-dist/fonts/opentype/public/xcharter/XCharter-Roman.otf
 LaTeX Font Info:    Font shape `TU/XCharter(0)/m/n' will be
-(Font)              scaled to size 5.0pt on input line 173.
+(Font)              scaled to size 5.0pt on input line 191.
 Requested font "[XCharter-Roman.otf]/OT:script=latn;language=dflt;+tnum;+lnum;+cv01=0;mapping=tex-text;" at 5.0pt
  -> /usr/local/texlive/2023/texmf-dist/fonts/opentype/public/xcharter/XCharter-Roman.otf
+ [5]
 File: ./Figures/AcceptanceRejection/hist.png Graphic file (type bmp)
 <./Figures/AcceptanceRejection/hist.png>
- [5]
 File: ./Figures/AcceptanceRejection/error_linear_regression.png Graphic file (type bmp)
 <./Figures/AcceptanceRejection/error_linear_regression.png>
+ [6]
 File: ./Figures/LLN/verif.png Graphic file (type bmp)
 <./Figures/LLN/verif.png>
- [6]
 File: ./Figures/LLN/verifloglog.png Graphic file (type bmp)
 <./Figures/LLN/verifloglog.png>
  [7]
 File: ./Figures/CLT/verif.png Graphic file (type bmp)
 <./Figures/CLT/verif.png>
+ [8]
 File: ./Figures/CLT/meanerror.png Graphic file (type bmp)
 <./Figures/CLT/meanerror.png>
- [8]
 File: ./Figures/CLT/varianceerror.png Graphic file (type bmp)
 <./Figures/CLT/varianceerror.png>
+ [9]
 File: ./Figures/CLT/varianceslope.png Graphic file (type bmp)
 <./Figures/CLT/varianceslope.png>
- [9] [10]
+ [10] [11]
 File: ./Figures/VarianceReduction/direct.png Graphic file (type bmp)
 <./Figures/VarianceReduction/direct.png>
- [11]
 LaTeX Font Info:    Font shape `TU/XCharter(0)/m/it' will be
-(Font)              scaled to size 10.0pt on input line 379.
+(Font)              scaled to size 10.0pt on input line 403.
 Requested font "[XCharter-Italic.otf]/OT:script=latn;language=dflt;+tnum;+lnum;+cv01=0;mapping=tex-text;" at 10.0pt
  -> /usr/local/texlive/2023/texmf-dist/fonts/opentype/public/xcharter/XCharter-Italic.otf
+ [12]
 File: ./Figures/VarianceReduction/control.png Graphic file (type bmp)
 <./Figures/VarianceReduction/control.png>
- [12]
 File: ./Figures/VarianceReduction/beta.png Graphic file (type bmp)
 <./Figures/VarianceReduction/beta.png>
  [13]
@@ -1144,83 +1145,78 @@ File: ./Figures/VarianceReduction/stratified.png Graphic file (type bmp)
  [14]
 File: ./Figures/VarianceReduction/antithetic.png Graphic file (type bmp)
 <./Figures/VarianceReduction/antithetic.png>
+ [15]
 File: ./Figures/VarianceReduction/comparison.png Graphic file (type bmp)
 <./Figures/VarianceReduction/comparison.png>
- [15] [16]
+ [16]
 File: ./Figures/VarianceReduction/comparisonintegrals.png Graphic file (type bmp)
 <./Figures/VarianceReduction/comparisonintegrals.png>
- [17] [18] [19] [20]
+ [17] [18] [19] [20] [21]
 File: ./Figures/Sympletic/phaseanalytics.png Graphic file (type bmp)
 <./Figures/Sympletic/phaseanalytics.png>
 File: ./Figures/Sympletic/eulerphase1.png Graphic file (type bmp)
 <./Figures/Sympletic/eulerphase1.png>
- [21]
+ [22]
 File: ./Figures/Sympletic/eulerenergy1.png Graphic file (type bmp)
 <./Figures/Sympletic/eulerenergy1.png>
- [22] [23]
+ [23] [24]
 File: ./Figures/Sympletic/eulerphase.png Graphic file (type bmp)
 <./Figures/Sympletic/eulerphase.png>
- [24]
+ [25]
 File: ./Figures/Sympletic/eulerenergy.png Graphic file (type bmp)
 <./Figures/Sympletic/eulerenergy.png>
 File: ./Figures/Sympletic/eulermaxenergy.png Graphic file (type bmp)
 <./Figures/Sympletic/eulermaxenergy.png>
- [25] [26]
+ [26] [27]
 File: ./Figures/Sympletic/verletphase.png Graphic file (type bmp)
 <./Figures/Sympletic/verletphase.png>
 File: ./Figures/Sympletic/verletenergy.png Graphic file (type bmp)
 <./Figures/Sympletic/verletenergy.png>
- [27]
+ [28]
 File: ./Figures/Sympletic/verletmaxenergy.png Graphic file (type bmp)
 <./Figures/Sympletic/verletmaxenergy.png>
 File: ./Figures/Sympletic/maxenergydifference.png Graphic file (type bmp)
 <./Figures/Sympletic/maxenergydifference.png>
- [28] [29]
+ [29] [30]
 File: ./Figures/Sympletic/graphic.jpg Graphic file (type bmp)
 <./Figures/Sympletic/graphic.jpg>
- [30]
+ [31]
 Requested font "cmbx10" at 10.0pt
  -> /usr/local/texlive/2023/texmf-dist/fonts/tfm/public/cm/cmbx10.tfm
 Requested font "cmbx7" at 7.0pt
  -> /usr/local/texlive/2023/texmf-dist/fonts/tfm/public/cm/cmbx7.tfm
 Requested font "cmbx5" at 5.0pt
  -> /usr/local/texlive/2023/texmf-dist/fonts/tfm/public/cm/cmbx5.tfm
- [31] [32]
+ [32] [33]
 File: ./Figures/SolarSystem/gravitationalpotential.png Graphic file (type bmp)
 <./Figures/SolarSystem/gravitationalpotential.png>
- [33]
+ [34]
 File: ./Figures/SolarSystem/orbits.png Graphic file (type bmp)
 <./Figures/SolarSystem/orbits.png>
- [34]
-
-LaTeX Warning: Reference `fig:solarsystemenergy' on page 35 undefined on input line 1326.
-
+ [35]
 File: ./Figures/SolarSystem/energy1.png Graphic file (type bmp)
 <./Figures/SolarSystem/energy1.png>
 File: ./Figures/SolarSystem/energy2.png Graphic file (type bmp)
 <./Figures/SolarSystem/energy2.png>
-[35]
+ [36]
 File: ./Figures/SolarSystem/orbitsjupiter.png Graphic file (type bmp)
 <./Figures/SolarSystem/orbitsjupiter.png>
- [36]
+ [37]
 File: ./Figures/SolarSystem/orbits_euler.png Graphic file (type bmp)
 <./Figures/SolarSystem/orbits_euler.png>
 File: ./Figures/SolarSystem/energy_euler.png Graphic file (type bmp)
 <./Figures/SolarSystem/energy_euler.png>
- [37] (./main.bbl) [38] (./main.aux)
-
-LaTeX Warning: There were undefined references.
-
+ [38] (./main.bbl) [39] (./main.aux)
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: DEF44752CE5E2400A5472C183A928064;6789.
+(rerunfilecheck)             Checksum: 87B6E69DAF5927F8DC26B1AF61135F88;7206.
  ) 
 Here is how much of TeX's memory you used:
- 28795 strings out of 476683
- 582098 string characters out of 5804048
- 1857018 words of memory out of 5000000
- 48468 multiletter control sequences out of 15000+600000
+ 28826 strings out of 476683
+ 582970 string characters out of 5804048
+ 1859018 words of memory out of 5000000
+ 48499 multiletter control sequences out of 15000+600000
  519051 words of font info for 70 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
  125i,13n,129p,1848b,598s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on main.xdv (39 pages, 578544 bytes).
+Output written on main.xdv (40 pages, 629984 bytes).

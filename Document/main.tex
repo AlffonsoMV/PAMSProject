@@ -67,13 +67,29 @@
 \tableofcontents
 \newpage
 
+\section*{Introduction}
 
+This article offers a concise yet comprehensive overview of advanced simulation techniques in statistical and dynamical systems. We begin by exploring various methods for simulating random variables, starting with the Inverse CDF method and progressing to the more intricate Rejection Sampling method.
 
-\section{Simulation of Random Variables} % Unnumbered section
+The discussion then extends to the empirical validation of fundamental statistical laws such as the Law of Large Numbers and the Central Limit Theorem. In parallel, we delve into variance reduction techniques including control variates, importance sampling, and other methods, highlighting their significance in enhancing simulation accuracy and efficiency.
 
-The aim of this section is to introduce the simulation of random variables from a probability distribution alredy given. We will focus on two methods: Inverse CDF method (also known as Inversion Method) and Rejection Sampling method (also known as Acceptance-Rejection method).
+In the realm of Hamiltonian dynamics, the article presents an in-depth exploration of symplectic schemes. This includes a detailed examination of the Euler method, the Störmer-Verlet method, and their applications in modeling complex systems like the solar system’s gravitational dynamics.
+
+Concluding with a segment on "Sampling via Markov chains," the article discusses advanced topics like Euler-Moruyama schemes for 2D potentials and Langevin dynamics, emphasizing their relevance in the simulation of comprehensive 2D molecular systems. This final section aims to enrich the understanding of Markov chain methodologies within computational simulations.
+
+\section{Simulation of Random Variables}
+\label{sec:simulation_of_random_variables}
+
+This section explores the simulation of random variables, a cornerstone in statistical and dynamical system studies. In Section 1.1, we introduce the Inverse CDF method (\ref{sec:inverse_cdf}), providing a foundational overview of its mechanics and application in simulating random variables.
+
+Progressing to Section 1.2 (\ref{sec:rejection_sampling}), the manuscript transitions to the Rejection Sampling method. This section is further divided to enhance clarity and depth: Section 1.2.1 (\ref{sec:enveloping_distribution}) delves into the selection of the appropriate enveloping distribution, and Section 1.2.2 (\ref{sec:results_rejection_sampling}) presents the outcomes and insights from applying this method.
+
+The narrative continues in Section 1.3 (\ref{sec:lln}), where the empirical validation of the Law of Large Numbers is discussed, and in Section 1.4 (\ref{sec:clt}), focusing on the Central Limit Theorem. These sections underscore the practical validation and implications of these pivotal statistical laws in simulation scenarios.
+
+Concluding this section, a detailed examination of various variance reduction techniques is presented in Section 1.5 (\ref{sec:variance_reduction}). Starting with fundamental concepts in Section 1.5.1 (\ref{sec:variance_reduction_preliminaries}), it then explores control variates (Section 1.5.2, \ref{sec:control_variates}), importance sampling (Section 1.5.3, \ref{sec:importance_sampling}), stratified sampling (Section 1.5.4, \ref{sec:stratified_sampling}), and antithetic variates (Section 1.5.5, \ref{sec:antithetic_variates}), culminating in a comparative review in Section 1.5.6 (\ref{sec:comparative_review}). This part of the manuscript synthesizes and compares these techniques, highlighting their role in enhancing the accuracy and efficiency of simulation processes.
 
 \subsection{Inverse CDF method}
+\label{sec:inverse_cdf}
 
 Inverse CDF method is a basic method to generate pseudo-random numbers from any probability distribution given its cumulative distribution function. First of all, we can make the following supposition: Let \(X\) be a random variable with cumulative distribution function \(F\) and probability density function \(f\). Then, the cumulative distribution function of \(Y = F^{-1}(U)\) behaves like \(F\), so the probability density function of \(Y\) is \(f\). Knowing this, the idea is to generate a uniform random variable \(U\) and then apply the inverse of the cumulative distribution function \(F^{-1}\) to obtain a random variable with the desired distribution. The Algorithm~\ref{alg:fastTwoSum} is as follows:
 
@@ -136,6 +152,7 @@ In drawing conclusions from the observed alignment of the histograms of generate
 
 
 \subsection{Rejection Sampling method}
+\label{sec:rejection_sampling}
 
 The Rejection Sampling method is a method to generate pseudo-random numbers for any probability distribution given its probability density function. The idea is to generate a set of random numbers from a probability distribution that is easy to sample from and then reject the numbers that are not in the desired distribution. The Algorithm~\ref{alg:rejectionalg} is as follows:
 
@@ -158,6 +175,7 @@ Let's see this with one example. We want to generate a set of random numbers fro
 \begin{equation} \label{eq:bimodal} f(x) = 0.3e^{-0.2x^2}+0.7e^{-0.2(x-5)^2} \end{equation}
 
 \subsubsection{Selection of the "enveloping" distribution}
+\label{sec:enveloping_distribution}
 
 In this subsection we will explain the process of selecting an optimised "enveloping" distribution. In fact, we could use any distribution that envelops the desired one, but this will probably be very inefficient because there will be many samples that will not be under the objective function, so our goal is to obtain a distribution that envelops the desired one but with the smallest possible space between them. In this paper we have chosen the normal distribution as the "enveloping" distribution because it is easy to sample and is a good candidate for enveloping the desired distribution. Knowing this, we have three parameters to optimise: the mean, \(\mu\); the variance, \(\sigma\); and the scale parameter, \(M\). Note that for this problem, we have to define the bounds as \(a\), \(b\).
 
@@ -179,6 +197,7 @@ In this way, we ensure that whatever the function is, we will envelope it. Knowi
 We can solve this problem with multiple methods. In our case, we have chosen the Nelder-Mead's method (also called downhill simplex method).
 
 \subsubsection{Results of the Rejection Sampling method}
+\label{sec:results_rejection_sampling}
 
 Once we have selected the "enveloping" distribution, we can apply the Rejection Sampling method. In our case, the enveloping function is the N(\(\mu \approx 3.644\) ,\(\sigma \approx 3.041\)) and the scalator parameter \(M \approx 1.545\). The Figure~\ref{fig:rejectionmethod} shows the histogram of the generated random numbers and the probability density function of the desired and the easy distribution.
 
@@ -201,6 +220,7 @@ First of all, note that the distribution chosen with the Equation~\ref{eq:proble
 In drawing conclusions from the observed alignment of the histograms of generated random numbers with the target distribution, there appears to be a noteworthy correlation, as evidenced by Figure~\ref{fig:rejectionerror}. This figure tentatively suggests a coherence between the theoretical and empirical means and variances, hinting at a plausible reliability of the rejection sampling methods used. The error plot seems to indicate a convergence, providing a preliminary yet cautious optimism about the accuracy of the generated numbers in adhering to the desired distributions.
 
 \subsection{Empirical validation of the Law of Large Numbers}
+\label{sec:lln}
 
 The Law of Large Numbers posits that, as the number of trials in an experiment increases, the average of the results obtained should converge towards the expected value of the probability distribution in question. Formally, the law can be expressed as follows:
 
@@ -238,6 +258,7 @@ where \(x_i\) is the \(i\)-th random number generated and \(\mu\) is the theoret
 The visual representation in Figure~\ref{fig:verificationllnlog} substantiates that the error indeed diminishes as the number of trials augments, validating the assertion of the Law of Large Numbers that the experimental mean approaches the theoretical mean with an increasing number of observations. Note that the slope of the regression line is approximately \(-0.5\).
 
 \subsection{Empirical Validation of the Central Limit Theorem}
+\label{sec:clt}
 
 The Central Limit Theorem (CLT) posits a pivotal foundational theorem in probability theory, signifying that, irrespective of the shape of the original distribution, the distribution of sample means will approximate a normal distribution as the sample size burgeons. To empirically validate this theorem, we can simulate a series of random numbers from any given probability distribution and systematically calculate their mean. By perpetuating this process, we can construct a histogram of the means and scrutinize whether it converges to a normal distribution, aligning with the theorem's prediction. Formally, the theorem can be expressed as follows:
 
@@ -299,6 +320,7 @@ Finally, another way to validate the CLT is to plot the variance as the number o
 Computing the slope of the linear regression we obtain that it is \(-1\). This phenomenological observation substantiates the assertions of the Central Limit Theorem, illuminating the convergence of the distribution of sample means to a normal distribution as the sample size escalates, validating the theoretical underpinnings of the theorem through empirical exploration.
 
 \subsection{Variance reduction techniques}
+\label{sec:variance_reduction}
 
 In the theory of Monte Carlo methods, variance reduction techniques are a pivotal tool to increase the precision of the estimates of the expected value of a random variable. In this section, we will focus on three techniques: Control variates, Importance sampling and Antithetic variates. Also, we will introduce an example problem in which we will apply these techniques to compare them.
 
@@ -325,6 +347,7 @@ Since we are going to introduce and compare the three techniques, first of all w
 It should be noted that the selection of the integral for this demonstration was intentional; a readily solvable integral was chosen for its ease of analytical computation, allowing for a straightforward comparison with theoretical values. Nonetheless, the methods illustrated herein are equally applicable and potent for evaluating integrals that pose substantial challenges to analytical computation.
 
 \subsubsection{Preliminaries}
+\label{sec:variance_reduction_preliminaries}
 
 First of all we have to compute which is the estimation we alredy can have without applying any variance reduction technique. We can compute the integral analytically. We know that the mean of the variable in a probability space is defined as follows:
 
@@ -360,6 +383,7 @@ To conclude, we can compute the variance of the estimation as follows:
 In this case, we have computed that \(\mathrm{Var}(X) \approx 8.977 \cdot 10^{-2}\).
 
 \subsubsection{Control variates}
+\label{sec:control_variates}
 
 Control variates is a variance reduction technique with the following idea: Let \(\mu\) the parameter we want to estimate, and assume we have a statistic \(Y\) such that \(\mathbb{E}(Y) = \tau\). Then, we can estimate \(\mu\) by estimating \(\mathbb{E}(Y)\) as \(\hat{\mathbb{E}}(Y)\) and correcting the bias with the following formula:
 
@@ -410,6 +434,7 @@ In our case, we can use the knowledge of the mean of the uniform distribution to
 In this case, we have computed that \(\mathrm{Var}(X) \approx 5.168 \cdot 10^{-3}\).
 
 \subsubsection{Importance sampling}
+\label{sec:importance_sampling}
 
 Importance sampling is another variance reduction technique. Instead of using the knowledge of another estimator to reduce the bias of our sample, as done in the control variates method, in this case the idea is using the knowledge of the actual function we want to integrate, so instead of using a uniform distribution, we can use another distribution that is more similar to the function we want to integrate, in order to try more samples in the areas where the function is more important. 
 
@@ -436,6 +461,7 @@ So the idea is to generate a sample of random numbers \(X \sim Beta(2.9,1)\), an
 In this case, we have computed that \(\mathrm{Var}(X) \approx 1.274 \cdot 10^{-4}\).
 
 \subsubsection{Stratified sampling}
+\label{sec:stratified_sampling}
 
 The idea is to divide the interval of the stratified sampling is pretty simple. We divide the interval in \(n\) subintervals, and we generate a sample of random numbers for each subinterval. Doing this, we are trying to reduce the variance of the mean of the distribution we are considering, so the sample is more representative of the distribution. The Figure~\ref{fig:stratifiedsampling} shows the error to the theoretical value as the number of trials increases.
 
@@ -449,6 +475,7 @@ The idea is to divide the interval of the stratified sampling is pretty simple. 
 In this case, we have computed that \(\mathrm{Var}(X) \approx 1.108 \cdot 10^{-7}\).
 
 \subsubsection{Antithetic variates}
+\label{sec:antithetic_variates}
 
 The Antithetic variates method consists on taking for each random sample, its antithetic, i.e. the symmetric with respect to the mean of the distribution. The idea is that the variance of the mean of the distribution is reduced, since the mean of the antithetic is the same as the mean of the distribution. In our case, we have generated a sample \(\mathcal{U} \sim \mathcal{U}(0,0.5)\) and its antithetic \(\mathcal{U}' = \{1 - x \ : \ x \in \mathcal{U}\}\). Taking \(X = \mathcal{U} \bigcup \mathcal{U}' \), we can apply Equation \eqref{eq:expectedvalueestimate} to \(f(X)\) to obtain the estimate of the integral. The Figure~\ref{fig:antitheticvariates} shows the error to the theoretical value as the number of trials increases.
 
@@ -462,6 +489,7 @@ The Antithetic variates method consists on taking for each random sample, its an
 In this case, we have computed that \(\mathrm{Var}(X) \approx 1.178 \cdot 10^{-2}\).
 
 \subsubsection{Comparative Review}
+\label{sec:comparative_review}
 
 After unraveled the intricacies of each method and confirming the convergence of each approach described in this study, we now turn to a more focused comparison of these techniques. The goal is simple: find out which method works best for our specific problem. See Figure~\ref{fig:comparisonvariancereduction} for a visual representation of the error in relation to the theoretical value as we increase the number of trials for each method.
 
@@ -544,6 +572,20 @@ Notably, for the importance sampling method, we opted for a normal distribution 
 Reviewing the data, stratified sampling again stands out for its rapid convergence. However, the importance sampling lags, a likely outcome of applying a general normal distribution for all functions, each requiring a unique distribution. But to outrightly conclude that stratified sampling is the go-to method would be a rush to judgment, given our exploration is based on limited scenarios. Thorough exploration involving varied problems is essential to cement our initial conclusions while maintaining the professional and scientific rigor of our exploration.
 
 \section{Hamiltonian dynamics}
+\label{sec:hamiltonian_dynamics}
+
+This section delves into the realm of Hamiltonian dynamics, beginning with an in-depth exploration of symplectic schemes in Section 2.1 (\ref{sec:symplectic_schemes}). This section starts with a discussion on the analytical solution in Section 2.1.1 (\ref{sec:analytical_solution}), setting the groundwork for understanding symplectic integration methods.
+
+In Section 2.1.2 (\ref{sec:euler_method}), the focus shifts to the Euler method, detailing its application and significance in Hamiltonian systems. Following this, Section 2.1.3 (\ref{sec:failure_standard_methods}) discusses the limitations and failures of standard methods in this context, highlighting the need for more sophisticated approaches.
+
+Section 2.1.4 (\ref{sec:constructing_symplectic_schemes}) addresses the construction of symplectic schemes, a crucial step for accurate simulations in Hamiltonian dynamics. This is further expanded in Section 2.1.5 (\ref{sec:symplectic_euler_method}), which specifically examines the Symplectic Euler method. A detailed Linear Stability Analysis of the Symplectic Euler scheme is then presented in Section 2.1.5.1 (\ref{sec:linear_stability_symplectic_euler}).
+
+The narrative continues with the Stormer-Verlet method in Section 2.1.6 (\ref{sec:stormer_verlet_method}), another important technique in symplectic integration, followed by a Linear Stability Analysis of the Verlet scheme in Section 2.1.6.1 (\ref{sec:linear_stability_verlet}). Section 2.1.7 (\ref{sec:backward_error_analysis}) concludes this part with a discussion on Backward Error Analysis, providing insights into the error characteristics of symplectic integrators.
+
+Section 2.2 (\ref{sec:solar_system_simulation}) shifts the focus to the practical application of these concepts in simulating the solar system. Section 2.2.1 (\ref{sec:modeling_solar_system}) begins with modeling gravitational dynamics, followed by the implementation of the Störmer-Verlet scheme in Section 2.2.2 (\ref{sec:stormer_verlet_scheme_gravitational_dynamics}). The implementation details of these models are further elaborated in Section 2.2.3 (\ref{sec:implementation_solar_system}), with two experiments: Experiment 1 in Section 2.2.3.1 (\ref{sec:expanding_n_body_problem}) expands to the N-Body problem, and Experiment 2 in Section 2.2.3.2 (\ref{sec:using_symplectic_euler_method}) utilizes the Symplectic Euler Method, providing practical insights into their application in complex dynamical systems.
+
+\subsection{Introduction to Hamiltonian dynamics}
+\label{sec:introduction_hamiltonian_dynamics}
 
 Hamiltonian dynamics, also called "Hamiltonian mechanics", is a reformulation of the clasical mechanics which describes the temporal evolution of a physical system in terms of pairs of variables: the generalized coordinates \(q_i\) and their momenta \(p_i\).
 
@@ -626,6 +668,7 @@ One of the most important property of the Hamiltonian dynamics is the following:
 \end{proof}
 
 \subsection{Symplectic schemes}
+\label{sec:symplectic_schemes}
 
 In this section we will introduce the symplectic schemes, which are a family of numerical methods to solve the Hamiltonian dynamics equations. The idea is to discretize the Hamiltonian dynamics equations \eqref{eq:hamiltoniandynamics2} in order to obtain a numerical approximation of the solution. The symplectic schemes are a family of numerical methods which preserve the symplectic structure of the Hamiltonian dynamics equations, i.e. the energy of the system is conserved over time.
 
@@ -637,6 +680,7 @@ In this section we will introduce the symplectic schemes, which are a family of 
 \end{definition}
 
 \subsubsection{Analytical solution}
+\label{sec:analytical_solution}
 
 Let us introduce a simple example problem to illustrate the symplectic schemes: the harmonic oscillator. The harmonic oscillator is a system composed of a particle of mass \(m\) attached to a spring with spring constant \(k\). The position of the particle is denoted by \(q(t)\). The potential energy of the system is defined as follows:
 
@@ -749,6 +793,7 @@ The Figure~\ref{fig:harmonicoscillator} shows the phase space of the harmonic os
 
 
 \subsubsection{Euler method}
+\label{sec:euler_method}
 
 The Euler method is a numerical method to solve ordinary differential equations. The idea is to discretize the differential equation in order to obtain a numerical approximation of the solution. The Euler method discretizes the differential equation as follows:
 
@@ -781,6 +826,7 @@ As we can discern, this phace space is not even near to the real phase space of 
 As we can see, the energy is not conserved over time, which is another property of the harmonic oscillator. The energy is increasing over time, which is not the correct behaviour of the harmonic oscillator. With this results we can conclude that the Euler method is not a good method to solve the Hamiltonian dynamics equations. This is a consequence of the fact that the Euler method does not preserve the symplectic structure of the Hamiltonian dynamics equations. Therefore, in the next section we will introduce a new method that preserves the symplectic structure of the Hamiltonian dynamics equations which is a slight modification of the Euler method.
 
 \subsubsection{Failure of standard methods}
+\label{sec:failure_standard_methods}
 
 As we alredy know, the Hamiltonian dynamics is a standard ordinal differential equation (ODE), so it can be approximated by any standard integration scheme. However, as we saw using the Euler scheme, the energy increases over the time so it doesn't work. To provide a further view of this, in this section, we want to introduce the mathematical approach to see why this methods are failing. Considering again the problem of the harmonic oscillator, whose Hamiltonian is provided in \ref{eq:hamiltonianharmonicoscillator}. And taking the euler scheme given in \ref{eq:euler} we can rewrite it to:
 
@@ -799,6 +845,7 @@ Since \(\lambda_1 \lambda_2 = 1 + (\Delta t \omega)^2 > 1\) the energy exponenti
 
 
 \subsubsection{Constructing Symplectic Schemes}
+\label{sec:constructing_symplectic_schemes}
 
 To develop an integrator, we split the Hamiltonian \(H(q,p)\) into simpler components:
 
@@ -876,6 +923,7 @@ Combining these flows yields our symplectic schemes. The sequence of combining m
 
 
 \subsubsection{Symplectic Euler method}
+\label{sec:symplectic_euler_method}
 
 The symplectic Euler method is a slight modification of the Euler method that preserves the symplectic structure of Hamiltonian systems. This new method discretizes the Hamiltonian dynamics equations \eqref{eq:hamiltoniandynamics2} as follows:
 
@@ -924,6 +972,7 @@ The Figure~\ref*{fig:eulermaxenergy} shows the function \(\Gamma_{\Delta t}^{Eul
 To conclude the section, we can see in Figure~\ref*{fig:eulermaxenergy} that the difference decreases as the time step decreases, which is the expected behaviour of any scheme that preserves the symplectic structure of the Hamiltonian dynamics equations. Therefore, we can conclude that the symplectic Euler method is a good method to solve the Hamiltonian dynamics equations.
 
 \subsubsubsection{Linear Stability Analysis of the Sympletic Euler Scheme}
+\label{sec:linear_stability_symplectic_euler}
 
 Using the equation \ref{eq:symplecticeuler} and replacing all the termusing the harmonic oscillator problem, one can rewrite the scheme as:
 
@@ -964,6 +1013,7 @@ Therefore, the sympletic euler scheme isn't stable for any \(\xi\).
 
 
 \subsubsection{Stormer-Verlet method}
+\label{sec:stormer_verlet_method}
 
 The Störmer-Verlet method, often simply referred to as the Verlet method, is a numerical technique used to integrate ordinary differential equations of the form \( \dot{y} = f(y) \). It is particularly popular in molecular dynamics simulations and other problems modeled by Hamiltonian systems. The method can be derived directly from the Taylor series expansion of the solution. The central idea behind the method is to use information from both the current and previous time steps to predict the value at the next time step. 
 
@@ -1041,6 +1091,7 @@ So now we are prepared to overview the difference between both methods. The Figu
 As we can see, the Störmer-Verlet method is much better than the Euler Sympletic method. Probably, this is a consequence of the fact that the Störmer-Verlet method is a second order method, while the Euler Sympletic method is a first order method. Therefore, we can conclude that the Störmer-Verlet method is a better method to solve the Hamiltonian dynamics equations than the Euler Sympletic method.
 
 \subsubsubsection{Linear Stability Analysis of the Verlet Scheme}
+\label{sec:linear_stability_verlet}
 
 Using the equation \ref{eq:stormerverletharmonic} and replacing all the terms by its definition, and considering that \(\omega = \sqrt{\frac{k}{m}}\), we can rewrite the scheme as:
 
@@ -1108,6 +1159,7 @@ For stability, we require \( |\lambda_1| \leq 1 \). This translates to the condi
 This inequality leads to a tautology so it is always stable. This is consistent with the observed property of the Störmer-Verlet scheme which conserves the energy over time and doesn't let errors gro unboundedly. This, in combination with its second-order accuracy, makes it preferable over the Euler sympletic method for problems modeled by Hamiltonian systems.
 
 \subsubsection{Backward Error Analysis}
+\label{sec:backward_error_analysis}
 
 In this section, we will introduce the backward error analysis. The backward error analysis is a technique to analyze the error of a numerical method. We can define the idea of this technique as: For a given problem \(P(x)\), an exact input \(x\) and an approximate solution \(\hat{x}\), we can define the backward error as the smallest perturbation \(\Delta x\) such that \(P(x + \Delta x) = \hat{x}\). Therefore the formal definitions, extracted with little modifications from \cite{fraysse2018hdr}, is:
 
@@ -1135,12 +1187,14 @@ The following Figure~\ref{fig:backwarderror} extracted from \cite{higham2020back
 
 
 \subsection{Solar System Simulation}
+\label{sec:solar_system_simulation}
 
 In this section, we'll harness the power of Hamiltonian dynamics to craft a simulation of the solar system. We'll adopt the Stormer-Verlet scheme, renowned for its energy-conserving properties, as our primary numerical method.
 
 First of all, let's do a brief introduction to the problem we want to solve. We can see the solar system as a set of \(N\) bodies, each of them with a mass \(m_i\) a position \(q_i\) and a velocity \(v_i\). The position and velocity are vectors in \(\mathbb{R}^2\). The gravitational force between two bodies is given by:
 
 \subsubsection{Modeling the Solar System: Gravitational Dynamics}
+\label{sec:modeling_solar_system}
 
 The motion of celestial bodies in the solar system, primarily planets, moons, and the Sun, can be described by Newton's law of universal gravitation. For \(N\) bodies, the gravitational force exerted on the \(i^{th}\) body due to the \(j^{th}\) body is given by:
 
@@ -1181,6 +1235,7 @@ This Hamiltonian can be used to derive the equations of motion using Hamilton's 
 In the next section, we'll dive deeper into the implementation details, but this sets up the mathematical foundation for our solar system simulation based on gravitational interactions.
 
 \subsubsection{Störmer-Verlet Scheme for Gravitational Dynamics}
+\label{sec:stormer_verlet_scheme_gravitational_dynamics}
 
 Now that we have the Hamiltonian for the system, we can derive use it inside the Störmer-Verlet scheme to derive the equations of motion. The Störmer-Verlet scheme for the \(i^{th}\) body is:
 
@@ -1273,7 +1328,8 @@ This is the gradient of the potential energy with respect to the position of the
 \end{figure}
 As we could have expected, the Sun has, by far, the most negative potential energy, since it is the body with the highest mass. Also we can observe that the potential energy is negative, which is the expected behaviour of the gravitational potential energy. 
 
-\subsubsection{Implementation}
+\subsubsection{Implementation of the Solar System Simulation}
+\label{sec:implementation_solar_system}
 
 First of all, we need to define the parameters of the simulation. The Table~\ref{table:parameters} shows the parameters of the simulation.
 
@@ -1323,7 +1379,7 @@ For illustrative purposes, we'll simulate the orbits of the Sun, Mercury, Venus,
 
 We can see that the orbits are closed curves, which is the expected behaviour of the planets of the solar system. Also, we can see that the orbits are not perfect circles, which is also the expected behaviour of the planets of the solar system. 
 
-Now let's see the energy of the system. The Figure~\ref{fig:solarsystemenergy} shows the energy of the system for the same simulation.
+Now let's see the energy of the system. The Figure~\ref{fig:solarsystemenergy1} shows the energy of the system for the same simulation.
 
 \begin{figure}[H]
 	\centering
@@ -1346,6 +1402,7 @@ As predicted, we can observe that the energy is preserved.
 Now that we have the system created and we have seen that the energy is preserved, we can do some experiments. 
 
 \subsubsubsection{Experiment 1: Expanding to the N-Body Problem}
+\label{sec:expanding_n_body_problem}
 
 In our initial simulation, as detailed in the referenced table, we included data for Jupiter but did not incorporate it into the actual simulation. This was primarily due to Jupiter's significant distance from the inner planets, which could potentially complicate the visual clarity of our model. However, given Jupiter's substantial mass – the largest among the planets – its inclusion is crucial for a more comprehensive understanding of the solar system's dynamics. This necessitates an expansion of our model to an N-body problem, allowing for the gravitational influence of not just the Sun but also the other planets to be accounted for.
 
@@ -1360,6 +1417,7 @@ To explore this, we have extended our simulation to include Jupiter, aiming to o
 
 
 \subsubsubsection{Experiment 2: Using Symplectic Euler Method}
+\label{sec:using_symplectic_euler_method}
 
 We alredy know that the Störmer-Verlet method performs better than the Euler Symplectic method, but let's see how the solar system behaves using the Euler Sympletic method. The Figure~\ref{fig:solarsystemeuler} shows the orbits of the planets of the solar system using the Euler Symplectic method for \(\Delta t = 1\) day and \(T = 20\) years.
 
