@@ -4,51 +4,55 @@ The top-level auxiliary file: main.aux
 The style file: plain.bst
 Database file #1: mybib.bib
 Warning--entry type for "fraysse2018hdr" isn't style-file defined
---line 1 of file mybib.bib
+--line 32 of file mybib.bib
 Warning--entry type for "higham2020backwarderror" isn't style-file defined
---line 10 of file mybib.bib
+--line 41 of file mybib.bib
 Warning--entry type for "nssdc2022planetaryfactsheet" isn't style-file defined
---line 20 of file mybib.bib
+--line 65 of file mybib.bib
+Warning--entry type for "peng2023rejectionsampling" isn't style-file defined
+--line 73 of file mybib.bib
+Warning--entry type for "wikitInverseTransformSampling" isn't style-file defined
+--line 91 of file mybib.bib
 Warning--to sort, need author or key in nssdc2022planetaryfactsheet
-You've used 4 entries,
+You've used 8 entries,
             2118 wiz_defined-function locations,
-            516 strings with 4416 characters,
-and the built_in function-call counts, 814 in all, are:
-= -- 72
-> -- 22
+            541 strings with 4977 characters,
+and the built_in function-call counts, 1745 in all, are:
+= -- 162
+> -- 50
 < -- 0
-+ -- 11
-- -- 6
-* -- 32
-:= -- 132
-add.period$ -- 11
-call.type$ -- 4
-change.case$ -- 14
++ -- 23
+- -- 14
+* -- 75
+:= -- 289
+add.period$ -- 24
+call.type$ -- 8
+change.case$ -- 30
 chr.to.int$ -- 0
-cite$ -- 5
-duplicate$ -- 33
-empty$ -- 90
-format.name$ -- 6
-if$ -- 177
+cite$ -- 9
+duplicate$ -- 70
+empty$ -- 183
+format.name$ -- 14
+if$ -- 378
 int.to.chr$ -- 0
-int.to.str$ -- 4
-missing$ -- 2
-newline$ -- 22
-num.names$ -- 6
-pop$ -- 35
+int.to.str$ -- 8
+missing$ -- 5
+newline$ -- 43
+num.names$ -- 14
+pop$ -- 61
 preamble$ -- 1
-purify$ -- 11
+purify$ -- 23
 quote$ -- 0
-skip$ -- 27
+skip$ -- 54
 stack$ -- 0
-substring$ -- 21
-swap$ -- 4
+substring$ -- 62
+swap$ -- 8
 text.length$ -- 0
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 14
+type$ -- 28
 warning$ -- 1
-while$ -- 6
-width$ -- 5
-write$ -- 40
-(There were 4 warnings)
+while$ -- 15
+width$ -- 9
+write$ -- 84
+(There were 6 warnings)

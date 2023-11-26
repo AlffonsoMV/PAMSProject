@@ -4,6 +4,11 @@
 Planetary fact sheet, 2023.
 \newblock Accessed: 2023-11-02.
 
+\bibitem{wikitInverseTransformSampling}
+Wikipedia contributors.
+\newblock Inverse transform sampling, 2023.
+\newblock Accessed: 2023-11-24.
+
 \bibitem{fraysse2018hdr}
 V.~Frayssé.
 \newblock Hdr thesis, 2018.
@@ -13,6 +18,22 @@ V.~Frayssé.
 Nicholas~J. Higham.
 \newblock What is backward error?, 3 2020.
 \newblock Accessed: 2023-11-15.
+
+\bibitem{jourdain2016probabilites}
+Benjamin Jourdain.
+\newblock {\em Probabilités et statistique}.
+\newblock Ellipses, 2 edition, 2016.
+\newblock Bibliogr. p. 185. Index.
+
+\bibitem{doi:10.1137/S1052623496303482}
+K.~I.~M. McKinnon.
+\newblock Convergence of the nelder--mead simplex method to a nonstationary point.
+\newblock {\em SIAM Journal on Optimization}, 9(1):148--158, 1998.
+
+\bibitem{peng2023rejectionsampling}
+Roger~D. Peng.
+\newblock 6.3 rejection sampling, 2023.
+\newblock Accessed: 2023-11-25.
 
 \bibitem{stoltz2023introduction}
 Gabriel Stoltz.

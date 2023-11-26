@@ -1277,9 +1277,6 @@ INPUT ./Figures/AcceptanceRejection/hist.png
 INPUT ./Figures/AcceptanceRejection/error_linear_regression.png
 INPUT ./Figures/AcceptanceRejection/error_linear_regression.png
 INPUT ./Figures/AcceptanceRejection/error_linear_regression.png
-INPUT ./Figures/LLN/verif.png
-INPUT ./Figures/LLN/verif.png
-INPUT ./Figures/LLN/verif.png
 INPUT ./Figures/LLN/verifloglog.png
 INPUT ./Figures/LLN/verifloglog.png
 INPUT ./Figures/LLN/verifloglog.png
@@ -1316,9 +1313,9 @@ INPUT ./Figures/VarianceReduction/antithetic.png
 INPUT ./Figures/VarianceReduction/comparison.png
 INPUT ./Figures/VarianceReduction/comparison.png
 INPUT ./Figures/VarianceReduction/comparison.png
-INPUT ./Figures/VarianceReduction/comparisonintegrals.png
-INPUT ./Figures/VarianceReduction/comparisonintegrals.png
-INPUT ./Figures/VarianceReduction/comparisonintegrals.png
+INPUT ./Figures/VarianceReduction/comparison2.png
+INPUT ./Figures/VarianceReduction/comparison2.png
+INPUT ./Figures/VarianceReduction/comparison2.png
 INPUT ./Figures/Sympletic/phaseanalytics.png
 INPUT ./Figures/Sympletic/phaseanalytics.png
 INPUT ./Figures/Sympletic/phaseanalytics.png
