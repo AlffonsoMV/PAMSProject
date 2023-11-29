@@ -15,15 +15,15 @@
 \contentsline {section}{\numberline {2}Hamiltonian dynamics}{19}{section.2}%
 \contentsline {subsection}{\numberline {2.1}Introduction to Hamiltonian dynamics}{20}{subsection.2.1}%
 \contentsline {subsection}{\numberline {2.2}Symplectic schemes}{21}{subsection.2.2}%
-\contentsline {subsubsection}{\numberline {2.2.1}Analytical solution}{21}{subsubsection.2.2.1}%
+\contentsline {subsubsection}{\numberline {2.2.1}Analytical solution}{22}{subsubsection.2.2.1}%
 \contentsline {subsubsection}{\numberline {2.2.2}Euler method}{24}{subsubsection.2.2.2}%
 \contentsline {subsubsection}{\numberline {2.2.3}Failure of standard methods}{25}{subsubsection.2.2.3}%
-\contentsline {subsubsection}{\numberline {2.2.4}Constructing Symplectic Schemes}{25}{subsubsection.2.2.4}%
+\contentsline {subsubsection}{\numberline {2.2.4}Constructing Symplectic Schemes}{26}{subsubsection.2.2.4}%
 \contentsline {subsubsection}{\numberline {2.2.5}Symplectic Euler method}{27}{subsubsection.2.2.5}%
-\contentsline {subsubsubsection}{\numberline {2.2.5.1}Linear Stability Analysis of the Sympletic Euler Scheme}{28}{subsubsubsection.2.2.5.1}%
+\contentsline {subsubsubsection}{\numberline {2.2.5.1}Linear Stability Analysis of the Sympletic Euler Scheme}{29}{subsubsubsection.2.2.5.1}%
 \contentsline {subsubsection}{\numberline {2.2.6}Stormer-Verlet method}{29}{subsubsection.2.2.6}%
-\contentsline {subsubsubsection}{\numberline {2.2.6.1}Linear Stability Analysis of the Verlet Scheme}{31}{subsubsubsection.2.2.6.1}%
-\contentsline {subsubsection}{\numberline {2.2.7}Backward Error Analysis}{32}{subsubsection.2.2.7}%
+\contentsline {subsubsubsection}{\numberline {2.2.6.1}Linear Stability Analysis of the Verlet Scheme}{32}{subsubsubsection.2.2.6.1}%
+\contentsline {subsubsection}{\numberline {2.2.7}Backward Error Analysis}{33}{subsubsection.2.2.7}%
 \contentsline {subsection}{\numberline {2.3}Solar System Simulation}{33}{subsection.2.3}%
 \contentsline {subsubsection}{\numberline {2.3.1}Modeling the Solar System: Gravitational Dynamics}{33}{subsubsection.2.3.1}%
 \contentsline {subsubsection}{\numberline {2.3.2}Störmer-Verlet Scheme for Gravitational Dynamics}{34}{subsubsection.2.3.2}%

@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999995 (TeX Live 2023) (preloaded format=xelatex 2023.9.6)  26 NOV 2023 20:42
+This is XeTeX, Version 3.141592653-2.6-0.999995 (TeX Live 2023) (preloaded format=xelatex 2023.9.6)  26 NOV 2023 20:47
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1155,9 +1155,10 @@ File: ./Figures/Sympletic/phaseanalytics.png Graphic file (type bmp)
  [23]
 File: ./Figures/Sympletic/eulerphase1.png Graphic file (type bmp)
 <./Figures/Sympletic/eulerphase1.png>
+ [24]
 File: ./Figures/Sympletic/eulerenergy1.png Graphic file (type bmp)
 <./Figures/Sympletic/eulerenergy1.png>
- [24] [25] [26]
+ [25] [26]
 File: ./Figures/Sympletic/eulerphase.png Graphic file (type bmp)
 <./Figures/Sympletic/eulerphase.png>
 File: ./Figures/Sympletic/eulerenergy.png Graphic file (type bmp)
@@ -1165,15 +1166,14 @@ File: ./Figures/Sympletic/eulerenergy.png Graphic file (type bmp)
  [27]
 File: ./Figures/Sympletic/eulermaxenergy.png Graphic file (type bmp)
 <./Figures/Sympletic/eulermaxenergy.png>
- [28]
+ [28] [29]
 File: ./Figures/Sympletic/verletphase.png Graphic file (type bmp)
 <./Figures/Sympletic/verletphase.png>
- [29]
 File: ./Figures/Sympletic/verletenergy.png Graphic file (type bmp)
 <./Figures/Sympletic/verletenergy.png>
+ [30]
 File: ./Figures/Sympletic/verletmaxenergy.png Graphic file (type bmp)
 <./Figures/Sympletic/verletmaxenergy.png>
- [30]
 File: ./Figures/Sympletic/maxenergydifference.png Graphic file (type bmp)
 <./Figures/Sympletic/maxenergydifference.png>
  [31] [32]
@@ -1217,4 +1217,4 @@ Here is how much of TeX's memory you used:
  1348 hyphenation exceptions out of 8191
  125i,13n,129p,1410b,598s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on main.xdv (41 pages, 649608 bytes).
+Output written on main.xdv (41 pages, 650488 bytes).

@@ -588,6 +588,12 @@ But before moving on to look at more problems, let's look at the comparative tab
 	\end{tabular}
 \end{center}
 
+Recall that the formula used to compute the variance is:
+
+\begin{equation*} \mathrm{Var}(X) = \mathrm{Var}(\hat{\mathbb{E}}(X)) \ n \end{equation*}
+
+With a sample size of \(n = 1000\).
+
 Analyzing the table, we discern significant disparities in variance between the different sampling methods, accentuating the prominence of stratified sampling, which registers the minimal variance,. This numerical inferiority in variance corroborates the preliminary observation about its superior convergence rate, offering more stable and reliable estimates. Stratified sampling outperformed other methods in our study primarily due to its targeted approach of dividing the population into homogeneous strata. This division ensures proportional representation of all subgroups, reducing sampling bias and variance within each stratum. Consequently, it yields more accurate and representative results. Furthermore, by adjusting the sample size within each stratum based on variability, stratified sampling enhances overall efficiency and precision. These methodological strengths contribute to its superior performance in terms of reliability and convergence rates, especially in diverse and complex datasets. Contrastingly, direct sampling exhibits the maximum variance, revealing its comparative inefficiency and instability in procuring estimates for this specific problem. The remaining methods, while overshadowed by the efficacy of stratified sampling, still exhibit markedly lower variances than direct sampling.
 
 Next, we'll broaden our investigation to a more complex problem, applying the methods we’ve discussed to estimate the following integrals:
