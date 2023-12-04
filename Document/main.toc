@@ -30,3 +30,12 @@
 \contentsline {subsubsection}{\numberline {2.3.3}Implementation of the Solar System Simulation}{36}{subsubsection.2.3.3}%
 \contentsline {subsubsubsection}{\numberline {2.3.3.1}Experiment 1: Expanding to the N-Body Problem}{38}{subsubsubsection.2.3.3.1}%
 \contentsline {subsubsubsection}{\numberline {2.3.3.2}Experiment 2: Using Symplectic Euler Method}{39}{subsubsubsection.2.3.3.2}%
+\contentsline {section}{\numberline {3}Markov Chains}{40}{section.3}%
+\contentsline {subsection}{\numberline {3.1}Introduction to Markov Chains}{40}{subsection.3.1}%
+\contentsline {subsubsection}{\numberline {3.1.1}Stationary Distribution}{41}{subsubsection.3.1.1}%
+\contentsline {subsubsection}{\numberline {3.1.2}Irreducibility and Uniqueness}{41}{subsubsection.3.1.2}%
+\contentsline {subsection}{\numberline {3.2}Markov Chain Montecarlo Methods}{42}{subsection.3.2}%
+\contentsline {subsubsection}{\numberline {3.2.1}Metropolis-Hastings Algorithm}{42}{subsubsection.3.2.1}%
+\contentsline {subsubsubsection}{\numberline {3.2.1.1}Example: Sampling from a Gamma Distribution}{42}{subsubsubsection.3.2.1.1}%
+\contentsline {subsubsection}{\numberline {3.2.2}Gibbs Sampling}{43}{subsubsection.3.2.2}%
+\contentsline {subsubsubsection}{\numberline {3.2.2.1}Example: Sampling from a Bivariate Normal Distribution}{43}{subsubsubsection.3.2.2.1}%

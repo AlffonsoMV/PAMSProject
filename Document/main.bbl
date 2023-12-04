@@ -1,4 +1,4 @@
-\begin{thebibliography}{1}
+\begin{thebibliography}{10}
 
 \bibitem{nssdc2022planetaryfactsheet}
 Planetary fact sheet, 2023.
@@ -8,6 +8,24 @@ Planetary fact sheet, 2023.
 Wikipedia contributors.
 \newblock Inverse transform sampling, 2023.
 \newblock Accessed: 2023-11-24.
+
+\bibitem{wiki:metropolishastings}
+Wikipedia contributors.
+\newblock Metropolis–hastings algorithm - wikipedia.
+\newblock Wikipedia, The Free Encyclopedia, 2023.
+\newblock Accessed: 2023-11-29.
+
+\bibitem{wiki:bivariatenormal}
+Wikipedia contributors.
+\newblock Multivariate normal distribution - wikipedia.
+\newblock Wikipedia, The Free Encyclopedia, 2023.
+\newblock Accessed: 2023-11-29.
+
+\bibitem{diaconis2008markov}
+Persi Diaconis.
+\newblock The markov chain monte carlo revolution.
+\newblock {\em Bulletin of the American Mathematical Society}, 46:179--205, 2008.
+\newblock Accessed: 2023-11-29.
 
 \bibitem{fraysse2018hdr}
 V.~Frayssé.
@@ -34,6 +52,11 @@ K.~I.~M. McKinnon.
 Roger~D. Peng.
 \newblock 6.3 rejection sampling, 2023.
 \newblock Accessed: 2023-11-25.
+
+\bibitem{reygner2023methodes}
+Julien Reygner.
+\newblock Méthodes numériques probabilistes, 2023.
+\newblock Course material for Master de Mathématiques et Applications, Spécialité Mathématiques de la Modélisation, Sorbonne Université et École des Ponts ParisTech, Academic Year 2023/2024.
 
 \bibitem{stoltz2023introduction}
 Gabriel Stoltz.

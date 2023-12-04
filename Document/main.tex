@@ -253,7 +253,7 @@ where \(x_i\) is the \(i\)-th random number generated and \(\mu\) is the theoret
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=0.5\linewidth]{./Figures/LLN/verifloglog.png}
-	\caption{Logarithmic depiction of the absolute error relative to the mean. Average of 1000 trials per point.}
+	\caption{Logarithmic depiction of the absolute error relative to the mean. Average of 1000 trials per point. SLOPE!}
 	\label{fig:verificationllnlog}
 \end{figure}
 
@@ -1524,6 +1524,193 @@ Comparing it to the results obtained using the Störmer-Verlet method, again we 
 \end{table}
 
 Therefore, in this problem we can conclude that the Störmer-Verlet method is $3.14$ times better in terms of conservation of the Energy than the Euler Sympletic method.
+
+\section{Markov Chains}
+\label{sec:markov_chains}
+
+This sections aims to show how Markov Chains are extremely useful in the field of Hamiltonian Dynamics. For this we will introduce the concept of Markov Chains and its properties, then we will explain the Markov Chain Montecarlo Methods (MCMC) and finally we will show how to use MCMC to sample from a distribution.
+
+\subsection{Introduction to Markov Chains}
+\label{sec:introduction_markov_chains}
+
+Let us start by introducing the concept of \textit{Markov Chain}. A Markov Chain is a stochastic process that satisfies the Markov property. The Markov property states that the conditional probability distribution for the state at the next step depends only on the current state and not on the previous states. The Markov property can be expressed mathematically as:
+
+\[
+	\mathbb{P}(X_{n+1} = x | X_1 = x_1, X_2 = x_2, \dots, X_n = x_n) = \mathbb{P}(X_{n+1} = x | X_n = x_n)
+\]
+
+for any states \(x, x_1, x_2, \dots, x_n\). 
+
+A Markov Chain is usually characterised by the matrix of transitions, which is the matrix of the probabilities of transitioning between states of a Markov Chain. The Markov Chain is a square matrix $K(x,y)$ such that $K(x,y) \geq 0$ and \(\sum_{y} K(x,y) = 1\), where the rows and columns are indexed by the states of the Markov Process. The entry in the \(i^{th}\) row and \(j^{th}\) column of the Markov Chain is the probability of transitioning from state \(i\) to state \(j\).
+
+\subsubsection{Stationary Distribution}
+\label{sec:stationary_distribution}
+
+The final objective of the Chapter~\ref{sec:markov_chains} is to introduce the Markov Chain Montecarlo Methods (MCMC). As first step to introduce MCMC, we need to introduce the concept of stationary distribution. 
+
+\begin{definition}[Stationary Distribution]
+	Let $(X_n)_{n \geq 0}$ be a Markov Chain in $E$ with transition matrix $P$. A probability measure $pi$ on $E$ is called a \textit{stationary distribution} for $(X_n)_{n \geq 0}$ if it satisfies 
+	
+	\[
+		\pi P = \pi
+	\]
+\end{definition}
+
+The denomination of stationary distribution comes from the following result.
+
+\begin{proposition}
+	Let $\pi$ be a stationary distribution for $(X_n)_{n \geq 0}$. For any \(n \geq 0\),
+
+	\[
+		\mathbb{P}_\pi(X_n = y) = \pi(y) \ \ for \ all \ x \in E
+	\]
+
+	in other words, $\pi$ is a stationary distribution if and only if the distribution of $X_n$ is $\pi$ for all $n \geq 0$.
+\end{proposition}
+
+The proof can be found in \cite{diaconis2008markov}.
+
+\begin{theorem}[Fundamental Theorem of Markov Chains]
+	Let \(\chi\) be a finite set and \(K(x,y)\) a Markov Chain indexed by $\chi$. If there is $n_0 \in \mathbb{N}$ such that \(K^n(x,y) \geq 0\) for all \(n > n_0\), then $K$ has a unique stationary distribution $\pi$ such that
+
+	\[
+		K^n(x,y) \xrightarrow{n \to \infty} \pi(y) \  \ for \ each \ x, y \in \chi
+	\]
+\end{theorem}
+
+This theorem has been extracted from~\cite{reygner2023methodes}. 
+
+\subsubsection{Irreducibility and Uniqueness}
+
+One may ask if the stationary distribution is unique. The answer is no, it is not unique. However, there exists a condition that guarantees the uniqueness of the stationary distribution. This condition is called irreducibility. 
+
+\begin{definition}
+	A Markov Chain is said to be \textit{irreducible} if for any two states $x$ and $y$, there exists $n \geq 0$ such that $K^n(x,y) > 0$.
+\end{definition}
+
+\begin{proposition}
+	Let $K$ be a Markov Chain with a finite state space $\chi$. If $K$ is irreducible, then it has a unique stationary distribution $\pi$.
+\end{proposition}
+
+\subsection{Markov Chain Montecarlo Methods}
+
+In this section, we will introduce the Markov Chain Montecarlo Methods (MCMC). The MCMC are a class of algorithms for sampling from a probability distribution. The idea of MCMC is to construct a Markov Chain that has the desired distribution as its stationary distribution. Therefore, the Markov Chain will converge to the desired distribution as the number of steps increases.
+
+\subsubsection{Metropolis-Hastings Algorithm}
+
+The Metropolis-Hastings algorithm is a MCMC algorithm for sampling from a probability distribution. The algorithm is defined as follows:
+
+\begin{center}
+	\begin{minipage}{0.7\linewidth} % Adjust the minipage width to accomodate for the length of algorithm lines
+		\begin{algorithm}[H]
+			1. Choose an initial state $x_0$ \\
+			2. For $n = 0, 1, 2, \dots$ \\
+			\hspace*{0.5cm} a. Sample $y$ from $q(x_n, \cdot)$ \\
+			\hspace*{0.5cm} b. Compute the acceptance probability $\alpha(x_n, y)$ \\
+			\hspace*{0.5cm} c. Sample $u$ from $\mathcal{U}(0,1)$ \\
+			\hspace*{0.5cm} d. If $u < \alpha(x_n, y)$, set $x_{n+1} = y$ \\
+			\hspace*{0.5cm} e. Else, set $x_{n+1} = x_n$ \\
+			3. Return $(x_n)_{n \geq 0}$
+			\caption{Metropolis-Hastings} % Algorithm name
+			\label{alg:Metropolis-Hastings}   % optional label to refer to
+		\end{algorithm}
+	\end{minipage}
+\end{center}
+
+where $q(x, \cdot)$ is a probability distribution on $\chi$ and $\alpha(x,y)$ is the acceptance probability defined as:
+
+\[
+	\alpha(x,y) = \min \left(1, \frac{\pi(y) q(y,x)}{\pi(x) q(x,y)} \right)
+\]
+
+where $\pi$ is the desired distribution. The proof of the correctness of the algorithm can be found in \cite{wiki:metropolishastings}.
+
+\subsubsubsection{Example: Sampling from a Gamma Distribution}
+
+Let's see an example of the Metropolis-Hastings algorithm. We will use the Metropolis-Hastings algorithm to sample from a Gamma distribution. The Gamma distribution is a two-parameter family of continuous probability distributions. The probability density function of the Gamma distribution is:
+
+\[
+	f(x) = \frac{\beta^\alpha}{\Gamma(\alpha)} x^{\alpha - 1} e^{-\beta x}
+\]
+
+where $\alpha, \beta > 0$ and $\Gamma(\alpha)$ is the Gamma function. The Gamma distribution is often used to model the time until an event occurs. For example, the time until a machine part fails, the time until a queue empties, the time until a customer arrives, etc. The Gamma distribution is also used to model the size of insurance claims and rainfall. Executing the algorithm with the following parameters: $\alpha = 2$ and $\beta = 1$ and $q(x, \cdot) = \mathcal{N}(x, \delta t)$ with $\delta t = 1$, we get the following results:
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.5\linewidth]{./Figures/MCMC/gamma.png}
+	\caption{Sampling from a Gamma distribution using the Metropolis-Hastings algorithm with $\alpha = 2$ and $\beta = 1$ and $q(x, \cdot) = \mathcal{N}(x, \delta t)$ with $\delta t = 1$.}
+	\label{fig:gamma}
+\end{figure}
+
+We can see that the samples are distributed according to the Gamma distribution.
+
+
+\subsubsection{Gibbs Sampling}
+
+The Gibbs sampling is a MCMC algorithm for sampling from a probability distribution. The algorithm is defined as follows:
+
+\begin{center}
+	\begin{minipage}{0.7\linewidth} % Adjust the minipage width to accomodate for the length of algorithm lines
+		\begin{algorithm}[H]
+			1. Choose an initial state $x_0$ \\
+			2. For $n = 0, 1, 2, \dots$ \\
+			\hspace*{0.5cm} a. Sample $x_{n+1}^{(1)}$ from $p(x_1 | x_n^{(2)}, x_n^{(3)}, \dots, x_n^{(d)})$ \\
+			\hspace*{0.5cm} b. Sample $x_{n+1}^{(2)}$ from $p(x_2 | x_{n+1}^{(1)}, x_n^{(3)}, \dots, x_n^{(d)})$ \\
+			\hspace*{0.5cm} c. $\dots$ \\
+			\hspace*{0.5cm} d. Sample $x_{n+1}^{(d)}$ from $p(x_d | x_{n+1}^{(1)}, x_{n+1}^{(2)}, \dots, x_{n+1}^{(d-1)})$ \\
+			3. Return $(x_n)_{n \geq 0}$
+			\caption{Gibbs Sampling} % Algorithm name
+			\label{alg:Gibbs-Sampling}   % optional label to refer to
+		\end{algorithm}
+	\end{minipage}
+\end{center}
+
+where $p(x_i | x_1, x_2, \dots, x_{i-1}, x_{i+1}, \dots, x_d)$ is the conditional probability distribution of $x_i$ given all other variables. 
+
+\subsubsubsection{Example: Sampling from a Bivariate Normal Distribution}
+
+Let's see an example of the Gibbs sampling algorithm. We will use the Gibbs sampling algorithm to sample from a bivariate normal distribution. The bivariate normal distribution is a probability distribution of two random variables $X$ and $Y$ that satisfy the following conditions:
+
+\[
+	\begin{cases}
+		X \sim \mathcal{N}(\mu_x, \sigma_x^2) \\
+		Y \sim \mathcal{N}(\mu_y, \sigma_y^2) \\
+		X \perp Y
+	\end{cases}
+\]
+
+where $\mu_x, \mu_y, \sigma_x, \sigma_y$ are the parameters of the distribution. The probability density function of the bivariate normal distribution is:
+
+\[
+	f(x,y) = \frac{1}{2 \pi \sigma_x \sigma_y \sqrt{1 - \rho^2}} \exp \left( -\frac{1}{2(1 - \rho^2)} \left[ \frac{(x - \mu_x)^2}{\sigma_x^2} + \frac{(y - \mu_y)^2}{\sigma_y^2} - \frac{2 \rho (x - \mu_x)(y - \mu_y)}{\sigma_x \sigma_y} \right] \right)
+\]
+
+where $\rho$ is the correlation coefficient between $X$ and $Y$. The Figure~\ref{fig:bivariatenormal} shows how the bivariate normal distribution looks like, this picture is extracted from \cite{wiki:bivariatenormal}.
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.5\linewidth]{./Figures/MCMC/MultivariateNormal-2.png}
+	\caption{Bivariate normal distribution.}
+	\label{fig:bivariatenormal}
+\end{figure}
+
+Executing the algorithm with the following parameters: $\mu_x = 0$, $\mu_y = 0$, $\sigma_x = 1$, $\sigma_y = 1$ and $\rho = 0.5$, we get the following results:
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.5\linewidth]{./Figures/MCMC/bivariates.png}
+	\caption{Sampling from a bivariate normal distribution using the Gibbs sampling algorithm with $\mu_x = 0$, $\mu_y = 0$, $\sigma_x = 1$, $\sigma_y = 1$ and $\rho = 0.5$.}
+	\label{fig:bivariatenormal}
+\end{figure}
+
+We can see that the samples are distributed according to the bivariate normal distribution.
+
+
+
+
+
+
+\newpage
 
 \bibliographystyle{plain}
 \bibliography{mybib.bib}
