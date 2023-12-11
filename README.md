@@ -7,28 +7,26 @@
 - **Tutor:** PhD. Noé Blassel
 
 ## Introduction
-This project explores the simulation of random variables from given probability distributions. It primarily focuses on two methods for simulating these variables: the Inverse CDF method and the Rejection Sampling method. 
+This thesis delves into several sophisticated statistical and computational techniques, focusing on the simulation of random variables, exploration of Hamiltonian dynamics, and an in-depth study of Markov chains. Each section provides a blend of theoretical understanding and practical application.
 
 ## Sections
-### Simulating Random Variables
-#### Overview
-The aim of this section is to introduce the simulation of random variables from a probability distribution already given, focusing on the Inverse CDF method and the Rejection Sampling method.
 
-#### Inverse CDF Method
-This method is a basic technique to generate pseudo-random numbers from any probability distribution, given its cumulative distribution function (CDF). It is based on the assumption that if \(X\) is a random variable with cumulative distribution function \(F\) and probability density function \(f\), then the cumulative distribution function of \(Y = F^{-1}(U)\) behaves like \(F\), and the probability density function of \(Y\) is \(f\).
+### Simulation of Random Variables
+- **Inverse CDF Method**: Introduction to simulating random variables using the inverse cumulative distribution function.
+- **Rejection Sampling Method**: Detailed exploration of rejection sampling, including the selection of enveloping distributions and method results.
+- **Empirical Validation**: Methods to validate the Law of Large Numbers and the Central Limit Theorem through empirical approaches.
+- **Variance Reduction Techniques**: Discusses various techniques like control variates, importance sampling, stratified sampling, and antithetic variates, and compares their effectiveness.
 
-#### Rejection Sampling Method
-This method is used to generate random numbers from a distribution by using an easy-to-sample distribution. It envelopes the desired distribution with a known distribution scaled by a factor \(M\). The histogram of generated random numbers using this method aligns remarkably well with the target distribution. The error to the theoretical mean as the number of trials increases is also discussed.
+### 2. Hamiltonian Dynamics
+- **Introduction and Symplectic Schemes**: Covers the fundamentals of Hamiltonian dynamics and the development of symplectic schemes.
+- **Numerical Methods**: Analysis of various numerical methods including the Euler method, and the construction of symplectic schemes.
+- **Stability Analysis**: Linear stability analysis of the Symplectic Euler and Verlet Schemes.
+- **Solar System Simulation**: Implementing the learned techniques to model and simulate gravitational dynamics in the solar system, with a focus on the Stormer-Verlet scheme.
 
-### Variance Reduction Techniques
-#### Overview
-This section explores various variance reduction techniques, such as Antithetic Variates, Control Variates, Importance Sampling, and Stratified Sampling. These techniques are applied to estimate integrals of different functions, such as Parabola, Gaussian, Sine, Polynomial, and Exponential functions, to compare the error in each method.
-
-#### Method-wise Error Comparison
-The method-wise error for each function is illustrated, and it is observed that stratified sampling stands out for its rapid convergence. However, the importance sampling lags due to applying a general normal distribution for all functions. A thorough exploration involving varied problems is essential to cement the initial conclusions while maintaining professional and scientific rigor.
-
-## Conclusion
-The project provides a comprehensive exploration of simulating random variables and applying variance reduction techniques to estimate integrals of different functions. It offers insights into the performance and application of each method in various scenarios.
+### 3. Markov Chains
+- **Fundamentals of Markov Chains**: Introduction to Markov Chains, covering stationary distributions and the principles of irreducibility and uniqueness.
+- **Markov Chain Monte Carlo Methods**: Detailed exploration of the Metropolis-Hastings and Gibbs Sampling algorithms, with practical examples like sampling from Gamma and Bivariate Normal distributions.
+- **Advanced Applications**: Application of these methods to complex scenarios, like the Müller-Brown potential.
 
 ## Contact
 For any queries or further clarification, please contact:
