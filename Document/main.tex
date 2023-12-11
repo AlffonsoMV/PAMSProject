@@ -1706,7 +1706,64 @@ Executing the algorithm with the following parameters: $\mu_x = 0$, $\mu_y = 0$,
 We can see that the samples are distributed according to the bivariate normal distribution.
 
 
+\subsubsection{Müller-Brown Potential}
 
+In this section, we will introduce the Müller-Brown potential. The Müller-Brown potential is a function of two variables that is often used as a test function for optimization algorithms. The Müller-Brown potential is defined as:
+
+\[
+	U(x_1, x_2) = s \sum_{k=1}^4 A_k \exp(\alpha_k(x_1 - a_k)^2 + \beta_k(x_1 - a_k)(x_2 - b_k) + \gamma_k(x_2 - b_k)^2)
+\]
+
+where \(A_k\) is the height of the \(k^{th}\) Gaussian, \((a_k, b_k)\) is the location of the \(k^{th}\) Gaussian and \((\alpha_k, \beta_k, \gamma_k)\) is the shape of the \(k^{th}\) Gaussian. In our case, the parameters that we will use are:
+
+\[
+	\begin{cases}
+		(A_1, A_2, A_3, A_4) = (-200, -100, -170, 15) \\
+		(\alpha_1, \alpha_2, \alpha_3, \alpha_4) = (-1, -1, -6.5, 0.7) \\
+		(\beta_1, \beta_2, \beta_3, \beta_4) = (0, 0, 11, 0.6) \\
+		(\gamma_1, \gamma_2, \gamma_3, \gamma_4) = (-10, -10, -6.5, 0.7) \\
+		(a_1, a_2, a_3, a_4) = (1, 0, -0.5, -1) \\
+		(b_1, b_2, b_3, b_4) = (0, 0.5, 1.5, 1) \\
+		s = 0.05
+	\end{cases}
+\]
+
+The Figure~\ref{fig:mullerbrown} shows how the Müller-Brown potential looks like with these parameters.
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.5\linewidth]{./Figures/MCMC/mullerbrown.png}
+	\caption{Müller-Brown potential.}
+	\label{fig:mullerbrown}
+\end{figure}
+
+The Müller-Brown potential is often used as a test function for optimization algorithms because it has many local minimun and one global minimun, therefore it is common that the optimization algorithms get stuck in a local minimun.
+
+\subsubsubsection{Metropolis-Hastings Algorithm for the Müller-Brown Potential}
+
+Now, we want to know how the Metropolis-Hastings algorithm behaves when we use the Müller-Brown potential as the desired distribution. The Figure~\ref{fig:mullerbrownmh} shows the results of the Metropolis-Hastings algorithm for the Müller-Brown potential.
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.5\linewidth]{./Figures/MCMC/mullerbrownmh.png}
+	\caption{Sampling from the Müller-Brown potential using the Metropolis-Hastings algorithm.}
+	\label{fig:mullerbrownmh}
+\end{figure}
+
+We can see that the samples instead of beign distributed all around the Müller-Brown potential, they are concentrated in a local minimun. This is because the Metropolis-Hastings algorithm is not a good algorithm for sampling from a distribution with many local minimuns.
+
+\subsubsubsection{Gibbs Sampling Algorithm for the Müller-Brown Potential}
+
+Now, we want to know how the Gibbs sampling algorithm behaves when we use the Müller-Brown potential as the desired distribution. The Figure~\ref{fig:mullerbrowngibbs} shows the results of the Gibbs sampling algorithm for the Müller-Brown potential.
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.5\linewidth]{./Figures/MCMC/mullerbrowngibbs.png}
+	\caption{Sampling from the Müller-Brown potential using the Gibbs sampling algorithm.}
+	\label{fig:mullerbrowngibbs}
+\end{figure}
+
+We can see that the samples are distributed all around the Müller-Brown potential, which is the expected behaviour of the Gibbs sampling algorithm. Therefore, we can conclude that the Gibbs sampling algorithm is a good algorithm for sampling from a distribution with many local minimuns.
 
 
 

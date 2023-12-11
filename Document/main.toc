@@ -39,3 +39,6 @@
 \contentsline {subsubsubsection}{\numberline {3.2.1.1}Example: Sampling from a Gamma Distribution}{42}{subsubsubsection.3.2.1.1}%
 \contentsline {subsubsection}{\numberline {3.2.2}Gibbs Sampling}{43}{subsubsection.3.2.2}%
 \contentsline {subsubsubsection}{\numberline {3.2.2.1}Example: Sampling from a Bivariate Normal Distribution}{43}{subsubsubsection.3.2.2.1}%
+\contentsline {subsubsection}{\numberline {3.2.3}Müller-Brown Potential}{44}{subsubsection.3.2.3}%
+\contentsline {subsubsubsection}{\numberline {3.2.3.1}Metropolis-Hastings Algorithm for the Müller-Brown Potential}{45}{subsubsubsection.3.2.3.1}%
+\contentsline {subsubsubsection}{\numberline {3.2.3.2}Gibbs Sampling Algorithm for the Müller-Brown Potential}{46}{subsubsubsection.3.2.3.2}%

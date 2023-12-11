@@ -1,19 +1,19 @@
 # Fdb version 4
-["bibtex main"] 1701709366 "main.aux" "main.bbl" "main" 1701712267 0
+["bibtex main"] 1702323490 "main.aux" "main.bbl" "main" 1702323493 0
   "./mybib.bib" 1701709248 4982 c70e08c4f5713879ef0054e073d975f7 ""
   "/usr/local/texlive/2023basic/texmf-dist/bibtex/bst/base/plain.bst" 1292289607 20613 bd3fbfa9f64872b81ac57a0dd2ed855f ""
-  "main.aux" 1701712262 29721 60830eec4bfbfc60848b8b5f1b000288 "xelatex"
+  "main.aux" 1702323491 31103 fbbf741e2712087aa5a919c543608e51 "xelatex"
   (generated)
   "main.bbl"
   "main.blg"
   (rewritten before read)
-["xdvipdfmx"] 1701712263 "main.xdv" "main.pdf" "main" 1701712267 0
-  "main.xdv" 1701712262 735740 3ce621fec859b4dc39a45fa98a4d2915 "xelatex"
+["xdvipdfmx"] 1702323491 "main.xdv" "main.pdf" "main" 1702323493 0
+  "main.xdv" 1702323491 764216 9d86638f102066a4d86f930b4b98400d "xelatex"
   (generated)
   "main.pdf"
   (rewritten before read)
-["xelatex"] 1701712261 "/Users/alfonsomateos/Documents/ENPC/PAMS Project/Document/main.tex" "main.xdv" "main" 1701712267 0
-  "/Users/alfonsomateos/Documents/ENPC/PAMS Project/Document/main.tex" 1701712261 94194 e69f2fd82aaa2f2cc90e3551e23f169f ""
+["xelatex"] 1702323490 "/Users/alfonsomateos/Documents/ENPC/PAMS Project/Document/main.tex" "main.xdv" "main" 1702323493 0
+  "/Users/alfonsomateos/Documents/ENPC/PAMS Project/Document/main.tex" 1702323490 97449 7d0c4322e7591a8670fa974d7a9dbb08 ""
   "/usr/local/texlive/2023basic/texmf-dist/fonts/tfm/adobe/zapfding/pzdr.tfm" 1136768653 1528 f853c4d1b4e0550255e02831fdc8496f ""
   "/usr/local/texlive/2023basic/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm" 1246382020 1004 54797486969f23fa377b128694d548df ""
   "/usr/local/texlive/2023basic/texmf-dist/fonts/tfm/public/amsfonts/symbols/msam10.tfm" 1246382020 916 f87d7c45f9c908e672703b83b72241a3 ""
@@ -209,6 +209,9 @@
   "Figures/MCMC/MultivariateNormal-2.png" 1701709176 91347 ed83b33854a0f0ca602dbf295ac5fc66 ""
   "Figures/MCMC/bivariates.png" 1701709361 91719 591566be7fa69ea3655cd550e861b00c ""
   "Figures/MCMC/gamma.png" 1701708551 33579 1b9c36985de7bc165cddd78519802efe ""
+  "Figures/MCMC/mullerbrown.png" 1702321771 209816 30648c5882408432412c1da7a5a4005d ""
+  "Figures/MCMC/mullerbrowngibbs.png" 1702323467 46040 e27fe398dfb447d6530db9f7c64d97f0 ""
+  "Figures/MCMC/mullerbrownmh.png" 1702322559 31920 c544734c8b2e259adf29c4a1e9a79476 ""
   "Figures/SolarSystem/energy1.png" 1699817945 37305 d99a61cd0c46ceeeac2b03a797a81d7e ""
   "Figures/SolarSystem/energy2.png" 1699818030 90847 9104ddf57b70fdbcf7a1faa8f16951ce ""
   "Figures/SolarSystem/energy_euler.png" 1699819777 90413 08d415f97ed397864caa2a4d0d73d668 ""
@@ -236,11 +239,11 @@
   "Figures/VarianceReduction/importance.png" 1695817320 24081 07428233a79f3e3154e2dd2c3792d687 ""
   "Figures/VarianceReduction/stratified.png" 1695817335 23118 df24c9602ecc87579256826dfa420c0d ""
   "logo-enpc.eps" 1696975345 586786 2481599d970520a68364592352c92496 ""
-  "main.aux" 1701712262 29721 60830eec4bfbfc60848b8b5f1b000288 "xelatex"
-  "main.bbl" 1701709366 2154 32c1a878fdc7c2063d6e2f3984b264fb "bibtex main"
-  "main.out" 1701712262 9188 379b542b7a8720270c0da52fac0acd0d "xelatex"
-  "main.tex" 1701712261 94194 e69f2fd82aaa2f2cc90e3551e23f169f ""
-  "main.toc" 1701712262 4285 3afbeee26427ad44d4fa1df30e5f20dd "xelatex"
+  "main.aux" 1702323491 31103 fbbf741e2712087aa5a919c543608e51 "xelatex"
+  "main.bbl" 1702323490 2154 32c1a878fdc7c2063d6e2f3984b264fb "bibtex main"
+  "main.out" 1702323491 10142 e85ea48ba13ef05b0685d3a74eee26b8 "xelatex"
+  "main.tex" 1702323490 97449 7d0c4322e7591a8670fa974d7a9dbb08 ""
+  "main.toc" 1702323491 4676 bec16c072c092dbb9094764f3e120acf "xelatex"
   "structure.tex" 1701281718 8634 fe68ba7a3c9b10196817fc210604841b ""
   (generated)
   "main.aux"

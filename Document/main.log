@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999995 (TeX Live 2023) (preloaded format=xelatex 2023.11.29)  4 DEC 2023 18:51
+This is XeTeX, Version 3.141592653-2.6-0.999995 (TeX Live 2023) (preloaded format=xelatex 2023.11.29)  11 DEC 2023 20:38
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1219,7 +1219,15 @@ File: ./Figures/MCMC/MultivariateNormal-2.png Graphic file (type bmp)
 <./Figures/MCMC/MultivariateNormal-2.png>
 File: ./Figures/MCMC/bivariates.png Graphic file (type bmp)
 <./Figures/MCMC/bivariates.png>
- [44] (./main.bbl) [45] (./main.aux)
+ [44]
+File: ./Figures/MCMC/mullerbrown.png Graphic file (type bmp)
+<./Figures/MCMC/mullerbrown.png>
+File: ./Figures/MCMC/mullerbrownmh.png Graphic file (type bmp)
+<./Figures/MCMC/mullerbrownmh.png>
+ [45]
+File: ./Figures/MCMC/mullerbrowngibbs.png Graphic file (type bmp)
+<./Figures/MCMC/mullerbrowngibbs.png>
+ [46] (./main.bbl) [47] (./main.aux)
  ***********
 LaTeX2e <2023-11-01>
 L3 programming layer <2023-11-09>
@@ -1229,15 +1237,15 @@ L3 programming layer <2023-11-09>
 LaTeX Warning: There were multiply-defined labels.
 
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: 379B542B7A8720270C0DA52FAC0ACD0D;9188.
+(rerunfilecheck)             Checksum: E85EA48BA13EF05B0685D3A74EEE26B8;10142.
  ) 
 Here is how much of TeX's memory you used:
- 28800 strings out of 476447
- 582239 string characters out of 5793879
- 1935186 words of memory out of 5000000
- 50138 multiletter control sequences out of 15000+600000
+ 28831 strings out of 476447
+ 583290 string characters out of 5793879
+ 1936186 words of memory out of 5000000
+ 50166 multiletter control sequences out of 15000+600000
  564833 words of font info for 74 fonts, out of 8000000 for 9000
  319 hyphenation exceptions out of 8191
  127i,13n,132p,1410b,601s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on main.xdv (46 pages, 735740 bytes).
+Output written on main.xdv (48 pages, 764216 bytes).

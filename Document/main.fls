@@ -477,6 +477,15 @@ INPUT ./Figures/MCMC/MultivariateNormal-2.png
 INPUT ./Figures/MCMC/bivariates.png
 INPUT ./Figures/MCMC/bivariates.png
 INPUT ./Figures/MCMC/bivariates.png
+INPUT ./Figures/MCMC/mullerbrown.png
+INPUT ./Figures/MCMC/mullerbrown.png
+INPUT ./Figures/MCMC/mullerbrown.png
+INPUT ./Figures/MCMC/mullerbrownmh.png
+INPUT ./Figures/MCMC/mullerbrownmh.png
+INPUT ./Figures/MCMC/mullerbrownmh.png
+INPUT ./Figures/MCMC/mullerbrowngibbs.png
+INPUT ./Figures/MCMC/mullerbrowngibbs.png
+INPUT ./Figures/MCMC/mullerbrowngibbs.png
 INPUT ./main.bbl
 INPUT ./main.bbl
 INPUT main.bbl
