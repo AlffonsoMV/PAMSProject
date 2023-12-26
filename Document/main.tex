@@ -1763,8 +1763,20 @@ Now, we want to know how the Gibbs sampling algorithm behaves when we use the M�
 	\label{fig:mullerbrowngibbs}
 \end{figure}
 
-We can see that the samples are distributed all around the Müller-Brown potential, which is the expected behaviour of the Gibbs sampling algorithm. Therefore, we can conclude that the Gibbs sampling algorithm is a good algorithm for sampling from a distribution with many local minimuns.
+We can see that the samples are distributed all around the Müller-Brown potential, which is the expected behaviour of the Gibbs sampling algorithm. But one could think wether this sampling is fitting the distribution or not. To check this, we have computed the heatmap of the samples. In this case, we have done a heatmap of another execution but in this case we have used 100000 samples. The Figure~\ref{fig:mullerbrownheatmap} shows the heatmap of the samples.
 
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.5\linewidth]{./Figures/MCMC/mullerbrowngibbsheat.png}
+	\caption{Heatmap of the samples of the Müller-Brown potential using the Gibbs sampling algorithm.}
+	\label{fig:mullerbrownheatmap}
+\end{figure}
+
+We can see that the heatmap is very similar to the Müller-Brown potential, therefore we can conclude that the Gibbs sampling algorithm is a good algorithm for sampling from a distribution with many local minimuns.
+
+
+
+\subsection{Simulation of a 2D molecular system}
 
 
 \newpage

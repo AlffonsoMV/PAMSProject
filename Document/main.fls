@@ -1,8 +1,8 @@
-PWD /Users/alfonsomateos/Documents/ENPC/PAMS Project/Document
+PWD /Users/alfonsomateos/Documents/PONTS/PAMS Project/Document
 INPUT /usr/local/texlive/2023basic/texmf.cnf
 INPUT /usr/local/texlive/2023basic/texmf-dist/web2c/texmf.cnf
 INPUT /usr/local/texlive/2023basic/texmf-var/web2c/xetex/xelatex.fmt
-INPUT /Users/alfonsomateos/Documents/ENPC/PAMS Project/Document/main.tex
+INPUT /Users/alfonsomateos/Documents/PONTS/PAMS Project/Document/main.tex
 OUTPUT main.log
 INPUT /usr/local/texlive/2023basic/texmf-dist/tex/latex/base/article.cls
 INPUT /usr/local/texlive/2023basic/texmf-dist/tex/latex/base/article.cls
@@ -486,6 +486,9 @@ INPUT ./Figures/MCMC/mullerbrownmh.png
 INPUT ./Figures/MCMC/mullerbrowngibbs.png
 INPUT ./Figures/MCMC/mullerbrowngibbs.png
 INPUT ./Figures/MCMC/mullerbrowngibbs.png
+INPUT ./Figures/MCMC/mullerbrowngibbsheat.png
+INPUT ./Figures/MCMC/mullerbrowngibbsheat.png
+INPUT ./Figures/MCMC/mullerbrowngibbsheat.png
 INPUT ./main.bbl
 INPUT ./main.bbl
 INPUT main.bbl
