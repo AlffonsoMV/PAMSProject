@@ -435,9 +435,6 @@ INPUT ./Figures/Sympletic/verletphase.png
 INPUT ./Figures/Sympletic/verletenergy.png
 INPUT ./Figures/Sympletic/verletenergy.png
 INPUT ./Figures/Sympletic/verletenergy.png
-INPUT ./Figures/Sympletic/verletmaxenergy.png
-INPUT ./Figures/Sympletic/verletmaxenergy.png
-INPUT ./Figures/Sympletic/verletmaxenergy.png
 INPUT ./Figures/Sympletic/maxenergydifference.png
 INPUT ./Figures/Sympletic/maxenergydifference.png
 INPUT ./Figures/Sympletic/maxenergydifference.png
@@ -489,6 +486,15 @@ INPUT ./Figures/MCMC/mullerbrowngibbs.png
 INPUT ./Figures/MCMC/mullerbrowngibbsheat.png
 INPUT ./Figures/MCMC/mullerbrowngibbsheat.png
 INPUT ./Figures/MCMC/mullerbrowngibbsheat.png
+INPUT ./Figures/MCMC/LennardJones/boundaryconditions.png
+INPUT ./Figures/MCMC/LennardJones/boundaryconditions.png
+INPUT ./Figures/MCMC/LennardJones/boundaryconditions.png
+INPUT ./Figures/MCMC/LennardJones/particles.png
+INPUT ./Figures/MCMC/LennardJones/particles.png
+INPUT ./Figures/MCMC/LennardJones/particles.png
+INPUT ./Figures/MCMC/LennardJones/energy.png
+INPUT ./Figures/MCMC/LennardJones/energy.png
+INPUT ./Figures/MCMC/LennardJones/energy.png
 INPUT ./main.bbl
 INPUT ./main.bbl
 INPUT main.bbl

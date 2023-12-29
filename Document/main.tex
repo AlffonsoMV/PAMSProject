@@ -700,7 +700,7 @@ A very common physical interpretation of the Hamiltonian function is the followi
 	H(q,p) = V(q) + \frac{1}{2} p^T M^{-1} p
 \end{equation*}
 
-Where \(M\) is the mass matrix of the system, i.e. \(M = \mathrm{diag}(m_1, m_2, ..., m_n)\) with \(m_i\) the mass of the \(i\)-th particle, note that we are supposing that the mass is stable over time. In this case, we can reformulate the Hamiltonian dynamics equations as follows:
+Where \(M\) is the mass matrix of the system, note that we are supposing that the mass is stable over time. In this case, we can reformulate the Hamiltonian dynamics equations as follows:
 
 \begin{equation} 
 	\begin{cases}
@@ -739,7 +739,7 @@ One of the most important property of the Hamiltonian dynamics is the following:
 \subsection{Symplectic schemes}
 \label{sec:symplectic_schemes}
 
-In this section we will introduce the symplectic schemes, which are a family of numerical methods to solve the Hamiltonian dynamics equations. The idea is to discretize the Hamiltonian dynamics equations \eqref{eq:hamiltoniandynamics2} in order to obtain a numerical approximation of the solution. The symplectic schemes are a family of numerical methods which preserve the symplectic structure of the Hamiltonian dynamics equations, i.e. the energy of the system is conserved over time.
+In this section we will introduce the symplectic schemes, which are a family of numerical methods to solve the Hamiltonian dynamics equations. The idea is to discretize the Hamiltonian dynamics equations \eqref{eq:hamiltoniandynamics2} in order to obtain a numerical approximation of the solution. The symplectic schemes are a family of numerical methods which preserve the energy conservation property of the Hamiltonian dynamics equations, i.e. the energy of the system is conserved over time.
 
 \begin{definition}
 	For an open set \(U \subset \chi \), a mapping \(g: U \rightarrow \mathbb{R}^{2D}\) of class \(C^1\) is symplectic if \(\nabla g(q,p)\) satisfies
@@ -868,13 +868,13 @@ The Euler method is a numerical method to solve ordinary differential equations.
 
 \begin{equation}
 	\begin{cases}
-		p_{t+ \Delta t} &= p_t - \Delta t \frac{\partial H}{\partial q}(q_t, p_t) = p_t - \Delta t \nabla_q V(q_t) \\
-		q_{t+ \Delta t} &= q_t + \Delta t \frac{\partial H}{\partial p}(q_t, p_t) = q_t + \Delta t M^{-1} p_t
+		p^{n+1} &= p^n - \Delta t \frac{\partial H}{\partial q}(q^n, p^n) = p^n - \Delta t \nabla_q V(q^n) \\
+		q^{n+1} &= q^n + \Delta t \frac{\partial H}{\partial p}(q^n, p^n) = q^n + \Delta t M^{-1} p^n
 	\end{cases}
 	\label{eq:euler}
 \end{equation}
 
-Being \(\Delta t\) the time step of the discretization. Applying this sequence to the harmonic oscillator, which equations are described in \eqref{eq:hamiltonianharmonicoscillator}, we obtain the following phase space:
+Being \(\Delta t\) the time step of the discretization and $p^n \approx p_{n\Delta t}$. Applying this sequence to the harmonic oscillator, which equations are described in \eqref{eq:hamiltonianharmonicoscillator}, we obtain the following phase space:
 
 \begin{figure}[H]
 	\centering
@@ -883,7 +883,7 @@ Being \(\Delta t\) the time step of the discretization. Applying this sequence t
 	\label{fig:hamiltonianharmonicoscillator}
 \end{figure}
 
-As we can discern, this phace space is not even near to the real phase space of the harmonic oscillator. The Figure~\ref{fig:hamiltonianharmonicoscillator} shows the phase space of the harmonic oscillator using the Euler method with \(\Delta t = 0.1\). We can see that the phase space is not a closed curve, which is the correct behaviour of the harmonic oscillator. Also, the energy is not conserved over time, which is another property of the harmonic oscillator. The Figure~\ref{fig:hamiltonianharmonicoscillatorenergy} shows the energy of the harmonic oscillator using the Euler method with \(\Delta t = 0.1\).
+As we can discern, this trajectory is not even near to the real trajectory of the harmonic oscillator in ideal conditions. The Figure~\ref{fig:hamiltonianharmonicoscillator} shows the phase space of the harmonic oscillator using the Euler method with \(\Delta t = 0.1\). We can see that the phase space is not a closed curve, which is the correct behaviour of the harmonic oscillator. Also, the energy is not conserved over time, which is another property of the harmonic oscillator. The Figure~\ref{fig:hamiltonianharmonicoscillatorenergy} shows the energy of the harmonic oscillator using the Euler method with \(\Delta t = 0.1\).
 
 \begin{figure}[H]
 	\centering
@@ -900,7 +900,7 @@ As we can see, the energy is not conserved over time, which is another property 
 As we alredy know, the Hamiltonian dynamics is a standard ordinal differential equation (ODE), so it can be approximated by any standard integration scheme. However, as we saw using the Euler scheme, the energy increases over the time so it doesn't work. To provide a further view of this, in this section, we want to introduce the mathematical approach to see why this methods are failing. Considering again the problem of the harmonic oscillator, whose Hamiltonian is provided in \ref{eq:hamiltonianharmonicoscillator}. And taking the euler scheme given in \ref{eq:euler} we can rewrite it to:
 
 \[
-	\begin{pmatrix} p^{n+1} \\ q^{n+1} \end{pmatrix} = A \begin{pmatrix} p^{n} \\ q^{n} \end{pmatrix}
+	\begin{pmatrix} p^{n+1} \\ q^{n+1} \end{pmatrix} = A^{n+1} \begin{pmatrix} p^{0} \\ q^{0} \end{pmatrix}
 \]
 
 Being \(A = \begin{pmatrix} 1 & -k\Delta t \\ \frac{1}{m} \Delta t & 1  \end{pmatrix}\). Now we diagonalize this matrix, so we obtain that its eigenvalues are:
@@ -910,7 +910,7 @@ Being \(A = \begin{pmatrix} 1 & -k\Delta t \\ \frac{1}{m} \Delta t & 1  \end{pma
 	\lambda_2 = 1 - i\Delta t\sqrt{\frac{k}{m}} = i - i \Delta t \omega
 \]
 
-Since \(\lambda_1 \lambda_2 = 1 + (\Delta t \omega)^2 > 1\) the energy exponentially increases in the time. Following this way of reasoning, it can be easily checked that the Runge-Kutta scheme and the implicit Euler scheme also fail. So the next step of the project is to construct schemes that can conserve the energy.
+Since \(\lambda_1 \lambda_2 = 1 + (\Delta t \omega)^2 > 1\), we observe that the eigenvalues' magnitudes are greater than one. This indicates that the energy of the system, represented by the norm of the vector \((p, q)\), will grow exponentially over time. To see this, consider that the energy at the \(n\)-th step is proportional to the square of the norm of the vector \((p^n, q^n)\). Since each step of the Euler method multiplies the previous vector by \(A\), and the eigenvalues of \(A\) have magnitudes greater than one, the norm of this vector, and hence the energy, will increase exponentially with each step. This exponential growth is a clear indication of the method's failure to conserve energy, a fundamental characteristic of the harmonic oscillator in a closed system. Therefore, the Euler method, along with other similar standard integration schemes, is unsuitable for simulating systems where energy conservation is crucial, necessitating the development of more sophisticated methods that can maintain the energy constant over time. 
 
 
 \subsubsection{Constructing Symplectic Schemes}
@@ -998,8 +998,8 @@ The symplectic Euler method is a slight modification of the Euler method that pr
 
 \begin{equation}
 	\begin{cases}
-		p_{t+ \Delta t} &= p_t - \Delta t \frac{\partial H}{\partial q}(q_t, p_t) = p_t - \Delta t \nabla_q V(q_t) \\
-		q_{t+ \Delta t} &= q_t + \Delta t \frac{\partial H}{\partial p}(q_{t+1}, p_{t+1}) = q_t + \Delta t M^{-1} p_{t+1}
+		p^{n+1} &= p^n - \Delta t \frac{\partial H}{\partial q}(q^n, p^n) = p^n - \Delta t \nabla_q V(q^n) \\
+		q^{n+1} &= q^n + \Delta t \frac{\partial H}{\partial p}(q^{n+1}, p^{n+1}) = q^n + \Delta t M^{-1} p^{n+1}
 	\end{cases}
 	\label{eq:symplecticeuler}
 \end{equation}
@@ -1013,7 +1013,7 @@ Being \(\Delta t\) the time step of the discretization. Applying this sequence t
 	\label{fig:eulerphase}
 \end{figure}
 
-The Figure~\ref{fig:eulerphase} shows the phase space of the harmonic oscillator using the symplectic Euler method. We can see that the phase space is a closed curve, which is the correct behaviour of the harmonic oscillator.
+The Figure~\ref{fig:eulerphase} shows the phase space of the harmonic oscillator using the symplectic Euler method. We can see that the trajectory in the phase space is a closed curve, which is the correct behaviour of the harmonic oscillator.
 
 \begin{figure}[H]
 	\centering
@@ -1022,7 +1022,7 @@ The Figure~\ref{fig:eulerphase} shows the phase space of the harmonic oscillator
 	\label{fig:eulerenergy}
 \end{figure}
 
-The Figure~\ref{fig:eulerenergy} shows the energy of the harmonic oscillator using the symplectic Euler method. We can see that the energy is conserved over time, as we wanted for the Hamiltonian dynamics. Note that is not a straight line but the average of the energy is the same, so we can conclude that the energy is conserved over time.
+The Figure~\ref{fig:eulerenergy} shows the energy of the harmonic oscillator using the symplectic Euler method. We can see that the energy is approximately conserved over time, as we wanted for the Hamiltonian dynamics. Note that is not a straight line but the average of the energy is the same, so we can conclude that the energy is conserved over time.
 
 Now, if we define the next map:
 \[
@@ -1046,40 +1046,23 @@ To conclude the section, we can see in Figure~\ref*{fig:eulermaxenergy} that the
 Using the equation \ref{eq:symplecticeuler} and replacing all the termusing the harmonic oscillator problem, one can rewrite the scheme as:
 
 \[
-	\begin{pmatrix} p^{n+1} \\ q^{n+1} \end{pmatrix} = A \begin{pmatrix} p^{n} \\ q^{n} \end{pmatrix}
+	\begin{pmatrix} p^{n+1} \\ q^{n+1} \end{pmatrix} = A^{n+1} \begin{pmatrix} p^{0} \\ q^{0} \end{pmatrix}
 \]
 
 With
 
 \[
-	A = \begin{pmatrix}
-		1 && -\Delta t k \\
-		\frac{\Delta t}{m} && 1
-	\end{pmatrix}
+	A = \begin{pmatrix} 1 & -\Delta t k \\ \frac{\Delta t}{m} & 1 -  \frac{\Delta t^2 k}{m} \end{pmatrix}
 \]
 
-Noting \(\xi = \Delta t \sqrt{\frac{k}{m}}\), the eigenvalues are:
+The eigenvalues are:
 
-\[
-	\lambda_1 = 1 + i\xi, \ \ \lambda_2 = 1 - i\xi
-\]
+\begin{align*}
+	\lambda_1 &= \frac{-\Delta t^2 k - \Delta t \sqrt{k(\Delta t^2 k - 4m)}}{2m} + 1 \\
+	\lambda_2 &= \frac{-\Delta t^2 k + \Delta t \sqrt{k(\Delta t^2 k - 4m)}}{2m} + 1
+\end{align*}
 
-In linear stability analysis, a scheme is said to be stable if the eigenvalues of the amplification matrix lie inside the unit circle in the complex plane. This means that their absolute values should be less than or equal to 1 for all possible values of \(\xi\). In this case, their magnitudes are:
-
-\[
-	|\lambda_1| = |\lambda_2| = 1 + \xi^2
-\]
-
-For stability we require \(|\lambda| \leq 1\). This transalates to the condition:
-
-\[
-	1 + \xi^2 \leq 1
-\]
-
-Therefore, the sympletic euler scheme isn't stable for any \(\xi\).
-
-
-
+The fact that \(\lambda_1 \lambda_2 = 1\) indicates that the energy of the system is conserved over time.
 
 \subsubsection{Stormer-Verlet method}
 \label{sec:stormer_verlet_method}
@@ -1124,7 +1107,7 @@ The Figure~\ref{fig:stormerverletphase} shows the phase space of the harmonic os
 	\label{fig:stormerverletphase}
 \end{figure}
 
-The Figure~\ref{fig:stormerverletphase} shows the phase space of the harmonic oscillator using the Störmer-Verlet method. We can see that the phase space is a closed curve, which is the correct behaviour of the harmonic oscillator.
+The Figure~\ref{fig:stormerverletphase} shows the phase space of the harmonic oscillator using the Störmer-Verlet method. We can see that the trajectory in the phase space is a closed curve, which is the correct behaviour of the harmonic oscillator.
 
 \begin{figure}[H]
 	\centering
@@ -1133,20 +1116,11 @@ The Figure~\ref{fig:stormerverletphase} shows the phase space of the harmonic os
 	\label{fig:stormerverletenergy}
 \end{figure}
 
-The Figure~\ref{fig:stormerverletenergy} shows the energy of the harmonic oscillator using the Störmer-Verlet method. We can see that the energy is conserved over time, as we wanted for the Hamiltonian dynamics. Like the behaviour of the Euler Sympletic method, we can see that in this case, the energy continues to oscillate around the average value, however the scale of this oscillation is much smaller than in the Euler Sympletic method. To see this, we define the following function:
+The Figure~\ref{fig:stormerverletenergy} shows the energy of the harmonic oscillator using the Störmer-Verlet method. We can see that the energy is approximately conserved over time, as we wanted for the Hamiltonian dynamics. Like the behaviour of the Euler Sympletic method, we can see that in this case, the energy continues to oscillate around the average value, however the scale of this oscillation is much smaller than in the Euler Sympletic method. To see this, we define the following function:
 
 \[
-	\Gamma_{\Delta t}^{Verlet} = \max_{n \in \mathbb{N}}\{|H_{\Delta t}(p^n, q^n) - H_{\Delta t}(p^0, q^0)|\}
+	\Gamma_{\Delta t}^{Verlet} = \max_{h = 1 ... N_{\Delta t}}\{|H(q^n, p^n) - H(q^0, p^0)|\}
 \]
-
-The Figure~\ref*{fig:stormerverletmaxenergy} shows the function \(\Gamma_{\Delta t}^{Verlet}\) over \(\frac{1}{\Delta t}\).
-
-\begin{figure}[H]
-	\centering
-	\includegraphics[width=0.5\linewidth]{./Figures/Sympletic/verletmaxenergy.png}
-	\caption{Function \(\Gamma_{\Delta t}^{Verlet}\) over \(\frac{1}{\Delta t}.\)}
-	\label{fig:stormerverletmaxenergy}
-\end{figure}
 
 So now we are prepared to overview the difference between both methods. The Figure~\ref*{fig:comparisonmaxenergy} shows the function \(\Gamma_{\Delta t}^{Euler}\) and \(\Gamma_{\Delta t}^{Verlet}\) over \(\frac{1}{\Delta t}\).
 
@@ -1157,7 +1131,7 @@ So now we are prepared to overview the difference between both methods. The Figu
 	\label{fig:comparisonmaxenergy}
 \end{figure}
 
-As we can see, the Störmer-Verlet method is much better than the Euler Sympletic method. Probably, this is a consequence of the fact that the Störmer-Verlet method is a second order method, while the Euler Sympletic method is a first order method. Therefore, we can conclude that the Störmer-Verlet method is a better method to solve the Hamiltonian dynamics equations than the Euler Sympletic method.
+As we can see, the Störmer-Verlet method is much better than the Euler Sympletic method. Note that the slope of the linear regression of the Störmer-Verlet method is approximately -2.0147 and the slope of the linear regression of the Euler Sympletic method is approximately -1.8196 Probably, this is a consequence of the fact that the Störmer-Verlet method is a second order method, while the Euler Sympletic method is a first order method. Therefore, we can conclude that the Störmer-Verlet method is a better method to solve the Hamiltonian dynamics equations than the Euler Sympletic method.
 
 \subsubsubsection{Linear Stability Analysis of the Verlet Scheme}
 \label{sec:linear_stability_verlet}
@@ -1225,7 +1199,7 @@ For stability, we require \( |\lambda_1| \leq 1 \). This translates to the condi
 	(1 - \xi)^2 + \xi(2-\xi) \leq 1
 \]
 
-This inequality leads to a tautology so it is always stable. This is consistent with the observed property of the Störmer-Verlet scheme which conserves the energy over time and doesn't let errors gro unboundedly. This, in combination with its second-order accuracy, makes it preferable over the Euler sympletic method for problems modeled by Hamiltonian systems.
+This inequality leads to a tautology so it is always stable. This is consistent with the observed property of the Störmer-Verlet scheme which conserves the energy over time. This, in combination with its second-order accuracy, makes it preferable over the Euler sympletic method for problems modeled by Hamiltonian systems.
 
 \subsubsection{Backward Error Analysis}
 \label{sec:backward_error_analysis}
@@ -1446,7 +1420,7 @@ For illustrative purposes, we'll simulate the orbits of the Sun, Mercury, Venus,
 	\label{fig:solarsystem}
 \end{figure}
 
-We can see that the orbits are closed curves, which is the expected behaviour of the planets of the solar system. Also, we can see that the orbits are not perfect circles, which is also the expected behaviour of the planets of the solar system. 
+We can see that the orbits are closed curves, which is the expected behaviour of the planets of the solar system. Also, we can see that the orbits are not perfect circles, which is also the expected behaviour of the planets of the solar system. Note that for illustrative purposes, since it is known that the Earth has an orbit of 365.25 days, we have simulated the orbits for 365 days. If we had plotted also other plants like Jupiter, the plot would have been very messy, so we have decided to plot only the inner planets.
 
 Now let's see the energy of the system. The Figure~\ref{fig:solarsystemenergy1} shows the energy of the system for the same simulation.
 
@@ -1457,7 +1431,7 @@ Now let's see the energy of the system. The Figure~\ref{fig:solarsystemenergy1} 
 	\label{fig:solarsystemenergy1}
 \end{figure}
 
-We can see that the energy is conserved over time, as we wanted for the Hamiltonian dynamics. Note that is not a straight line but the average of the energy is the same and we can see a slight of oscillations that may be repeated in the future if the simulation is done for more time. So, let's do the simulation for 20 years. The Figure~\ref{fig:solarsystemenergy2} shows the energy of the system for the same simulation.
+We can see that the energy is approximately conserved over time, as we wanted for the Hamiltonian dynamics. Note that is not a straight line but the average of the energy is the same and we can see a slight of oscillations that may be repeated in the future if the simulation is done for more time. So, let's do the simulation for 20 years. The Figure~\ref{fig:solarsystemenergy2} shows the energy of the system for the same simulation.
 
 \begin{figure}[H]
 	\centering
@@ -1466,7 +1440,7 @@ We can see that the energy is conserved over time, as we wanted for the Hamilton
 	\label{fig:solarsystemenergy2}
 \end{figure}
 
-As predicted, we can observe that the energy is preserved.
+As predicted, we can observe that the energy is approximately preserved.
 
 Now that we have the system created and we have seen that the energy is preserved, we can do some experiments. 
 
@@ -1515,15 +1489,15 @@ Comparing it to the results obtained using the Störmer-Verlet method, again we 
 	\toprule
 	\textbf{Method} & $\max{H(x)} - \min{H(x)}$  & $\max{|H(X) - \mathbb{E}(H(X))|}$\\
 	\midrule
-	Symplectic Euler & 7.29e-6 & 3.64e-6  \\
-	Störmer-Verlet   & 2.32e-6 & 1.16e-6 \\
+	Symplectic Euler & 2.43e-5 & 1.26e-5  \\
+	Störmer-Verlet   & 1.59e-5 & 9.04e-6 \\
 	\bottomrule
 	\end{tabular}
 	\caption{Data of Celestial Bodies in the Solar System}
 	\label{table:comparison}
 \end{table}
 
-Therefore, in this problem we can conclude that the Störmer-Verlet method is $3.14$ times better in terms of conservation of the Energy than the Euler Sympletic method.
+Therefore, in this problem we can conclude that the Störmer-Verlet method is better in terms of conservation of the Energy than the Euler Sympletic method.
 
 \section{Markov Chains}
 \label{sec:markov_chains}
@@ -1777,6 +1751,51 @@ We can see that the heatmap is very similar to the Müller-Brown potential, ther
 
 
 \subsection{Simulation of a 2D molecular system}
+
+This final section aims to show how the MCMC algorithms can be used to simulate a 2D molecular system. This subsection is divided in two parts. In the first part, we will introduce the potential we have used to simulate the ecosystem and we will delve a bit into the theory of the molecular dynamics. In the second part, we will do the implementation of the Gibbs sampling algorithm for the molecular system.
+
+\subsubsection{Theoretical Framework and Lennard-Jones Potential}
+
+At the heart of our molecular simulation lies the Lennard-Jones potential, a simplistic yet powerful model to represent interactions between a pair of atoms or molecules. It is mathematically expressed as:
+
+\[
+	U(r) = 4\epsilon \left[ \left( \frac{\sigma}{r} \right)^{12} - \left( \frac{\sigma}{r} \right)^6 \right]
+\]
+
+where \( U(r) \) represents the potential energy between two particles separated by a distance \( r \), \( \epsilon \) signifies the depth of the potential well (indicating the strength of attraction), and \( \sigma \) is the distance at which the potential is zero. The \( r^{-12} \) term models the Pauli exclusion principle, responsible for the repulsive force at short distances due to overlapping electron orbitals. Conversely, the \( r^{-6} \) term accounts for the attractive van der Waals forces, dominant at longer ranges. This dualistic nature of the potential captures the essence of molecular interactions, balancing attraction and repulsion.
+
+The parameters \( \epsilon \) and \( \sigma \) are not merely mathematical constructs but hold profound physical meanings. \( \epsilon \) relates to the energy scale of interactions, dictating how strongly particles attract or repel each other. \( \sigma \), on the other hand, sets the spatial scale, determining the effective size of the particles. These parameters are often determined empirically or through quantum mechanical calculations for specific substances, making the Lennard-Jones potential a versatile tool for simulating a wide range of molecular systems.
+
+\subsubsection{Implementation using the Metropolis Hastings Algorithm}
+
+When simulating the dynamics of molecular systems, accurately replicating the environmental context is crucial. To this end, we have conceptualized a 10x10 unit square space as the primary stage for the molecular interactions. However, to more closely mimic an infinite environment, where energy is not artificially confined or lost at the boundaries, we adopt a toroidal geometry. A torus, which is essentially a surface of revolution generated by revolving a circle in three-dimensional space around a coplanar axis, offers an elegant solution. This spatial configuration is achieved computationally through the application of modular arithmetic at the boundaries, ensuring a seamless and continuous space. This approach is crucial for maintaining the integrity of the system's energy dynamics and is visually represented in the Figure~\ref{fig:boundaryconditions}.
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.5\linewidth]{./Figures/MCMC/LennardJones/boundaryconditions.png}
+	\caption{Illustration of boundary conditions demonstrating the toroidal topology, adapted from \cite{hunt2003arnold}.}
+	\label{fig:boundaryconditions}
+\end{figure}
+
+In our simulation, the initial placement of 30 particles within this toroidal space is generated using a uniform distribution, ensuring an unbiased starting point for the system. Given that these particles interact via the Lennard-Jones potential, we utilize the Metropolis-Hastings algorithm to simulate their dynamics. This algorithm, celebrated for its effectiveness in exploring complex probabilistic spaces, allows us to observe the evolution of the system under thermal fluctuations and intermolecular forces. The Figure~\ref{fig:particlesmh} depicts the spatial distribution of the particles within the torus at the outset and after 1000 iterations of the Metropolis-Hastings algorithm, showcasing the system's dynamic evolution.
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.75\linewidth]{./Figures/MCMC/LennardJones/particles.png}
+	\caption{Spatial distribution of particles in the torus before and after 1000 iterations of the Metropolis-Hastings algorithm, demonstrating the system's evolution.}
+	\label{fig:particlesmh}
+\end{figure}
+
+An integral aspect of our analysis is the examination of the system's energy profile over the course of the simulation. The Metropolis-Hastings algorithm, in theory, should conserve the total energy of the system, a hypothesis we put to the test. The Figure~\ref{fig:energymh} captures the energy of the system at the beginning and after 1000 iterations, providing insights into the algorithm's efficacy in maintaining energy conservation.
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.75\linewidth]{./Figures/MCMC/LennardJones/energy.png}
+	\caption{Energy profile of the system before and after 1000 iterations of the Metropolis-Hastings algorithm, illustrating the conservation of energy.}
+	\label{fig:energymh}
+\end{figure}
+
+As observed, the energy of the system remains approximately constant, validating the expected behavior of the Metropolis-Hastings algorithm in preserving the thermodynamic properties of the molecular system.
 
 
 \newpage

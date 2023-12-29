@@ -22,24 +22,26 @@
 \contentsline {subsubsection}{\numberline {2.2.5}Symplectic Euler method}{28}{subsubsection.2.2.5}%
 \contentsline {subsubsubsection}{\numberline {2.2.5.1}Linear Stability Analysis of the Sympletic Euler Scheme}{30}{subsubsubsection.2.2.5.1}%
 \contentsline {subsubsection}{\numberline {2.2.6}Stormer-Verlet method}{30}{subsubsection.2.2.6}%
-\contentsline {subsubsubsection}{\numberline {2.2.6.1}Linear Stability Analysis of the Verlet Scheme}{33}{subsubsubsection.2.2.6.1}%
-\contentsline {subsubsection}{\numberline {2.2.7}Backward Error Analysis}{34}{subsubsection.2.2.7}%
+\contentsline {subsubsubsection}{\numberline {2.2.6.1}Linear Stability Analysis of the Verlet Scheme}{32}{subsubsubsection.2.2.6.1}%
+\contentsline {subsubsection}{\numberline {2.2.7}Backward Error Analysis}{33}{subsubsection.2.2.7}%
 \contentsline {subsection}{\numberline {2.3}Solar System Simulation}{34}{subsection.2.3}%
 \contentsline {subsubsection}{\numberline {2.3.1}Modeling the Solar System: Gravitational Dynamics}{34}{subsubsection.2.3.1}%
 \contentsline {subsubsection}{\numberline {2.3.2}Störmer-Verlet Scheme for Gravitational Dynamics}{35}{subsubsection.2.3.2}%
 \contentsline {subsubsection}{\numberline {2.3.3}Implementation of the Solar System Simulation}{37}{subsubsection.2.3.3}%
 \contentsline {subsubsubsection}{\numberline {2.3.3.1}Experiment 1: Expanding to the N-Body Problem}{39}{subsubsubsection.2.3.3.1}%
 \contentsline {subsubsubsection}{\numberline {2.3.3.2}Experiment 2: Using Symplectic Euler Method}{40}{subsubsubsection.2.3.3.2}%
-\contentsline {section}{\numberline {3}Markov Chains}{41}{section.3}%
-\contentsline {subsection}{\numberline {3.1}Introduction to Markov Chains}{41}{subsection.3.1}%
+\contentsline {section}{\numberline {3}Markov Chains}{42}{section.3}%
+\contentsline {subsection}{\numberline {3.1}Introduction to Markov Chains}{42}{subsection.3.1}%
 \contentsline {subsubsection}{\numberline {3.1.1}Stationary Distribution}{42}{subsubsection.3.1.1}%
-\contentsline {subsubsection}{\numberline {3.1.2}Irreducibility and Uniqueness}{42}{subsubsection.3.1.2}%
+\contentsline {subsubsection}{\numberline {3.1.2}Irreducibility and Uniqueness}{43}{subsubsection.3.1.2}%
 \contentsline {subsection}{\numberline {3.2}Markov Chain Montecarlo Methods}{43}{subsection.3.2}%
 \contentsline {subsubsection}{\numberline {3.2.1}Metropolis-Hastings Algorithm}{43}{subsubsection.3.2.1}%
-\contentsline {subsubsubsection}{\numberline {3.2.1.1}Example: Sampling from a Gamma Distribution}{43}{subsubsubsection.3.2.1.1}%
+\contentsline {subsubsubsection}{\numberline {3.2.1.1}Example: Sampling from a Gamma Distribution}{44}{subsubsubsection.3.2.1.1}%
 \contentsline {subsubsection}{\numberline {3.2.2}Gibbs Sampling}{44}{subsubsection.3.2.2}%
-\contentsline {subsubsubsection}{\numberline {3.2.2.1}Example: Sampling from a Bivariate Normal Distribution}{44}{subsubsubsection.3.2.2.1}%
-\contentsline {subsubsection}{\numberline {3.2.3}Müller-Brown Potential}{45}{subsubsection.3.2.3}%
-\contentsline {subsubsubsection}{\numberline {3.2.3.1}Metropolis-Hastings Algorithm for the Müller-Brown Potential}{46}{subsubsubsection.3.2.3.1}%
-\contentsline {subsubsubsection}{\numberline {3.2.3.2}Gibbs Sampling Algorithm for the Müller-Brown Potential}{47}{subsubsubsection.3.2.3.2}%
-\contentsline {subsection}{\numberline {3.3}Simulation of a 2D molecular system}{48}{subsection.3.3}%
+\contentsline {subsubsubsection}{\numberline {3.2.2.1}Example: Sampling from a Bivariate Normal Distribution}{45}{subsubsubsection.3.2.2.1}%
+\contentsline {subsubsection}{\numberline {3.2.3}Müller-Brown Potential}{46}{subsubsection.3.2.3}%
+\contentsline {subsubsubsection}{\numberline {3.2.3.1}Metropolis-Hastings Algorithm for the Müller-Brown Potential}{47}{subsubsubsection.3.2.3.1}%
+\contentsline {subsubsubsection}{\numberline {3.2.3.2}Gibbs Sampling Algorithm for the Müller-Brown Potential}{48}{subsubsubsection.3.2.3.2}%
+\contentsline {subsection}{\numberline {3.3}Simulation of a 2D molecular system}{49}{subsection.3.3}%
+\contentsline {subsubsection}{\numberline {3.3.1}Theoretical Framework and Lennard-Jones Potential}{49}{subsubsection.3.3.1}%
+\contentsline {subsubsection}{\numberline {3.3.2}Implementation using the Metropolis Hastings Algorithm}{49}{subsubsection.3.3.2}%

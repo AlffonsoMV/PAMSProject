@@ -1,19 +1,19 @@
 # Fdb version 4
-["bibtex main"] 1703611115 "main.aux" "main.bbl" "main" 1703611120 0
-  "./mybib.bib" 1701709248 4982 c70e08c4f5713879ef0054e073d975f7 ""
+["bibtex main"] 1703875452 "main.aux" "main.bbl" "main" 1703875455 0
+  "./mybib.bib" 1703874761 5505 99ad86d3a79c48394cd98731cad39d94 ""
   "/usr/local/texlive/2023basic/texmf-dist/bibtex/bst/base/plain.bst" 1292289607 20613 bd3fbfa9f64872b81ac57a0dd2ed855f ""
-  "main.aux" 1703611116 31598 44523e25ae5d1d3fa90b674e66602a13 "xelatex"
+  "main.aux" 1703875452 33008 9d4c3abacecbfe249be8a19a897a06cb "xelatex"
   (generated)
   "main.bbl"
   "main.blg"
   (rewritten before read)
-["xdvipdfmx"] 1703611117 "main.xdv" "main.pdf" "main" 1703611120 0
-  "main.xdv" 1703611116 771912 f61a314c4461c7d28d38f7fe4ffd318f "xelatex"
+["xdvipdfmx"] 1703875452 "main.xdv" "main.pdf" "main" 1703875455 0
+  "main.xdv" 1703875452 830996 a905fd2079d3d30483375f96521acc82 "xelatex"
   (generated)
   "main.pdf"
   (rewritten before read)
-["xelatex"] 1703611115 "/Users/alfonsomateos/Documents/PONTS/PAMS Project/Document/main.tex" "main.xdv" "main" 1703611120 0
-  "/Users/alfonsomateos/Documents/PONTS/PAMS Project/Document/main.tex" 1703611113 98148 1c1af5141a58ea15d24a1cafe96dd9f6 ""
+["xelatex"] 1703875452 "/Users/alfonsomateos/Documents/PONTS/PAMS Project/Document/main.tex" "main.xdv" "main" 1703875455 0
+  "/Users/alfonsomateos/Documents/PONTS/PAMS Project/Document/main.tex" 1703875451 103909 f0c5e2de663789dd4eb4afeaa08d0544 ""
   "/usr/local/texlive/2023basic/texmf-dist/fonts/tfm/adobe/zapfding/pzdr.tfm" 1136768653 1528 f853c4d1b4e0550255e02831fdc8496f ""
   "/usr/local/texlive/2023basic/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm" 1246382020 1004 54797486969f23fa377b128694d548df ""
   "/usr/local/texlive/2023basic/texmf-dist/fonts/tfm/public/amsfonts/symbols/msam10.tfm" 1246382020 916 f87d7c45f9c908e672703b83b72241a3 ""
@@ -206,6 +206,9 @@
   "Figures/InverseCDF/histogram.png" 1700823639 16950 ca05f14df2e55da935bedd38facffefa ""
   "Figures/InverseCDF/uniform_error.png" 1695738582 21908 2c101fc0da3459efe40566ec867fa0b4 ""
   "Figures/LLN/verifloglog.png" 1700913663 43853 922b26bd41cdcabf7776f796adaff80e ""
+  "Figures/MCMC/LennardJones/boundaryconditions.png" 1703874751 35985 cd6f763ceca9541540456a077e85c8af ""
+  "Figures/MCMC/LennardJones/energy.png" 1703875233 75960 ec55d261180db975ea268c59704d3387 ""
+  "Figures/MCMC/LennardJones/particles.png" 1703875126 19439 6c5911eab89c4e8ad19d5b7c28d8af90 ""
   "Figures/MCMC/MultivariateNormal-2.png" 1701709176 91347 ed83b33854a0f0ca602dbf295ac5fc66 ""
   "Figures/MCMC/bivariates.png" 1701709361 91719 591566be7fa69ea3655cd550e861b00c ""
   "Figures/MCMC/gamma.png" 1701708551 33579 1b9c36985de7bc165cddd78519802efe ""
@@ -215,21 +218,20 @@
   "Figures/MCMC/mullerbrownmh.png" 1702322559 31920 c544734c8b2e259adf29c4a1e9a79476 ""
   "Figures/SolarSystem/energy1.png" 1699817945 37305 d99a61cd0c46ceeeac2b03a797a81d7e ""
   "Figures/SolarSystem/energy2.png" 1699818030 90847 9104ddf57b70fdbcf7a1faa8f16951ce ""
-  "Figures/SolarSystem/energy_euler.png" 1699819777 90413 08d415f97ed397864caa2a4d0d73d668 ""
+  "Figures/SolarSystem/energy_euler.png" 1703870811 53936 28d2b1743d57881a19ec441ff210845b ""
   "Figures/SolarSystem/gravitationalpotential.png" 1698955914 227290 a77b04c43e335aae2fa78c238f4aa518 ""
   "Figures/SolarSystem/orbits.png" 1699817625 78786 4ca1342aa116e3f46a1d2a85b936be7d ""
-  "Figures/SolarSystem/orbits_euler.png" 1699819765 56422 461b881d0cd10d5517b6686cb1b29332 ""
+  "Figures/SolarSystem/orbits_euler.png" 1703870760 67431 dacbd7d9058a42a1d9ab77980464d0b6 ""
   "Figures/SolarSystem/orbitsjupiter.png" 1699818729 53258 a797467c690f4fc1e9e11a19834a9a1d ""
   "Figures/Sympletic/eulerenergy.png" 1696439022 66087 3ccc2b44bebe28fa08c8251edb5e66dc ""
   "Figures/Sympletic/eulerenergy1.png" 1696951615 23980 bd2b297d8eba7bfd8f3059e80ecef53d ""
-  "Figures/Sympletic/eulermaxenergy.png" 1697128281 24256 964113a151c7f5306db382c17b821394 ""
+  "Figures/Sympletic/eulermaxenergy.png" 1703868303 32918 12abcdac9848f2b05400a2ed82c90b90 ""
   "Figures/Sympletic/eulerphase.png" 1696439010 25327 6a8778274470ce882736bac956515a68 ""
   "Figures/Sympletic/eulerphase1.png" 1696951466 160253 f2776e5bd0860d2fbcdbec60a7c1e559 ""
   "Figures/Sympletic/graphic.jpg" 1700069677 19325 8e3acd5e9ae61dda07a118be36601eae ""
-  "Figures/Sympletic/maxenergydifference.png" 1697128735 32114 bb79a91b21a2c919c50fd9ac4b6dbf28 ""
+  "Figures/Sympletic/maxenergydifference.png" 1703868401 44672 736da242d32598440d48b2c04dc05465 ""
   "Figures/Sympletic/phaseanalytics.png" 1696951093 31328 f2fb2a7ad0e4722b2a6fb94908bb157d ""
   "Figures/Sympletic/verletenergy.png" 1696974436 68076 d8b9e24bb21d5ed5dc4526d8f5d1ecc1 ""
-  "Figures/Sympletic/verletmaxenergy.png" 1697128297 24389 e43023a03c021255e491c33d5b1e25af ""
   "Figures/Sympletic/verletphase.png" 1696974048 25570 da6209ad4bbaec804a697bfecf7e86ef ""
   "Figures/VarianceReduction/antithetic.png" 1695817347 23453 a296431e61d06e5a5880efcb745b52fd ""
   "Figures/VarianceReduction/beta.png" 1695815874 24139 db4fa5b0d1926cbe1506f79a3b9fee48 ""
@@ -240,11 +242,11 @@
   "Figures/VarianceReduction/importance.png" 1695817320 24081 07428233a79f3e3154e2dd2c3792d687 ""
   "Figures/VarianceReduction/stratified.png" 1695817335 23118 df24c9602ecc87579256826dfa420c0d ""
   "logo-enpc.eps" 1696975345 586786 2481599d970520a68364592352c92496 ""
-  "main.aux" 1703611116 31598 44523e25ae5d1d3fa90b674e66602a13 "xelatex"
-  "main.bbl" 1703611115 2154 32c1a878fdc7c2063d6e2f3984b264fb "bibtex main"
-  "main.out" 1703611116 10390 8305163f5ea6393cc8e1b6fc76539c3f "xelatex"
-  "main.tex" 1703611113 98148 1c1af5141a58ea15d24a1cafe96dd9f6 ""
-  "main.toc" 1703611116 4778 d92e8f74b2cf25a032626dfe7e2a52f3 "xelatex"
+  "main.aux" 1703875452 33008 9d4c3abacecbfe249be8a19a897a06cb "xelatex"
+  "main.bbl" 1703875452 2404 1d40efffa0545358555ef42a91f9b5fd "bibtex main"
+  "main.out" 1703875452 11068 fe650e438f7d3544eebc4bdc2e89d711 "xelatex"
+  "main.tex" 1703875451 103909 f0c5e2de663789dd4eb4afeaa08d0544 ""
+  "main.toc" 1703875452 5035 203bda52edb4fc7e2c7b84047fc78598 "xelatex"
   "structure.tex" 1701281718 8634 fe68ba7a3c9b10196817fc210604841b ""
   (generated)
   "main.aux"
