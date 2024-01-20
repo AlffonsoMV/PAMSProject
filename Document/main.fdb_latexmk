@@ -1,19 +1,19 @@
 # Fdb version 4
-["bibtex main"] 1703875452 "main.aux" "main.bbl" "main" 1703875455 0
+["bibtex main"] 1703875452 "main.aux" "main.bbl" "main" 1704718488 0
   "./mybib.bib" 1703874761 5505 99ad86d3a79c48394cd98731cad39d94 ""
   "/usr/local/texlive/2023basic/texmf-dist/bibtex/bst/base/plain.bst" 1292289607 20613 bd3fbfa9f64872b81ac57a0dd2ed855f ""
-  "main.aux" 1703875452 33008 9d4c3abacecbfe249be8a19a897a06cb "xelatex"
+  "main.aux" 1704718485 33008 9d4c3abacecbfe249be8a19a897a06cb "xelatex"
   (generated)
   "main.bbl"
   "main.blg"
   (rewritten before read)
-["xdvipdfmx"] 1703875452 "main.xdv" "main.pdf" "main" 1703875455 0
-  "main.xdv" 1703875452 830996 a905fd2079d3d30483375f96521acc82 "xelatex"
+["xdvipdfmx"] 1704718486 "main.xdv" "main.pdf" "main" 1704718488 0
+  "main.xdv" 1704718485 831008 d70901369916c4cbc2005c9d776b22fc "xelatex"
   (generated)
   "main.pdf"
   (rewritten before read)
-["xelatex"] 1703875452 "/Users/alfonsomateos/Documents/PONTS/PAMS Project/Document/main.tex" "main.xdv" "main" 1703875455 0
-  "/Users/alfonsomateos/Documents/PONTS/PAMS Project/Document/main.tex" 1703875451 103909 f0c5e2de663789dd4eb4afeaa08d0544 ""
+["xelatex"] 1704718485 "/Users/alfonsomateos/Documents/PONTS/PAMS Project/Document/main.tex" "main.xdv" "main" 1704718488 0
+  "/Users/alfonsomateos/Documents/PONTS/PAMS Project/Document/main.tex" 1704718484 103910 2cb384534ae405579a38ac5427c3501c ""
   "/usr/local/texlive/2023basic/texmf-dist/fonts/tfm/adobe/zapfding/pzdr.tfm" 1136768653 1528 f853c4d1b4e0550255e02831fdc8496f ""
   "/usr/local/texlive/2023basic/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm" 1246382020 1004 54797486969f23fa377b128694d548df ""
   "/usr/local/texlive/2023basic/texmf-dist/fonts/tfm/public/amsfonts/symbols/msam10.tfm" 1246382020 916 f87d7c45f9c908e672703b83b72241a3 ""
@@ -242,11 +242,11 @@
   "Figures/VarianceReduction/importance.png" 1695817320 24081 07428233a79f3e3154e2dd2c3792d687 ""
   "Figures/VarianceReduction/stratified.png" 1695817335 23118 df24c9602ecc87579256826dfa420c0d ""
   "logo-enpc.eps" 1696975345 586786 2481599d970520a68364592352c92496 ""
-  "main.aux" 1703875452 33008 9d4c3abacecbfe249be8a19a897a06cb "xelatex"
+  "main.aux" 1704718485 33008 9d4c3abacecbfe249be8a19a897a06cb "xelatex"
   "main.bbl" 1703875452 2404 1d40efffa0545358555ef42a91f9b5fd "bibtex main"
-  "main.out" 1703875452 11068 fe650e438f7d3544eebc4bdc2e89d711 "xelatex"
-  "main.tex" 1703875451 103909 f0c5e2de663789dd4eb4afeaa08d0544 ""
-  "main.toc" 1703875452 5035 203bda52edb4fc7e2c7b84047fc78598 "xelatex"
+  "main.out" 1704718485 11068 fe650e438f7d3544eebc4bdc2e89d711 "xelatex"
+  "main.tex" 1704718484 103910 2cb384534ae405579a38ac5427c3501c ""
+  "main.toc" 1704718485 5035 203bda52edb4fc7e2c7b84047fc78598 "xelatex"
   "structure.tex" 1701281718 8634 fe68ba7a3c9b10196817fc210604841b ""
   (generated)
   "main.aux"
