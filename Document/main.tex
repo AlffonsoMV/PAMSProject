@@ -1720,11 +1720,21 @@ Now, we want to know how the Metropolis-Hastings algorithm behaves when we use t
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=0.5\linewidth]{./Figures/MCMC/mullerbrownmh.png}
-	\caption{Sampling from the Müller-Brown potential using the Metropolis-Hastings algorithm.}
+	\caption{Sampling from the Müller-Brown potential using the Metropolis-Hastings algorithm with a temperature of 1 and 100000 samples.}
 	\label{fig:mullerbrownmh}
 \end{figure}
 
-We can see that the samples instead of beign distributed all around the Müller-Brown potential, they are concentrated in a local minimun. This is because the Metropolis-Hastings algorithm is not a good algorithm for sampling from a distribution with many local minimuns.
+We can see that the samples instead of beign distributed all around the Müller-Brown potential, they are concentrated in a local minimun. But what happens if we increase the temperature? The idea of increasing the temperature is to increase the probability of accepting a sample that is worse than the current one, therefore we will be able to escape from the local minimun. The Figure~\ref{fig:mullerbrownmh2} shows the results of the Metropolis-Hastings algorithm for the Müller-Brown potential with a temperature of 40.
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.5\linewidth]{./Figures/MCMC/mullerbrownmh2.png}
+	\caption{Sampling from the Müller-Brown potential using the Metropolis-Hastings algorithm with a temperature of 40 and 100000 samples.}
+	\label{fig:mullerbrownmh2}
+\end{figure}
+
+We can see that the samples are distributed all around the Müller-Brown potential, which is the expected behaviour of the Metropolis-Hastings algorithm. But one could think wether this sampling is fitting the distribution or not. This will be checked in a future section after introducing the Gibbs sampling algorithm.
+
 
 \subsubsubsection{Gibbs Sampling Algorithm for the Müller-Brown Potential}
 
@@ -1733,22 +1743,45 @@ Now, we want to know how the Gibbs sampling algorithm behaves when we use the M�
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=0.5\linewidth]{./Figures/MCMC/mullerbrowngibbs.png}
-	\caption{Sampling from the Müller-Brown potential using the Gibbs sampling algorithm.}
+	\caption{Sampling from the Müller-Brown potential using the Gibbs sampling algorithm with 100000 samples.}
 	\label{fig:mullerbrowngibbs}
 \end{figure}
 
-We can see that the samples are distributed all around the Müller-Brown potential, which is the expected behaviour of the Gibbs sampling algorithm. But one could think wether this sampling is fitting the distribution or not. To check this, we have computed the heatmap of the samples. In this case, we have done a heatmap of another execution but in this case we have used 100000 samples. The Figure~\ref{fig:mullerbrownheatmap} shows the heatmap of the samples.
+We can see that the samples are distributed all around the Müller-Brown potential, which is the expected behaviour of the Gibbs sampling algorithm. 
+
+\subsubsubsection{Comparison between Metropolis-Hastings and Gibbs Sampling}
+
+This section is built with two aims. First we want to check if the samples obtained with the Metropolis-Hastings algorithm are distributed according to the Müller-Brown potential. Second, we want to compare the Metropolis-Hastings algorithm and the Gibbs sampling algorithm.
+
+For these aims we will use the Kullback-Leibler divergence. The Kullback-Leibler divergence is a measure of how one probability distribution is different from a second, reference probability distribution. The Kullback-Leibler divergence of a probability distribution $P$ from a probability distribution $Q$ is defined as:
+
+\[
+	D_{KL}(P||Q) = \sum_{x \in \chi} P(x) \log \left( \frac{P(x)}{Q(x)} \right)
+\]
+
+where $\chi$ is the state space of the probability distributions.
+
+This measure gives us a way to compare two probability distributions. If the Kullback-Leibler divergence is small, then the two probability distributions are similar. If the Kullback-Leibler divergence is big, then the two probability distributions are different. 
+
+The Figure~\ref{fig:klmh} shows the Kullback-Leibler divergence between the samples obtained with the Metropolis-Hastings algorithm and the Müller-Brown potential as the number of samples increases.
 
 \begin{figure}[H]
 	\centering
-	\includegraphics[width=0.5\linewidth]{./Figures/MCMC/mullerbrowngibbsheat.png}
-	\caption{Heatmap of the samples of the Müller-Brown potential using the Gibbs sampling algorithm.}
-	\label{fig:mullerbrownheatmap}
+	\includegraphics[width=0.5\linewidth]{./Figures/MCMC/klmh.png}
+	\caption{Kullback-Leibler divergence between the samples obtained with the Metropolis-Hastings algorithm, with temperature 40, and the Müller-Brown potential as the number of samples increases.}
+	\label{fig:klmh}
 \end{figure}
 
-We can see that the heatmap is very similar to the Müller-Brown potential, therefore we can conclude that the Gibbs sampling algorithm is a good algorithm for sampling from a distribution with many local minimuns.
+From this figure we can get two important results, first, and maybe the most important one, is that the Kullback-Leibler divergence is decreasing as the number of samples increases, therefore the samples obtained with the Metropolis-Hastings algorithm are distributed according to the Müller-Brown potential. Second, we can see that both algorithms, Metropolis-Hastings and Gibbs sampling, are converging almost at the same rate. This is a very important result because it shows that both algorithms are equally good for sampling from a distribution.
 
+As a final experiment, we wanted to plot the heatmap of both distributions as well as the heatmap of the theoretical distribution, to see that indeed the samples obtained with the Metropolis-Hastings algorithm and the Gibbs sampling algorithm are distributed according to the Müller-Brown potential. The Figure~\ref{fig:heatmaps} shows the heatmaps of the theoretical distribution, the Metropolis-Hastings algorithm and the Gibbs sampling algorithm.
 
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.75\linewidth]{./Figures/MCMC/heatmaps.png}
+	\caption{Heatmaps of the theoretical distribution, the Metropolis-Hastings algorithm, with tempeature 40, and the Gibbs sampling algorithm. The heatmaps are computed with 100000 samples.}
+	\label{fig:heatmaps}
+\end{figure}
 
 \subsection{Simulation of a 2D molecular system}
 
@@ -1777,7 +1810,22 @@ When simulating the dynamics of molecular systems, accurately replicating the en
 	\label{fig:boundaryconditions}
 \end{figure}
 
-In our simulation, the initial placement of 30 particles within this toroidal space is generated using a uniform distribution, ensuring an unbiased starting point for the system. Given that these particles interact via the Lennard-Jones potential, we utilize the Metropolis-Hastings algorithm to simulate their dynamics. This algorithm, celebrated for its effectiveness in exploring complex probabilistic spaces, allows us to observe the evolution of the system under thermal fluctuations and intermolecular forces. The Figure~\ref{fig:particlesmh} depicts the spatial distribution of the particles within the torus at the outset and after 1000 iterations of the Metropolis-Hastings algorithm, showcasing the system's dynamic evolution.
+In our simulation, the initial placement of 30 particles within this toroidal space is generated using a uniform distribution, ensuring an unbiased starting point for the system. Given that these particles interact via the Lennard-Jones potential, we utilize the Metropolis-Hastings algorithm to simulate their dynamics. This algorithm, celebrated for its effectiveness in exploring complex probabilistic spaces, allows us to observe the evolution of the system under thermal fluctuations and intermolecular forces. For this whole experiment, we will be using the following parameters:
+
+\[
+	\begin{cases}
+		n = 84 \\
+		\epsilon = 1 \\
+		\sigma = 1 \\
+		\Delta t = 0.01 \\
+		p^{*} = 0.844 \\
+		T^{*} = 0.71
+	\end{cases}
+\]
+
+With \( \epsilon \) and \( \sigma \) the parameters of the Lennard-Jones potential, \( \Delta t \) the time step, \( p^{*} \) the reduced pressure and \( T^{*} \) the reduced temperature and \(n\) the number of particles. Note that since \(\epsilon = 1 \) and \( \sigma = 1\) then \(p^{*} = p\) and \(T^{*} = T\).
+
+The Figure~\ref{fig:particlesmh} depicts the spatial distribution of the particles within the torus at the outset and after 1000 iterations of the Metropolis-Hastings algorithm, showcasing the system's dynamic evolution.
 
 \begin{figure}[H]
 	\centering
@@ -1785,6 +1833,8 @@ In our simulation, the initial placement of 30 particles within this toroidal sp
 	\caption{Spatial distribution of particles in the torus before and after 1000 iterations of the Metropolis-Hastings algorithm, demonstrating the system's evolution.}
 	\label{fig:particlesmh}
 \end{figure}
+
+One thing that is extremly interesting of this simulation that can be observed in the Figure~\ref{fig:particlesmh} is that, at the first case, we have distributed the particles randomly around the torus, but after 1000 iterations of the Metropolis-Hastings algorithm, the particles have been distributed in a way in which we can see that there are a minimun distance between the particles. This is a very interesting result because it shows that the model is working as expected.
 
 An integral aspect of our analysis is the examination of the system's energy profile over the course of the simulation. The Metropolis-Hastings algorithm, in theory, should conserve the total energy of the system, a hypothesis we put to the test. The Figure~\ref{fig:energymh} captures the energy of the system at the beginning and after 1000 iterations, providing insights into the algorithm's efficacy in maintaining energy conservation.
 
@@ -1797,6 +1847,25 @@ An integral aspect of our analysis is the examination of the system's energy pro
 
 As observed, the energy of the system remains approximately constant, validating the expected behavior of the Metropolis-Hastings algorithm in preserving the thermodynamic properties of the molecular system.
 
+We have seen before the interesting result of the minimun distance between the particles, so now we want to see if indeed the theoretical aspects of the Lennard-Jones potential are being fulfilled. For this aim we can move on to the concept of the radial distribution function. The radial distribution function is a function that describes how density varies as a function of distance from a reference particle. We already know that this distribution should have the shape represented in the Figure~\ref{fig:radialdistributionfunction}, obtained from \cite{wiki:radialdistributionfunction}.
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.5\linewidth]{./Figures/MCMC/LennardJones/radialdistributionfunction.png}
+	\caption{Radial distribution function for a liquid.}
+	\label{fig:radialdistributionfunction}
+\end{figure}
+
+If we try to compute the radial distribution function for our system, we will get the Figure~\ref{fig:radialdistributionfunctionmh}.
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.52\linewidth]{./Figures/MCMC/LennardJones/rdf_exp.png}
+	\caption{Radial distribution function for the system before and after 1000 iterations of the Metropolis-Hastings algorithm.}
+	\label{fig:radialdistributionfunctionmh}
+\end{figure}
+
+We can see that the radial distribution function is almost of the same shape as the theoretical one, even though there is not as smooth as the other one since we have a finite number of particles. Therefore, we can conclude that it seems that the Metropolis-Hastings algorithm is working as expected.
 
 \newpage
 

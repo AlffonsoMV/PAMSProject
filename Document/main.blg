@@ -14,51 +14,53 @@ Warning--entry type for "peng2023rejectionsampling" isn't style-file defined
 Warning--I'm ignoring reygner2023methodes's extra "note" field
 --line 106 of file mybib.bib
 Warning--entry type for "wiki:bivariatenormal" isn't style-file defined
---line 121 of file mybib.bib
+--line 120 of file mybib.bib
 Warning--entry type for "wiki:metropolishastings" isn't style-file defined
 --line 130 of file mybib.bib
+Warning--entry type for "wiki:radialdistributionfunction" isn't style-file defined
+--line 139 of file mybib.bib
 Warning--entry type for "wikitInverseTransformSampling" isn't style-file defined
---line 140 of file mybib.bib
+--line 149 of file mybib.bib
 Warning--to sort, need author or key in nssdc2022planetaryfactsheet
-You've used 13 entries,
+You've used 14 entries,
             2118 wiz_defined-function locations,
-            566 strings with 5701 characters,
-and the built_in function-call counts, 3040 in all, are:
-= -- 295
-> -- 91
+            570 strings with 5796 characters,
+and the built_in function-call counts, 3257 in all, are:
+= -- 317
+> -- 98
 < -- 0
-+ -- 41
-- -- 26
-* -- 139
-:= -- 508
-add.period$ -- 43
-call.type$ -- 13
-change.case$ -- 51
++ -- 44
+- -- 28
+* -- 145
+:= -- 545
+add.period$ -- 47
+call.type$ -- 14
+change.case$ -- 55
 chr.to.int$ -- 0
-cite$ -- 14
-duplicate$ -- 113
-empty$ -- 304
-format.name$ -- 26
-if$ -- 655
+cite$ -- 15
+duplicate$ -- 120
+empty$ -- 326
+format.name$ -- 28
+if$ -- 703
 int.to.chr$ -- 0
-int.to.str$ -- 13
+int.to.str$ -- 14
 missing$ -- 7
-newline$ -- 72
-num.names$ -- 24
-pop$ -- 89
+newline$ -- 78
+num.names$ -- 26
+pop$ -- 97
 preamble$ -- 1
-purify$ -- 39
+purify$ -- 42
 quote$ -- 0
-skip$ -- 87
+skip$ -- 93
 stack$ -- 0
-substring$ -- 140
-swap$ -- 13
+substring$ -- 145
+swap$ -- 14
 text.length$ -- 0
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 48
+type$ -- 52
 warning$ -- 1
-while$ -- 28
-width$ -- 15
-write$ -- 144
-(There were 9 warnings)
+while$ -- 30
+width$ -- 16
+write$ -- 156
+(There were 10 warnings)

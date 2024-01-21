@@ -42,6 +42,7 @@
 \contentsline {subsubsection}{\numberline {3.2.3}Müller-Brown Potential}{46}{subsubsection.3.2.3}%
 \contentsline {subsubsubsection}{\numberline {3.2.3.1}Metropolis-Hastings Algorithm for the Müller-Brown Potential}{47}{subsubsubsection.3.2.3.1}%
 \contentsline {subsubsubsection}{\numberline {3.2.3.2}Gibbs Sampling Algorithm for the Müller-Brown Potential}{48}{subsubsubsection.3.2.3.2}%
-\contentsline {subsection}{\numberline {3.3}Simulation of a 2D molecular system}{49}{subsection.3.3}%
-\contentsline {subsubsection}{\numberline {3.3.1}Theoretical Framework and Lennard-Jones Potential}{49}{subsubsection.3.3.1}%
-\contentsline {subsubsection}{\numberline {3.3.2}Implementation using the Metropolis Hastings Algorithm}{49}{subsubsection.3.3.2}%
+\contentsline {subsubsubsection}{\numberline {3.2.3.3}Comparison between Metropolis-Hastings and Gibbs Sampling}{49}{subsubsubsection.3.2.3.3}%
+\contentsline {subsection}{\numberline {3.3}Simulation of a 2D molecular system}{50}{subsection.3.3}%
+\contentsline {subsubsection}{\numberline {3.3.1}Theoretical Framework and Lennard-Jones Potential}{50}{subsubsection.3.3.1}%
+\contentsline {subsubsection}{\numberline {3.3.2}Implementation using the Metropolis Hastings Algorithm}{50}{subsubsection.3.3.2}%
