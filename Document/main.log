@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999995 (TeX Live 2023) (preloaded format=xelatex 2023.11.29)  20 JAN 2024 21:41
+This is XeTeX, Version 3.141592653-2.6-0.999995 (TeX Live 2023) (preloaded format=xelatex 2023.11.29)  21 JAN 2024 23:12
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -905,11 +905,7 @@ Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 28
 \Hy@SectionHShift=\skip157
 )
 \c@subsubsubsection=\count366
-) (./main.aux
-
-LaTeX Warning: Label `fig:bivariatenormal' multiply defined.
-
-)
+) (./main.aux)
 \openout1 = `main.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 26.
@@ -1252,18 +1248,14 @@ File: ./Figures/MCMC/LennardJones/rdf_exp.png Graphic file (type bmp)
 LaTeX2e <2023-11-01>
 L3 programming layer <2023-11-09>
  ***********
-
-
-LaTeX Warning: There were multiply-defined labels.
-
 Package rerunfilecheck Info: File `main.out' has not changed.
 (rerunfilecheck)             Checksum: E42643C0B5F42CA053050AC20BF748AC;11446.
  ) 
 Here is how much of TeX's memory you used:
- 28905 strings out of 476447
- 586124 string characters out of 5793879
+ 28906 strings out of 476447
+ 586146 string characters out of 5793879
  1936186 words of memory out of 5000000
- 50232 multiletter control sequences out of 15000+600000
+ 50233 multiletter control sequences out of 15000+600000
  564833 words of font info for 74 fonts, out of 8000000 for 9000
  319 hyphenation exceptions out of 8191
  127i,13n,132p,1411b,601s stack positions out of 10000i,1000n,20000p,200000b,200000s

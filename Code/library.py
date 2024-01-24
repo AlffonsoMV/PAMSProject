@@ -68,7 +68,7 @@ def importance_sampling(function, a, b, iters=1000):
 
 def stratified_sampling(function, a, b, iters=1000):
     strata = np.linspace(a, b, iters + 1)
-    x = np.random.uniform(strata[:-1], strata[1:])
+    x = np.random.uniform(strata[:-1], strata[1:], iters)
     y = function(x)
     estimate = np.mean(y)
     return estimate
