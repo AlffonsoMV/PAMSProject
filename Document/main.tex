@@ -1,4 +1,5 @@
-\documentclass{article}
+\documentclass{report}
+
 \usepackage{float}
 \usepackage{multirow}
 \usepackage{booktabs} % For better tables
@@ -6,6 +7,7 @@
 \usepackage[T1]{fontenc}
 
 \input{structure.tex} 
+
 
 \title{PAMS's project} % Title of the assignment
 
@@ -16,7 +18,7 @@
 \firstname{Alfonso}
 \lastname{Mateos Vicente}
 \teacher{Noé Blassel}
-\master{Mme. Jane Doe}
+\master{}
 \title{PAM's project}
 \date{\today}
 
@@ -69,18 +71,22 @@
 
 \section*{Abstract}
 
-This paper presents a comprehensive examination of simulation techniques in the realms of random variables, Hamiltonian dynamics, and Markov chain sampling. The initial section is devoted to the simulation of random variables, leveraging the Inverse Cumulative Distribution Function (CDF) method and Rejection Sampling method. Empirical validations of the Law of Large Numbers and the Central Limit Theorem are conducted to ascertain the efficacy of these methods. We also explore various variance reduction techniques, including control variates, importance sampling, stratified sampling, and antithetic variates, culminating in a detailed comparative analysis.
+This paper presents an in-depth exploration of advanced simulation techniques across three key domains: random variables, Hamiltonian dynamics, and Markov chain sampling, each providing critical insights into the field of computational statistics and mathematical modeling.
 
-The subsequent section shifts focus to Hamiltonian dynamics, beginning with an introduction to the core principles, followed by an exploration of symplectic schemes. This includes analytical solutions, the Euler method, and a critical examination of the failure of standard methods. The development of Symplectic Schemes, particularly the Symplectic Euler and Stormer-Verlet methods, is presented with a comprehensive linear stability analysis. The application of these methods is illustrated through the simulation of the Solar System's gravitational dynamics, extending to experiments involving the N-Body Problem and the Symplectic Euler Method.
+In the first section, we focus on the simulation of random variables. Here, the Inverse Cumulative Distribution Function (CDF) method and Rejection Sampling method are thoroughly examined. We empirically validate the Law of Large Numbers and the Central Limit Theorem, assessing the reliability and efficiency of these simulation methods. Additionally, this section delves into various variance reduction techniques such as control variates, importance sampling, stratified sampling, and antithetic variates. A comparative analysis of these techniques highlights their significance in enhancing simulation accuracy and efficiency.
 
-The paper culminates with a section on Sampling via Markov Chains. This section explores the application of Euler-Moruyama schemes to 2D potentials, delve into the intricacies of Langevin dynamics and splitting schemes, and present the final implementation in a full 2D molecular system. This aims to deepen the understanding of Markov chain sampling techniques and their practical applications in complex systems.
+The paper then transitions to Hamiltonian dynamics, starting with a foundational introduction to its principles. We explore symplectic schemes, offering insights into their analytical solutions, and critically evaluate the Euler method alongside the limitations of standard approaches. The development and application of advanced Symplectic Schemes, particularly the Symplectic Euler and Stormer-Verlet methods, are presented, including a comprehensive linear stability analysis. The practical application of these methods is exemplified through the simulation of the Solar System's gravitational dynamics, with extensions to the N-Body Problem and an exploration of the Symplectic Euler Method.
+
+The final section of the paper addresses Markov chain sampling. This segment is dedicated to the Metropolis-Hastings algorithm and Gibbs Sampling, offering a nuanced understanding of these techniques through practical examples like sampling from Gamma and Bivariate Normal distributions. The application of these methods to the Müller-Brown Potential is examined, providing a comparative analysis of their efficacy. The section culminates with the implementation of Markov chain sampling in simulating a 2D molecular system, using the Lennard-Jones potential to model complex physical interactions. This part not only demonstrates the versatility of Markov chain sampling methods but also underscores their importance in simulating and understanding intricate systems.
+
+Overall, this paper aims to provide a comprehensive overview of contemporary simulation techniques, offering both theoretical insights and practical applications across various fields, thereby contributing to the advancement of computational statistics and mathematical modeling.
 
 \newpage
 
-\section{Simulation of Random Variables}
+\chapter{Simulation of Random Variables}
 \label{sec:simulation_of_random_variables}
 
-This section explores the simulation of random variables, a cornerstone in statistical and dynamical system studies. In Section 1.1, we introduce the Inverse CDF method (\ref{sec:inverse_cdf}), providing a foundational overview of its mechanics and application in simulating random variables.
+This chapter explores the simulation of random variables, a cornerstone in statistical and dynamical system studies. In Section 1.1, we introduce the Inverse CDF method (\ref{sec:inverse_cdf}), providing a foundational overview of its mechanics and application in simulating random variables.
 
 Progressing to Section 1.2 (\ref{sec:rejection_sampling}), the manuscript transitions to the Rejection Sampling method. This section is further divided to enhance clarity and depth: Section 1.2.1 (\ref{sec:enveloping_distribution}) delves into the selection of the appropriate enveloping distribution, and Section 1.2.2 (\ref{sec:results_rejection_sampling}) presents the outcomes and insights from applying this method.
 
@@ -88,7 +94,7 @@ The narrative continues in Section 1.3 (\ref{sec:lln}), where the empirical vali
 
 Concluding this section, a detailed examination of various variance reduction techniques is presented in Section 1.5 (\ref{sec:variance_reduction}). Starting with fundamental concepts in Section 1.5.1 (\ref{sec:variance_reduction_preliminaries}), it then explores control variates (Section 1.5.2, \ref{sec:control_variates}), importance sampling (Section 1.5.3, \ref{sec:importance_sampling}), stratified sampling (Section 1.5.4, \ref{sec:stratified_sampling}), and antithetic variates (Section 1.5.5, \ref{sec:antithetic_variates}), culminating in a comparative review in Section 1.5.6 (\ref{sec:comparative_review}). This part of the manuscript synthesizes and compares these techniques, highlighting their role in enhancing the accuracy and efficiency of simulation processes.
 
-\subsection{Inverse CDF method}
+\section{Inverse CDF method}
 \label{sec:inverse_cdf}
 
 Inverse CDF method is a basic method to generate pseudo-random numbers from any probability distribution given its cumulative distribution function. First of all, let's introduce the following statement extracted from \cite{wikitInverseTransformSampling}:
@@ -139,27 +145,22 @@ Recall that the uniform and exponential means are:
 \begin{equation*} \mu_{\mathcal{U}} = \frac{a + b}{2} \end{equation*}
 \begin{equation*} \mu_{\mathcal{E}} = \frac{1}{\lambda} \end{equation*}
 
-The Figure~\ref{fig:uniformerrorcdf} and Figure~\ref{fig:exponentialerrorcdf} shows the error to the theoretical mean as the number of trials increases for the uniform and exponential distribution.
+The Figure~\ref{fig:errors} shows the error to the theoretical mean as the number of trials increases for the uniform and exponential distribution.
+
+
 
 \begin{figure}[H]
 	\centering
-	\includegraphics[width=0.5\linewidth]{./Figures/InverseCDF/uniform_error.png}
-	\caption{Error to the theoretical mean as the number of trials increases for the uniform distribution. Average of 10000 trials per point.}
-	\label{fig:uniformerrorcdf}
+	\includegraphics[width=0.8\linewidth]{./Figures/InverseCDF/errors.png}
+	\caption{Error to the theoretical mean as the number of trials increases for the uniform distribution (left) and exponential distribution (right). Average of 10000 trials per point.}
+	\label{fig:errors}
 \end{figure}
 
-\begin{figure}[H]
-	\centering
-	\includegraphics[width=0.5\linewidth]{./Figures/InverseCDF/exponential_error.png}
-	\caption{Error to the theoretical mean as the number of trials increases for the exponential distribution. Average of 10000 trials per point.}
-	\label{fig:exponentialerrorcdf}
-\end{figure}
-
-In drawing conclusions from the observed alignment of the histograms of generated random numbers with the target distribution, t  here appears to be a noteworthy relation, as evidenced by Figures~\ref{fig:uniformerrorcdf} and~\ref{fig:exponentialerrorcdf}, since the error tends to zero as the number of trials increases.
+In drawing conclusions from the observed alignment of the histograms of generated random numbers with the target distribution, t  here appears to be a noteworthy relation, as evidenced by Figure~\ref{fig:errors}, since the error tends to zero as the number of trials increases.
 
 
 
-\subsection{Rejection Sampling method}
+\section{Rejection Sampling method}
 \label{sec:rejection_sampling}
 
 The Rejection Sampling method is a method to generate pseudo-random numbers for any probability distribution given its probability density function. The idea is to generate a set of random numbers from a probability distribution that is easy to sample from and then reject the numbers that are not in the desired distribution. The Algorithm~\ref{alg:rejectionalg} is as follows:
@@ -182,7 +183,7 @@ Let's see this with one example. We want to generate a set of random numbers fro
 
 \begin{equation} \label{eq:bimodal} f(x) = 0.3e^{-0.2x^2}+0.7e^{-0.2(x-5)^2} \end{equation}
 
-\subsubsection{Selection of the "enveloping" distribution}
+\subsection{Selection of the enveloping distribution}
 \label{sec:enveloping_distribution}
 
 In this subsection we will explain the process of selecting an optimised "enveloping" distribution. In fact, we could use any distribution that envelops the desired one, but this will probably be very inefficient because there will be many samples that will not be under the objective function, so our goal is to obtain a distribution that envelops the desired one but with the smallest possible space between them. In this report we have chosen the normal distribution as the "enveloping" distribution because it is easy to sample by using the \textit{Quantile function} as the inverse CDF and applying the previous sampling method, and it is a good candidate for enveloping the desired distribution. Knowing this, we have three parameters to optimise: the mean, \(\mu\); the variance, \(\sigma\); and the scale parameter, \(M\). Note that for this problem, we have to define the bounds as \(a\), \(b\).
@@ -206,7 +207,7 @@ In this way, we ensure that whatever the function is, we will envelope it. Knowi
 
 We can solve this problem with multiple methods. In our case, we have chosen the Nelder-Mead's method (also called downhill simplex method) \cite{doi:10.1137/S1052623496303482}.
 
-\subsubsection{Results of the Rejection Sampling method}
+\subsection{Results of the Rejection Sampling method}
 \label{sec:results_rejection_sampling}
 
 Once we have selected the "enveloping" distribution, we can apply the Rejection Sampling method. In our case, the enveloping function is the N(\(\mu \approx 3.644\) ,\(\sigma \approx 3.041\)) and the scalator parameter \(M \approx 1.545\). The Figure~\ref{fig:rejectionmethod} shows the histogram of the generated random numbers and the probability density function of the desired and the easy distribution.
@@ -229,7 +230,7 @@ First of all, note that the distribution chosen with the Equation~\ref{eq:proble
 
 In drawing conclusions we can see that the error tends to zero as the number of trials increases, so we can conclude that the Rejection Sampling method is a good method to generate pseudo-random numbers from any probability distribution given its probability density function.
 
-\subsection{Empirical validation of the Law of Large Numbers}
+\section{Empirical validation of the Law of Large Numbers}
 \label{sec:lln}
 
 This section explores the empirical validation of the Law of Large Numbers, a pivotal theorem in probability theory. The Law of Large Numbers (LLN) is a fundamental theorem in probability theory, asserting that the average of a sequence of independent and identically distributed random variables with finite expected value converges to this expected value as the number of terms in the sequence increases. Formally, the theorem can be expressed as follows, extracted from \cite{jourdain2016probabilites}:
@@ -259,7 +260,7 @@ where \(x_i\) is the \(i\)-th random number generated and \(\mu\) is the theoret
 
 The visual representation in Figure~\ref{fig:verificationllnlog} substantiates that the error indeed diminishes as the number of trials augments, validating the assertion of the Law of Large Numbers that the experimental mean approaches the theoretical mean with an increasing number of observations. This is further corroborated by the linear regression, which yields a slope of \(-1.000\), in alignment with the theoretical prediction.
 
-\subsection{Empirical Validation of the Central Limit Theorem}
+\section{Empirical Validation of the Central Limit Theorem}
 \label{sec:clt}
 
 The Central Limit Theorem (CLT) posits a pivotal foundational theorem in probability theory, signifying that, irrespective of the shape of the original distribution, the distribution of sample means will approximate a normal distribution as the sample size increases. To empirically validate this theorem, we can simulate a series of random numbers from any given probability distribution and systematically calculate their mean. By repeating this process, we can construct a histogram of the means and scrutinize whether it converges to a normal distribution, aligning with the theorem's prediction. Formally, the theorem can be expressed as follows:
@@ -322,7 +323,7 @@ Finally, another way to validate the CLT is to plot the variance as the number o
 
 The slope of the regression line is \(-1\) in alignment with the theoretical prediction. This corroborates the validity of the Central Limit Theorem, as the variance of the means of the samples does indeed diminish as the number of trials increases.
 
-\subsection{Variance reduction techniques}
+\section{Variance reduction techniques}
 \label{sec:variance_reduction}
 
 In the theory of Monte Carlo methods, variance reduction techniques are a pivotal tool to increase the precision of the estimates of the expected value of a random variable. In this section, we will focus on three techniques: Control variates, Importance sampling and Antithetic variates. Also, we will introduce an example problem in which we will apply these techniques to compare them.
@@ -349,7 +350,7 @@ Since we are going to introduce and compare the three techniques, first of all w
 
 It should be noted that the selection of the integral for this demonstration was intentional; a readily solvable integral was chosen for its ease of analytical computation, allowing for a straightforward comparison with theoretical values. Nonetheless, the methods illustrated herein are equally applicable and potent for evaluating integrals that pose substantial challenges to analytical computation.
 
-\subsubsection{Preliminaries}
+\subsection{Preliminaries}
 \label{sec:variance_reduction_preliminaries}
 
 First of all we have to compute which is the estimation we already can have without applying any variance reduction technique. We can compute the integral analytically. We know that the mean of the variable in a probability space is defined as follows:
@@ -363,29 +364,9 @@ Since \(f(x) = \frac{1}{b-a}\) for the uniform distribution on \([a,b]\), we can
 
 \begin{equation} \label{eq:directmethodintegral} I = \int_{0}^{1} x^2 \ dx = \mathbb{E}(g(X)) = \int_0^1 x^2 \frac{1}{1-0} \ dx = \frac{1}{3} \end{equation}
 
-So, we only have to generate a set of random numbers \(X \sim \mathcal{U}(0,1)\), apply \(g(x) = x^2\) and get the mean of the sample which is the estimate of the integral. The Figure~\ref{fig:directmethod} shows the error to the theoretical value as the number of trials increases. The error to the theoretical value is defined as:
+So, we only have to generate a set of random numbers \(X \sim \mathcal{U}(0,1)\), apply \(g(x) = x^2\) and get the mean of the sample which is the estimate of the integral.
 
-\begin{equation*} error = \frac{1}{n}\sum_{i=1}^{n} | x_i - \mu | \end{equation*}
-
-where \(x_i\) is the \(i\)-th random number generated and \(\mu\) is the theoretical mean of the distribution. Note that this formula will be used in all the following sections.
-
-\begin{figure}[H]
-	\centering
-	\includegraphics[width=0.5\linewidth]{./Figures/VarianceReduction/direct.png}
-	\caption{Error to the theoretical value as the number of trials increases using the direct method. Average of 100 trials per point.}
-	\label{fig:directmethod}
-\end{figure}
-
-Following the Equation \eqref{eq:variance}, we can compute the variance of the estimation as follows:
-
-\begin{equation} 
-	\label{eq:variancedirectmethod} 
-	\mathrm{Var}(X) = \mathrm{Var}(\hat{\mathbb{E}}(X)) \ n 
-\end{equation}
-
-In this case, we have computed that \(\mathrm{Var}(X) \approx 8.977 \cdot 10^{-2}\).
-
-\subsubsection{Control variates}
+\subsection{Control variates}
 \label{sec:control_variates}
 
 Control variates is a variance reduction technique with the following idea: Let \(\mu\) the parameter we want to estimate, and assume we have a statistic \(Y\) such that \(\mathbb{E}(Y) = \tau\). Then, we can estimate \(\mu\) by estimating \(\mathbb{E}(Y)\) as \(\hat{\mathbb{E}}(Y)\) and correcting the bias with the following formula:
@@ -422,25 +403,19 @@ Being \(c\) a constant which minimize the variance of the estimation. It is comp
 		\(c = -\frac{\mathrm{Cov}(\mu, \tau)}{\mathrm{Var}(\tau)}\) 
 	\end{center}
 
+	Since we want to minimize the variance, we can differentiate again with respect to \(c\) and we obtain:
+
+	\begin{center}
+		\(\frac{\partial^2 \mathrm{Var}(\hat{\mu})}{\partial c^2} = 2\mathrm{Var}(\tau) > 0\) \\
+	\end{center}
+
+	Therefore, we can conclude that the variance is minimized when \(c = -\frac{\mathrm{Cov}(\mu, \tau)}{\mathrm{Var}(\tau)}\).
 
 \end{proof}
 
-In our case, we can use the knowledge of the mean of the uniform distribution to correct the bias, so in each iteration we can compute the mean of the sample of random numbers of \(\mathcal{U}(0,1)\), and knowing that the mean of the uniform distirbution is \(0.5\) we can apply Equation \eqref{eq:controlvariates} to obtain the estimate of the integral. The Figure~\ref{fig:controlvariates} shows the error to the theoretical value as the number of trials increases, i.e. the error of the estimation of the integral:
+In our case, we can use the knowledge of the mean of the uniform distribution to correct the bias, so in each iteration we can compute the mean of the sample of random numbers of \(\mathcal{U}(0,1)\), and knowing that the mean of the uniform distirbution is \(0.5\) we can apply Equation \eqref{eq:controlvariates} to obtain the estimate of the integral. 
 
-\begin{equation*}
-	error = \frac{1}{n}\sum_{i=1}^{n} | x_i - \frac{1}{3} |
-\end{equation*}
-
-\begin{figure}[H]
-	\centering
-	\includegraphics[width=0.5\linewidth]{./Figures/VarianceReduction/control.png}
-	\caption{Error to the theoretical value as the number of trials increases using the control variates method. Average of 100 trials per point.}
-	\label{fig:controlvariates}
-\end{figure}
-
-In this case, we have computed that \(\mathrm{Var}(X) \approx 5.168 \cdot 10^{-3}\).
-
-\subsubsection{Importance sampling}
+\subsection{Importance sampling}
 \label{sec:importance_sampling}
 
 Importance sampling is another variance reduction technique. Instead of using the knowledge of another estimator to reduce the bias of our sample, as done in the control variates method, in this case the idea is using the knowledge of the actual function we want to integrate, so instead of using a uniform distribution, we can use another distribution that is more similar to the function we want to integrate, in order to try more samples in the areas where the function is more important. 
@@ -470,22 +445,32 @@ So the idea is to generate a sample of random numbers \(X \sim Beta(2.9,1)\), an
 	\end{minipage}
 \end{center}
 
-With the error:
+Now let's show why this method works.
 
-\begin{equation*} error = | \bar{\mathbb{E}}(X) - \frac{1}{3} | \end{equation*}
+\begin{proof}
+	The standard Monte Carlo estimator for \( \mathbb{E}[g(X)] \) is:
+	
+	\[ \hat{\mathbb{E}}[g(X)] = \frac{1}{n} \sum_{i=1}^{n} g(X_i) \]
+	
+	where \( X_i \) are i.i.d. samples from the distribution of \( X \).
+	
+	In Importance Sampling, we draw samples \( Y_i \) from a different distribution and compute the estimator:
 
-The Figure~\ref{fig:importancesampling} shows the error to the theoretical value as the number of trials increases.
+	\[ \hat{\mathbb{E}}_{IS}[g(X)] = \frac{1}{n} \sum_{i=1}^{n} \frac{g(Y_i) f_X(Y_i)}{f_Y(Y_i)} \]
+	   
+	where \( f_X \) and \( f_Y \) are the probability density functions of \( X \) and \( Y \), respectively.
+	
+	The variance of the Importance Sampling estimator is:
+	   
+	\[ \mathrm{Var}(\hat{\mathbb{E}}_{IS}[g(X)]) = \frac{1}{n} \left( \mathbb{E}\left[ \left( \frac{g(Y) f_X(Y)}{f_Y(Y)} \right)^2 \right] - \mathbb{E}^2[g(X)] \right) \]
+	   
+	The variance reduction comes from the fact that if \( f_Y(y) \) is chosen such that it is closer to \( |g(y)| \), the term \( \frac{f_X(Y)}{f_Y(Y)} \) will stabilize the values of \( g(Y) \), leading to a reduction in variance. 
+	   
+	Threfore, Ii the sampling distribution \( Y \) is chosen appropriately, \( \mathrm{Var}(\hat{\mathbb{E}}_{IS}[g(X)]) \) will be less than \( \mathrm{Var}(\hat{\mathbb{E}}[g(X)]) \), achieving variance reduction.
+\end{proof}
 
-\begin{figure}[H]
-	\centering
-	\includegraphics[width=0.5\linewidth]{./Figures/VarianceReduction/importance.png}
-	\caption{Error to the theoretical value as the number of trials increases using the importance sampling method. Average of 100 trials per point.}
-	\label{fig:importancesampling}
-\end{figure}
 
-In this case, we have computed that \(\mathrm{Var}(X) \approx 1.274 \cdot 10^{-4}\).
-
-\subsubsection{Stratified sampling}
+\subsection{Stratified sampling}
 \label{sec:stratified_sampling}
 
 The idea is to divide the interval of the stratified sampling is pretty simple. We divide the interval in \(n\) subintervals, and we generate a sample of random numbers for each subinterval. Doing this, we are trying to reduce the variance of the mean of the distribution we are considering, so the sample is more representative of the distribution. The alrogithm is as follows:
@@ -502,22 +487,41 @@ The idea is to divide the interval of the stratified sampling is pretty simple. 
 	\end{minipage}
 \end{center}
 
-With the error:
+Now let's show why this method works.
 
-\begin{equation*} error = | \bar{\mathbb{E}}(X) - \frac{1}{3} | \end{equation*}
+\begin{proof}
+    Consider a population divided into \( k \) non-overlapping strata, and let a random variable \( X \) be defined over this population. We are interested in estimating the mean \( \mathbb{E}[X] \).
 
-The Figure~\ref{fig:stratifiedsampling} shows the error to the theoretical value as the number of trials increases.
+	For each stratum \( i \), let \( X_i \) represent the values of \( X \) within that stratum. The mean and variance of \( X_i \) are \( \mathbb{E}[X_i] \) and \( \mathrm{Var}(X_i) \), respectively.
 
-\begin{figure}[H]
-	\centering
-	\includegraphics[width=0.5\linewidth]{./Figures/VarianceReduction/stratified.png}
-	\caption{Error to the theoretical value as the number of trials increases using the stratified sampling method. Average of 100 trials per point.}
-	\label{fig:stratifiedsampling}
-\end{figure}
+   	In stratified sampling, we sample \( n_i \) observations from each stratum \( i \). The estimator for the mean of \( X \) is a weighted average of the sample means of each stratum:
+   	\[ \hat{\mathbb{E}}[X] = \sum_{i=1}^{k} w_i \bar{X}_i \]
+   	where \( w_i = \frac{N_i}{N} \) is the weight of the \( i \)-th stratum (based on its proportion of the total population), \( N_i \) is the size of stratum \( i \), \( N \) is the total population size, and \( \bar{X}_i \) is the sample mean for stratum \( i \).
 
-In this case, we have computed that \(\mathrm{Var}(X) \approx 1.108 \cdot 10^{-7}\).
+   	The variance of \( \hat{\mathbb{E}}[X] \) is derived by considering the variance contribution of each stratum's estimator. Since the samples from different strata are independent, the variances add:
+   	\[ \mathrm{Var}(\hat{\mathbb{E}}[X]) = \sum_{i=1}^{k} \mathrm{Var}(w_i \bar{X}_i) \]
+   	The variance of the sample mean \( \bar{X}_i \) for each stratum is \( \frac{\mathrm{Var}(X_i)}{n_i} \). Therefore, the variance of the weighted mean for each stratum is:
+   	\[ \mathrm{Var}(w_i \bar{X}_i) = w_i^2 \frac{\mathrm{Var}(X_i)}{n_i} \]
+   	Combining these, we get the total variance:
+   	\[ \mathrm{Var}_{\text{stratified}}(\hat{X}) = \sum_{i=1}^{k} w_i^2 \frac{\mathrm{Var}(X_i)}{n_i} \]
 
-\subsubsection{Antithetic variates}
+   	The variance under simple random sampling (assuming a sample size of \( n \)) is:
+   	\[ \mathrm{Var}_{\text{simple}}(\hat{X}) = \frac{\mathrm{Var}(X)}{n} \]
+
+	Stratified sampling reduces the variance compared to simple random sampling if:
+
+	\[ \sum_{i=1}^{k} \left( \frac{N_i}{N} \right)^2 \frac{\mathrm{Var}(X_i)}{n_i} < \frac{\mathrm{Var}(X)}{n} \]
+	   
+	This inequality holds true especially when the variance within each stratum \( \mathrm{Var}(X_i) \) is significantly lower than the overall variance \( \mathrm{Var}(X) \) due to the homogeneity within each stratum.
+	   
+	To further optimize, the number of samples \( n_i \) can be allocated to each stratum using proportional or optimal allocation strategies, often based on minimizing the variance of the estimator.
+	   
+	Therefore, by judiciously partitioning the domain into strata and allocating samples, stratified sampling significantly reduces the variance of the estimator compared to simple random sampling, particularly when variances within strata are substantially lower than the overall variance.
+
+\end{proof}
+
+
+\subsection{Antithetic variates}
 \label{sec:antithetic_variates}
 
 The Antithetic variates method consists on taking for each random sample, its antithetic, i.e. the symmetric with respect to the mean of the distribution. The idea is that the variance of the mean of the distribution is reduced, since the mean of the antithetic is the same as the mean of the distribution. In our case, we have generated a sample \(\mathcal{U} \sim \mathcal{U}(0,0.5)\) and its antithetic \(\mathcal{U}' = \{1 - x \ : \ x \in \mathcal{U}\}\). We can apply Equation \eqref{eq:expectedvalueestimate} to \(f(X)\) to obtain the estimate of the integral. The algorithm is as follows:
@@ -534,25 +538,46 @@ The Antithetic variates method consists on taking for each random sample, its an
 	\end{minipage}
 \end{center}
 
-With the error:
+Now, let's show why this method works.
+
+\begin{proof}
+    Let \( X \) be a random variable from which we are sampling to estimate \( \mathbb{E}[X] \), and consider the use of Antithetic Variates to reduce the variance of this estimate.
+
+       For each sample \( X_i \) drawn from the distribution of \( X \), an antithetic variate \( X'_i \) is constructed such that \( X_i \) and \( X'_i \) are negatively correlated. This is typically done by setting \( X'_i = F^{-1}(1 - F(X_i)) \) where \( F \) is the cumulative distribution function of \( X \).
+
+       The estimator with Antithetic Variates is given by:
+       \[ \hat{\mathbb{E}}_{AV}[X] = \frac{1}{2n} \sum_{i=1}^{n} (X_i + X'_i) \]
+       where \( n \) is the number of sample pairs.
+
+       To derive the variance of this estimator, consider:
+       \[ \mathrm{Var}(\hat{\mathbb{E}}_{AV}[X]) = \frac{1}{4n^2} \sum_{i=1}^{n} \mathrm{Var}(X_i + X'_i) \]
+       Since \( X_i \) and \( X'_i \) are negatively correlated, we expand the variance term:
+       \[ \mathrm{Var}(X_i + X'_i) = \mathrm{Var}(X_i) + \mathrm{Var}(X'_i) + 2\mathrm{Cov}(X_i, X'_i) \]
+
+       The covariance term \( \mathrm{Cov}(X_i, X'_i) \) is negative due to the negative correlation between \( X_i \) and \( X'_i \). This reduces the variance of their sum.
+
+       Assuming \( \mathrm{Var}(X_i) \) and \( \mathrm{Var}(X'_i) \) are equal and represented by \( \sigma^2 \), and letting the covariance be represented by \( \mathrm{Cov}(X_i, X'_i) = -\rho\sigma^2 \) where \( \rho > 0 \), the variance becomes:
+       \[ \mathrm{Var}(X_i + X'_i) = 2\sigma^2 - 2\rho\sigma^2 = 2\sigma^2(1 - \rho) \]
+    Thus, the variance of the estimator is:
+    \[ \mathrm{Var}(\hat{\mathbb{E}}_{AV}[X]) = \frac{1}{4n^2} \sum_{i=1}^{n} 2\sigma^2(1 - \rho) = \frac{\sigma^2(1 - \rho)}{2n} \]
+
+    The variance under simple random sampling for \( n \) samples is \( \mathrm{Var}_{\text{simple}}(\hat{X}) = \frac{\sigma^2}{n} \).
+
+    Antithetic variates reduce variance compared to simple random sampling if:
+    \[ \frac{\sigma^2(1 - \rho)}{2n} < \frac{\sigma^2}{n} \]
+    which simplifies to \( 1 - \rho < 2 \), a condition satisfied since \( \rho > 0 \).
+
+    Therefore, the use of antithetic variates, through the introduction of negative covariance, effectively reduces the variance of the estimator compared to simple random sampling. This reduction is particularly significant when the negative correlation between the pairs of samples is strong.
+\end{proof}
+
+\subsection{Comparative Review}
+\label{sec:comparative_review}
+
+Having looked at the methods and confirmed the convergence of each approach described in this study, we now turn to a more focused comparison of these techniques. The goal is simple: find out which method works best for our specific problem. For this aims, we will be using the following formula to compute the error:
 
 \begin{equation*} error = | \bar{\mathbb{E}}(X) - \frac{1}{3} | \end{equation*}
 
-The Figure~\ref{fig:antitheticvariates} shows the error to the theoretical value as the number of trials increases.
-
-\begin{figure}[H]
-	\centering
-	\includegraphics[width=0.5\linewidth]{./Figures/VarianceReduction/antithetic.png}
-	\caption{Error to the theoretical value as the number of trials increases using the antithetic variates method. Average of 100 trials per point.}
-	\label{fig:antitheticvariates}
-\end{figure}
-
-In this case, we have computed that \(\mathrm{Var}(X) \approx 1.178 \cdot 10^{-2}\).
-
-\subsubsection{Comparative Review}
-\label{sec:comparative_review}
-
-Having looked at the methods and confirmed the convergence of each approach described in this study, we now turn to a more focused comparison of these techniques. The goal is simple: find out which method works best for our specific problem. See Figure~\ref{fig:comparisonvariancereduction} for a visual representation of the error in relation to the theoretical value as we increase the number of trials for each method.
+See Figure~\ref{fig:comparisonvariancereduction} for a visual representation of the error in relation to the theoretical value as we increase the number of trials for each method.
 
 \begin{figure}[H]
 \centering
@@ -560,10 +585,6 @@ Having looked at the methods and confirmed the convergence of each approach desc
 \caption{Error variation with increased trials for each method.}
 \label{fig:comparisonvariancereduction}
 \end{figure}
-
-Note that the error was defined as follows:	
-
-\begin{equation*} error = | \bar{\mathbb{E}}(X) - \frac{1}{3} | \end{equation*}
 
 Looking at the data, it’s clear that stratified sampling takes the lead with its quicker convergence compared to the other methods. However, claiming it as the undisputed champion would be premature, especially when we’ve explored just one problem. To firm up this initial finding, we need to dig deeper and explore a variety of problems.
 
@@ -640,10 +661,10 @@ where \(method\) is the method we are using, \(f\) is the function we are integr
 
 Note that in the cace of importance sampling, we have used the gaussian distribution as the sampling distribution, therefore the error could be higher than the other methods, since the gaussian distribution might not be the best sampling distribution for all the functions. To conclude, we can say that the stratified sampling method is the best method for this problem, since it has the lowest error in all the functions. 
 
-\section{Hamiltonian dynamics}
+\chapter{Hamiltonian dynamics}
 \label{sec:hamiltonian_dynamics}
 
-This section delves into the realm of Hamiltonian dynamics, beginning with an in-depth exploration of symplectic schemes in Section 2.1 (\ref{sec:symplectic_schemes}). This section starts with a discussion on the analytical solution in Section 2.1.1 (\ref{sec:analytical_solution}), setting the groundwork for understanding symplectic integration methods.
+This chapter delves into the realm of Hamiltonian dynamics, beginning with an in-depth exploration of symplectic schemes in Section 2.1 (\ref{sec:symplectic_schemes}). This section starts with a discussion on the analytical solution in Section 2.1.1 (\ref{sec:analytical_solution}), setting the groundwork for understanding symplectic integration methods.
 
 In Section 2.1.2 (\ref{sec:euler_method}), the focus shifts to the Euler method, detailing its application and significance in Hamiltonian systems. Following this, Section 2.1.3 (\ref{sec:failure_standard_methods}) discusses the limitations and failures of standard methods in this context, highlighting the need for more sophisticated approaches.
 
@@ -653,7 +674,7 @@ The narrative continues with the Stormer-Verlet method in Section 2.1.6 (\ref{se
 
 Section 2.2 (\ref{sec:solar_system_simulation}) shifts the focus to the practical application of these concepts in simulating the solar system. Section 2.2.1 (\ref{sec:modeling_solar_system}) begins with modeling gravitational dynamics, followed by the implementation of the Störmer-Verlet scheme in Section 2.2.2 (\ref{sec:stormer_verlet_scheme_gravitational_dynamics}). The implementation details of these models are further elaborated in Section 2.2.3 (\ref{sec:implementation_solar_system}), with two experiments: Experiment 1 in Section 2.2.3.1 (\ref{sec:expanding_n_body_problem}) expands to the N-Body problem, and Experiment 2 in Section 2.2.3.2 (\ref{sec:using_symplectic_euler_method}) utilizes the Symplectic Euler Method, providing practical insights into their application in complex dynamical systems.
 
-\subsection{Introduction to Hamiltonian dynamics}
+\section{Introduction to Hamiltonian dynamics}
 \label{sec:introduction_hamiltonian_dynamics}
 
 Hamiltonian dynamics, also called "Hamiltonian mechanics", is a reformulation of the clasical mechanics which describes the temporal evolution of a physical system in terms of pairs of variables: the generalized coordinates \(q_i\) and their momenta \(p_i\).
@@ -736,7 +757,7 @@ One of the most important property of the Hamiltonian dynamics is the following:
 	Since the hamiltonian \(H\) is defined as the total energy of the system, we can conclude that the energy of the system is conserved over time.
 \end{proof}
 
-\subsection{Symplectic schemes}
+\section{Symplectic schemes}
 \label{sec:symplectic_schemes}
 
 In this section we will introduce the symplectic schemes, which are a family of numerical methods to solve the Hamiltonian dynamics equations. The idea is to discretize the Hamiltonian dynamics equations \eqref{eq:hamiltoniandynamics2} in order to obtain a numerical approximation of the solution. The symplectic schemes are a family of numerical methods which preserve the energy conservation property of the Hamiltonian dynamics equations, i.e. the energy of the system is conserved over time.
@@ -748,7 +769,7 @@ In this section we will introduce the symplectic schemes, which are a family of 
 	\]
 \end{definition}
 
-\subsubsection{Analytical solution}
+\subsection{Analytical solution}
 \label{sec:analytical_solution}
 
 Let us introduce a simple example problem to illustrate the symplectic schemes: the harmonic oscillator. The harmonic oscillator is a system composed of a particle of mass \(m\) attached to a spring with spring constant \(k\). The position of the particle is denoted by \(q(t)\). The potential energy of the system is defined as follows:
@@ -861,7 +882,7 @@ The Figure~\ref{fig:harmonicoscillator} shows the phase space of the harmonic os
 \end{figure}
 
 
-\subsubsection{Euler method}
+\subsection{Euler method}
 \label{sec:euler_method}
 
 The Euler method is a numerical method to solve ordinary differential equations. The idea is to discretize the differential equation in order to obtain a numerical approximation of the solution. The Euler method discretizes the differential equation as follows:
@@ -894,7 +915,7 @@ As we can discern, this trajectory is not even near to the real trajectory of th
 
 As we can see, the energy is not conserved over time, which is another property of the harmonic oscillator. The energy is increasing over time, which is not the correct behaviour of the harmonic oscillator. With this results we can conclude that the Euler method is not a good method to solve the Hamiltonian dynamics equations. This is a consequence of the fact that the Euler method does not preserve the symplectic structure of the Hamiltonian dynamics equations. Therefore, in the next section we will introduce a new method that preserves the symplectic structure of the Hamiltonian dynamics equations which is a slight modification of the Euler method.
 
-\subsubsection{Failure of standard methods}
+\subsection{Failure of standard methods}
 \label{sec:failure_standard_methods}
 
 As we alredy know, the Hamiltonian dynamics is a standard ordinal differential equation (ODE), so it can be approximated by any standard integration scheme. However, as we saw using the Euler scheme, the energy increases over the time so it doesn't work. To provide a further view of this, in this section, we want to introduce the mathematical approach to see why this methods are failing. Considering again the problem of the harmonic oscillator, whose Hamiltonian is provided in \ref{eq:hamiltonianharmonicoscillator}. And taking the euler scheme given in \ref{eq:euler} we can rewrite it to:
@@ -913,7 +934,7 @@ Being \(A = \begin{pmatrix} 1 & -k\Delta t \\ \frac{1}{m} \Delta t & 1  \end{pma
 Since \(\lambda_1 \lambda_2 = 1 + (\Delta t \omega)^2 > 1\), we observe that the eigenvalues' magnitudes are greater than one. This indicates that the energy of the system, represented by the norm of the vector \((p, q)\), will grow exponentially over time. To see this, consider that the energy at the \(n\)-th step is proportional to the square of the norm of the vector \((p^n, q^n)\). Since each step of the Euler method multiplies the previous vector by \(A\), and the eigenvalues of \(A\) have magnitudes greater than one, the norm of this vector, and hence the energy, will increase exponentially with each step. This exponential growth is a clear indication of the method's failure to conserve energy, a fundamental characteristic of the harmonic oscillator in a closed system. Therefore, the Euler method, along with other similar standard integration schemes, is unsuitable for simulating systems where energy conservation is crucial, necessitating the development of more sophisticated methods that can maintain the energy constant over time. 
 
 
-\subsubsection{Constructing Symplectic Schemes}
+\subsection{Constructing Symplectic Schemes}
 \label{sec:constructing_symplectic_schemes}
 
 To develop an integrator, we split the Hamiltonian \(H(q,p)\) into simpler components:
@@ -991,7 +1012,7 @@ Combining these flows yields our symplectic schemes. The sequence of combining m
 
 
 
-\subsubsection{Symplectic Euler method}
+\subsection{Symplectic Euler method}
 \label{sec:symplectic_euler_method}
 
 The symplectic Euler method is a slight modification of the Euler method that preserves the symplectic structure of Hamiltonian systems. This new method discretizes the Hamiltonian dynamics equations \eqref{eq:hamiltoniandynamics2} as follows:
@@ -1040,7 +1061,7 @@ The Figure~\ref*{fig:eulermaxenergy} shows the function \(\Gamma_{\Delta t}^{Eul
 
 To conclude the section, we can see in Figure~\ref*{fig:eulermaxenergy} that the difference decreases as the time step decreases, which is the expected behaviour of any scheme that preserves the symplectic structure of the Hamiltonian dynamics equations. Therefore, we can conclude that the symplectic Euler method is a good method to solve the Hamiltonian dynamics equations.
 
-\subsubsubsection{Linear Stability Analysis of the Sympletic Euler Scheme}
+\subsubsection{Linear Stability Analysis of the Sympletic Euler Scheme}
 \label{sec:linear_stability_symplectic_euler}
 
 Using the equation \ref{eq:symplecticeuler} and replacing all the termusing the harmonic oscillator problem, one can rewrite the scheme as:
@@ -1064,7 +1085,7 @@ The eigenvalues are:
 
 The fact that \(\lambda_1 \lambda_2 = 1\) indicates that the energy of the system is conserved over time.
 
-\subsubsection{Stormer-Verlet method}
+\subsection{Stormer-Verlet method}
 \label{sec:stormer_verlet_method}
 
 The Störmer-Verlet method, often simply referred to as the Verlet method, is a numerical technique used to integrate ordinary differential equations of the form \( \dot{y} = f(y) \). It is particularly popular in molecular dynamics simulations and other problems modeled by Hamiltonian systems. The method can be derived directly from the Taylor series expansion of the solution. The central idea behind the method is to use information from both the current and previous time steps to predict the value at the next time step. 
@@ -1133,7 +1154,7 @@ So now we are prepared to overview the difference between both methods. The Figu
 
 As we can see, the Störmer-Verlet method is much better than the Euler Sympletic method. Note that the slope of the linear regression of the Störmer-Verlet method is approximately -2.0147 and the slope of the linear regression of the Euler Sympletic method is approximately -1.8196 Probably, this is a consequence of the fact that the Störmer-Verlet method is a second order method, while the Euler Sympletic method is a first order method. Therefore, we can conclude that the Störmer-Verlet method is a better method to solve the Hamiltonian dynamics equations than the Euler Sympletic method.
 
-\subsubsubsection{Linear Stability Analysis of the Verlet Scheme}
+\subsubsection{Linear Stability Analysis of the Verlet Scheme}
 \label{sec:linear_stability_verlet}
 
 Using the equation \ref{eq:stormerverletharmonic} and replacing all the terms by its definition, and considering that \(\omega = \sqrt{\frac{k}{m}}\), we can rewrite the scheme as:
@@ -1201,7 +1222,7 @@ For stability, we require \( |\lambda_1| \leq 1 \). This translates to the condi
 
 This inequality leads to a tautology so it is always stable. This is consistent with the observed property of the Störmer-Verlet scheme which conserves the energy over time. This, in combination with its second-order accuracy, makes it preferable over the Euler sympletic method for problems modeled by Hamiltonian systems.
 
-\subsubsection{Backward Error Analysis}
+\subsection{Backward Error Analysis}
 \label{sec:backward_error_analysis}
 
 In this section, we will introduce the backward error analysis. The backward error analysis is a technique to analyze the error of a numerical method. We can define the idea of this technique as: For a given problem \(P(x)\), an exact input \(x\) and an approximate solution \(\hat{x}\), we can define the backward error as the smallest perturbation \(\Delta x\) such that \(P(x + \Delta x) = \hat{x}\). Therefore the formal definitions, extracted with little modifications from \cite{fraysse2018hdr}, is:
@@ -1229,14 +1250,14 @@ The following Figure~\ref{fig:backwarderror} extracted from \cite{higham2020back
 
 
 
-\subsection{Solar System Simulation}
+\section{Solar System Simulation}
 \label{sec:solar_system_simulation}
 
 In this section, we'll harness the power of Hamiltonian dynamics to craft a simulation of the solar system. We'll adopt the Stormer-Verlet scheme, renowned for its energy-conserving properties, as our primary numerical method.
 
 First of all, let's do a brief introduction to the problem we want to solve. We can see the solar system as a set of \(N\) bodies, each of them with a mass \(m_i\) a position \(q_i\) and a velocity \(v_i\). The position and velocity are vectors in \(\mathbb{R}^2\). The gravitational force between two bodies is given by:
 
-\subsubsection{Modeling the Solar System: Gravitational Dynamics}
+\subsection{Modeling the Solar System: Gravitational Dynamics}
 \label{sec:modeling_solar_system}
 
 The motion of celestial bodies in the solar system, primarily planets, moons, and the Sun, can be described by Newton's law of universal gravitation. For \(N\) bodies, the gravitational force exerted on the \(i^{th}\) body due to the \(j^{th}\) body is given by:
@@ -1277,7 +1298,7 @@ This Hamiltonian can be used to derive the equations of motion using Hamilton's 
 
 In the next section, we'll dive deeper into the implementation details, but this sets up the mathematical foundation for our solar system simulation based on gravitational interactions.
 
-\subsubsection{Störmer-Verlet Scheme for Gravitational Dynamics}
+\subsection{Störmer-Verlet Scheme for Gravitational Dynamics}
 \label{sec:stormer_verlet_scheme_gravitational_dynamics}
 
 Now that we have the Hamiltonian for the system, we can derive use it inside the Störmer-Verlet scheme to derive the equations of motion. The Störmer-Verlet scheme for the \(i^{th}\) body is:
@@ -1371,7 +1392,7 @@ This is the gradient of the potential energy with respect to the position of the
 \end{figure}
 As we could have expected, the Sun has, by far, the most negative potential energy, since it is the body with the highest mass. Also we can observe that the potential energy is negative, which is the expected behaviour of the gravitational potential energy. 
 
-\subsubsection{Implementation of the Solar System Simulation}
+\subsection{Implementation of the Solar System Simulation}
 \label{sec:implementation_solar_system}
 
 First of all, we need to define the parameters of the simulation. The Table~\ref{table:parameters} shows the parameters of the simulation.
@@ -1444,7 +1465,7 @@ As predicted, we can observe that the energy is approximately preserved.
 
 Now that we have the system created and we have seen that the energy is preserved, we can do some experiments. 
 
-\subsubsubsection{Experiment 1: Expanding to the N-Body Problem}
+\subsubsection{Experiment 1: Expanding to the N-Body Problem}
 \label{sec:expanding_n_body_problem}
 
 In our initial simulation, as detailed in the referenced table, we included data for Jupiter but did not incorporate it into the actual simulation. This was primarily due to Jupiter's significant distance from the inner planets, which could potentially complicate the visual clarity of our model. However, given Jupiter's substantial mass – the largest among the planets – its inclusion is crucial for a more comprehensive understanding of the solar system's dynamics. This necessitates an expansion of our model to an N-body problem, allowing for the gravitational influence of not just the Sun but also the other planets to be accounted for.
@@ -1499,16 +1520,16 @@ Comparing it to the results obtained using the Störmer-Verlet method, again we 
 
 Therefore, in this problem we can conclude that the Störmer-Verlet method is better in terms of conservation of the Energy than the Euler Sympletic method.
 
-\section{Markov Chains and Their Applications}
+\chapter{Markov Chains and their Applications}
 \label{sec:markov_chains}
 
-Section 3 delves into the fascinating world of Markov Chains and their applications, a fundamental concept in stochastic processes and computational statistics. Beginning with Section 3.1 (\ref{sec:introduction_markov_chains}), we introduce the concept of Markov Chains, elucidating their structure and theoretical underpinnings. This includes an exploration of the Stationary Distribution in Section 3.1.1 (\ref{sec:stationary_distribution}) and a discussion on Irreducibility and Uniqueness in Section 3.1.2 (\ref{sec:irreducibility_uniqueness}), laying the groundwork for understanding their behavior and significance in various applications.
+Chapter 3 delves into the fascinating world of Markov Chains and their applications, a fundamental concept in stochastic processes and computational statistics. Beginning with Section 3.1 (\ref{sec:introduction_markov_chains}), we introduce the concept of Markov Chains, elucidating their structure and theoretical underpinnings. This includes an exploration of the Stationary Distribution in Section 3.1.1 (\ref{sec:stationary_distribution}) and a discussion on Irreducibility and Uniqueness in Section 3.1.2 (\ref{sec:irreducibility_uniqueness}), laying the groundwork for understanding their behavior and significance in various applications.
 
 Transitioning to Section 3.2 (\ref{sec:markov_chain_montecarlo}), the focus shifts to Markov Chain Monte Carlo (MCMC) methods. This section is organized to provide a comprehensive understanding of these methods: Section 3.2.1 (\ref{sec:metropolis_hastings}) introduces the Metropolis-Hastings Algorithm, a widely used MCMC method, with an illustrative example on sampling from a Gamma Distribution in Section 3.2.1.1 (\ref{sec:gamma_distribution_sampling}). Following this, we explore Gibbs Sampling in Section 3.2.2 (\ref{sec:gibbs_sampling}), another pivotal MCMC technique, with an example of sampling from a Bivariate Normal Distribution in Section 3.2.2.1 (\ref{sec:bivariate_normal_sampling}). Section 3.2.3 (\ref{sec:muller_brown_potential}) addresses the Müller-Brown Potential, highlighting its application in the Metropolis-Hastings (\ref{sec:metropolis_muller_brown}) and Gibbs Sampling (\ref{sec:gibbs_muller_brown}) algorithms, and concludes with a comparative analysis of these methods in Section 3.2.3.3 (\ref{sec:comparison_metropolis_gibbs}).
 
 The narrative in this section culminates with Section 3.3 (\ref{sec:simulation_2d_molecular_system}), where we delve into the simulation of a 2D molecular system. This includes a theoretical overview of the Lennard-Jones Potential in Section 3.3.1 (\ref{sec:lennard_jones_potential}) and its implementation using the Metropolis-Hastings Algorithm in Section 3.3.2 (\ref{sec:metropolis_hastings_implementation}). This final part of the section not only demonstrates the practical applications of Markov Chains and MCMC methods but also highlights their versatility and effectiveness in simulating complex physical systems.
 
-\subsection{Introduction to Markov Chains}
+\section{Introduction to Markov Chains}
 \label{sec:introduction_markov_chains}
 
 Let us start by introducing the concept of \textit{Markov Chain}. A Markov Chain is a stochastic process that satisfies the Markov property. The Markov property states that the conditional probability distribution for the state at the next step depends only on the current state and not on the previous states. The Markov property can be expressed mathematically as:
@@ -1521,7 +1542,7 @@ for any states \(x, x_1, x_2, \dots, x_n\).
 
 A Markov Chain is usually characterised by the matrix of transitions, which is the matrix of the probabilities of transitioning between states of a Markov Chain. The Markov Chain is a square matrix $K(x,y)$ such that $K(x,y) \geq 0$ and \(\sum_{y} K(x,y) = 1\), where the rows and columns are indexed by the states of the Markov Process. The entry in the \(i^{th}\) row and \(j^{th}\) column of the Markov Chain is the probability of transitioning from state \(i\) to state \(j\).
 
-\subsubsection{Stationary Distribution}
+\subsection{Stationary Distribution}
 \label{sec:stationary_distribution}
 
 The final objective of the Chapter~\ref{sec:markov_chains} is to introduce the Markov Chain Montecarlo Methods (MCMC). As first step to introduce MCMC, we need to introduce the concept of stationary distribution. 
@@ -1558,7 +1579,7 @@ The proof can be found in \cite{diaconis2008markov}.
 
 This theorem has been extracted from~\cite{reygner2023methodes}. 
 
-\subsubsection{Irreducibility and Uniqueness}
+\subsection{Irreducibility and Uniqueness}
 \label{sec:irreducibility_uniqueness}
 
 One may ask if the stationary distribution is unique. The answer is no, it is not unique. However, there exists a condition that guarantees the uniqueness of the stationary distribution. This condition is called irreducibility. 
@@ -1576,7 +1597,7 @@ One may ask if the stationary distribution is unique. The answer is no, it is no
 
 In this section, we will introduce the Markov Chain Montecarlo Methods (MCMC). The MCMC are a class of algorithms for sampling from a probability distribution. The idea of MCMC is to construct a Markov Chain that has the desired distribution as its stationary distribution. Therefore, the Markov Chain will converge to the desired distribution as the number of steps increases.
 
-\subsubsection{Metropolis-Hastings Algorithm}
+\subsection{Metropolis-Hastings Algorithm}
 \label{sec:metropolis_hastings}
 
 The Metropolis-Hastings algorithm is a MCMC algorithm for sampling from a probability distribution. The algorithm is defined as follows:
@@ -1606,7 +1627,7 @@ where $q(x, \cdot)$ is a probability distribution on $\chi$ and $\alpha(x,y)$ is
 
 where $\pi$ is the desired distribution. The proof of the correctness of the algorithm can be found in \cite{wiki:metropolishastings}.
 
-\subsubsubsection{Example: Sampling from a Gamma Distribution}
+\subsubsection{Example: Sampling from a Gamma Distribution}
 \label{sec:gamma_distribution_sampling}
 
 Let's see an example of the Metropolis-Hastings algorithm. We will use the Metropolis-Hastings algorithm to sample from a Gamma distribution. The Gamma distribution is a two-parameter family of continuous probability distributions. The probability density function of the Gamma distribution is:
@@ -1627,7 +1648,7 @@ where $\alpha, \beta > 0$ and $\Gamma(\alpha)$ is the Gamma function. The Gamma 
 We can see that the samples are distributed according to the Gamma distribution.
 
 
-\subsubsection{Gibbs Sampling}
+\subsection{Gibbs Sampling}
 \label{sec:gibbs_sampling}
 
 The Gibbs sampling is a MCMC algorithm for sampling from a probability distribution $\pi$. The algorithm is defined as follows:
@@ -1650,7 +1671,7 @@ The Gibbs sampling is a MCMC algorithm for sampling from a probability distribut
 
 where $p(x_i | x_1, x_2, \dots, x_{i-1}, x_{i+1}, \dots, x_d)$ is the conditional probability distribution of $x_i$ given all other variables. 
 
-\subsubsubsection{Example: Sampling from a Bivariate Normal Distribution}
+\subsubsection{Example: Sampling from a Bivariate Normal Distribution}
 \label{sec:bivariate_normal_sampling}
 
 Let's see an example of the Gibbs sampling algorithm. We will use the Gibbs sampling algorithm to sample from a bivariate normal distribution. The bivariate normal distribution is a probability distribution of two random variables $X$ and $Y$ that satisfy the following conditions:
@@ -1690,7 +1711,7 @@ Executing the algorithm with the following parameters: $\mu_x = 0$, $\mu_y = 0$,
 We can see that the samples are distributed according to the bivariate normal distribution.
 
 
-\subsubsection{Müller-Brown Potential}
+\subsection{Müller-Brown Potential}
 \label{sec:muller_brown_potential}
 
 In this section, we will introduce the Müller-Brown potential. The Müller-Brown potential is a function of two variables that is often used as a test function for optimization algorithms. The Müller-Brown potential is defined as:
@@ -1724,7 +1745,7 @@ The Figure~\ref{fig:mullerbrown} shows how the Müller-Brown potential looks lik
 
 The Müller-Brown potential is often used as a test function for optimization algorithms because it has many local minimun and one global minimun, therefore it is common that the optimization algorithms get stuck in a local minimun.
 
-\subsubsubsection{Metropolis-Hastings Algorithm for the Müller-Brown Potential}
+\subsubsection{Metropolis-Hastings Algorithm for the Müller-Brown Potential}
 \label{sec:metropolis_muller_brown}
 
 Now, we want to know how the Metropolis-Hastings algorithm behaves when we use the Müller-Brown potential as the desired distribution. The Figure~\ref{fig:mullerbrownmh} shows the results of the Metropolis-Hastings algorithm for the Müller-Brown potential.
@@ -1748,7 +1769,7 @@ We can see that the samples instead of beign distributed all around the Müller-
 We can see that the samples are distributed all around the Müller-Brown potential, which is the expected behaviour of the Metropolis-Hastings algorithm. But one could think wether this sampling is fitting the distribution or not. This will be checked in a future section after introducing the Gibbs sampling algorithm.
 
 
-\subsubsubsection{Gibbs Sampling Algorithm for the Müller-Brown Potential}
+\subsubsection{Gibbs Sampling Algorithm for the Müller-Brown Potential}
 \label{sec:gibbs_muller_brown}
 
 Now, we want to know how the Gibbs sampling algorithm behaves when we use the Müller-Brown potential as the desired distribution. The Figure~\ref{fig:mullerbrowngibbs} shows the results of the Gibbs sampling algorithm for the Müller-Brown potential.
@@ -1762,7 +1783,7 @@ Now, we want to know how the Gibbs sampling algorithm behaves when we use the M�
 
 We can see that the samples are distributed all around the Müller-Brown potential, which is the expected behaviour of the Gibbs sampling algorithm. 
 
-\subsubsubsection{Comparison between Metropolis-Hastings and Gibbs Sampling}
+\subsubsection{Comparison between Metropolis-Hastings and Gibbs Sampling}
 \label{sec:comparison_metropolis_gibbs}
 
 This section is built with two aims. First we want to check if the samples obtained with the Metropolis-Hastings algorithm are distributed according to the Müller-Brown potential. Second, we want to compare the Metropolis-Hastings algorithm and the Gibbs sampling algorithm.
@@ -1797,12 +1818,12 @@ As a final experiment, we wanted to plot the heatmap of both distributions as we
 	\label{fig:heatmaps}
 \end{figure}
 
-\subsection{Simulation of a 2D molecular system}
+\section{Simulation of a 2D molecular system}
 \label{sec:simulation_2d_molecular_system}
 
 This final section aims to show how the MCMC algorithms can be used to simulate a 2D molecular system. This subsection is divided in two parts. In the first part, we will introduce the potential we have used to simulate the ecosystem and we will delve a bit into the theory of the molecular dynamics. In the second part, we will do the implementation of the Gibbs sampling algorithm for the molecular system.
 
-\subsubsection{Theoretical Framework and Lennard-Jones Potential}
+\subsection{Theoretical Framework and Lennard-Jones Potential}
 \label{sec:lennard_jones_potential}
 
 At the heart of our molecular simulation lies the Lennard-Jones potential, a simplistic yet powerful model to represent interactions between a pair of atoms or molecules. It is mathematically expressed as:
@@ -1815,7 +1836,7 @@ where \( U(r) \) represents the potential energy between two particles separated
 
 The parameters \( \epsilon \) and \( \sigma \) are not merely mathematical constructs but hold profound physical meanings. \( \epsilon \) relates to the energy scale of interactions, dictating how strongly particles attract or repel each other. \( \sigma \), on the other hand, sets the spatial scale, determining the effective size of the particles. These parameters are often determined empirically or through quantum mechanical calculations for specific substances, making the Lennard-Jones potential a versatile tool for simulating a wide range of molecular systems.
 
-\subsubsection{Implementation using the Metropolis Hastings Algorithm}
+\subsection{Implementation using the Metropolis Hastings Algorithm}
 \label{sec:metropolis_hastings_implementation}
 
 When simulating the dynamics of molecular systems, accurately replicating the environmental context is crucial. To this end, we have conceptualized a 10x10 unit square space as the primary stage for the molecular interactions. However, to more closely mimic an infinite environment, where energy is not artificially confined or lost at the boundaries, we adopt a toroidal geometry. A torus, which is essentially a surface of revolution generated by revolving a circle in three-dimensional space around a coplanar axis, offers an elegant solution. This spatial configuration is achieved computationally through the application of modular arithmetic at the boundaries, ensuring a seamless and continuous space. This approach is crucial for maintaining the integrity of the system's energy dynamics and is visually represented in the Figure~\ref{fig:boundaryconditions}.
@@ -1827,16 +1848,15 @@ When simulating the dynamics of molecular systems, accurately replicating the en
 	\label{fig:boundaryconditions}
 \end{figure}
 
-In our simulation, the initial placement of 30 particles within this toroidal space is generated using a uniform distribution, ensuring an unbiased starting point for the system. Given that these particles interact via the Lennard-Jones potential, we utilize the Metropolis-Hastings algorithm to simulate their dynamics. This algorithm, celebrated for its effectiveness in exploring complex probabilistic spaces, allows us to observe the evolution of the system under thermal fluctuations and intermolecular forces. For this whole experiment, we will be using the following parameters:
+In our simulation, the initial placement of the particles within this toroidal space is generated using a uniform distribution, ensuring an unbiased starting point for the system. Given that these particles interact via the Lennard-Jones potential, we utilize both algorithms, the Metropolis-Hastings algorithm and the Gibbs sampling algorithm, to simulate their dynamics. These algorithms allow us to observe the evolution of the system under thermal fluctuations and intermolecular forces. For this whole experiment, we will be using the following parameters:
 
 \[
 	\begin{cases}
-		n = 84 \\
 		\epsilon = 1 \\
 		\sigma = 1 \\
 		\Delta t = 0.01 \\
-		p^{*} = 0.844 \\
-		T^{*} = 0.71
+		p^{*} = 0.9 \\
+		T^{*} = 1.5
 	\end{cases}
 \]
 
@@ -1851,7 +1871,16 @@ The Figure~\ref{fig:particlesmh} depicts the spatial distribution of the particl
 	\label{fig:particlesmh}
 \end{figure}
 
-One thing that is extremly interesting of this simulation that can be observed in the Figure~\ref{fig:particlesmh} is that, at the first case, we have distributed the particles randomly around the torus, but after 1000 iterations of the Metropolis-Hastings algorithm, the particles have been distributed in a way in which we can see that there are a minimun distance between the particles. This is a very interesting result because it shows that the model is working as expected.
+Note that we have implemented this simulation to be in n-dimensions, so we can simulate the system in any dimension, for example, in the Figure~\ref{fig:particlesmh2} we can see the simulation in 3 dimensions of 500 particles after 100 iterations of the Gibbs Sampling algorithm.
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.75\linewidth]{./Figures/MCMC/LennardJones/particles_3d.png}
+	\caption{Spatial distribution of particles in the torus in 3 dimensions after 100 iterations of the Gibbs Sampling algorithm.}
+	\label{fig:particlesmh2}
+\end{figure}
+
+One thing that is extremly interesting of this simulation that can be observed in the Figure~\ref{fig:particlesmh} is that, at the first case, we have distributed the particles randomly around the torus, but after 1000 iterations of the Gibbs Sampling algorithm, the particles have been distributed in a way in which we can see that there are a minimun distance between the particles. This is a very interesting result because it shows that the model is working as expected.
 
 An integral aspect of our analysis is the examination of the system's energy profile over the course of the simulation. The Metropolis-Hastings algorithm, in theory, should conserve the total energy of the system, a hypothesis we put to the test. The Figure~\ref{fig:energymh} captures the energy of the system at the beginning and after 1000 iterations, providing insights into the algorithm's efficacy in maintaining energy conservation.
 
@@ -1878,11 +1907,11 @@ If we try to compute the radial distribution function for our system, we will ge
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=0.52\linewidth]{./Figures/MCMC/LennardJones/rdf_exp.png}
-	\caption{Radial distribution function for the system before and after 1000 iterations of the Metropolis-Hastings algorithm.}
+	\caption{Radial distribution function for the system after 1000 iterations of the Gibbs Sampling algorithm.}
 	\label{fig:radialdistributionfunctionmh}
 \end{figure}
 
-We can see that the radial distribution function is almost of the same shape as the theoretical one, even though there is not as smooth as the other one since we have a finite number of particles. Therefore, we can conclude that it seems that the Metropolis-Hastings algorithm is working as expected.
+We can see that the radial distribution function is almost of the same shape as the theoretical one, even though there is not as smooth as the other one since we have a finite number of particles. Therefore, we can conclude that it seems that the Gibbs Sampling algorithm is working as expected.
 
 \newpage
 
