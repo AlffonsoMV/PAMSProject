@@ -1499,10 +1499,14 @@ Comparing it to the results obtained using the Störmer-Verlet method, again we 
 
 Therefore, in this problem we can conclude that the Störmer-Verlet method is better in terms of conservation of the Energy than the Euler Sympletic method.
 
-\section{Markov Chains}
+\section{Markov Chains and Their Applications}
 \label{sec:markov_chains}
 
-This sections aims to show how Markov Chains are extremely useful in the field of Hamiltonian Dynamics. For this we will introduce the concept of Markov Chains and its properties, then we will explain the Markov Chain Montecarlo Methods (MCMC) and finally we will show how to use MCMC to sample from a distribution.
+Section 3 delves into the fascinating world of Markov Chains and their applications, a fundamental concept in stochastic processes and computational statistics. Beginning with Section 3.1 (\ref{sec:introduction_markov_chains}), we introduce the concept of Markov Chains, elucidating their structure and theoretical underpinnings. This includes an exploration of the Stationary Distribution in Section 3.1.1 (\ref{sec:stationary_distribution}) and a discussion on Irreducibility and Uniqueness in Section 3.1.2 (\ref{sec:irreducibility_uniqueness}), laying the groundwork for understanding their behavior and significance in various applications.
+
+Transitioning to Section 3.2 (\ref{sec:markov_chain_montecarlo}), the focus shifts to Markov Chain Monte Carlo (MCMC) methods. This section is organized to provide a comprehensive understanding of these methods: Section 3.2.1 (\ref{sec:metropolis_hastings}) introduces the Metropolis-Hastings Algorithm, a widely used MCMC method, with an illustrative example on sampling from a Gamma Distribution in Section 3.2.1.1 (\ref{sec:gamma_distribution_sampling}). Following this, we explore Gibbs Sampling in Section 3.2.2 (\ref{sec:gibbs_sampling}), another pivotal MCMC technique, with an example of sampling from a Bivariate Normal Distribution in Section 3.2.2.1 (\ref{sec:bivariate_normal_sampling}). Section 3.2.3 (\ref{sec:muller_brown_potential}) addresses the Müller-Brown Potential, highlighting its application in the Metropolis-Hastings (\ref{sec:metropolis_muller_brown}) and Gibbs Sampling (\ref{sec:gibbs_muller_brown}) algorithms, and concludes with a comparative analysis of these methods in Section 3.2.3.3 (\ref{sec:comparison_metropolis_gibbs}).
+
+The narrative in this section culminates with Section 3.3 (\ref{sec:simulation_2d_molecular_system}), where we delve into the simulation of a 2D molecular system. This includes a theoretical overview of the Lennard-Jones Potential in Section 3.3.1 (\ref{sec:lennard_jones_potential}) and its implementation using the Metropolis-Hastings Algorithm in Section 3.3.2 (\ref{sec:metropolis_hastings_implementation}). This final part of the section not only demonstrates the practical applications of Markov Chains and MCMC methods but also highlights their versatility and effectiveness in simulating complex physical systems.
 
 \subsection{Introduction to Markov Chains}
 \label{sec:introduction_markov_chains}
@@ -1555,6 +1559,7 @@ The proof can be found in \cite{diaconis2008markov}.
 This theorem has been extracted from~\cite{reygner2023methodes}. 
 
 \subsubsection{Irreducibility and Uniqueness}
+\label{sec:irreducibility_uniqueness}
 
 One may ask if the stationary distribution is unique. The answer is no, it is not unique. However, there exists a condition that guarantees the uniqueness of the stationary distribution. This condition is called irreducibility. 
 
@@ -1567,10 +1572,12 @@ One may ask if the stationary distribution is unique. The answer is no, it is no
 \end{proposition}
 
 \subsection{Markov Chain Montecarlo Methods}
+\label{sec:markov_chain_montecarlo}
 
 In this section, we will introduce the Markov Chain Montecarlo Methods (MCMC). The MCMC are a class of algorithms for sampling from a probability distribution. The idea of MCMC is to construct a Markov Chain that has the desired distribution as its stationary distribution. Therefore, the Markov Chain will converge to the desired distribution as the number of steps increases.
 
 \subsubsection{Metropolis-Hastings Algorithm}
+\label{sec:metropolis_hastings}
 
 The Metropolis-Hastings algorithm is a MCMC algorithm for sampling from a probability distribution. The algorithm is defined as follows:
 
@@ -1600,11 +1607,12 @@ where $q(x, \cdot)$ is a probability distribution on $\chi$ and $\alpha(x,y)$ is
 where $\pi$ is the desired distribution. The proof of the correctness of the algorithm can be found in \cite{wiki:metropolishastings}.
 
 \subsubsubsection{Example: Sampling from a Gamma Distribution}
+\label{sec:gamma_distribution_sampling}
 
 Let's see an example of the Metropolis-Hastings algorithm. We will use the Metropolis-Hastings algorithm to sample from a Gamma distribution. The Gamma distribution is a two-parameter family of continuous probability distributions. The probability density function of the Gamma distribution is:
 
 \[
-	f(x) = \frac{\beta^\alpha}{\Gamma(\alpha)} x^{\alpha - 1} e^{-\beta x}
+	\pi(x) = \frac{\beta^\alpha}{\Gamma(\alpha)} x^{\alpha - 1} e^{-\beta x}
 \]
 
 where $\alpha, \beta > 0$ and $\Gamma(\alpha)$ is the Gamma function. The Gamma distribution is often used to model the time until an event occurs. For example, the time until a machine part fails, the time until a queue empties, the time until a customer arrives, etc. The Gamma distribution is also used to model the size of insurance claims and rainfall. Executing the algorithm with the following parameters: $\alpha = 2$ and $\beta = 1$ and $q(x, \cdot) = \mathcal{N}(x, \delta t)$ with $\delta t = 1$, we get the following results:
@@ -1620,8 +1628,9 @@ We can see that the samples are distributed according to the Gamma distribution.
 
 
 \subsubsection{Gibbs Sampling}
+\label{sec:gibbs_sampling}
 
-The Gibbs sampling is a MCMC algorithm for sampling from a probability distribution. The algorithm is defined as follows:
+The Gibbs sampling is a MCMC algorithm for sampling from a probability distribution $\pi$. The algorithm is defined as follows:
 
 \begin{center}
 	\begin{minipage}{0.7\linewidth} % Adjust the minipage width to accomodate for the length of algorithm lines
@@ -1642,6 +1651,7 @@ The Gibbs sampling is a MCMC algorithm for sampling from a probability distribut
 where $p(x_i | x_1, x_2, \dots, x_{i-1}, x_{i+1}, \dots, x_d)$ is the conditional probability distribution of $x_i$ given all other variables. 
 
 \subsubsubsection{Example: Sampling from a Bivariate Normal Distribution}
+\label{sec:bivariate_normal_sampling}
 
 Let's see an example of the Gibbs sampling algorithm. We will use the Gibbs sampling algorithm to sample from a bivariate normal distribution. The bivariate normal distribution is a probability distribution of two random variables $X$ and $Y$ that satisfy the following conditions:
 
@@ -1681,6 +1691,7 @@ We can see that the samples are distributed according to the bivariate normal di
 
 
 \subsubsection{Müller-Brown Potential}
+\label{sec:muller_brown_potential}
 
 In this section, we will introduce the Müller-Brown potential. The Müller-Brown potential is a function of two variables that is often used as a test function for optimization algorithms. The Müller-Brown potential is defined as:
 
@@ -1714,6 +1725,7 @@ The Figure~\ref{fig:mullerbrown} shows how the Müller-Brown potential looks lik
 The Müller-Brown potential is often used as a test function for optimization algorithms because it has many local minimun and one global minimun, therefore it is common that the optimization algorithms get stuck in a local minimun.
 
 \subsubsubsection{Metropolis-Hastings Algorithm for the Müller-Brown Potential}
+\label{sec:metropolis_muller_brown}
 
 Now, we want to know how the Metropolis-Hastings algorithm behaves when we use the Müller-Brown potential as the desired distribution. The Figure~\ref{fig:mullerbrownmh} shows the results of the Metropolis-Hastings algorithm for the Müller-Brown potential.
 
@@ -1737,6 +1749,7 @@ We can see that the samples are distributed all around the Müller-Brown potenti
 
 
 \subsubsubsection{Gibbs Sampling Algorithm for the Müller-Brown Potential}
+\label{sec:gibbs_muller_brown}
 
 Now, we want to know how the Gibbs sampling algorithm behaves when we use the Müller-Brown potential as the desired distribution. The Figure~\ref{fig:mullerbrowngibbs} shows the results of the Gibbs sampling algorithm for the Müller-Brown potential.
 
@@ -1750,6 +1763,7 @@ Now, we want to know how the Gibbs sampling algorithm behaves when we use the M�
 We can see that the samples are distributed all around the Müller-Brown potential, which is the expected behaviour of the Gibbs sampling algorithm. 
 
 \subsubsubsection{Comparison between Metropolis-Hastings and Gibbs Sampling}
+\label{sec:comparison_metropolis_gibbs}
 
 This section is built with two aims. First we want to check if the samples obtained with the Metropolis-Hastings algorithm are distributed according to the Müller-Brown potential. Second, we want to compare the Metropolis-Hastings algorithm and the Gibbs sampling algorithm.
 
@@ -1784,10 +1798,12 @@ As a final experiment, we wanted to plot the heatmap of both distributions as we
 \end{figure}
 
 \subsection{Simulation of a 2D molecular system}
+\label{sec:simulation_2d_molecular_system}
 
 This final section aims to show how the MCMC algorithms can be used to simulate a 2D molecular system. This subsection is divided in two parts. In the first part, we will introduce the potential we have used to simulate the ecosystem and we will delve a bit into the theory of the molecular dynamics. In the second part, we will do the implementation of the Gibbs sampling algorithm for the molecular system.
 
 \subsubsection{Theoretical Framework and Lennard-Jones Potential}
+\label{sec:lennard_jones_potential}
 
 At the heart of our molecular simulation lies the Lennard-Jones potential, a simplistic yet powerful model to represent interactions between a pair of atoms or molecules. It is mathematically expressed as:
 
@@ -1800,6 +1816,7 @@ where \( U(r) \) represents the potential energy between two particles separated
 The parameters \( \epsilon \) and \( \sigma \) are not merely mathematical constructs but hold profound physical meanings. \( \epsilon \) relates to the energy scale of interactions, dictating how strongly particles attract or repel each other. \( \sigma \), on the other hand, sets the spatial scale, determining the effective size of the particles. These parameters are often determined empirically or through quantum mechanical calculations for specific substances, making the Lennard-Jones potential a versatile tool for simulating a wide range of molecular systems.
 
 \subsubsection{Implementation using the Metropolis Hastings Algorithm}
+\label{sec:metropolis_hastings_implementation}
 
 When simulating the dynamics of molecular systems, accurately replicating the environmental context is crucial. To this end, we have conceptualized a 10x10 unit square space as the primary stage for the molecular interactions. However, to more closely mimic an infinite environment, where energy is not artificially confined or lost at the boundaries, we adopt a toroidal geometry. A torus, which is essentially a surface of revolution generated by revolving a circle in three-dimensional space around a coplanar axis, offers an elegant solution. This spatial configuration is achieved computationally through the application of modular arithmetic at the boundaries, ensuring a seamless and continuous space. This approach is crucial for maintaining the integrity of the system's energy dynamics and is visually represented in the Figure~\ref{fig:boundaryconditions}.
 

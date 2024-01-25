@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999995 (TeX Live 2023) (preloaded format=xelatex 2023.11.29)  21 JAN 2024 23:12
+This is XeTeX, Version 3.141592653-2.6-0.999995 (TeX Live 2023) (preloaded format=xelatex 2023.11.29)  25 JAN 2024 16:32
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1209,55 +1209,56 @@ File: ./Figures/SolarSystem/energy_euler.png Graphic file (type bmp)
  [41] [42] [43]
 File: ./Figures/MCMC/gamma.png Graphic file (type bmp)
 <./Figures/MCMC/gamma.png>
- [44]
+ [44] [45]
 File: ./Figures/MCMC/MultivariateNormal-2.png Graphic file (type bmp)
 <./Figures/MCMC/MultivariateNormal-2.png>
 File: ./Figures/MCMC/bivariates.png Graphic file (type bmp)
 <./Figures/MCMC/bivariates.png>
- [45]
+ [46]
 File: ./Figures/MCMC/mullerbrown.png Graphic file (type bmp)
 <./Figures/MCMC/mullerbrown.png>
- [46]
 File: ./Figures/MCMC/mullerbrownmh.png Graphic file (type bmp)
 <./Figures/MCMC/mullerbrownmh.png>
+ [47]
 File: ./Figures/MCMC/mullerbrownmh2.png Graphic file (type bmp)
 <./Figures/MCMC/mullerbrownmh2.png>
- [47]
 File: ./Figures/MCMC/mullerbrowngibbs.png Graphic file (type bmp)
 <./Figures/MCMC/mullerbrowngibbs.png>
  [48]
 File: ./Figures/MCMC/klmh.png Graphic file (type bmp)
 <./Figures/MCMC/klmh.png>
+ [49]
 File: ./Figures/MCMC/heatmaps.png Graphic file (type bmp)
 <./Figures/MCMC/heatmaps.png>
- [49] [50]
+ [50]
 File: ./Figures/MCMC/LennardJones/boundaryconditions.png Graphic file (type bmp)
 <./Figures/MCMC/LennardJones/boundaryconditions.png>
+ [51]
 File: ./Figures/MCMC/LennardJones/particles.png Graphic file (type bmp)
 <./Figures/MCMC/LennardJones/particles.png>
- [51]
+ [52]
 File: ./Figures/MCMC/LennardJones/energy.png Graphic file (type bmp)
 <./Figures/MCMC/LennardJones/energy.png>
- [52]
+ [53]
 File: ./Figures/MCMC/LennardJones/radialdistributionfunction.png Graphic file (type bmp)
 <./Figures/MCMC/LennardJones/radialdistributionfunction.png>
 File: ./Figures/MCMC/LennardJones/rdf_exp.png Graphic file (type bmp)
 <./Figures/MCMC/LennardJones/rdf_exp.png>
- [53] (./main.bbl) [54] (./main.aux)
+ [54] (./main.bbl) [55] (./main.aux)
  ***********
 LaTeX2e <2023-11-01>
 L3 programming layer <2023-11-09>
  ***********
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: E42643C0B5F42CA053050AC20BF748AC;11446.
+(rerunfilecheck)             Checksum: 938D636B5635FB8414E9BE58B0391EA7;11570.
  ) 
 Here is how much of TeX's memory you used:
- 28906 strings out of 476447
- 586146 string characters out of 5793879
+ 28919 strings out of 476447
+ 586534 string characters out of 5793879
  1936186 words of memory out of 5000000
- 50233 multiletter control sequences out of 15000+600000
+ 50246 multiletter control sequences out of 15000+600000
  564833 words of font info for 74 fonts, out of 8000000 for 9000
  319 hyphenation exceptions out of 8191
  127i,13n,132p,1411b,601s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on main.xdv (55 pages, 881292 bytes).
+Output written on main.xdv (56 pages, 899872 bytes).
