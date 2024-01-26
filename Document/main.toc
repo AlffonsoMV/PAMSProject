@@ -1,7 +1,7 @@
 \contentsline {chapter}{\numberline {1}Simulation of Random Variables}{4}{chapter.1}%
 \contentsline {section}{\numberline {1.1}Inverse CDF method}{4}{section.1.1}%
 \contentsline {section}{\numberline {1.2}Rejection Sampling method}{6}{section.1.2}%
-\contentsline {subsection}{\numberline {1.2.1}Selection of the enveloping distribution}{7}{subsection.1.2.1}%
+\contentsline {subsection}{\numberline {1.2.1}Selection of the enveloping distribution}{6}{subsection.1.2.1}%
 \contentsline {subsection}{\numberline {1.2.2}Results of the Rejection Sampling method}{7}{subsection.1.2.2}%
 \contentsline {section}{\numberline {1.3}Empirical validation of the Law of Large Numbers}{8}{section.1.3}%
 \contentsline {section}{\numberline {1.4}Empirical Validation of the Central Limit Theorem}{10}{section.1.4}%
@@ -29,20 +29,22 @@
 \contentsline {subsection}{\numberline {2.3.2}Störmer-Verlet Scheme for Gravitational Dynamics}{35}{subsection.2.3.2}%
 \contentsline {subsection}{\numberline {2.3.3}Implementation of the Solar System Simulation}{37}{subsection.2.3.3}%
 \contentsline {subsubsection}{\numberline {2.3.3.1}Experiment 1: Expanding to the N-Body Problem}{39}{subsubsection.2.3.3.1}%
-\contentsline {subsubsubsection}{\numberline {2.3.3.1.1}Experiment 2: Using Symplectic Euler Method}{40}{subsubsubsection.2.3.3.1.1}%
+\contentsline {subsubsection}{\numberline {2.3.3.2}Experiment 2: Using Symplectic Euler Method}{40}{subsubsection.2.3.3.2}%
 \contentsline {chapter}{\numberline {3}Markov Chains and their Applications}{43}{chapter.3}%
-\contentsline {section}{\numberline {3.1}Introduction to Markov Chains}{43}{section.3.1}%
+\contentsline {section}{\numberline {3.1}Introduction to Markov Chains}{44}{section.3.1}%
 \contentsline {subsection}{\numberline {3.1.1}Stationary Distribution}{44}{subsection.3.1.1}%
-\contentsline {subsection}{\numberline {3.1.2}Irreducibility and Uniqueness}{44}{subsection.3.1.2}%
+\contentsline {subsection}{\numberline {3.1.2}Irreducibility and Uniqueness}{45}{subsection.3.1.2}%
 \contentsline {subsection}{\numberline {3.1.3}Markov Chain Montecarlo Methods}{45}{subsection.3.1.3}%
 \contentsline {subsection}{\numberline {3.1.4}Metropolis-Hastings Algorithm}{45}{subsection.3.1.4}%
 \contentsline {subsubsection}{\numberline {3.1.4.1}Example: Sampling from a Gamma Distribution}{45}{subsubsection.3.1.4.1}%
 \contentsline {subsection}{\numberline {3.1.5}Gibbs Sampling}{46}{subsection.3.1.5}%
-\contentsline {subsubsection}{\numberline {3.1.5.1}Example: Sampling from a Bivariate Normal Distribution}{46}{subsubsection.3.1.5.1}%
-\contentsline {subsection}{\numberline {3.1.6}Müller-Brown Potential}{47}{subsection.3.1.6}%
-\contentsline {subsubsection}{\numberline {3.1.6.1}Metropolis-Hastings Algorithm for the Müller-Brown Potential}{48}{subsubsection.3.1.6.1}%
-\contentsline {subsubsection}{\numberline {3.1.6.2}Gibbs Sampling Algorithm for the Müller-Brown Potential}{49}{subsubsection.3.1.6.2}%
-\contentsline {subsubsection}{\numberline {3.1.6.3}Comparison between Metropolis-Hastings and Gibbs Sampling}{50}{subsubsection.3.1.6.3}%
-\contentsline {section}{\numberline {3.2}Simulation of a 2D molecular system}{51}{section.3.2}%
-\contentsline {subsection}{\numberline {3.2.1}Theoretical Framework and Lennard-Jones Potential}{52}{subsection.3.2.1}%
-\contentsline {subsection}{\numberline {3.2.2}Implementation using the Metropolis Hastings Algorithm}{52}{subsection.3.2.2}%
+\contentsline {subsubsection}{\numberline {3.1.5.1}Example: Sampling from a Bivariate Normal Distribution}{47}{subsubsection.3.1.5.1}%
+\contentsline {subsection}{\numberline {3.1.6}Müller-Brown Potential}{48}{subsection.3.1.6}%
+\contentsline {subsubsection}{\numberline {3.1.6.1}Metropolis-Hastings Algorithm for the Müller-Brown Potential}{49}{subsubsection.3.1.6.1}%
+\contentsline {subsubsection}{\numberline {3.1.6.2}Gibbs Sampling Algorithm for the Müller-Brown Potential}{50}{subsubsection.3.1.6.2}%
+\contentsline {subsubsection}{\numberline {3.1.6.3}Comparison between Metropolis-Hastings and Gibbs Sampling}{51}{subsubsection.3.1.6.3}%
+\contentsline {section}{\numberline {3.2}Simulation of a 2D molecular system}{53}{section.3.2}%
+\contentsline {subsection}{\numberline {3.2.1}Theoretical Framework and Lennard-Jones Potential}{53}{subsection.3.2.1}%
+\contentsline {subsection}{\numberline {3.2.2}Implementation of the model}{53}{subsection.3.2.2}%
+\contentsline {subsubsection}{\numberline {3.2.2.1}Implementation 2D using the Metropolis-Hastings algorithm}{54}{subsubsection.3.2.2.1}%
+\contentsline {subsubsection}{\numberline {3.2.2.2}Implementation 3D using the Gibbs Sampling algorithm}{56}{subsubsection.3.2.2.2}%

@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999995 (TeX Live 2023) (preloaded format=xelatex 2023.11.29)  25 JAN 2024 23:49
+This is XeTeX, Version 3.141592653-2.6-0.999995 (TeX Live 2023) (preloaded format=xelatex 2023.11.29)  26 JAN 2024 17:02
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -919,7 +919,9 @@ LaTeX Font Info:    Trying to load font information for U+stmry on input line 2.
 \tf@toc=\write5
 \openout5 = `main.toc'.
 
- [2] [3]
+ [2] [3
+
+]
 Chapter 1.
 [4
 
@@ -1024,53 +1026,61 @@ File: ./Figures/SolarSystem/energy_euler.png Graphic file (type bmp)
 Chapter 3.
 [43
 
-] [44]
+] [44] [45]
 File: ./Figures/MCMC/gamma.png Graphic file (type bmp)
 <./Figures/MCMC/gamma.png>
- [45] [46]
+ [46]
 File: ./Figures/MCMC/MultivariateNormal-2.png Graphic file (type bmp)
 <./Figures/MCMC/MultivariateNormal-2.png>
+ [47]
 File: ./Figures/MCMC/bivariates.png Graphic file (type bmp)
 <./Figures/MCMC/bivariates.png>
- [47]
+ [48]
 File: ./Figures/MCMC/mullerbrown.png Graphic file (type bmp)
 <./Figures/MCMC/mullerbrown.png>
-File: ./Figures/MCMC/mullerbrownmh.png Graphic file (type bmp)
-<./Figures/MCMC/mullerbrownmh.png>
- [48]
 File: ./Figures/MCMC/mullerbrownmh2.png Graphic file (type bmp)
 <./Figures/MCMC/mullerbrownmh2.png>
+ [49]
 File: ./Figures/MCMC/mullerbrowngibbs.png Graphic file (type bmp)
 <./Figures/MCMC/mullerbrowngibbs.png>
- [49]
+ [50]
 File: ./Figures/MCMC/klmh.png Graphic file (type bmp)
 <./Figures/MCMC/klmh.png>
- [50]
-Overfull \hbox (1.84807pt too wide) in paragraph at lines 1812--1813
-\T1/lmr/m/n/10 heatmap of the the-o-ret-i-cal dis-tri-bu-tion, to see that in-deed the sam-ples ob-tained with the Metropolis-
- []
-
+ [51]
 File: ./Figures/MCMC/heatmaps.png Graphic file (type bmp)
 <./Figures/MCMC/heatmaps.png>
-[51]
+ [52]
 File: ./Figures/MCMC/LennardJones/boundaryconditions.png Graphic file (type bmp)
 <./Figures/MCMC/LennardJones/boundaryconditions.png>
- [52]
+ [53]
 File: ./Figures/MCMC/LennardJones/particles.png Graphic file (type bmp)
 <./Figures/MCMC/LennardJones/particles.png>
- [53]
-File: ./Figures/MCMC/LennardJones/particles_3d.png Graphic file (type bmp)
-<./Figures/MCMC/LennardJones/particles_3d.png>
+ [54]
 File: ./Figures/MCMC/LennardJones/energy.png Graphic file (type bmp)
 <./Figures/MCMC/LennardJones/energy.png>
- [54]
+ [55]
+Underfull \hbox (badness 1038) in paragraph at lines 1949--1949
+[]\T1/lmr/bx/n/10 Algorithm 9: \T1/lmr/m/n/10 Es-ti-mat-ing Con-di-tional Dis-tri-bu-tions in
+ []
+
+
+Overfull \hbox (15.0pt too wide) detected at line 1951
+[][] 
+ []
+
+[56]
+File: ./Figures/MCMC/LennardJones/particles_3d.png Graphic file (type bmp)
+<./Figures/MCMC/LennardJones/particles_3d.png>
+File: ./Figures/MCMC/LennardJones/rdf_explanation.png Graphic file (type bmp)
+<./Figures/MCMC/LennardJones/rdf_explanation.png>
+ [57]
 File: ./Figures/MCMC/LennardJones/radialdistributionfunction.png Graphic file (type bmp)
 <./Figures/MCMC/LennardJones/radialdistributionfunction.png>
 File: ./Figures/MCMC/LennardJones/rdf_exp.png Graphic file (type bmp)
 <./Figures/MCMC/LennardJones/rdf_exp.png>
- [55] [56] (./main.bbl
+ [58] [59] (./main.bbl
 Missing character: There is no – ("2013) in font ec-lmr10!
-) [57
+) [60
 
 ] (./main.aux)
  ***********
@@ -1078,15 +1088,15 @@ LaTeX2e <2023-11-01>
 L3 programming layer <2023-11-09>
  ***********
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: 3D0DCA92195A5FD6706B5D9CAD62043E;11340.
+(rerunfilecheck)             Checksum: B8E10FC005320764ADCAAF01F6C68B24;11911.
  ) 
 Here is how much of TeX's memory you used:
- 26191 strings out of 476447
- 489727 string characters out of 5793879
+ 26194 strings out of 476447
+ 489948 string characters out of 5793879
  1930186 words of memory out of 5000000
- 47577 multiletter control sequences out of 15000+600000
+ 47580 multiletter control sequences out of 15000+600000
  605296 words of font info for 67 fonts, out of 8000000 for 9000
  319 hyphenation exceptions out of 8191
- 127i,13n,132p,1411b,601s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 127i,13n,132p,1411b,604s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on main.xdv (58 pages, 235456 bytes).
+Output written on main.xdv (61 pages, 252328 bytes).

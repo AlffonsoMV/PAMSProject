@@ -69,30 +69,30 @@
 \tableofcontents
 \newpage
 
-\section*{Abstract}
+\chapter*{Abstract}
 
-This paper presents an in-depth exploration of advanced simulation techniques across three key domains: random variables, Hamiltonian dynamics, and Markov chain sampling, each providing critical insights into the field of computational statistics and mathematical modeling.
+This comprehensive paper delves into the intricacies of simulation techniques, spanning across the domains of random variable simulation, Hamiltonian dynamics, and Markov chain sampling, with an emphasis on their diverse applications in computational statistics and mathematical modeling.
 
-In the first section, we focus on the simulation of random variables. Here, the Inverse Cumulative Distribution Function (CDF) method and Rejection Sampling method are thoroughly examined. We empirically validate the Law of Large Numbers and the Central Limit Theorem, assessing the reliability and efficiency of these simulation methods. Additionally, this section delves into various variance reduction techniques such as control variates, importance sampling, stratified sampling, and antithetic variates. A comparative analysis of these techniques highlights their significance in enhancing simulation accuracy and efficiency.
+In the first section, the focus is on the simulation of random variables. We begin with a detailed exploration of the Inverse Cumulative Distribution Function (CDF) method and the Rejection Sampling method, providing an extensive analysis of various enveloping distributions and their results. This part also includes an empirical validation of the Law of Large Numbers and the Central Limit Theorem, establishing the reliability and efficiency of these methods. We further investigate several variance reduction techniques, including control variates, importance sampling, stratified sampling, and antithetic variates, offering a comparative review of their effectiveness in enhancing simulation accuracy and efficiency.
 
-The paper then transitions to Hamiltonian dynamics, starting with a foundational introduction to its principles. We explore symplectic schemes, offering insights into their analytical solutions, and critically evaluate the Euler method alongside the limitations of standard approaches. The development and application of advanced Symplectic Schemes, particularly the Symplectic Euler and Stormer-Verlet methods, are presented, including a comprehensive linear stability analysis. The practical application of these methods is exemplified through the simulation of the Solar System's gravitational dynamics, with extensions to the N-Body Problem and an exploration of the Symplectic Euler Method.
+The second section transitions to Hamiltonian dynamics, starting with its foundational principles. We discuss symplectic schemes, particularly focusing on their analytical solutions and critically evaluating the Euler method and the limitations of standard methods. Advanced symplectic schemes, such as the Symplectic Euler and Stormer-Verlet methods, are presented, including linear stability analysis. This section culminates with practical applications in simulating the Solar System's gravitational dynamics and expanding to the N-Body Problem, highlighting the use of the Symplectic Euler Method.
 
-The final section of the paper addresses Markov chain sampling. This segment is dedicated to the Metropolis-Hastings algorithm and Gibbs Sampling, offering a nuanced understanding of these techniques through practical examples like sampling from Gamma and Bivariate Normal distributions. The application of these methods to the Müller-Brown Potential is examined, providing a comparative analysis of their efficacy. The section culminates with the implementation of Markov chain sampling in simulating a 2D molecular system, using the Lennard-Jones potential to model complex physical interactions. This part not only demonstrates the versatility of Markov chain sampling methods but also underscores their importance in simulating and understanding intricate systems.
+The final section is dedicated to Markov chain sampling, offering a deep dive into the Metropolis-Hastings algorithm and Gibbs Sampling. Practical applications are provided through sampling from Gamma and Bivariate Normal distributions and the simulation of the Müller-Brown Potential, with comparative analyses of their effectiveness. The section concludes with an innovative exploration of simulating molecular systems, detailing the implementation of a 2D molecular system using the Metropolis-Hastings algorithm and extending this simulation to a 3D molecular system using the Gibbs Sampling algorithm. The use of the Lennard-Jones potential in these simulations demonstrates the versatility of Markov chain sampling methods in modeling complex physical interactions in both two and three dimensions.
 
-Overall, this paper aims to provide a comprehensive overview of contemporary simulation techniques, offering both theoretical insights and practical applications across various fields, thereby contributing to the advancement of computational statistics and mathematical modeling.
+Overall, this paper not only provides a thorough overview of advanced simulation techniques but also showcases their practical applications, significantly contributing to the fields of computational statistics and mathematical modeling.
 
 \newpage
 
 \chapter{Simulation of Random Variables}
 \label{sec:simulation_of_random_variables}
 
-This chapter explores the simulation of random variables, a cornerstone in statistical and dynamical system studies. In Section 1.1, we introduce the Inverse CDF method (\ref{sec:inverse_cdf}), providing a foundational overview of its mechanics and application in simulating random variables.
+This chapter explores the simulation of random variables, a cornerstone in statistical and dynamical system studies. In Section 1.1, we introduce the Inverse CDF method Section~\ref{sec:inverse_cdf}, providing a foundational overview of its mechanics and application in simulating random variables.
 
-Progressing to Section 1.2 (\ref{sec:rejection_sampling}), the manuscript transitions to the Rejection Sampling method. This section is further divided to enhance clarity and depth: Section 1.2.1 (\ref{sec:enveloping_distribution}) delves into the selection of the appropriate enveloping distribution, and Section 1.2.2 (\ref{sec:results_rejection_sampling}) presents the outcomes and insights from applying this method.
+Progressing to Section~\ref{sec:rejection_sampling}, the manuscript transitions to the Rejection Sampling method. This section is further divided to enhance clarity and depth: Section~\ref{sec:enveloping_distribution} delves into the selection of the appropriate enveloping distribution, and Section~\ref{sec:results_rejection_sampling} presents the outcomes and insights from applying this method.
 
-The narrative continues in Section 1.3 (\ref{sec:lln}), where the empirical validation of the Law of Large Numbers is discussed, and in Section 1.4 (\ref{sec:clt}), focusing on the Central Limit Theorem. These sections underscore the practical validation and implications of these pivotal statistical laws in simulation scenarios.
+The narrative continues in Section~\ref{sec:lln}, where the empirical validation of the Law of Large Numbers is discussed, and in Section~\ref{sec:clt}, focusing on the Central Limit Theorem. These sections underscore the practical validation and implications of these pivotal statistical laws in simulation scenarios.
 
-Concluding this section, a detailed examination of various variance reduction techniques is presented in Section 1.5 (\ref{sec:variance_reduction}). Starting with fundamental concepts in Section 1.5.1 (\ref{sec:variance_reduction_preliminaries}), it then explores control variates (Section 1.5.2, \ref{sec:control_variates}), importance sampling (Section 1.5.3, \ref{sec:importance_sampling}), stratified sampling (Section 1.5.4, \ref{sec:stratified_sampling}), and antithetic variates (Section 1.5.5, \ref{sec:antithetic_variates}), culminating in a comparative review in Section 1.5.6 (\ref{sec:comparative_review}). This part of the manuscript synthesizes and compares these techniques, highlighting their role in enhancing the accuracy and efficiency of simulation processes.
+Concluding this section, a detailed examination of various variance reduction techniques is presented in Section~\ref{sec:variance_reduction}. Starting with fundamental concepts in Section~\ref{sec:variance_reduction_preliminaries}, it then explores control variates (Section~\ref{sec:control_variates}), importance sampling (Section~\ref{sec:importance_sampling}), stratified sampling (Section~\ref{sec:stratified_sampling}), and antithetic variates (Section~\ref{sec:antithetic_variates}), culminating in a comparative review in Section~\ref{sec:comparative_review}. This part of the manuscript synthesizes and compares these techniques, highlighting their role in enhancing the accuracy and efficiency of simulation processes.
 
 \section{Inverse CDF method}
 \label{sec:inverse_cdf}
@@ -254,7 +254,7 @@ where \(x_i\) is the \(i\)-th random number generated and \(\mu\) is the theoret
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=0.5\linewidth]{./Figures/LLN/verifloglog.png}
-	\caption{Logarithmic depiction of the absolute error relative to the mean. Average of 1000 trials per point. SLOPE!}
+	\caption{Logarithmic depiction of the absolute error relative to the mean. Average of 1000 trials per point.}
 	\label{fig:verificationllnlog}
 \end{figure}
 
@@ -664,15 +664,15 @@ Note that in the cace of importance sampling, we have used the gaussian distribu
 \chapter{Hamiltonian dynamics}
 \label{sec:hamiltonian_dynamics}
 
-This chapter delves into the realm of Hamiltonian dynamics, beginning with an in-depth exploration of symplectic schemes in Section 2.1 (\ref{sec:symplectic_schemes}). This section starts with a discussion on the analytical solution in Section 2.1.1 (\ref{sec:analytical_solution}), setting the groundwork for understanding symplectic integration methods.
+This chapter delves into the realm of Hamiltonian dynamics, beginning with an introduction to hamiltonian dynamics in Section~\ref{sec:introduction_hamiltonian_dynamics}, followed by an in-depth exploration of symplectic schemes in Section~\ref{sec:symplectic_schemes}. This section starts with a discussion on the analytical solution in Section~\ref{sec:analytical_solution}, setting the groundwork for understanding symplectic integration methods.
 
-In Section 2.1.2 (\ref{sec:euler_method}), the focus shifts to the Euler method, detailing its application and significance in Hamiltonian systems. Following this, Section 2.1.3 (\ref{sec:failure_standard_methods}) discusses the limitations and failures of standard methods in this context, highlighting the need for more sophisticated approaches.
+In Section~\ref{sec:euler_method}, the focus shifts to the Euler method, detailing its application and significance in Hamiltonian systems. Following this, Section~\ref{sec:failure_standard_methods} discusses the limitations and failures of standard methods in this context, highlighting the need for more sophisticated approaches.
 
-Section 2.1.4 (\ref{sec:constructing_symplectic_schemes}) addresses the construction of symplectic schemes, a crucial step for accurate simulations in Hamiltonian dynamics. This is further expanded in Section 2.1.5 (\ref{sec:symplectic_euler_method}), which specifically examines the Symplectic Euler method. A detailed Linear Stability Analysis of the Symplectic Euler scheme is then presented in Section 2.1.5.1 (\ref{sec:linear_stability_symplectic_euler}).
+Section~\ref{sec:constructing_symplectic_schemes} addresses the construction of symplectic schemes, a crucial step for accurate simulations in Hamiltonian dynamics. This is further expanded in Section~\ref{sec:symplectic_euler_method}, which specifically examines the Symplectic Euler method. A detailed Linear Stability Analysis of the Symplectic Euler scheme is then presented in Section~\ref{sec:linear_stability_symplectic_euler}.
 
-The narrative continues with the Stormer-Verlet method in Section 2.1.6 (\ref{sec:stormer_verlet_method}), another important technique in symplectic integration, followed by a Linear Stability Analysis of the Verlet scheme in Section 2.1.6.1 (\ref{sec:linear_stability_verlet}). Section 2.1.7 (\ref{sec:backward_error_analysis}) concludes this part with a discussion on Backward Error Analysis, providing insights into the error characteristics of symplectic integrators.
+The narrative continues with the Stormer-Verlet method in Section~\ref{sec:stormer_verlet_method}, another important technique in symplectic integration, followed by a Linear Stability Analysis of the Verlet scheme in Section~\ref{sec:linear_stability_verlet}. Section~\ref{sec:backward_error_analysis} concludes this part with a discussion on Backward Error Analysis, providing insights into the error characteristics of symplectic integrators.
 
-Section 2.2 (\ref{sec:solar_system_simulation}) shifts the focus to the practical application of these concepts in simulating the solar system. Section 2.2.1 (\ref{sec:modeling_solar_system}) begins with modeling gravitational dynamics, followed by the implementation of the Störmer-Verlet scheme in Section 2.2.2 (\ref{sec:stormer_verlet_scheme_gravitational_dynamics}). The implementation details of these models are further elaborated in Section 2.2.3 (\ref{sec:implementation_solar_system}), with two experiments: Experiment 1 in Section 2.2.3.1 (\ref{sec:expanding_n_body_problem}) expands to the N-Body problem, and Experiment 2 in Section 2.2.3.2 (\ref{sec:using_symplectic_euler_method}) utilizes the Symplectic Euler Method, providing practical insights into their application in complex dynamical systems.
+Section~\ref{sec:solar_system_simulation} shifts the focus to the practical application of these concepts in simulating the solar system. Section~\ref{sec:modeling_solar_system} begins with modeling gravitational dynamics, followed by the implementation of the Störmer-Verlet scheme in Section~\ref{sec:stormer_verlet_scheme_gravitational_dynamics}. The implementation details of these models are further elaborated in Section~\ref{sec:implementation_solar_system}, with two experiments: Experiment 1 in Section~\ref{sec:expanding_n_body_problem} expands to the N-Body problem, and Experiment 2 in Section~\ref{sec:using_symplectic_euler_method} utilizes the Symplectic Euler Method, providing practical insights into their application in complex dynamical systems.
 
 \section{Introduction to Hamiltonian dynamics}
 \label{sec:introduction_hamiltonian_dynamics}
@@ -1480,7 +1480,7 @@ To explore this, we have extended our simulation to include Jupiter, aiming to o
 \end{figure}
 
 
-\subsubsubsection{Experiment 2: Using Symplectic Euler Method}
+\subsubsection{Experiment 2: Using Symplectic Euler Method}
 \label{sec:using_symplectic_euler_method}
 
 We alredy know that the Störmer-Verlet method performs better than the Euler Symplectic method, but let's see how the solar system behaves using the Euler Sympletic method. The Figure~\ref{fig:solarsystemeuler} shows the orbits of the planets of the solar system using the Euler Symplectic method for \(\Delta t = 1\) day and \(T = 20\) years.
@@ -1523,11 +1523,11 @@ Therefore, in this problem we can conclude that the Störmer-Verlet method is be
 \chapter{Markov Chains and their Applications}
 \label{sec:markov_chains}
 
-Chapter 3 delves into the fascinating world of Markov Chains and their applications, a fundamental concept in stochastic processes and computational statistics. Beginning with Section 3.1 (\ref{sec:introduction_markov_chains}), we introduce the concept of Markov Chains, elucidating their structure and theoretical underpinnings. This includes an exploration of the Stationary Distribution in Section 3.1.1 (\ref{sec:stationary_distribution}) and a discussion on Irreducibility and Uniqueness in Section 3.1.2 (\ref{sec:irreducibility_uniqueness}), laying the groundwork for understanding their behavior and significance in various applications.
+Chapter 3 embarks on an enthralling journey into the realm of Markov Chains and their myriad applications, a cornerstone in the fields of stochastic processes and computational statistics. We commence this exploration with an introduction to Markov Chains in Section~\ref{sec:introduction_markov_chains}, where we unravel their intricate structure and delve into their theoretical foundations. This segment includes a deep dive into the Stationary Distribution in Section~\ref{sec:stationary_distribution} and a comprehensive discussion on the concepts of Irreducibility and Uniqueness in Section~\ref{sec:irreducibility_uniqueness}. These discussions are pivotal in establishing a foundational understanding of Markov Chains' behavior and their profound implications in a variety of real-world scenarios.
 
-Transitioning to Section 3.2 (\ref{sec:markov_chain_montecarlo}), the focus shifts to Markov Chain Monte Carlo (MCMC) methods. This section is organized to provide a comprehensive understanding of these methods: Section 3.2.1 (\ref{sec:metropolis_hastings}) introduces the Metropolis-Hastings Algorithm, a widely used MCMC method, with an illustrative example on sampling from a Gamma Distribution in Section 3.2.1.1 (\ref{sec:gamma_distribution_sampling}). Following this, we explore Gibbs Sampling in Section 3.2.2 (\ref{sec:gibbs_sampling}), another pivotal MCMC technique, with an example of sampling from a Bivariate Normal Distribution in Section 3.2.2.1 (\ref{sec:bivariate_normal_sampling}). Section 3.2.3 (\ref{sec:muller_brown_potential}) addresses the Müller-Brown Potential, highlighting its application in the Metropolis-Hastings (\ref{sec:metropolis_muller_brown}) and Gibbs Sampling (\ref{sec:gibbs_muller_brown}) algorithms, and concludes with a comparative analysis of these methods in Section 3.2.3.3 (\ref{sec:comparison_metropolis_gibbs}).
+As we progress to Section~\ref{sec:markov_chain_montecarlo}, the narrative shifts its spotlight to the Markov Chain Monte Carlo (MCMC) methods, a fascinating facet of Markov Chains. This section is meticulously structured to foster a holistic understanding of these methods. We begin with the Metropolis-Hastings Algorithm, a flagship technique in MCMC, in Section~\ref{sec:metropolis_hastings}, complemented by a practical example of sampling from a Gamma Distribution in Section~\ref{sec:gamma_distribution_sampling}. Following this, we venture into the world of Gibbs Sampling in Section~\ref{sec:gibbs_sampling}, another cornerstone MCMC technique, illustrated with an example involving a Bivariate Normal Distribution in Section~\ref{sec:bivariate_normal_sampling}. The discussion extends to the Müller-Brown Potential in Section~\ref{sec:muller_brown_potential}, showcasing its integration into both the Metropolis-Hastings (Section~\ref{sec:metropolis_muller_brown}) and Gibbs Sampling (Section~\ref{sec:gibbs_muller_brown}) algorithms, culminating in a comparative analysis of these methods in Section~\ref{sec:comparison_metropolis_gibbs}.
 
-The narrative in this section culminates with Section 3.3 (\ref{sec:simulation_2d_molecular_system}), where we delve into the simulation of a 2D molecular system. This includes a theoretical overview of the Lennard-Jones Potential in Section 3.3.1 (\ref{sec:lennard_jones_potential}) and its implementation using the Metropolis-Hastings Algorithm in Section 3.3.2 (\ref{sec:metropolis_hastings_implementation}). This final part of the section not only demonstrates the practical applications of Markov Chains and MCMC methods but also highlights their versatility and effectiveness in simulating complex physical systems.
+The climax of this chapter unfolds in Section~\ref{sec:simulation_2d_molecular_system}, where we immerse ourselves in the simulation of a 2D molecular system. Here, we present a theoretical exploration of the Lennard-Jones Potential in Section~\ref{sec:lennard_jones_potential}, followed by its practical application in simulating both 2-dimensional and 3-dimensional systems using the Metropolis-Hastings algorithm (Section~\ref{sec:lennard_jones_2d}) and the Gibbs Sampling algorithm (Section~\ref{sec:lennard_jones_3d}), respectively. This concluding segment not only showcases the practical utility of Markov Chains and MCMC methods but also underscores their remarkable versatility and efficacy in modeling and simulating intricate physical systems.
 
 \section{Introduction to Markov Chains}
 \label{sec:introduction_markov_chains}
@@ -1647,50 +1647,49 @@ where $\alpha, \beta > 0$ and $\Gamma(\alpha)$ is the Gamma function. The Gamma 
 
 We can see that the samples are distributed according to the Gamma distribution.
 
-
 \subsection{Gibbs Sampling}
 \label{sec:gibbs_sampling}
 
-The Gibbs sampling is a MCMC algorithm for sampling from a probability distribution $\pi$. The algorithm is defined as follows:
+Gibbs Sampling is a Markov Chain Monte Carlo (MCMC) algorithm used for generating samples from a multidimensional probability distribution $\pi$. The essence of this algorithm lies in its iterative approach, sampling from conditional distributions of each variable in sequence. This process is detailed as follows:
 
 \begin{center}
-	\begin{minipage}{0.7\linewidth} % Adjust the minipage width to accomodate for the length of algorithm lines
+	\begin{minipage}{0.7\linewidth}
 		\begin{algorithm}[H]
-			1. Choose an initial state $x_0$ \\
-			2. For $n = 0, 1, 2, \dots$ \\
-			\hspace*{0.5cm} a. Sample $x_{n+1}^{(1)}$ from $p(x_1 | x_n^{(2)}, x_n^{(3)}, \dots, x_n^{(d)})$ \\
-			\hspace*{0.5cm} b. Sample $x_{n+1}^{(2)}$ from $p(x_2 | x_{n+1}^{(1)}, x_n^{(3)}, \dots, x_n^{(d)})$ \\
-			\hspace*{0.5cm} c. $\dots$ \\
-			\hspace*{0.5cm} d. Sample $x_{n+1}^{(d)}$ from $p(x_d | x_{n+1}^{(1)}, x_{n+1}^{(2)}, \dots, x_{n+1}^{(d-1)})$ \\
-			3. Return $(x_n)_{n \geq 0}$
-			\caption{Gibbs Sampling} % Algorithm name
-			\label{alg:Gibbs-Sampling}   % optional label to refer to
+			1. Initialize with a starting state $x_0 = (x_0^{(1)}, x_0^{(2)}, \dots, x_0^{(d)})$ \\
+			2. For each iteration $n = 0, 1, 2, \dots$ do: \\
+			\hspace*{0.5cm} a. Sample $x_{n+1}^{(1)}$ from the conditional distribution $p(x_1 | x_n^{(2)}, x_n^{(3)}, \dots, x_n^{(d)})$. \\
+			\hspace*{0.5cm} b. Sample $x_{n+1}^{(2)}$ from $p(x_2 | x_{n+1}^{(1)}, x_n^{(3)}, \dots, x_n^{(d)})$. \\
+			\hspace*{0.5cm} c. Continue in this fashion for each subsequent dimension. \\
+			\hspace*{0.5cm} d. Finally, sample $x_{n+1}^{(d)}$ from $p(x_d | x_{n+1}^{(1)}, x_{n+1}^{(2)}, \dots, x_{n+1}^{(d-1)})$. \\
+			3. The sequence $(x_n)_{n \geq 0}$ forms the Markov chain. \\
+			\caption{Gibbs Sampling Algorithm}
+			\label{alg:Gibbs-Sampling}
 		\end{algorithm}
 	\end{minipage}
 \end{center}
 
-where $p(x_i | x_1, x_2, \dots, x_{i-1}, x_{i+1}, \dots, x_d)$ is the conditional probability distribution of $x_i$ given all other variables. 
+In this algorithm, $p(x_i | x_1, x_2, \dots, x_{i-1}, x_{i+1}, \dots, x_d)$ represents the conditional probability distribution of variable $x_i$ given all other variables in the state. This conditional dependence is the key to understanding the Gibbs Sampling process.
 
 \subsubsection{Example: Sampling from a Bivariate Normal Distribution}
 \label{sec:bivariate_normal_sampling}
 
-Let's see an example of the Gibbs sampling algorithm. We will use the Gibbs sampling algorithm to sample from a bivariate normal distribution. The bivariate normal distribution is a probability distribution of two random variables $X$ and $Y$ that satisfy the following conditions:
+Consider the example of sampling from a bivariate normal distribution using Gibbs Sampling. A bivariate normal distribution involves two random variables, $X$ and $Y$, each normally distributed and potentially correlated. The distribution is defined by the parameters $\mu_x, \mu_y, \sigma_x, \sigma_y$, and the correlation coefficient $\rho$:
 
 \[
 	\begin{cases}
 		X \sim \mathcal{N}(\mu_x, \sigma_x^2) \\
 		Y \sim \mathcal{N}(\mu_y, \sigma_y^2) \\
-		X \perp Y
+		\text{Correlation coefficient: } \rho
 	\end{cases}
 \]
 
-where $\mu_x, \mu_y, \sigma_x, \sigma_y$ are the parameters of the distribution. The probability density function of the bivariate normal distribution is:
+The probability density function of the bivariate normal distribution is given by:
 
 \[
 	f(x,y) = \frac{1}{2 \pi \sigma_x \sigma_y \sqrt{1 - \rho^2}} \exp \left( -\frac{1}{2(1 - \rho^2)} \left[ \frac{(x - \mu_x)^2}{\sigma_x^2} + \frac{(y - \mu_y)^2}{\sigma_y^2} - \frac{2 \rho (x - \mu_x)(y - \mu_y)}{\sigma_x \sigma_y} \right] \right)
 \]
 
-where $\rho$ is the correlation coefficient between $X$ and $Y$. The Figure~\ref{fig:bivariatenormal} shows how the bivariate normal distribution looks like, this picture is extracted from \cite{wiki:bivariatenormal}.
+Figure~\ref{fig:bivariatenormal} illustrates the bivariate normal distribution.
 
 \begin{figure}[H]
 	\centering
@@ -1699,17 +1698,37 @@ where $\rho$ is the correlation coefficient between $X$ and $Y$. The Figure~\ref
 	\label{fig:bivariatenormal}
 \end{figure}
 
-Executing the algorithm with the following parameters: $\mu_x = 0$, $\mu_y = 0$, $\sigma_x = 1$, $\sigma_y = 1$ and $\rho = 0.5$, we get the following results:
+In the context of a bivariate normal distribution, the Gibbs Sampling algorithm involves iteratively sampling from the conditional distributions \( P(x | y) \) and \( P(y | x) \). These distributions can be derived from the joint distribution of \( X \) and \( Y \).
+
+Given a bivariate normal distribution with the parameters \( \mu_x, \mu_y, \sigma_x, \sigma_y, \) and correlation coefficient \( \rho \), the conditional distributions are as follows:
+
+1. \( P(x | y) \): The distribution of \( X \) given \( Y = y \) is a normal distribution with the following mean and variance:
+   
+\begin{align*}
+   	\text{Mean: } & \mu_{x|y} = \mu_x + \rho \frac{\sigma_x}{\sigma_y}(y - \mu_y) \\
+	\text{Variance: } & \sigma_{x|y}^2 = (1 - \rho^2)\sigma_x^2
+\end{align*}
+
+2. \( P(y | x) \): The distribution of \( Y \) given \( X = x \) is a normal distribution with the following mean and variance:
+
+\begin{align*}
+   \text{Mean: } & \mu_{y|x} = \mu_y + \rho \frac{\sigma_y}{\sigma_x}(x - \mu_x) \\
+   \text{Variance: } & \sigma_{y|x}^2 = (1 - \rho^2)\sigma_y^2
+\end{align*}
+
+The Gibbs Sampling algorithm then proceeds by iteratively sampling \( X \) from \( P(x | y) \) and \( Y \) from \( P(y | x) \), using the above conditional means and variances.
+
+Executing this algorithm with parameters \( \mu_x = 0 \), \( \mu_y = 0 \), \( \sigma_x = 1 \), \( \sigma_y = 1 \), and \( \rho = 0.5 \), we simulate the sampling process. The resultant samples are expected to align with the bivariate normal distribution characteristics, as depicted in Figure~\ref{fig:bivariatenormal2}.
+
 
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=0.5\linewidth]{./Figures/MCMC/bivariates.png}
-	\caption{Sampling from a bivariate normal distribution using the Gibbs sampling algorithm with $\mu_x = 0$, $\mu_y = 0$, $\sigma_x = 1$, $\sigma_y = 1$ and $\rho = 0.5$.}
+	\caption{Sampling from a bivariate normal distribution using Gibbs Sampling with parameters $\mu_x = 0$, $\mu_y = 0$, $\sigma_x = 1$, $\sigma_y = 1$, and $\rho = 0.5$.}
 	\label{fig:bivariatenormal2}
 \end{figure}
 
-We can see that the samples are distributed according to the bivariate normal distribution.
-
+The figure demonstrates that the samples conform to the expected characteristics of a bivariate normal distribution, validating the effectiveness of the Gibbs Sampling algorithm in this context.
 
 \subsection{Müller-Brown Potential}
 \label{sec:muller_brown_potential}
@@ -1748,22 +1767,13 @@ The Müller-Brown potential is often used as a test function for optimization al
 \subsubsection{Metropolis-Hastings Algorithm for the Müller-Brown Potential}
 \label{sec:metropolis_muller_brown}
 
-Now, we want to know how the Metropolis-Hastings algorithm behaves when we use the Müller-Brown potential as the desired distribution. The Figure~\ref{fig:mullerbrownmh} shows the results of the Metropolis-Hastings algorithm for the Müller-Brown potential.
-
-\begin{figure}[H]
-	\centering
-	\includegraphics[width=0.5\linewidth]{./Figures/MCMC/mullerbrownmh.png}
-	\caption{Sampling from the Müller-Brown potential using the Metropolis-Hastings algorithm with a temperature of 1 and 100000 samples.}
-	\label{fig:mullerbrownmh}
-\end{figure}
-
-We can see that the samples instead of beign distributed all around the Müller-Brown potential, they are concentrated in a local minimun. But what happens if we increase the temperature? The idea of increasing the temperature is to increase the probability of accepting a sample that is worse than the current one, therefore we will be able to escape from the local minimun. The Figure~\ref{fig:mullerbrownmh2} shows the results of the Metropolis-Hastings algorithm for the Müller-Brown potential with a temperature of 40.
+Now, we want to know how the Metropolis-Hastings algorithm behaves when we use the Müller-Brown potential as the desired distribution. The Figure~\ref{fig:mullerbrownmh} shows the results of the Metropolis-Hastings algorithm for the Müller-Brown potential..
 
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=0.5\linewidth]{./Figures/MCMC/mullerbrownmh2.png}
 	\caption{Sampling from the Müller-Brown potential using the Metropolis-Hastings algorithm with a temperature of 40 and 100000 samples.}
-	\label{fig:mullerbrownmh2}
+	\label{fig:mullerbrownmh}
 \end{figure}
 
 We can see that the samples are distributed all around the Müller-Brown potential, which is the expected behaviour of the Metropolis-Hastings algorithm. But one could think wether this sampling is fitting the distribution or not. This will be checked in a future section after introducing the Gibbs sampling algorithm.
@@ -1772,33 +1782,54 @@ We can see that the samples are distributed all around the Müller-Brown potenti
 \subsubsection{Gibbs Sampling Algorithm for the Müller-Brown Potential}
 \label{sec:gibbs_muller_brown}
 
-Now, we want to know how the Gibbs sampling algorithm behaves when we use the Müller-Brown potential as the desired distribution. The Figure~\ref{fig:mullerbrowngibbs} shows the results of the Gibbs sampling algorithm for the Müller-Brown potential.
+In this section, our focus shifts to understanding the behavior of the Gibbs sampling algorithm when applied to the Müller-Brown potential. This potential represents our target distribution.
+
+Previously, we successfully defined conditional distributions for simpler distributions like the bivariate normal. However, the Müller-Brown potential presents a more challenging scenario. Its distinct behavior from a bivariate normal distribution means that we lack a straightforward analytical expression for its conditional distributions. To overcome this hurdle, we turn to a one-dimensional (1D) sampling method for deriving these distributions. Specifically, we employ Rejection Sampling, as detailed in Section~\ref{sec:rejection_sampling} on Rejection Sampling.
+
+The procedure for sampling \(x\) given a fixed \(y_0\) using Rejection Sampling is outlined below:
+
+\begin{center}
+	\begin{minipage}{0.7\linewidth}
+		\begin{algorithm}[H]
+			\caption{Sampling $x$ given $y_0$ using Rejection Sampling} % Algorithm name
+			1. Determine \(K\), the maximum negative value of the Müller-Brown potential, \( -U(x, y_0) \). \\
+			2. Continue sampling until an acceptable sample is found: \\
+			\hspace*{0.5cm} a. Randomly guess a value for \(x\) within the range \([0, b]\), where \(b\) represents the size of the considered box. \\
+			\hspace*{0.5cm} b. Draw a sample \(u\) from a uniform distribution between \([0,1]\). \\
+			\hspace*{0.5cm} c. Accept the sample \(x\) if \(u < \frac{e^{U(x,y_0)}}{e^{K}}\); otherwise, reject it and repeat. \\
+			\label{alg:Gibbs-Sampling-Muller-Brown}   % optional label to refer to
+		\end{algorithm}
+	\end{minipage}
+\end{center}
+
+With this approach, we can effectively execute the Gibbs Sampling algorithm, where Rejection Sampling facilitates obtaining \(p(X | Y)\) and \(p(Y | X)\). The results of applying the Gibbs Sampling algorithm to the Müller-Brown potential are illustrated in Figure~\ref{fig:mullerbrowngibbs}.
 
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=0.5\linewidth]{./Figures/MCMC/mullerbrowngibbs.png}
-	\caption{Sampling from the Müller-Brown potential using the Gibbs sampling algorithm with 100000 samples.}
+	\caption{Sampling from the Müller-Brown potential using the Gibbs sampling algorithm with 10000 samples.}
 	\label{fig:mullerbrowngibbs}
 \end{figure}
 
-We can see that the samples are distributed all around the Müller-Brown potential, which is the expected behaviour of the Gibbs sampling algorithm. 
+The distribution of the samples across the Müller-Brown potential landscape, as shown in the figure, aligns with our expectations from the Gibbs sampling method. The next section will further delve into comparing these samples with those obtained through the Metropolis-Hastings algorithm, ensuring they conform to the Müller-Brown potential's characteristics.
 
 \subsubsection{Comparison between Metropolis-Hastings and Gibbs Sampling}
 \label{sec:comparison_metropolis_gibbs}
 
-This section is built with two aims. First we want to check if the samples obtained with the Metropolis-Hastings algorithm are distributed according to the Müller-Brown potential. Second, we want to compare the Metropolis-Hastings algorithm and the Gibbs sampling algorithm.
+The objective of this section is twofold. Initially, we aim to verify whether the samples generated by the Metropolis-Hastings algorithm accurately reflect the Müller-Brown potential's distribution. Subsequently, we'll compare the Metropolis-Hastings method with the Gibbs Sampling approach.
 
-For these aims we will use the Kullback-Leibler divergence. The Kullback-Leibler divergence is a measure of how one probability distribution is different from a second, reference probability distribution. The Kullback-Leibler divergence of a probability distribution $P$ from a probability distribution $Q$ is defined as:
+To achieve these goals, we employ the Kullback-Leibler (KL) divergence, a statistical tool used to measure the difference between two probability distributions. The KL divergence quantifies how one probability distribution diverges from a reference distribution. Mathematically, it's defined as:
 
 \[
 	D_{KL}(P||Q) = \sum_{x \in \chi} P(x) \log \left( \frac{P(x)}{Q(x)} \right)
 \]
 
-where $\chi$ is the state space of the probability distributions.
+where \(\chi\) denotes the state space of the distributions in question.
 
-This measure gives us a way to compare two probability distributions. If the Kullback-Leibler divergence is small, then the two probability distributions are similar. If the Kullback-Leibler divergence is big, then the two probability distributions are different. 
+This metric allows us to quantitatively compare two probability distributions. A smaller KL divergence indicates that the distributions are similar, while a larger value suggests significant differences.
 
-The Figure~\ref{fig:klmh} shows the Kullback-Leibler divergence between the samples obtained with the Metropolis-Hastings algorithm and the Müller-Brown potential as the number of samples increases.
+
+Figure~\ref{fig:klmh} demonstrates the KL divergence between the samples obtained via the Metropolis-Hastings algorithm and the Müller-Brown potential, observing how this divergence evolves as the sample size increases.
 
 \begin{figure}[H]
 	\centering
@@ -1807,9 +1838,9 @@ The Figure~\ref{fig:klmh} shows the Kullback-Leibler divergence between the samp
 	\label{fig:klmh}
 \end{figure}
 
-From this figure we can get two important results, first, and maybe the most important one, is that the Kullback-Leibler divergence is decreasing as the number of samples increases, therefore the samples obtained with the Metropolis-Hastings algorithm are distributed according to the Müller-Brown potential. Second, we can see that both algorithms, Metropolis-Hastings and Gibbs sampling, are converging almost at the same rate. This is a very important result because it shows that both algorithms are equally good for sampling from a distribution.
+Two critical insights emerge from this figure. First, and most importantly, the decreasing trend of the KL divergence with larger sample sizes suggests that the Metropolis-Hastings algorithm's samples are indeed distributed in alignment with the Müller-Brown potential. Second, the convergence rate of the KL divergence for the Metropolis-Hastings algorithm appears faster than that for the Gibbs Sampling method. This might imply the superiority of the Metropolis-Hastings algorithm in some contexts. However, it's crucial to remember that Gibbs Sampling is based on the ability to obtain conditional distributions, and in this study, we utilized Rejection Sampling, which has potential for optimization. For instance, substituting the uniform distribution for a normal distribution in Rejection Sampling could yield different results. Therefore, we cannot definitively conclude that Metropolis-Hastings is superior to Gibbs Sampling as it heavily depends on the specific problem and the implementation methods used.
 
-As a final experiment, we wanted to plot the heatmap of both distributions as well as the heatmap of the theoretical distribution, to see that indeed the samples obtained with the Metropolis-Hastings algorithm and the Gibbs sampling algorithm are distributed according to the Müller-Brown potential. The Figure~\ref{fig:heatmaps} shows the heatmaps of the theoretical distribution, the Metropolis-Hastings algorithm and the Gibbs sampling algorithm.
+The final part of this analysis involves visualizing the heatmaps of both the theoretical distribution and those generated by the Metropolis-Hastings and Gibbs Sampling algorithms. These heatmaps provide a graphical representation of the distribution of samples. Figure~\ref{fig:heatmaps} showcases these heatmaps, all computed using 10,000 samples.
 
 \begin{figure}[H]
 	\centering
@@ -1817,6 +1848,8 @@ As a final experiment, we wanted to plot the heatmap of both distributions as we
 	\caption{Heatmaps of the theoretical distribution, the Metropolis-Hastings algorithm, with tempeature 40, and the Gibbs sampling algorithm. The heatmaps are computed with 100000 samples.}
 	\label{fig:heatmaps}
 \end{figure}
+
+These visual representations reinforce our findings that the samples from both the Metropolis-Hastings and Gibbs Sampling algorithms are indeed consistent with the Müller-Brown potential, as evidenced by the decreasing KL divergence with increasing sample numbers.
 
 \section{Simulation of a 2D molecular system}
 \label{sec:simulation_2d_molecular_system}
@@ -1836,7 +1869,7 @@ where \( U(r) \) represents the potential energy between two particles separated
 
 The parameters \( \epsilon \) and \( \sigma \) are not merely mathematical constructs but hold profound physical meanings. \( \epsilon \) relates to the energy scale of interactions, dictating how strongly particles attract or repel each other. \( \sigma \), on the other hand, sets the spatial scale, determining the effective size of the particles. These parameters are often determined empirically or through quantum mechanical calculations for specific substances, making the Lennard-Jones potential a versatile tool for simulating a wide range of molecular systems.
 
-\subsection{Implementation using the Metropolis Hastings Algorithm}
+\subsection{Implementation of the model}
 \label{sec:metropolis_hastings_implementation}
 
 When simulating the dynamics of molecular systems, accurately replicating the environmental context is crucial. To this end, we have conceptualized a 10x10 unit square space as the primary stage for the molecular interactions. However, to more closely mimic an infinite environment, where energy is not artificially confined or lost at the boundaries, we adopt a toroidal geometry. A torus, which is essentially a surface of revolution generated by revolving a circle in three-dimensional space around a coplanar axis, offers an elegant solution. This spatial configuration is achieved computationally through the application of modular arithmetic at the boundaries, ensuring a seamless and continuous space. This approach is crucial for maintaining the integrity of the system's energy dynamics and is visually represented in the Figure~\ref{fig:boundaryconditions}.
@@ -1862,6 +1895,9 @@ In our simulation, the initial placement of the particles within this toroidal s
 
 With \( \epsilon \) and \( \sigma \) the parameters of the Lennard-Jones potential, \( \Delta t \) the time step, \( p^{*} \) the reduced pressure and \( T^{*} \) the reduced temperature and \(n\) the number of particles. Note that since \(\epsilon = 1 \) and \( \sigma = 1\) then \(p^{*} = p\) and \(T^{*} = T\).
 
+\subsubsection{Implementation 2D using the Metropolis-Hastings algorithm}
+\label{sec:lennard_jones_2d}
+
 The Figure~\ref{fig:particlesmh} depicts the spatial distribution of the particles within the torus at the outset and after 1000 iterations of the Metropolis-Hastings algorithm, showcasing the system's dynamic evolution.
 
 \begin{figure}[H]
@@ -1871,16 +1907,7 @@ The Figure~\ref{fig:particlesmh} depicts the spatial distribution of the particl
 	\label{fig:particlesmh}
 \end{figure}
 
-Note that we have implemented this simulation to be in n-dimensions, so we can simulate the system in any dimension, for example, in the Figure~\ref{fig:particlesmh2} we can see the simulation in 3 dimensions of 500 particles after 100 iterations of the Gibbs Sampling algorithm.
-
-\begin{figure}[H]
-	\centering
-	\includegraphics[width=0.75\linewidth]{./Figures/MCMC/LennardJones/particles_3d.png}
-	\caption{Spatial distribution of particles in the torus in 3 dimensions after 100 iterations of the Gibbs Sampling algorithm.}
-	\label{fig:particlesmh2}
-\end{figure}
-
-One thing that is extremly interesting of this simulation that can be observed in the Figure~\ref{fig:particlesmh} is that, at the first case, we have distributed the particles randomly around the torus, but after 1000 iterations of the Gibbs Sampling algorithm, the particles have been distributed in a way in which we can see that there are a minimun distance between the particles. This is a very interesting result because it shows that the model is working as expected.
+One thing that is extremly interesting of this simulation that can be observed in the Figure~\ref{fig:particlesmh} is that, at the first case, we have distributed the particles randomly around the torus, but after 1000 iterations of the Gibbs Sampling algorithm, the particles have been distributed in a way in which we can see that there are a minimun distance between the particles. This is a very interesting result because it shows that the model is probably working as expected.
 
 An integral aspect of our analysis is the examination of the system's energy profile over the course of the simulation. The Metropolis-Hastings algorithm, in theory, should conserve the total energy of the system, a hypothesis we put to the test. The Figure~\ref{fig:energymh} captures the energy of the system at the beginning and after 1000 iterations, providing insights into the algorithm's efficacy in maintaining energy conservation.
 
@@ -1891,9 +1918,79 @@ An integral aspect of our analysis is the examination of the system's energy pro
 	\label{fig:energymh}
 \end{figure}
 
-As observed, the energy of the system remains approximately constant, validating the expected behavior of the Metropolis-Hastings algorithm in preserving the thermodynamic properties of the molecular system.
+The stability of the system's energy, which remains largely unchanged, supports our expectations of the Metropolis-Hastings algorithm. This algorithm is known for maintaining the thermodynamic characteristics of molecular systems. The fact that the energy remains constant is a promising sign that the algorithm is functioning correctly. However, to confirm this more conclusively, we need to employ a more thorough method of verification. For this purpose, we plan to use the radial distribution function. Our current challenge is that most existing studies and references on the radial distribution function are based on three-dimensional systems. Therefore, to align our work with these studies, we will adapt our system to a three-dimensional model. Following this, we'll apply Gibbs Sampling to our three-dimensional system. This approach should allow us to derive a radial distribution function that is relevant and applicable to three-dimensional systems.
 
-We have seen before the interesting result of the minimun distance between the particles, so now we want to see if indeed the theoretical aspects of the Lennard-Jones potential are being fulfilled. For this aim we can move on to the concept of the radial distribution function. The radial distribution function is a function that describes how density varies as a function of distance from a reference particle. We already know that this distribution should have the shape represented in the Figure~\ref{fig:radialdistributionfunction}, obtained from \cite{wiki:radialdistributionfunction}.
+
+\subsubsection{Implementation 3D using the Gibbs Sampling algorithm}
+\label{sec:lennard_jones_3d}
+
+As previously mentioned, while the outcomes from the Metropolis-Hastings algorithm implementation appear optimistic, we need to verify their accuracy. To do this, we will implement the Gibbs Sampling algorithm in a three-dimensional space. As we discussed in Section~\ref{sec:gibbs_muller_brown}, this requires us to define the conditional distributions in three dimensions, similar to what we did for the Müller-Brown case. In situations like these, where an analytical expression for the conditional distributions is not available, a numerical approach is essential. We have chosen a specific algorithm for this purpose, detailed below.
+
+The algorithm we're using can be summarized as follows:
+
+\begin{center}
+    \begin{minipage}{0.7\linewidth}
+        \begin{algorithm}[H]
+            \textbf{Input:} Index of particle \( i \), position matrix \( \mathbf{P} \), variable range \( \mathcal{R} \), variable dimension \( d \) \\
+            \textbf{Output:} Estimated conditional probability distribution \( \mathbf{Pr} \)
+            \begin{enumerate}
+                \item Let \( n \) be the number of elements in \( \mathcal{R} \).
+                \item For each \( r \in \mathcal{R} \), construct a matrix \( \mathbf{P}_{varied} \) where:
+                      \begin{itemize}
+                          \item Each row is a copy of \( \mathbf{P}_i \), the \( i \)-th row of \( \mathbf{P} \).
+                          \item The \( d \)-th element of each row in \( \mathbf{P}_{varied} \) is set to a corresponding value from \( \mathcal{R} \).
+                      \end{itemize}
+                \item Construct a comprehensive position matrix \( \mathbf{P}_{all} \) by replicating \( \mathbf{P} \) \( n \) times and replacing its \( i \)-th row with \( \mathbf{P}_{varied} \).
+                \item Calculate the potential energy for each configuration in \( \mathbf{P}_{all} \), denoted as \( U(\mathbf{P}_{all}) \).
+                \item Compute probabilities \( \mathbf{Pr} \) from \( U \) using the exponential function: \( \mathbf{Pr} = e^{-U(\mathbf{P}_{all})} \). 
+                \item Normalize \( \mathbf{Pr} \) so that its sum equals one.
+                \item Return the normalized probability distribution \( \mathbf{Pr} \).
+            \end{enumerate}
+            \caption{Estimating Conditional Distributions in Three-Dimensional Gibbs Sampling}
+            \label{alg:conditional_distribution_math}
+        \end{algorithm}
+    \end{minipage}
+\end{center}
+
+
+This outlines our approach for estimating the conditional distributions numerically in three dimensions, as required for our implementation.
+
+Now that we have a method to compute the conditional distributions, we can proceed with the implementation of the Gibbs Sampling algorithm. The Figure~\ref{fig:particlesmh2} depicts the spatial distribution of the particles within the torus at the outset and after 100 iterations of the Gibbs Sampling algorithm, showcasing the system's dynamic evolution.
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.75\linewidth]{./Figures/MCMC/LennardJones/particles_3d.png}
+	\caption{Spatial distribution of particles in the torus in 3 dimensions after 100 iterations of the Gibbs Sampling algorithm.}
+	\label{fig:particlesmh2}
+\end{figure}
+
+We have seen before the interesting result of the minimun distance between the particles, so now we want to see if indeed the theoretical aspects of the Lennard-Jones potential are being fulfilled. For this aim we can move on to the concept of the radial distribution function. 
+
+The radial distribution function (RDF), \( g(r) \), is a key concept in understanding the spatial distribution of particles in a system, particularly in molecular simulations like the ones performed using the Gibbs Sampling algorithm. Mathematically, the RDF is defined as the ratio of the local density at a distance \( r \) from a reference particle to the average density of the system. 
+
+In a more formal sense, if \( \rho \) represents the average number density of particles in the system, and \( \rho(r) \) represents the local number density at a distance \( r \) from a reference particle, then the RDF is given by:
+\[ g(r) = \frac{\rho(r)}{\rho} \]
+
+For computational purposes, \( g(r) \) can be estimated by considering a series of concentric shells of thickness \( \delta r \) around a reference particle. The probability of finding a particle in each shell is then computed and normalized by the volume of the shell and the average number density of particles. Mathematically, for a shell between radii \( r \) and \( r + \delta r \), the RDF is estimated as:
+\[ g(r) \approx \frac{N(r)}{4\pi r^2 \delta r \rho} \]
+where \( N(r) \) is the average number of particles found in the shell.
+
+To rewrite the caption and accompanying text for the provided figure, which illustrates the process of estimating the radial distribution function (RDF), you can use the following revised version:
+
+For clarity, let us visualize the methodology behind calculating the radial distribution function. Figure~\ref{fig:rdf_explanation} provides a schematic representation of this concept.
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.3\linewidth]{./Figures/MCMC/LennardJones/rdf_explanation.png}
+	\caption{Schematic representation of radial distribution function estimation.}
+	\label{fig:rdf_explanation}
+\end{figure}
+
+In this schematic, the central red particle serves as the reference point around which concentric shells (depicted by dashed circles) of infinitesimal thickness, \( \delta r \), are considered. The RDF is estimated by counting the number of particles within the \(r\) and \( \delta r \) (illustrated as blue circles) and normalizing this count by the volume and the overall particle density. This process is replicated across all particles and averaged to yield the RDF, \( g(r) \), which quantifies the probability of finding another particle at a distance \( r \) from a given reference particle.
+
+This function is fundamental in characterizing the structure of materials, particularly in the context of the Lennard-Jones potential, as it provides insights into the arrangement of particles at various scales. Peaks in \( g(r) \) indicate preferred inter-particle distances due to energetic favorability, while valleys suggest distances that particles tend to avoid.
+
+In the context of our study using the Gibbs Sampling algorithm, the RDF helps validate the accuracy and realism of the simulated particle distributions. By comparing the RDF obtained from the simulation (as shown in Figure~\ref{fig:radialdistributionfunctionmh}) with the theoretical or experimental RDF (as depicted in Figure~\ref{fig:radialdistributionfunction}), we can assess how well the simulation captures the physical properties of the system under study. The agreement between the simulated and theoretical RDFs, despite the finite number of particles and computational limitations, reinforces the effectiveness of the Gibbs Sampling algorithm in replicating the physical behavior of the system.
 
 \begin{figure}[H]
 	\centering
@@ -1911,7 +2008,7 @@ If we try to compute the radial distribution function for our system, we will ge
 	\label{fig:radialdistributionfunctionmh}
 \end{figure}
 
-We can see that the radial distribution function is almost of the same shape as the theoretical one, even though there is not as smooth as the other one since we have a finite number of particles. Therefore, we can conclude that it seems that the Gibbs Sampling algorithm is working as expected.
+We can see that the radial distribution function is almost of the same shape as the theoretical one, even though there is not as smooth as the other one since we have a finite number of particles. Therefore, we can conclude that it seems that the Gibbs Sampling algorithm is working as expected, concluding that we have created the aimed molecular system.
 
 \newpage
 
