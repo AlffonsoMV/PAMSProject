@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999995 (TeX Live 2023) (preloaded format=xelatex 2023.11.29)  26 JAN 2024 17:02
+This is XeTeX, Version 3.141592653-2.6-0.999995 (TeX Live 2023) (preloaded format=xelatex 2023.11.29)  26 JAN 2024 18:19
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1000,10 +1000,10 @@ File: ./Figures/Sympletic/maxenergydifference.png Graphic file (type bmp)
  [32] [33]
 File: ./Figures/Sympletic/graphic.jpg Graphic file (type bmp)
 <./Figures/Sympletic/graphic.jpg>
- [34] [35]
+ [34] [35] [36]
 File: ./Figures/SolarSystem/gravitationalpotential.png Graphic file (type bmp)
 <./Figures/SolarSystem/gravitationalpotential.png>
- [36] [37]
+ [37]
 File: ./Figures/SolarSystem/orbits.png Graphic file (type bmp)
 <./Figures/SolarSystem/orbits.png>
 File: ./Figures/SolarSystem/energy1.png Graphic file (type bmp)
@@ -1071,9 +1071,9 @@ Overfull \hbox (15.0pt too wide) detected at line 1951
 [56]
 File: ./Figures/MCMC/LennardJones/particles_3d.png Graphic file (type bmp)
 <./Figures/MCMC/LennardJones/particles_3d.png>
+ [57]
 File: ./Figures/MCMC/LennardJones/rdf_explanation.png Graphic file (type bmp)
 <./Figures/MCMC/LennardJones/rdf_explanation.png>
- [57]
 File: ./Figures/MCMC/LennardJones/radialdistributionfunction.png Graphic file (type bmp)
 <./Figures/MCMC/LennardJones/radialdistributionfunction.png>
 File: ./Figures/MCMC/LennardJones/rdf_exp.png Graphic file (type bmp)
@@ -1099,4 +1099,4 @@ Here is how much of TeX's memory you used:
  319 hyphenation exceptions out of 8191
  127i,13n,132p,1411b,604s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on main.xdv (61 pages, 252328 bytes).
+Output written on main.xdv (61 pages, 253404 bytes).

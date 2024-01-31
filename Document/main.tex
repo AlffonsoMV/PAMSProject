@@ -33,7 +33,7 @@
         \vspace*{1cm}
         
         \Huge
-        \textbf{Simulation of Random Variables, Hamiltonian Dynamics, and Sampling via Markov Chains}
+        \textbf{Integrative Approaches to Simulating Random Variables, Hamiltonian Dynamics, and Markov Chains}
         
         \vspace{1.5cm}
 
@@ -1047,7 +1047,7 @@ The Figure~\ref{fig:eulerenergy} shows the energy of the harmonic oscillator usi
 
 Now, if we define the next map:
 \[
-	\Gamma_{\Delta t}^{Euler} = \max_{n \in \mathbb{N}}\{|H_{\Delta t}(p^n, q^n) - H_{\Delta t}(p^0, q^0)|\}
+	\Gamma_{\Delta t}^{Euler} = \max_{n = 1 ... N}\{|H(p^n_{\Delta t}, q^n_{\Delta t}) - H(p^0_{\Delta t}, q^0_{\Delta t})|\}
 \]
 
 The Figure~\ref*{fig:eulermaxenergy} shows the function \(\Gamma_{\Delta t}^{Euler}\) over \(\frac{1}{\Delta t}\).
@@ -1140,7 +1140,7 @@ The Figure~\ref{fig:stormerverletphase} shows the phase space of the harmonic os
 The Figure~\ref{fig:stormerverletenergy} shows the energy of the harmonic oscillator using the Störmer-Verlet method. We can see that the energy is approximately conserved over time, as we wanted for the Hamiltonian dynamics. Like the behaviour of the Euler Sympletic method, we can see that in this case, the energy continues to oscillate around the average value, however the scale of this oscillation is much smaller than in the Euler Sympletic method. To see this, we define the following function:
 
 \[
-	\Gamma_{\Delta t}^{Verlet} = \max_{h = 1 ... N_{\Delta t}}\{|H(q^n, p^n) - H(q^0, p^0)|\}
+	\Gamma_{\Delta t}^{Verlet} = \max_{n = 1 ... N}\{|H(q^n_{\Delta t}, p^n_{\Delta t}) - H(q^0_{\Delta t}, p^0_{\Delta t})|\}
 \]
 
 So now we are prepared to overview the difference between both methods. The Figure~\ref*{fig:comparisonmaxenergy} shows the function \(\Gamma_{\Delta t}^{Euler}\) and \(\Gamma_{\Delta t}^{Verlet}\) over \(\frac{1}{\Delta t}\).
@@ -1152,7 +1152,7 @@ So now we are prepared to overview the difference between both methods. The Figu
 	\label{fig:comparisonmaxenergy}
 \end{figure}
 
-As we can see, the Störmer-Verlet method is much better than the Euler Sympletic method. Note that the slope of the linear regression of the Störmer-Verlet method is approximately -2.0147 and the slope of the linear regression of the Euler Sympletic method is approximately -1.8196 Probably, this is a consequence of the fact that the Störmer-Verlet method is a second order method, while the Euler Sympletic method is a first order method. Therefore, we can conclude that the Störmer-Verlet method is a better method to solve the Hamiltonian dynamics equations than the Euler Sympletic method.
+The comparative analysis presented in Figure~\ref{fig:comparisonmaxenergy} clearly demonstrates the superiority of the Störmer-Verlet method over the Euler Symplectic method in solving Hamiltonian dynamics equations. This conclusion is evidenced by the slopes of their respective linear regressions: approximately -2 for the Störmer-Verlet method and -1 for the Euler Symplectic method. This difference is likely due to the Störmer-Verlet method being a second-order method, in contrast to the first-order nature of the Euler Symplectic method. Higher-order methods typically offer greater accuracy and stability in numerical simulations, as reflected in the more consistent energy conservation shown by the Störmer-Verlet method. Therefore, the Störmer-Verlet method emerges as the more effective approach for accurately solving these equations.
 
 \subsubsection{Linear Stability Analysis of the Verlet Scheme}
 \label{sec:linear_stability_verlet}
@@ -1952,8 +1952,7 @@ The algorithm we're using can be summarized as follows:
     \end{minipage}
 \end{center}
 
-
-This outlines our approach for estimating the conditional distributions numerically in three dimensions, as required for our implementation.
+This outlines our approach for estimating the conditional distributions numerically in three dimensions, as required for our implementation. Note that by using this methodology what we are really doing is sampling a discrete version of the Gibbs Sampling. If we wanted to sample the continuous version of the Gibbs Sampling, we would need to use the Metropolis-Hastings algorithm to sample the conditional distributions. However, this would be computationally expensive and would require a lot of time to compute. Therefore, we will use the discrete version of the Gibbs Sampling algorithm.
 
 Now that we have a method to compute the conditional distributions, we can proceed with the implementation of the Gibbs Sampling algorithm. The Figure~\ref{fig:particlesmh2} depicts the spatial distribution of the particles within the torus at the outset and after 100 iterations of the Gibbs Sampling algorithm, showcasing the system's dynamic evolution.
 
