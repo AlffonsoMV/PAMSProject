@@ -1,19 +1,19 @@
 # Fdb version 4
-["bibtex main"] 1706287954 "main.aux" "main.bbl" "main" 1706289590 0
-  "./mybib.bib" 1705782374 5850 e6f551260f54d64f95bd434c36ec676c ""
+["bibtex main"] 1707153773 "main.aux" "main.bbl" "main" 1707153782 0
+  "./mybib.bib" 1707153773 5814 bc275e013ebcf1598d67d926aa4e78cd ""
   "/usr/local/texlive/2023basic/texmf-dist/bibtex/bst/base/plain.bst" 1292289607 20613 bd3fbfa9f64872b81ac57a0dd2ed855f ""
-  "main.aux" 1706289584 35841 b757fbc6cf6feae01e77bd08aea019fe "xelatex"
+  "main.aux" 1707153774 35841 a09777a3bf89fac3761a261a8fee3ed1 "xelatex"
   (generated)
   "main.bbl"
   "main.blg"
   (rewritten before read)
-["xdvipdfmx"] 1706289584 "main.xdv" "main.pdf" "main" 1706289590 0
-  "main.xdv" 1706289584 253404 a17b1c2b73bdf77ba50f832b8dbfaa28 "xelatex"
+["xdvipdfmx"] 1707153774 "main.xdv" "main.pdf" "main" 1707153782 0
+  "main.xdv" 1707153774 253924 51fbdb64e14e4a6bf7e6bf30caaacb4b "xelatex"
   (generated)
   "main.pdf"
   (rewritten before read)
-["xelatex"] 1706289583 "/Users/alfonsomateos/Documents/PONTS/PAMS Project/Document/main.tex" "main.xdv" "main" 1706289590 0
-  "/Users/alfonsomateos/Documents/PONTS/PAMS Project/Document/main.tex" 1706289583 127804 942132f69c6e35599f77256b57c6d330 ""
+["xelatex"] 1707153773 "/Users/alfonsomateos/Documents/PONTS/PAMS Project/Document/main.tex" "main.xdv" "main" 1707153782 0
+  "/Users/alfonsomateos/Documents/PONTS/PAMS Project/Document/main.tex" 1707153726 128126 92af5d4fb4967be8341df6df93a48b11 ""
   "/usr/local/texlive/2023basic/texmf-dist/fonts/tfm/adobe/zapfding/pzdr.tfm" 1136768653 1528 f853c4d1b4e0550255e02831fdc8496f ""
   "/usr/local/texlive/2023basic/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm" 1246382020 1004 54797486969f23fa377b128694d548df ""
   "/usr/local/texlive/2023basic/texmf-dist/fonts/tfm/public/amsfonts/symbols/msam10.tfm" 1246382020 916 f87d7c45f9c908e672703b83b72241a3 ""
@@ -240,11 +240,11 @@
   "Figures/VarianceReduction/comparison.png" 1695817358 57522 d43a83f81b14985e78941521282a08a8 ""
   "Figures/VarianceReduction/comparison2.png" 1701027332 38295 389e429dbf6c7a31d635fe5d67343441 ""
   "logo-enpc.eps" 1696975345 586786 2481599d970520a68364592352c92496 ""
-  "main.aux" 1706289584 35841 b757fbc6cf6feae01e77bd08aea019fe "xelatex"
-  "main.bbl" 1706287954 2605 1f69430020e31f594e3bc6a320294171 "bibtex main"
-  "main.out" 1706289584 11911 b8e10fc005320764adcaaf01f6c68b24 "xelatex"
-  "main.tex" 1706289583 127804 942132f69c6e35599f77256b57c6d330 ""
-  "main.toc" 1706289584 5185 3c30eba656285c0a60a018175ab147cb "xelatex"
+  "main.aux" 1707153774 35841 a09777a3bf89fac3761a261a8fee3ed1 "xelatex"
+  "main.bbl" 1707153773 2573 8a977b9ca2c7ff200dfd20256d687f0a "bibtex main"
+  "main.out" 1707153774 11911 b8e10fc005320764adcaaf01f6c68b24 "xelatex"
+  "main.tex" 1707153726 128126 92af5d4fb4967be8341df6df93a48b11 ""
+  "main.toc" 1707153774 5185 9736547349bb23693834c9653a5ac709 "xelatex"
   "structure.tex" 1706200131 8586 2f2c54b9b07fcf708a30e1848eb3a375 ""
   (generated)
   "main.aux"

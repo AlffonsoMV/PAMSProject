@@ -8,32 +8,32 @@ Warning--entry type for "fraysse2018hdr" isn't style-file defined
 Warning--entry type for "higham2020backwarderror" isn't style-file defined
 --line 50 of file mybib.bib
 Warning--entry type for "nssdc2022planetaryfactsheet" isn't style-file defined
---line 86 of file mybib.bib
+--line 85 of file mybib.bib
 Warning--entry type for "peng2023rejectionsampling" isn't style-file defined
---line 94 of file mybib.bib
+--line 93 of file mybib.bib
 Warning--I'm ignoring reygner2023methodes's extra "note" field
---line 106 of file mybib.bib
+--line 105 of file mybib.bib
 Warning--entry type for "wiki:bivariatenormal" isn't style-file defined
---line 120 of file mybib.bib
+--line 119 of file mybib.bib
 Warning--entry type for "wiki:metropolishastings" isn't style-file defined
---line 130 of file mybib.bib
+--line 129 of file mybib.bib
 Warning--entry type for "wiki:radialdistributionfunction" isn't style-file defined
---line 139 of file mybib.bib
+--line 138 of file mybib.bib
 Warning--entry type for "wikitInverseTransformSampling" isn't style-file defined
---line 149 of file mybib.bib
+--line 148 of file mybib.bib
 Warning--to sort, need author or key in nssdc2022planetaryfactsheet
 You've used 14 entries,
             2118 wiz_defined-function locations,
-            570 strings with 5796 characters,
-and the built_in function-call counts, 3257 in all, are:
-= -- 317
+            569 strings with 5776 characters,
+and the built_in function-call counts, 3248 in all, are:
+= -- 315
 > -- 98
 < -- 0
 + -- 44
 - -- 28
 * -- 145
-:= -- 545
-add.period$ -- 47
+:= -- 543
+add.period$ -- 46
 call.type$ -- 14
 change.case$ -- 55
 chr.to.int$ -- 0
@@ -41,13 +41,13 @@ cite$ -- 15
 duplicate$ -- 120
 empty$ -- 326
 format.name$ -- 28
-if$ -- 703
+if$ -- 701
 int.to.chr$ -- 0
 int.to.str$ -- 14
 missing$ -- 7
-newline$ -- 78
+newline$ -- 77
 num.names$ -- 26
-pop$ -- 97
+pop$ -- 98
 preamble$ -- 1
 purify$ -- 42
 quote$ -- 0
@@ -62,5 +62,5 @@ type$ -- 52
 warning$ -- 1
 while$ -- 30
 width$ -- 16
-write$ -- 156
+write$ -- 154
 (There were 10 warnings)

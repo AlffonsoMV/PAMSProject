@@ -10,7 +10,7 @@
 \contentsline {subsection}{\numberline {1.5.2}Control variates}{13}{subsection.1.5.2}%
 \contentsline {subsection}{\numberline {1.5.3}Importance sampling}{14}{subsection.1.5.3}%
 \contentsline {subsection}{\numberline {1.5.4}Stratified sampling}{15}{subsection.1.5.4}%
-\contentsline {subsection}{\numberline {1.5.5}Antithetic variates}{16}{subsection.1.5.5}%
+\contentsline {subsection}{\numberline {1.5.5}Antithetic variates}{17}{subsection.1.5.5}%
 \contentsline {subsection}{\numberline {1.5.6}Comparative Review}{18}{subsection.1.5.6}%
 \contentsline {chapter}{\numberline {2}Hamiltonian dynamics}{21}{chapter.2}%
 \contentsline {section}{\numberline {2.1}Introduction to Hamiltonian dynamics}{21}{section.2.1}%

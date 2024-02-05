@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999995 (TeX Live 2023) (preloaded format=xelatex 2023.11.29)  26 JAN 2024 18:19
+This is XeTeX, Version 3.141592653-2.6-0.999995 (TeX Live 2023) (preloaded format=xelatex 2023.11.29)  5 FEB 2024 18:22
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -963,10 +963,7 @@ File: ./Figures/VarianceReduction/comparison.png Graphic file (type bmp)
 <./Figures/VarianceReduction/comparison.png>
 
 Missing character: There is no ’ ("2019) in font ec-lmr10!
-Missing character: There is no ’ ("2019) in font ec-lmr10!
-[18]
-Missing character: There is no ’ ("2019) in font ec-lmr10!
-[19]
+[18] [19]
 File: ./Figures/VarianceReduction/comparison2.png Graphic file (type bmp)
 <./Figures/VarianceReduction/comparison2.png>
  [20]
@@ -1059,12 +1056,12 @@ File: ./Figures/MCMC/LennardJones/particles.png Graphic file (type bmp)
 File: ./Figures/MCMC/LennardJones/energy.png Graphic file (type bmp)
 <./Figures/MCMC/LennardJones/energy.png>
  [55]
-Underfull \hbox (badness 1038) in paragraph at lines 1949--1949
+Underfull \hbox (badness 1038) in paragraph at lines 1955--1955
 []\T1/lmr/bx/n/10 Algorithm 9: \T1/lmr/m/n/10 Es-ti-mat-ing Con-di-tional Dis-tri-bu-tions in
  []
 
 
-Overfull \hbox (15.0pt too wide) detected at line 1951
+Overfull \hbox (15.0pt too wide) detected at line 1957
 [][] 
  []
 
@@ -1097,6 +1094,6 @@ Here is how much of TeX's memory you used:
  47580 multiletter control sequences out of 15000+600000
  605296 words of font info for 67 fonts, out of 8000000 for 9000
  319 hyphenation exceptions out of 8191
- 127i,13n,132p,1411b,604s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 127i,13n,132p,1410b,604s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on main.xdv (61 pages, 253404 bytes).
+Output written on main.xdv (61 pages, 253924 bytes).

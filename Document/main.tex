@@ -136,9 +136,9 @@ With this picture, we can see that the histogram of the generated random numbers
 
 We define the error as:
 
-\begin{equation*} error = \frac{1}{n}\sum_{i=1}^{n} | x_i - \mu | \end{equation*}
+\begin{equation*} error = \frac{1}{n}\sum_{i=1}^{n} | \hat{x}_i - \mu | \end{equation*}
 
-where \(x_i\) is the \(i\)-th random number generated and \(\mu\) is the theoretical mean of the distribution.
+where \(\hat{x}_i\) is the \(i\)-th random number generated and \(\mu\) is the theoretical mean of the distribution.
 
 Recall that the uniform and exponential means are:
 
@@ -246,10 +246,10 @@ This section explores the empirical validation of the Law of Large Numbers, a pi
 Given our established ability to generate random numbers reflecting specific probability distributions, we can select a distribution, generate a set of numbers corresponding to it, and then contrast the calculated averages and means of the target distribution while escalating the number of trials. Now we can define the following error:
 
 \begin{equation} 
-	error = \frac{1}{n}\sum_{i=1}^{n} (x_i - \mu)^2
+	error = \frac{1}{n}\sum_{i=1}^{n} (\hat{x}_i - \mu)^2
 \end{equation}
 
-where \(x_i\) is the \(i\)-th random number generated and \(\mu\) is the theoretical mean of the distribution. Note that in the theorem was stated that the esperance of the difference, behaves as the variance divided by the number of trials, so we can plot the variance as the number of trials increases and calculate the slope of the regression line. If the theory is correct, the slope should be around \(-1\) since the variance of the normal distribution is \(\mathbb{V}(\bar{X}) = \frac{sigma^2}{n}\), therefore, the variance is inversely proportional to the number of variables. The Figure~\ref{fig:verificationllnlog} shows the variance as the number of variables increases and the regression line.
+where \(\hat{x}_i\) is the \(i\)-th random number generated and \(\mu\) is the theoretical mean of the distribution. Note that in the theorem was stated that the esperance of the difference, behaves as the variance divided by the number of trials, so we can plot the variance as the number of trials increases and calculate the slope of the regression line. If the theory is correct, the slope should be around \(-1\) since the variance of the normal distribution is \(\mathrm{Var}(\bar{X}) = \frac{\sigma^2}{n}\), therefore, the variance is inversely proportional to the number of variables. The Figure~\ref{fig:verificationllnlog} shows the variance as the number of variables increases and the regression line.
 
 \begin{figure}[H]
 	\centering
@@ -285,9 +285,9 @@ For illustrative purposes, consider the uniform distribution on \([0,1]\), which
 
 In congruence with the methodology espoused in previous sections, we have juxtaposed the empirical mean of the samples with the theoretical mean, progressively augmenting the number of trials. Figure~\ref{fig:meanerror} delineates the deviation from the theoretical mean, and Figure~\ref{fig:varianceerror} represents the deviation from the theoretical variance, both as functions of the number of trials. Therefore the formula of the deviation is:
 
-\begin{equation*} error_{mean} = \frac{1}{n}\sum_{i=1}^{n} | x_i - \mu | \end{equation*}
+\begin{equation*} error_{mean} = \frac{1}{n}\sum_{i=1}^{n} | \hat{x}_i - \mu | \end{equation*}
 
-where \(x_i\) is the \(i\)-th random number generated and \(\mu\) is the theoretical mean of the distribution.
+where \(\hat{x}_i\) is the \(i\)-th random number generated and \(\mu\) is the theoretical mean of the distribution.
 
 \begin{figure}[H]
 	\centering
@@ -298,9 +298,9 @@ where \(x_i\) is the \(i\)-th random number generated and \(\mu\) is the theoret
 
 And for the case of the variance:
 
-\begin{equation*} error_{variance} = \frac{1}{n}\sum_{i=1}^{n} | x_i - \sigma^2 | \end{equation*}
+\begin{equation*} error_{variance} = \frac{1}{n}\sum_{i=1}^{n} | \hat{x}_i - \sigma^2 | \end{equation*}
 
-where \(x_i\) is the \(i\)-th random number generated and \(\sigma^2\) is the theoretical variance of the distribution.
+where \(\hat{x}_i\) is the \(i\)-th random number generated and \(\sigma^2\) is the theoretical variance of the distribution.
 
 \begin{figure}[H]
 	\centering
@@ -311,7 +311,7 @@ where \(x_i\) is the \(i\)-th random number generated and \(\sigma^2\) is the th
 
 A discernible insight gleaned from Figure~\ref{fig:meanerror} and Figure~\ref{fig:varianceerror} is the palpable decrement in deviations from the theoretical values as the trials proliferate. 
 
-Finally, another way to validate the CLT is to plot the variance as the number of variables increases and calculate the slope of the regression line. If the theory is correct, the slope should be around \(-1\) since the variance of the normal distribution is \(\mathbb{V}(\bar{X}) = \frac{\sigma^2}{n}\), therefore the variance is inversely proportional to the number of variables. The Figure~\ref{fig:variancereg} shows the variance as the number of variables increases and the regression line.
+Finally, another way to validate the CLT is to plot the variance as the number of variables increases and calculate the slope of the regression line. If the theory is correct, the slope should be around \(-1\) since the variance of the normal distribution is \(\mathrm{Var}(\bar{X}) = \frac{\sigma^2}{n}\), therefore the variance is inversely proportional to the number of variables. The Figure~\ref{fig:variancereg} shows the variance as the number of variables increases and the regression line.
 
 
 \begin{figure}[H]
@@ -466,7 +466,7 @@ Now let's show why this method works.
 	   
 	The variance reduction comes from the fact that if \( f_Y(y) \) is chosen such that it is closer to \( |g(y)| \), the term \( \frac{f_X(Y)}{f_Y(Y)} \) will stabilize the values of \( g(Y) \), leading to a reduction in variance. 
 	   
-	Threfore, Ii the sampling distribution \( Y \) is chosen appropriately, \( \mathrm{Var}(\hat{\mathbb{E}}_{IS}[g(X)]) \) will be less than \( \mathrm{Var}(\hat{\mathbb{E}}[g(X)]) \), achieving variance reduction.
+	Threfore, if the sampling distribution \( Y \) is chosen appropriately, \( \mathrm{Var}(\hat{\mathbb{E}}_{IS}[g(X)]) \) will be less than \( \mathrm{Var}(\hat{\mathbb{E}}[g(X)]) \), achieving variance reduction.
 \end{proof}
 
 
@@ -504,6 +504,12 @@ Now let's show why this method works.
    	\[ \mathrm{Var}(w_i \bar{X}_i) = w_i^2 \frac{\mathrm{Var}(X_i)}{n_i} \]
    	Combining these, we get the total variance:
    	\[ \mathrm{Var}_{\text{stratified}}(\hat{X}) = \sum_{i=1}^{k} w_i^2 \frac{\mathrm{Var}(X_i)}{n_i} \]
+
+	Note that the weight \( w_i \) is the size of the stratum relative to the total population. Therefore, the variance of the stratified estimator is:
+
+	\[ \mathrm{Var}_{\text{stratified}}(\hat{X}) = \sum_{i=1}^{k} \left( \frac{N_i}{N} \right)^2 \frac{\mathrm{Var}(X_i)}{n_i} \]
+
+	where \( N_i \) is the size of stratum \( i \) and \( N \) is the total population size.
 
    	The variance under simple random sampling (assuming a sample size of \( n \)) is:
    	\[ \mathrm{Var}_{\text{simple}}(\hat{X}) = \frac{\mathrm{Var}(X)}{n} \]
@@ -586,7 +592,7 @@ See Figure~\ref{fig:comparisonvariancereduction} for a visual representation of 
 \label{fig:comparisonvariancereduction}
 \end{figure}
 
-Looking at the data, it’s clear that stratified sampling takes the lead with its quicker convergence compared to the other methods. However, claiming it as the undisputed champion would be premature, especially when we’ve explored just one problem. To firm up this initial finding, we need to dig deeper and explore a variety of problems.
+Looking at the data, it’s clear that stratified sampling takes the lead with its quicker convergence compared to the other methods. However, claiming it as the undisputed champion would be premature, especially when we have explored just one problem. To firm up this initial finding, we need to dig deeper and explore a variety of problems.
 
 But before moving on to look at more problems, let's look at the comparative table of variances for each method:
 
@@ -615,9 +621,9 @@ Recall that the formula used to compute the variance is:
 
 With a sample size of \(n = 1000\).
 
-Analyzing the table, we discern significant disparities in variance between the different sampling methods, accentuating the prominence of stratified sampling, which registers the minimal variance,. This numerical inferiority in variance corroborates the preliminary observation about its superior convergence rate, offering more stable and reliable estimates. Stratified sampling outperformed other methods in our study primarily due to its targeted approach of dividing the population into homogeneous strata. This division ensures proportional representation of all subgroups, reducing sampling bias and variance within each stratum. Consequently, it yields more accurate and representative results. Furthermore, by adjusting the sample size within each stratum based on variability, stratified sampling enhances overall efficiency and precision. These methodological strengths contribute to its superior performance in terms of reliability and convergence rates, especially in diverse and complex datasets. Contrastingly, direct sampling exhibits the maximum variance, revealing its comparative inefficiency and instability in procuring estimates for this specific problem. The remaining methods, while overshadowed by the efficacy of stratified sampling, still exhibit markedly lower variances than direct sampling.
+Analyzing the table, we discern significant disparities in variance between the different sampling methods, accentuating the prominence of stratified sampling, which registers the minimal variance. This numerical inferiority in variance corroborates the preliminary observation about its superior convergence rate, offering more stable and reliable estimates. Stratified sampling outperformed other methods in our study primarily due to its targeted approach of dividing the population into homogeneous strata. This division ensures proportional representation of all subgroups, reducing sampling bias and variance within each stratum. Consequently, it yields more accurate and representative results. Furthermore, by adjusting the sample size within each stratum based on variability, stratified sampling enhances overall efficiency and precision. These methodological strengths contribute to its superior performance in terms of reliability and convergence rates, especially in diverse and complex datasets. Contrastingly, direct sampling exhibits the maximum variance, revealing its comparative inefficiency and instability in procuring estimates for this specific problem. The remaining methods, while overshadowed by the efficacy of stratified sampling, still exhibit markedly lower variances than direct sampling.
 
-Next, we'll broaden our investigation to a more complex problem, applying the methods we’ve discussed to estimate the following integrals:
+Next, we'll broaden our investigation to a more complex problem, applying the methods we have discussed to estimate the following integrals:
 
 \begin{equation} 
 	\label{eq:integralvariancereduction1} 
@@ -659,7 +665,7 @@ where \(method\) is the method we are using, \(f\) is the function we are integr
 \label{fig:comparisonvariancereduction2}
 \end{figure}
 
-Note that in the cace of importance sampling, we have used the gaussian distribution as the sampling distribution, therefore the error could be higher than the other methods, since the gaussian distribution might not be the best sampling distribution for all the functions. To conclude, we can say that the stratified sampling method is the best method for this problem, since it has the lowest error in all the functions. 
+Note that in the case of importance sampling, we have used the gaussian distribution as the sampling distribution, therefore the error could be higher than the other methods, since the gaussian distribution might not be the best sampling distribution for all the functions. To conclude, we can say that the stratified sampling method is the best method for this problem, since it has the lowest error in all the functions. 
 
 \chapter{Hamiltonian dynamics}
 \label{sec:hamiltonian_dynamics}
@@ -1090,7 +1096,7 @@ The fact that \(\lambda_1 \lambda_2 = 1\) indicates that the energy of the syste
 
 The Störmer-Verlet method, often simply referred to as the Verlet method, is a numerical technique used to integrate ordinary differential equations of the form \( \dot{y} = f(y) \). It is particularly popular in molecular dynamics simulations and other problems modeled by Hamiltonian systems. The method can be derived directly from the Taylor series expansion of the solution. The central idea behind the method is to use information from both the current and previous time steps to predict the value at the next time step. 
 
-The Störmer-Verlet method applied to the Hamiltonian equations is as follows (using dHdq and dHdp to denote the partial derivatives of H with respect to q and p, respectively):
+The Störmer-Verlet method applied to the Hamiltonian equations is as follows:
 
 \begin{equation}
 	\begin{cases}
@@ -1548,7 +1554,7 @@ A Markov Chain is usually characterised by the matrix of transitions, which is t
 The final objective of the Chapter~\ref{sec:markov_chains} is to introduce the Markov Chain Montecarlo Methods (MCMC). As first step to introduce MCMC, we need to introduce the concept of stationary distribution. 
 
 \begin{definition}[Stationary Distribution]
-	Let $(X_n)_{n \geq 0}$ be a Markov Chain in $E$ with transition matrix $P$. A probability measure $pi$ on $E$ is called a \textit{stationary distribution} for $(X_n)_{n \geq 0}$ if it satisfies 
+	Let $(X_n)_{n \geq 0}$ be a Markov Chain in $E$ with transition matrix $P$. A probability measure $\pi$ on $E$ is called a \textit{stationary distribution} for $(X_n)_{n \geq 0}$ if it satisfies 
 	
 	\[
 		\pi P = \pi
@@ -1561,7 +1567,7 @@ The denomination of stationary distribution comes from the following result.
 	Let $\pi$ be a stationary distribution for $(X_n)_{n \geq 0}$. For any \(n \geq 0\),
 
 	\[
-		\mathbb{P}_\pi(X_n = y) = \pi(y) \ \ for \ all \ x \in E
+		\mathbb{P}_\pi(X_n = y) = \pi(y) \ \ for \ all \ y \in E
 	\]
 
 	in other words, $\pi$ is a stationary distribution if and only if the distribution of $X_n$ is $\pi$ for all $n \geq 0$.
@@ -1767,7 +1773,7 @@ The Müller-Brown potential is often used as a test function for optimization al
 \subsubsection{Metropolis-Hastings Algorithm for the Müller-Brown Potential}
 \label{sec:metropolis_muller_brown}
 
-Now, we want to know how the Metropolis-Hastings algorithm behaves when we use the Müller-Brown potential as the desired distribution. The Figure~\ref{fig:mullerbrownmh} shows the results of the Metropolis-Hastings algorithm for the Müller-Brown potential..
+Now, we want to know how the Metropolis-Hastings algorithm behaves when we use the Müller-Brown potential as the desired distribution. The Figure~\ref{fig:mullerbrownmh} shows the results of the Metropolis-Hastings algorithm for the Müller-Brown potential.
 
 \begin{figure}[H]
 	\centering
