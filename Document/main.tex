@@ -86,7 +86,7 @@ Overall, this paper not only provides a thorough overview of advanced simulation
 \chapter{Simulation of Random Variables}
 \label{sec:simulation_of_random_variables}
 
-This chapter explores the simulation of random variables, a cornerstone in statistical and dynamical system studies. In Section 1.1, we introduce the Inverse CDF method Section~\ref{sec:inverse_cdf}, providing a foundational overview of its mechanics and application in simulating random variables.
+This chapter explores the simulation of random variables, a cornerstone in statistical and dynamical system studies. In Section~\ref{sec:inverse_cdf} we introduce the Inverse CDF method providing a foundational overview of its mechanics and application in simulating random variables.
 
 Progressing to Section~\ref{sec:rejection_sampling}, the manuscript transitions to the Rejection Sampling method. This section is further divided to enhance clarity and depth: Section~\ref{sec:enveloping_distribution} delves into the selection of the appropriate enveloping distribution, and Section~\ref{sec:results_rejection_sampling} presents the outcomes and insights from applying this method.
 
@@ -230,7 +230,11 @@ First of all, note that the distribution chosen with the Equation~\ref{eq:proble
 
 In drawing conclusions we can see that the error tends to zero as the number of trials increases, so we can conclude that the Rejection Sampling method is a good method to generate pseudo-random numbers from any probability distribution given its probability density function.
 
-\section{Empirical validation of the Law of Large Numbers}
+\section{Empirical validation of important statistical laws}
+
+In this section, we will empirically validate the Law of Large Numbers and the Central Limit Theorem. These laws are pivotal in probability theory and have profound implications in statistical analysis and modeling. The empirical validation of these laws will serve to corroborate their theoretical underpinnings and substantiate their practical relevance in simulation scenarios.
+
+\subsection{Empirical validation of the Law of Large Numbers}
 \label{sec:lln}
 
 This section explores the empirical validation of the Law of Large Numbers, a pivotal theorem in probability theory. The Law of Large Numbers (LLN) is a fundamental theorem in probability theory, asserting that the average of a sequence of independent and identically distributed random variables with finite expected value converges to this expected value as the number of terms in the sequence increases. Formally, the theorem can be expressed as follows, extracted from \cite{jourdain2016probabilites}:
@@ -260,7 +264,7 @@ where \(\hat{x}_i\) is the \(i\)-th random number generated and \(\mu\) is the t
 
 The visual representation in Figure~\ref{fig:verificationllnlog} substantiates that the error indeed diminishes as the number of trials augments, validating the assertion of the Law of Large Numbers that the experimental mean approaches the theoretical mean with an increasing number of observations. This is further corroborated by the linear regression, which yields a slope of \(-1.000\), in alignment with the theoretical prediction.
 
-\section{Empirical Validation of the Central Limit Theorem}
+\subsection{Empirical Validation of the Central Limit Theorem}
 \label{sec:clt}
 
 The Central Limit Theorem (CLT) posits a pivotal foundational theorem in probability theory, signifying that, irrespective of the shape of the original distribution, the distribution of sample means will approximate a normal distribution as the sample size increases. To empirically validate this theorem, we can simulate a series of random numbers from any given probability distribution and systematically calculate their mean. By repeating this process, we can construct a histogram of the means and scrutinize whether it converges to a normal distribution, aligning with the theorem's prediction. Formally, the theorem can be expressed as follows:
@@ -1228,26 +1232,6 @@ For stability, we require \( |\lambda_1| \leq 1 \). This translates to the condi
 
 This inequality leads to a tautology so it is always stable. This is consistent with the observed property of the Störmer-Verlet scheme which conserves the energy over time. This, in combination with its second-order accuracy, makes it preferable over the Euler sympletic method for problems modeled by Hamiltonian systems.
 
-\subsection{Backward Error Analysis}
-\label{sec:backward_error_analysis}
-
-In this section, we will introduce the backward error analysis. The backward error analysis is a technique to analyze the error of a numerical method. We can define the idea of this technique as: For a given problem \(P(x)\), an exact input \(x\) and an approximate solution \(\hat{x}\), we can define the backward error as the smallest perturbation \(\Delta x\) such that \(P(x + \Delta x) = \hat{x}\). Therefore the formal definitions, extracted with little modifications from \cite{fraysse2018hdr}, is:
-
-\begin{definition}[Backward error]
-	Let \(\hat{x}\) be an approximate solution to the equation \(P(d) = x\). Then the backward error of \(\hat{x}\) is defined by:
-	\[
-		\eta = \min \{ \epsilon : P(x + \Delta x) = \hat{x}, ||\Delta x|| \leq \epsilon \}
-	\]
-\end{definition}
-
-The following Figure~\ref{fig:backwarderror} extracted from \cite{higham2020backwarderror} illustrated the idea of the backward error analysis.
-
-\begin{figure}[H]
-	\centering
-	\includegraphics[width=0.5\linewidth]{./Figures/Sympletic/graphic.jpg}
-	\caption{Backward error analysis.}
-	\label{fig:backwarderror}
-\end{figure}
 
 
 
@@ -1551,7 +1535,7 @@ A Markov Chain is usually characterised by the matrix of transitions, which is t
 \subsection{Stationary Distribution}
 \label{sec:stationary_distribution}
 
-The final objective of the Chapter~\ref{sec:markov_chains} is to introduce the Markov Chain Montecarlo Methods (MCMC). As first step to introduce MCMC, we need to introduce the concept of stationary distribution. 
+The final objective of the Chapter~\ref{sec:markov_chains} is to introduce the Markov Chain Monte Carlo Methods (MCMC). As first step to introduce MCMC, we need to introduce the concept of stationary distribution. 
 
 \begin{definition}[Stationary Distribution]
 	Let $(X_n)_{n \geq 0}$ be a Markov Chain in $E$ with transition matrix $P$. A probability measure $\pi$ on $E$ is called a \textit{stationary distribution} for $(X_n)_{n \geq 0}$ if it satisfies 
@@ -1598,10 +1582,10 @@ One may ask if the stationary distribution is unique. The answer is no, it is no
 	Let $K$ be a Markov Chain with a finite state space $\chi$. If $K$ is irreducible, then it has a unique stationary distribution $\pi$.
 \end{proposition}
 
-\subsection{Markov Chain Montecarlo Methods}
+\section{Markov Chain Monte Carlo Methods}
 \label{sec:markov_chain_montecarlo}
 
-In this section, we will introduce the Markov Chain Montecarlo Methods (MCMC). The MCMC are a class of algorithms for sampling from a probability distribution. The idea of MCMC is to construct a Markov Chain that has the desired distribution as its stationary distribution. Therefore, the Markov Chain will converge to the desired distribution as the number of steps increases.
+In this section, we will introduce the Markov Chain Monte Carlo Methods (MCMC). The MCMC are a class of algorithms for sampling from a probability distribution. The idea of MCMC is to construct a Markov Chain that has the desired distribution as its stationary distribution. Therefore, the Markov Chain will converge to the desired distribution as the number of steps increases.
 
 \subsection{Metropolis-Hastings Algorithm}
 \label{sec:metropolis_hastings}
@@ -1857,10 +1841,10 @@ The final part of this analysis involves visualizing the heatmaps of both the th
 
 These visual representations reinforce our findings that the samples from both the Metropolis-Hastings and Gibbs Sampling algorithms are indeed consistent with the Müller-Brown potential, as evidenced by the decreasing KL divergence with increasing sample numbers.
 
-\section{Simulation of a 2D molecular system}
+\section{Molecular System Simulation}
 \label{sec:simulation_2d_molecular_system}
 
-This final section aims to show how the MCMC algorithms can be used to simulate a 2D molecular system. This subsection is divided in two parts. In the first part, we will introduce the potential we have used to simulate the ecosystem and we will delve a bit into the theory of the molecular dynamics. In the second part, we will do the implementation of the Gibbs sampling algorithm for the molecular system.
+This final section aims to show how the MCMC algorithms can be used to simulate a molecular system. This subsection is divided in two parts. In the first part, we will introduce the potential we have used to simulate the ecosystem and we will delve a bit into the theory of the molecular dynamics. In the second part, we will do the implementation of the Gibbs sampling algorithm for the molecular system.
 
 \subsection{Theoretical Framework and Lennard-Jones Potential}
 \label{sec:lennard_jones_potential}

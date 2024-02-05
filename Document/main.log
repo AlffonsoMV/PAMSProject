@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999995 (TeX Live 2023) (preloaded format=xelatex 2023.11.29)  5 FEB 2024 18:22
+This is XeTeX, Version 3.141592653-2.6-0.999995 (TeX Live 2023) (preloaded format=xelatex 2023.11.29)  5 FEB 2024 18:45
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -953,9 +953,10 @@ File: ./Figures/CLT/meanerror.png Graphic file (type bmp)
 <./Figures/CLT/meanerror.png>
 File: ./Figures/CLT/varianceerror.png Graphic file (type bmp)
 <./Figures/CLT/varianceerror.png>
+ [11]
 File: ./Figures/CLT/varianceslope.png Graphic file (type bmp)
 <./Figures/CLT/varianceslope.png>
- [11] [12] [13]
+ [12] [13]
 File: ./Figures/VarianceReduction/beta.png Graphic file (type bmp)
 <./Figures/VarianceReduction/beta.png>
  [14] [15] [16] [17]
@@ -968,6 +969,9 @@ File: ./Figures/VarianceReduction/comparison2.png Graphic file (type bmp)
 <./Figures/VarianceReduction/comparison2.png>
  [20]
 Chapter 2.
+
+LaTeX Warning: Reference `sec:backward_error_analysis' on page 21 undefined on input line 683.
+
 [21
 
 ] [22] [23] [24]
@@ -994,106 +998,106 @@ File: ./Figures/Sympletic/verletenergy.png Graphic file (type bmp)
  [31]
 File: ./Figures/Sympletic/maxenergydifference.png Graphic file (type bmp)
 <./Figures/Sympletic/maxenergydifference.png>
- [32] [33]
-File: ./Figures/Sympletic/graphic.jpg Graphic file (type bmp)
-<./Figures/Sympletic/graphic.jpg>
- [34] [35] [36]
+ [32] [33] [34] [35]
 File: ./Figures/SolarSystem/gravitationalpotential.png Graphic file (type bmp)
 <./Figures/SolarSystem/gravitationalpotential.png>
- [37]
+ [36]
 File: ./Figures/SolarSystem/orbits.png Graphic file (type bmp)
 <./Figures/SolarSystem/orbits.png>
+ [37]
 File: ./Figures/SolarSystem/energy1.png Graphic file (type bmp)
 <./Figures/SolarSystem/energy1.png>
- [38]
 File: ./Figures/SolarSystem/energy2.png Graphic file (type bmp)
 <./Figures/SolarSystem/energy2.png>
-
+ [38]
 Missing character: There is no – ("2013) in font ec-lmr10!
 Missing character: There is no – ("2013) in font ec-lmr10!
-[39]
 File: ./Figures/SolarSystem/orbitsjupiter.png Graphic file (type bmp)
 <./Figures/SolarSystem/orbitsjupiter.png>
+[39]
 File: ./Figures/SolarSystem/orbits_euler.png Graphic file (type bmp)
 <./Figures/SolarSystem/orbits_euler.png>
- [40]
 File: ./Figures/SolarSystem/energy_euler.png Graphic file (type bmp)
 <./Figures/SolarSystem/energy_euler.png>
- [41] [42]
+ [40] [41]
 Chapter 3.
-[43
+[42
 
-] [44] [45]
+] [43] [44]
 File: ./Figures/MCMC/gamma.png Graphic file (type bmp)
 <./Figures/MCMC/gamma.png>
- [46]
+ [45]
 File: ./Figures/MCMC/MultivariateNormal-2.png Graphic file (type bmp)
 <./Figures/MCMC/MultivariateNormal-2.png>
- [47]
+ [46]
 File: ./Figures/MCMC/bivariates.png Graphic file (type bmp)
 <./Figures/MCMC/bivariates.png>
- [48]
+ [47]
 File: ./Figures/MCMC/mullerbrown.png Graphic file (type bmp)
 <./Figures/MCMC/mullerbrown.png>
 File: ./Figures/MCMC/mullerbrownmh2.png Graphic file (type bmp)
 <./Figures/MCMC/mullerbrownmh2.png>
- [49]
+ [48]
 File: ./Figures/MCMC/mullerbrowngibbs.png Graphic file (type bmp)
 <./Figures/MCMC/mullerbrowngibbs.png>
- [50]
+ [49]
 File: ./Figures/MCMC/klmh.png Graphic file (type bmp)
 <./Figures/MCMC/klmh.png>
- [51]
+ [50]
 File: ./Figures/MCMC/heatmaps.png Graphic file (type bmp)
 <./Figures/MCMC/heatmaps.png>
- [52]
+ [51]
 File: ./Figures/MCMC/LennardJones/boundaryconditions.png Graphic file (type bmp)
 <./Figures/MCMC/LennardJones/boundaryconditions.png>
- [53]
+ [52]
 File: ./Figures/MCMC/LennardJones/particles.png Graphic file (type bmp)
 <./Figures/MCMC/LennardJones/particles.png>
- [54]
+ [53]
 File: ./Figures/MCMC/LennardJones/energy.png Graphic file (type bmp)
 <./Figures/MCMC/LennardJones/energy.png>
- [55]
-Underfull \hbox (badness 1038) in paragraph at lines 1955--1955
+ [54]
+Underfull \hbox (badness 1038) in paragraph at lines 1939--1939
 []\T1/lmr/bx/n/10 Algorithm 9: \T1/lmr/m/n/10 Es-ti-mat-ing Con-di-tional Dis-tri-bu-tions in
  []
 
 
-Overfull \hbox (15.0pt too wide) detected at line 1957
+Overfull \hbox (15.0pt too wide) detected at line 1941
 [][] 
  []
 
-[56]
+[55]
 File: ./Figures/MCMC/LennardJones/particles_3d.png Graphic file (type bmp)
 <./Figures/MCMC/LennardJones/particles_3d.png>
- [57]
+ [56]
 File: ./Figures/MCMC/LennardJones/rdf_explanation.png Graphic file (type bmp)
 <./Figures/MCMC/LennardJones/rdf_explanation.png>
 File: ./Figures/MCMC/LennardJones/radialdistributionfunction.png Graphic file (type bmp)
 <./Figures/MCMC/LennardJones/radialdistributionfunction.png>
 File: ./Figures/MCMC/LennardJones/rdf_exp.png Graphic file (type bmp)
 <./Figures/MCMC/LennardJones/rdf_exp.png>
- [58] [59] (./main.bbl
+ [57] [58] (./main.bbl
 Missing character: There is no – ("2013) in font ec-lmr10!
-) [60
+) [59
 
 ] (./main.aux)
  ***********
 LaTeX2e <2023-11-01>
 L3 programming layer <2023-11-09>
  ***********
+
+
+LaTeX Warning: There were undefined references.
+
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: B8E10FC005320764ADCAAF01F6C68B24;11911.
+(rerunfilecheck)             Checksum: 90A8E0EB8D71B276FE6901C15A4252D6;12014.
  ) 
 Here is how much of TeX's memory you used:
- 26194 strings out of 476447
- 489948 string characters out of 5793879
+ 26185 strings out of 476447
+ 489644 string characters out of 5793879
  1930186 words of memory out of 5000000
- 47580 multiletter control sequences out of 15000+600000
+ 47573 multiletter control sequences out of 15000+600000
  605296 words of font info for 67 fonts, out of 8000000 for 9000
  319 hyphenation exceptions out of 8191
  127i,13n,132p,1410b,604s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on main.xdv (61 pages, 253924 bytes).
+Output written on main.xdv (60 pages, 252044 bytes).

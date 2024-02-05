@@ -1,19 +1,19 @@
 # Fdb version 4
-["bibtex main"] 1707153773 "main.aux" "main.bbl" "main" 1707153782 0
+["bibtex main"] 1707155093 "main.aux" "main.bbl" "main" 1707155120 0
   "./mybib.bib" 1707153773 5814 bc275e013ebcf1598d67d926aa4e78cd ""
   "/usr/local/texlive/2023basic/texmf-dist/bibtex/bst/base/plain.bst" 1292289607 20613 bd3fbfa9f64872b81ac57a0dd2ed855f ""
-  "main.aux" 1707153774 35841 a09777a3bf89fac3761a261a8fee3ed1 "xelatex"
+  "main.aux" 1707155112 35479 5cd036e7a1febba01e04b460d156d04b "xelatex"
   (generated)
   "main.bbl"
   "main.blg"
   (rewritten before read)
-["xdvipdfmx"] 1707153774 "main.xdv" "main.pdf" "main" 1707153782 0
-  "main.xdv" 1707153774 253924 51fbdb64e14e4a6bf7e6bf30caaacb4b "xelatex"
+["xdvipdfmx"] 1707155112 "main.xdv" "main.pdf" "main" 1707155120 0
+  "main.xdv" 1707155112 252044 8da53f0a1527c1fa1eeb4e14b8dea4b5 "xelatex"
   (generated)
   "main.pdf"
   (rewritten before read)
-["xelatex"] 1707153773 "/Users/alfonsomateos/Documents/PONTS/PAMS Project/Document/main.tex" "main.xdv" "main" 1707153782 0
-  "/Users/alfonsomateos/Documents/PONTS/PAMS Project/Document/main.tex" 1707153726 128126 92af5d4fb4967be8341df6df93a48b11 ""
+["xelatex"] 1707155111 "/Users/alfonsomateos/Documents/PONTS/PAMS Project/Document/main.tex" "main.xdv" "main" 1707155120 0
+  "/Users/alfonsomateos/Documents/PONTS/PAMS Project/Document/main.tex" 1707155105 127373 13424c0f694025696ac5269e2d25dcc9 ""
   "/usr/local/texlive/2023basic/texmf-dist/fonts/tfm/adobe/zapfding/pzdr.tfm" 1136768653 1528 f853c4d1b4e0550255e02831fdc8496f ""
   "/usr/local/texlive/2023basic/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm" 1246382020 1004 54797486969f23fa377b128694d548df ""
   "/usr/local/texlive/2023basic/texmf-dist/fonts/tfm/public/amsfonts/symbols/msam10.tfm" 1246382020 916 f87d7c45f9c908e672703b83b72241a3 ""
@@ -231,7 +231,6 @@
   "Figures/Sympletic/eulermaxenergy.png" 1706288336 26327 847b1208fbfe5ba05e83085031c101ba ""
   "Figures/Sympletic/eulerphase.png" 1696439010 25327 6a8778274470ce882736bac956515a68 ""
   "Figures/Sympletic/eulerphase1.png" 1696951466 160253 f2776e5bd0860d2fbcdbec60a7c1e559 ""
-  "Figures/Sympletic/graphic.jpg" 1700069677 19325 8e3acd5e9ae61dda07a118be36601eae ""
   "Figures/Sympletic/maxenergydifference.png" 1706288200 29646 32bbe720debc278e3198b46d8b03fe66 ""
   "Figures/Sympletic/phaseanalytics.png" 1696951093 31328 f2fb2a7ad0e4722b2a6fb94908bb157d ""
   "Figures/Sympletic/verletenergy.png" 1696974436 68076 d8b9e24bb21d5ed5dc4526d8f5d1ecc1 ""
@@ -240,11 +239,11 @@
   "Figures/VarianceReduction/comparison.png" 1695817358 57522 d43a83f81b14985e78941521282a08a8 ""
   "Figures/VarianceReduction/comparison2.png" 1701027332 38295 389e429dbf6c7a31d635fe5d67343441 ""
   "logo-enpc.eps" 1696975345 586786 2481599d970520a68364592352c92496 ""
-  "main.aux" 1707153774 35841 a09777a3bf89fac3761a261a8fee3ed1 "xelatex"
-  "main.bbl" 1707153773 2573 8a977b9ca2c7ff200dfd20256d687f0a "bibtex main"
-  "main.out" 1707153774 11911 b8e10fc005320764adcaaf01f6c68b24 "xelatex"
-  "main.tex" 1707153726 128126 92af5d4fb4967be8341df6df93a48b11 ""
-  "main.toc" 1707153774 5185 9736547349bb23693834c9653a5ac709 "xelatex"
+  "main.aux" 1707155112 35479 5cd036e7a1febba01e04b460d156d04b "xelatex"
+  "main.bbl" 1707155093 2573 8a977b9ca2c7ff200dfd20256d687f0a "bibtex main"
+  "main.out" 1707155112 12014 90a8e0eb8d71b276fe6901c15a4252d6 "xelatex"
+  "main.tex" 1707155105 127373 13424c0f694025696ac5269e2d25dcc9 ""
+  "main.toc" 1707155112 5204 c9749f0a4325f96a27d44ba78723da37 "xelatex"
   "structure.tex" 1706200131 8586 2f2c54b9b07fcf708a30e1848eb3a375 ""
   (generated)
   "main.aux"

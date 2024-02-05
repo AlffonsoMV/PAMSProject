@@ -414,9 +414,6 @@ INPUT ./Figures/Sympletic/verletenergy.png
 INPUT ./Figures/Sympletic/maxenergydifference.png
 INPUT ./Figures/Sympletic/maxenergydifference.png
 INPUT ./Figures/Sympletic/maxenergydifference.png
-INPUT ./Figures/Sympletic/graphic.jpg
-INPUT ./Figures/Sympletic/graphic.jpg
-INPUT ./Figures/Sympletic/graphic.jpg
 INPUT /usr/local/texlive/2023basic/texmf-dist/fonts/tfm/public/cm/cmbx10.tfm
 INPUT /usr/local/texlive/2023basic/texmf-dist/fonts/tfm/public/cm/cmbx7.tfm
 INPUT /usr/local/texlive/2023basic/texmf-dist/fonts/tfm/public/cm/cmbx5.tfm
