@@ -1,18 +1,18 @@
 # Fdb version 4
-["bibtex main"] 1707155093 "main.aux" "main.bbl" "main" 1707155120 0
-  "./mybib.bib" 1707153773 5814 bc275e013ebcf1598d67d926aa4e78cd ""
+["bibtex main"] 1707156247 "main.aux" "main.bbl" "main" 1707156256 0
+  "./mybib.bib" 1707156247 5668 da0e4f99eb21652aa8e80fb0ef85a5e3 ""
   "/usr/local/texlive/2023basic/texmf-dist/bibtex/bst/base/plain.bst" 1292289607 20613 bd3fbfa9f64872b81ac57a0dd2ed855f ""
-  "main.aux" 1707155112 35479 5cd036e7a1febba01e04b460d156d04b "xelatex"
+  "main.aux" 1707156248 35479 5cd036e7a1febba01e04b460d156d04b "xelatex"
   (generated)
   "main.bbl"
   "main.blg"
   (rewritten before read)
-["xdvipdfmx"] 1707155112 "main.xdv" "main.pdf" "main" 1707155120 0
-  "main.xdv" 1707155112 252044 8da53f0a1527c1fa1eeb4e14b8dea4b5 "xelatex"
+["xdvipdfmx"] 1707156248 "main.xdv" "main.pdf" "main" 1707156256 0
+  "main.xdv" 1707156248 251956 2140dbab695d82f2c630144ac0f22bb6 "xelatex"
   (generated)
   "main.pdf"
   (rewritten before read)
-["xelatex"] 1707155111 "/Users/alfonsomateos/Documents/PONTS/PAMS Project/Document/main.tex" "main.xdv" "main" 1707155120 0
+["xelatex"] 1707156247 "/Users/alfonsomateos/Documents/PONTS/PAMS Project/Document/main.tex" "main.xdv" "main" 1707156256 0
   "/Users/alfonsomateos/Documents/PONTS/PAMS Project/Document/main.tex" 1707155105 127373 13424c0f694025696ac5269e2d25dcc9 ""
   "/usr/local/texlive/2023basic/texmf-dist/fonts/tfm/adobe/zapfding/pzdr.tfm" 1136768653 1528 f853c4d1b4e0550255e02831fdc8496f ""
   "/usr/local/texlive/2023basic/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm" 1246382020 1004 54797486969f23fa377b128694d548df ""
@@ -239,11 +239,11 @@
   "Figures/VarianceReduction/comparison.png" 1695817358 57522 d43a83f81b14985e78941521282a08a8 ""
   "Figures/VarianceReduction/comparison2.png" 1701027332 38295 389e429dbf6c7a31d635fe5d67343441 ""
   "logo-enpc.eps" 1696975345 586786 2481599d970520a68364592352c92496 ""
-  "main.aux" 1707155112 35479 5cd036e7a1febba01e04b460d156d04b "xelatex"
-  "main.bbl" 1707155093 2573 8a977b9ca2c7ff200dfd20256d687f0a "bibtex main"
-  "main.out" 1707155112 12014 90a8e0eb8d71b276fe6901c15a4252d6 "xelatex"
+  "main.aux" 1707156248 35479 5cd036e7a1febba01e04b460d156d04b "xelatex"
+  "main.bbl" 1707156247 2477 4efdb2c58e4e8c0a2cdfda22487b54e9 "bibtex main"
+  "main.out" 1707156248 12014 90a8e0eb8d71b276fe6901c15a4252d6 "xelatex"
   "main.tex" 1707155105 127373 13424c0f694025696ac5269e2d25dcc9 ""
-  "main.toc" 1707155112 5204 c9749f0a4325f96a27d44ba78723da37 "xelatex"
+  "main.toc" 1707156248 5204 c9749f0a4325f96a27d44ba78723da37 "xelatex"
   "structure.tex" 1706200131 8586 2f2c54b9b07fcf708a30e1848eb3a375 ""
   (generated)
   "main.aux"

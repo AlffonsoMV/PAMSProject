@@ -4,36 +4,34 @@ The top-level auxiliary file: main.aux
 The style file: plain.bst
 Database file #1: mybib.bib
 Warning--entry type for "fraysse2018hdr" isn't style-file defined
---line 39 of file mybib.bib
+--line 38 of file mybib.bib
 Warning--entry type for "higham2020backwarderror" isn't style-file defined
---line 50 of file mybib.bib
+--line 48 of file mybib.bib
 Warning--entry type for "nssdc2022planetaryfactsheet" isn't style-file defined
---line 85 of file mybib.bib
+--line 82 of file mybib.bib
 Warning--entry type for "peng2023rejectionsampling" isn't style-file defined
---line 93 of file mybib.bib
-Warning--I'm ignoring reygner2023methodes's extra "note" field
---line 105 of file mybib.bib
+--line 90 of file mybib.bib
 Warning--entry type for "wiki:bivariatenormal" isn't style-file defined
---line 119 of file mybib.bib
+--line 115 of file mybib.bib
 Warning--entry type for "wiki:metropolishastings" isn't style-file defined
---line 129 of file mybib.bib
+--line 125 of file mybib.bib
 Warning--entry type for "wiki:radialdistributionfunction" isn't style-file defined
---line 138 of file mybib.bib
+--line 134 of file mybib.bib
 Warning--entry type for "wikitInverseTransformSampling" isn't style-file defined
---line 148 of file mybib.bib
+--line 144 of file mybib.bib
 Warning--to sort, need author or key in nssdc2022planetaryfactsheet
 You've used 14 entries,
             2118 wiz_defined-function locations,
-            569 strings with 5776 characters,
-and the built_in function-call counts, 3248 in all, are:
-= -- 315
+            568 strings with 5756 characters,
+and the built_in function-call counts, 3221 in all, are:
+= -- 309
 > -- 98
 < -- 0
 + -- 44
 - -- 28
 * -- 145
-:= -- 543
-add.period$ -- 46
+:= -- 537
+add.period$ -- 43
 call.type$ -- 14
 change.case$ -- 55
 chr.to.int$ -- 0
@@ -41,17 +39,17 @@ cite$ -- 15
 duplicate$ -- 120
 empty$ -- 326
 format.name$ -- 28
-if$ -- 701
+if$ -- 695
 int.to.chr$ -- 0
 int.to.str$ -- 14
 missing$ -- 7
-newline$ -- 77
+newline$ -- 74
 num.names$ -- 26
-pop$ -- 98
+pop$ -- 99
 preamble$ -- 1
 purify$ -- 42
 quote$ -- 0
-skip$ -- 93
+skip$ -- 95
 stack$ -- 0
 substring$ -- 145
 swap$ -- 14
@@ -62,5 +60,5 @@ type$ -- 52
 warning$ -- 1
 while$ -- 30
 width$ -- 16
-write$ -- 154
-(There were 10 warnings)
+write$ -- 148
+(There were 9 warnings)
