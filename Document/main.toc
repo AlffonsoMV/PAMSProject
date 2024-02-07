@@ -33,18 +33,20 @@
 \contentsline {chapter}{\numberline {3}Markov Chains and their Applications}{42}{chapter.3}%
 \contentsline {section}{\numberline {3.1}Introduction to Markov Chains}{43}{section.3.1}%
 \contentsline {subsection}{\numberline {3.1.1}Stationary Distribution}{43}{subsection.3.1.1}%
-\contentsline {subsection}{\numberline {3.1.2}Irreducibility and Uniqueness}{44}{subsection.3.1.2}%
+\contentsline {subsection}{\numberline {3.1.2}Ergodic Theorem}{44}{subsection.3.1.2}%
+\contentsline {subsection}{\numberline {3.1.3}Irreducibility and Uniqueness}{44}{subsection.3.1.3}%
 \contentsline {section}{\numberline {3.2}Markov Chain Monte Carlo Methods}{44}{section.3.2}%
 \contentsline {subsection}{\numberline {3.2.1}Metropolis-Hastings Algorithm}{44}{subsection.3.2.1}%
-\contentsline {subsubsection}{\numberline {3.2.1.1}Example: Sampling from a Gamma Distribution}{44}{subsubsection.3.2.1.1}%
-\contentsline {subsection}{\numberline {3.2.2}Gibbs Sampling}{45}{subsection.3.2.2}%
+\contentsline {subsubsection}{\numberline {3.2.1.1}Example: Sampling from a Gamma Distribution}{45}{subsubsection.3.2.1.1}%
+\contentsline {subsection}{\numberline {3.2.2}Gibbs Sampling}{46}{subsection.3.2.2}%
 \contentsline {subsubsection}{\numberline {3.2.2.1}Example: Sampling from a Bivariate Normal Distribution}{46}{subsubsection.3.2.2.1}%
-\contentsline {subsection}{\numberline {3.2.3}Müller-Brown Potential}{47}{subsection.3.2.3}%
-\contentsline {subsubsection}{\numberline {3.2.3.1}Metropolis-Hastings Algorithm for the Müller-Brown Potential}{48}{subsubsection.3.2.3.1}%
-\contentsline {subsubsection}{\numberline {3.2.3.2}Gibbs Sampling Algorithm for the Müller-Brown Potential}{49}{subsubsection.3.2.3.2}%
-\contentsline {subsubsection}{\numberline {3.2.3.3}Comparison between Metropolis-Hastings and Gibbs Sampling}{50}{subsubsection.3.2.3.3}%
-\contentsline {section}{\numberline {3.3}Molecular System Simulation}{52}{section.3.3}%
-\contentsline {subsection}{\numberline {3.3.1}Theoretical Framework and Lennard-Jones Potential}{52}{subsection.3.3.1}%
-\contentsline {subsection}{\numberline {3.3.2}Implementation of the model}{52}{subsection.3.3.2}%
-\contentsline {subsubsection}{\numberline {3.3.2.1}Implementation 2D using the Metropolis-Hastings algorithm}{53}{subsubsection.3.3.2.1}%
-\contentsline {subsubsection}{\numberline {3.3.2.2}Implementation 3D using the Gibbs Sampling algorithm}{55}{subsubsection.3.3.2.2}%
+\contentsline {subsection}{\numberline {3.2.3}Müller-Brown Potential}{48}{subsection.3.2.3}%
+\contentsline {subsubsection}{\numberline {3.2.3.1}Boltzmann Distribution}{49}{subsubsection.3.2.3.1}%
+\contentsline {subsubsection}{\numberline {3.2.3.2}Metropolis-Hastings Algorithm for the Müller-Brown Potential}{50}{subsubsection.3.2.3.2}%
+\contentsline {subsubsection}{\numberline {3.2.3.3}Gibbs Sampling Algorithm for the Müller-Brown Potential}{50}{subsubsection.3.2.3.3}%
+\contentsline {subsubsection}{\numberline {3.2.3.4}Comparison between Metropolis-Hastings and Gibbs Sampling}{51}{subsubsection.3.2.3.4}%
+\contentsline {section}{\numberline {3.3}Molecular System Simulation}{53}{section.3.3}%
+\contentsline {subsection}{\numberline {3.3.1}Theoretical Framework and Lennard-Jones Potential}{53}{subsection.3.3.1}%
+\contentsline {subsection}{\numberline {3.3.2}Implementation of the model}{54}{subsection.3.3.2}%
+\contentsline {subsubsection}{\numberline {3.3.2.1}Implementation 2D using the Metropolis-Hastings algorithm}{55}{subsubsection.3.3.2.1}%
+\contentsline {subsubsection}{\numberline {3.3.2.2}Implementation 3D using the Gibbs Sampling algorithm}{56}{subsubsection.3.3.2.2}%

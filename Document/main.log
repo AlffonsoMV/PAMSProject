@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999995 (TeX Live 2023) (preloaded format=xelatex 2023.11.29)  5 FEB 2024 19:04
+This is XeTeX, Version 3.141592653-2.6-0.999995 (TeX Live 2023) (preloaded format=xelatex 2023.11.29)  7 FEB 2024 15:08
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1026,58 +1026,57 @@ Chapter 3.
 ] [43] [44]
 File: ./Figures/MCMC/gamma.png Graphic file (type bmp)
 <./Figures/MCMC/gamma.png>
- [45]
+ [45] [46]
 File: ./Figures/MCMC/MultivariateNormal-2.png Graphic file (type bmp)
 <./Figures/MCMC/MultivariateNormal-2.png>
- [46]
+ [47]
 File: ./Figures/MCMC/bivariates.png Graphic file (type bmp)
 <./Figures/MCMC/bivariates.png>
- [47]
 File: ./Figures/MCMC/mullerbrown.png Graphic file (type bmp)
 <./Figures/MCMC/mullerbrown.png>
+ [48] [49]
 File: ./Figures/MCMC/mullerbrownmh2.png Graphic file (type bmp)
 <./Figures/MCMC/mullerbrownmh2.png>
- [48]
+ [50]
 File: ./Figures/MCMC/mullerbrowngibbs.png Graphic file (type bmp)
 <./Figures/MCMC/mullerbrowngibbs.png>
- [49]
+ [51]
 File: ./Figures/MCMC/klmh.png Graphic file (type bmp)
 <./Figures/MCMC/klmh.png>
- [50]
 File: ./Figures/MCMC/heatmaps.png Graphic file (type bmp)
 <./Figures/MCMC/heatmaps.png>
- [51]
+ [52] [53]
 File: ./Figures/MCMC/LennardJones/boundaryconditions.png Graphic file (type bmp)
 <./Figures/MCMC/LennardJones/boundaryconditions.png>
- [52]
+ [54]
 File: ./Figures/MCMC/LennardJones/particles.png Graphic file (type bmp)
 <./Figures/MCMC/LennardJones/particles.png>
- [53]
 File: ./Figures/MCMC/LennardJones/energy.png Graphic file (type bmp)
 <./Figures/MCMC/LennardJones/energy.png>
- [54]
-Underfull \hbox (badness 1038) in paragraph at lines 1939--1939
+ [55]
+Underfull \hbox (badness 1038) in paragraph at lines 1983--1983
 []\T1/lmr/bx/n/10 Algorithm 9: \T1/lmr/m/n/10 Es-ti-mat-ing Con-di-tional Dis-tri-bu-tions in
  []
 
 
-Overfull \hbox (15.0pt too wide) detected at line 1941
+Overfull \hbox (15.0pt too wide) detected at line 1985
 [][] 
  []
 
-[55]
+[56]
 File: ./Figures/MCMC/LennardJones/particles_3d.png Graphic file (type bmp)
 <./Figures/MCMC/LennardJones/particles_3d.png>
- [56]
+ [57]
 File: ./Figures/MCMC/LennardJones/rdf_explanation.png Graphic file (type bmp)
 <./Figures/MCMC/LennardJones/rdf_explanation.png>
+ [58]
 File: ./Figures/MCMC/LennardJones/radialdistributionfunction.png Graphic file (type bmp)
 <./Figures/MCMC/LennardJones/radialdistributionfunction.png>
 File: ./Figures/MCMC/LennardJones/rdf_exp.png Graphic file (type bmp)
 <./Figures/MCMC/LennardJones/rdf_exp.png>
- [57] [58] (./main.bbl
+ [59] [60] (./main.bbl
 Missing character: There is no – ("2013) in font ec-lmr10!
-) [59
+) [61
 
 ] (./main.aux)
  ***********
@@ -1089,15 +1088,15 @@ L3 programming layer <2023-11-09>
 LaTeX Warning: There were undefined references.
 
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: 90A8E0EB8D71B276FE6901C15A4252D6;12014.
+(rerunfilecheck)             Checksum: 84D33EBE36EA4E5AFB616BEE4231C6CC;12339.
  ) 
 Here is how much of TeX's memory you used:
- 26185 strings out of 476447
- 489644 string characters out of 5793879
+ 26188 strings out of 476447
+ 489711 string characters out of 5793879
  1930186 words of memory out of 5000000
- 47573 multiletter control sequences out of 15000+600000
+ 47576 multiletter control sequences out of 15000+600000
  605296 words of font info for 67 fonts, out of 8000000 for 9000
  319 hyphenation exceptions out of 8191
- 127i,13n,132p,1410b,604s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 127i,13n,132p,1405b,604s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on main.xdv (60 pages, 251956 bytes).
+Output written on main.xdv (62 pages, 258928 bytes).

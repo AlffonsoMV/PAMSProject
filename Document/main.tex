@@ -69,7 +69,7 @@
 \tableofcontents
 \newpage
 
-\chapter*{Abstract}
+\chapter*{Introduction}
 
 This comprehensive paper delves into the intricacies of simulation techniques, spanning across the domains of random variable simulation, Hamiltonian dynamics, and Markov chain sampling, with an emphasis on their diverse applications in computational statistics and mathematical modeling.
 
@@ -587,7 +587,7 @@ Having looked at the methods and confirmed the convergence of each approach desc
 
 \begin{equation*} error = | \bar{\mathbb{E}}(X) - \frac{1}{3} | \end{equation*}
 
-See Figure~\ref{fig:comparisonvariancereduction} for a visual representation of the error in relation to the theoretical value as we increase the number of trials for each method.
+See Figure~\ref{fig:comparisonvariancereduction} for a visual representation of the error in relation to the theoretical value as we increase the number of trials for each method. Note that for this comparision we have used \(10\) stratas for the stratified sampling method.
 
 \begin{figure}[H]
 \centering
@@ -596,7 +596,7 @@ See Figure~\ref{fig:comparisonvariancereduction} for a visual representation of 
 \label{fig:comparisonvariancereduction}
 \end{figure}
 
-Looking at the data, it’s clear that stratified sampling takes the lead with its quicker convergence compared to the other methods. However, claiming it as the undisputed champion would be premature, especially when we have explored just one problem. To firm up this initial finding, we need to dig deeper and explore a variety of problems.
+Looking at the data, it’s clear that importance sampling takes the lead compared to the other methods. However, claiming it as the undisputed champion would be premature, especially when we have explored just one problem. To firm up this initial finding, we need to dig deeper and explore a variety of problems.
 
 But before moving on to look at more problems, let's look at the comparative table of variances for each method:
 
@@ -606,15 +606,15 @@ But before moving on to look at more problems, let's look at the comparative tab
 		Method & Variance \\
 		\hline
 		\hline
-		Direct sampling   			& \(8.977194 \cdot 10^{-2}\) \\
+		Direct sampling   			& \(1.95839 \cdot 10^{-4}\) \\
 		\hline
-		Control variates sampling 	& \(5.168373 \cdot 10^{-3}\) \\
+		Control variates sampling 	& \(1.12095 \cdot 10^{-5}\) \\
 		\hline
-		Importance sampling      	& \(1.274508 \cdot 10^{-4}\) \\
+		Importance sampling      	& \(2.17864 \cdot 10^{-7}\) \\
 		\hline
-		Stratified sampling       	& \(1.107865 \cdot 10^{-7}\) \\
+		Stratified sampling       	& \(2.76024 \cdot 10^{-6}\) \\
 		\hline
-		Antithetic sampling      	& \(1.178326 \cdot 10^{-2}\) \\
+		Antithetic sampling      	& \(2.14899 \cdot 10^{-5}\) \\
 		\hline
 	\end{tabular}
 \end{center}
@@ -625,7 +625,7 @@ Recall that the formula used to compute the variance is:
 
 With a sample size of \(n = 1000\).
 
-Analyzing the table, we discern significant disparities in variance between the different sampling methods, accentuating the prominence of stratified sampling, which registers the minimal variance. This numerical inferiority in variance corroborates the preliminary observation about its superior convergence rate, offering more stable and reliable estimates. Stratified sampling outperformed other methods in our study primarily due to its targeted approach of dividing the population into homogeneous strata. This division ensures proportional representation of all subgroups, reducing sampling bias and variance within each stratum. Consequently, it yields more accurate and representative results. Furthermore, by adjusting the sample size within each stratum based on variability, stratified sampling enhances overall efficiency and precision. These methodological strengths contribute to its superior performance in terms of reliability and convergence rates, especially in diverse and complex datasets. Contrastingly, direct sampling exhibits the maximum variance, revealing its comparative inefficiency and instability in procuring estimates for this specific problem. The remaining methods, while overshadowed by the efficacy of stratified sampling, still exhibit markedly lower variances than direct sampling.
+Upon examining the table, notable findings emerge. Initially, it's evident that direct sampling ranks as the least effective method, aligning with our theoretical insights. This approach primarily aims to reduce the variance in our estimates. In contrast, importance sampling emerges as the superior technique. However, it demands greater effort, as it involves identifying a more compatible distribution for the function we aim to integrate. Stratified sampling comes in as the next best option, showing potential for improved outcomes with an increased number of strata. Nevertheless, drawing definitive conclusions from a single case study is premature; further experimentation across various problems is necessary to determine the optimal method for each situation.
 
 Next, we'll broaden our investigation to a more complex problem, applying the methods we have discussed to estimate the following integrals:
 
@@ -669,7 +669,7 @@ where \(method\) is the method we are using, \(f\) is the function we are integr
 \label{fig:comparisonvariancereduction2}
 \end{figure}
 
-Note that in the case of importance sampling, we have used the gaussian distribution as the sampling distribution, therefore the error could be higher than the other methods, since the gaussian distribution might not be the best sampling distribution for all the functions. To conclude, we can say that the stratified sampling method is the best method for this problem, since it has the lowest error in all the functions. 
+Note that in the case of importance sampling, we have used the gaussian distribution as the sampling distribution, therefore the error could be higher than the other methods, since the gaussian distribution might not be the best sampling distribution for all the functions. To conclude, we can state that it depends on the problem which method is the best.
 
 \chapter{Hamiltonian dynamics}
 \label{sec:hamiltonian_dynamics}
@@ -1513,9 +1513,9 @@ Therefore, in this problem we can conclude that the Störmer-Verlet method is be
 \chapter{Markov Chains and their Applications}
 \label{sec:markov_chains}
 
-Chapter 3 embarks on an enthralling journey into the realm of Markov Chains and their myriad applications, a cornerstone in the fields of stochastic processes and computational statistics. We commence this exploration with an introduction to Markov Chains in Section~\ref{sec:introduction_markov_chains}, where we unravel their intricate structure and delve into their theoretical foundations. This segment includes a deep dive into the Stationary Distribution in Section~\ref{sec:stationary_distribution} and a comprehensive discussion on the concepts of Irreducibility and Uniqueness in Section~\ref{sec:irreducibility_uniqueness}. These discussions are pivotal in establishing a foundational understanding of Markov Chains' behavior and their profound implications in a variety of real-world scenarios.
+Chapter 3 embarks on an enthralling journey into the realm of Markov Chains and their myriad applications, a cornerstone in the fields of stochastic processes and computational statistics. We commence this exploration with an introduction to Markov Chains in Section~\ref{sec:introduction_markov_chains}, where we unravel their intricate structure and delve into their theoretical foundations. This segment includes a deep dive into the Stationary Distribution in Section~\ref{sec:stationary_distribution}, a brief state of the Ergodic Theorem in Section~\ref{sec:ergodic_theorem} and a comprehensive discussion on the concepts of Irreducibility and Uniqueness in Section~\ref{sec:irreducibility_uniqueness}. These discussions are pivotal in establishing a foundational understanding of Markov Chains' behavior and their profound implications in a variety of real-world scenarios.
 
-As we progress to Section~\ref{sec:markov_chain_montecarlo}, the narrative shifts its spotlight to the Markov Chain Monte Carlo (MCMC) methods, a fascinating facet of Markov Chains. This section is meticulously structured to foster a holistic understanding of these methods. We begin with the Metropolis-Hastings Algorithm, a flagship technique in MCMC, in Section~\ref{sec:metropolis_hastings}, complemented by a practical example of sampling from a Gamma Distribution in Section~\ref{sec:gamma_distribution_sampling}. Following this, we venture into the world of Gibbs Sampling in Section~\ref{sec:gibbs_sampling}, another cornerstone MCMC technique, illustrated with an example involving a Bivariate Normal Distribution in Section~\ref{sec:bivariate_normal_sampling}. The discussion extends to the Müller-Brown Potential in Section~\ref{sec:muller_brown_potential}, showcasing its integration into both the Metropolis-Hastings (Section~\ref{sec:metropolis_muller_brown}) and Gibbs Sampling (Section~\ref{sec:gibbs_muller_brown}) algorithms, culminating in a comparative analysis of these methods in Section~\ref{sec:comparison_metropolis_gibbs}.
+As we progress to Section~\ref{sec:markov_chain_montecarlo}, the narrative shifts its spotlight to the Markov Chain Monte Carlo (MCMC) methods, a fascinating facet of Markov Chains. This section is meticulously structured to foster a holistic understanding of these methods. We begin with the Metropolis-Hastings Algorithm, a flagship technique in MCMC, in Section~\ref{sec:metropolis_hastings}, complemented by a practical example of sampling from a Gamma Distribution in Section~\ref{sec:gamma_distribution_sampling}. Following this, we venture into the world of Gibbs Sampling in Section~\ref{sec:gibbs_sampling}, another cornerstone MCMC technique, illustrated with an example involving a Bivariate Normal Distribution in Section~\ref{sec:bivariate_normal_sampling}. The discussion extends to the Müller-Brown Potential in Section~\ref{sec:muller_brown_potential} and to how the phyisical potentials can be sampled using MCMC methods thanks to the Boltzmann Distribution in Section~\ref{sec:boltzmann_distribution}, showcasing its integration into both the Metropolis-Hastings (Section~\ref{sec:metropolis_muller_brown}) and Gibbs Sampling (Section~\ref{sec:gibbs_muller_brown}) algorithms, culminating in a comparative analysis of these methods in Section~\ref{sec:comparison_metropolis_gibbs}.
 
 The climax of this chapter unfolds in Section~\ref{sec:simulation_2d_molecular_system}, where we immerse ourselves in the simulation of a 2D molecular system. Here, we present a theoretical exploration of the Lennard-Jones Potential in Section~\ref{sec:lennard_jones_potential}, followed by its practical application in simulating both 2-dimensional and 3-dimensional systems using the Metropolis-Hastings algorithm (Section~\ref{sec:lennard_jones_2d}) and the Gibbs Sampling algorithm (Section~\ref{sec:lennard_jones_3d}), respectively. This concluding segment not only showcases the practical utility of Markov Chains and MCMC methods but also underscores their remarkable versatility and efficacy in modeling and simulating intricate physical systems.
 
@@ -1568,6 +1568,24 @@ The proof can be found in \cite{diaconis2008markov}.
 \end{theorem}
 
 This theorem has been extracted from~\cite{reygner2023methodes}. 
+
+\subsection{Ergodic Theorem}
+\label{sec:ergodic_theorem}
+
+After discussing the fundamental theorem and stationary distributions, it is crucial to introduce the Ergodic Theorem for Markov Chains. This theorem is a cornerstone in understanding the long-term behavior of Markov Chains.
+
+\begin{theorem}[Ergodic Theorem for Markov Chains]
+	Let $(X_n)_{n \geq 0}$ be an irreducible and aperiodic Markov Chain on a finite state space $E$ with a stationary distribution $\pi$. Then, for any initial distribution $\mu$ and for any function $f : E \to \mathbb{R}$, we have
+
+	\[
+		\lim_{n \to \infty} \frac{1}{n} \sum_{i=1}^n f(X_i) = \sum_{x \in E} f(x) \pi(x) \quad \text{with probability 1}.
+	\]
+\end{theorem}
+
+This theorem asserts that the time average of a function along the paths of the chain converges to a space average, weighted by the stationary distribution. This result is pivotal for the convergence analysis of Markov Chain Monte Carlo methods.
+
+A detailed proof and further discussion can be found in \cite{cambridge_markov}.
+
 
 \subsection{Irreducibility and Uniqueness}
 \label{sec:irreducibility_uniqueness}
@@ -1753,6 +1771,32 @@ The Figure~\ref{fig:mullerbrown} shows how the Müller-Brown potential looks lik
 \end{figure}
 
 The Müller-Brown potential is often used as a test function for optimization algorithms because it has many local minimun and one global minimun, therefore it is common that the optimization algorithms get stuck in a local minimun.
+
+\subsubsection{Boltzmann Distribution}
+\label{sec:boltzmann_distribution}
+
+Prior to delving into the application of the Metropolis-Hastings and Gibbs Sampling algorithms to the Müller-Brown potential, a natural query arises: given that the Müller-Brown potential is essentially a function describing energy, how does it relate to the concept of sampling a probability distribution? The answer lies in the realm of the Boltzmann distribution.
+
+The Boltzmann Distribution plays a crucial role in connecting the concept of a potential, such as the Müller-Brown potential, to a probability distribution suitable for sampling methods. This distribution is pivotal in statistical mechanics and provides a fundamental bridge between the microstate of a system (described by the potential energy) and its macrostate (described by temperature and entropy).
+
+The Boltzmann distribution is expressed as follows:
+
+\[
+    \pi(x, y) = \frac{e^{-\frac{U(x, y)}{kT}}}{Z}
+\]
+
+In this equation, \( \pi(x, y) \) denotes the probability of the system being in a state characterized by coordinates \( (x, y) \). The function \( U(x, y) \) represents the potential energy of that state, which in this context is given by the Müller-Brown potential. The temperature of the system is denoted by \( T \), and \( k \) is the Boltzmann constant, which acts as a bridge between the macroscopic and microscopic worlds.
+
+The denominator, \( Z \), is the partition function, a crucial component in statistical mechanics. It serves as a normalizing factor, ensuring that the probabilities across all possible states sum up to 1. Mathematically, it's defined as an integral over all states:
+
+\[
+    Z = \int \int e^{-\frac{U(x, y)}{kT}} \, dx \, dy
+\]
+
+The integration is performed over the entire configuration space, accounting for all possible states \( (x, y) \).
+
+The Boltzmann distribution's importance cannot be overstated in the context of sampling algorithms like Metropolis-Hastings and Gibbs Sampling. By converting the potential energy landscape into a probability distribution, these algorithms can effectively explore the state space, focusing on regions of high probability (low energy) while still allowing for exploration of less probable (higher energy) states. This approach is not only pivotal for the Müller-Brown potential but forms the foundation for the discussion of physical potentials in statistical mechanics and is extensively utilized in Chapter~\ref{sec:markov_chains}.
+
 
 \subsubsection{Metropolis-Hastings Algorithm for the Müller-Brown Potential}
 \label{sec:metropolis_muller_brown}

@@ -4,61 +4,61 @@ The top-level auxiliary file: main.aux
 The style file: plain.bst
 Database file #1: mybib.bib
 Warning--entry type for "fraysse2018hdr" isn't style-file defined
---line 38 of file mybib.bib
+--line 47 of file mybib.bib
 Warning--entry type for "higham2020backwarderror" isn't style-file defined
---line 48 of file mybib.bib
+--line 55 of file mybib.bib
 Warning--entry type for "nssdc2022planetaryfactsheet" isn't style-file defined
---line 82 of file mybib.bib
+--line 89 of file mybib.bib
 Warning--entry type for "peng2023rejectionsampling" isn't style-file defined
---line 90 of file mybib.bib
+--line 97 of file mybib.bib
 Warning--entry type for "wiki:bivariatenormal" isn't style-file defined
---line 115 of file mybib.bib
+--line 123 of file mybib.bib
 Warning--entry type for "wiki:metropolishastings" isn't style-file defined
---line 125 of file mybib.bib
+--line 132 of file mybib.bib
 Warning--entry type for "wiki:radialdistributionfunction" isn't style-file defined
---line 134 of file mybib.bib
+--line 142 of file mybib.bib
 Warning--entry type for "wikitInverseTransformSampling" isn't style-file defined
---line 144 of file mybib.bib
+--line 151 of file mybib.bib
 Warning--to sort, need author or key in nssdc2022planetaryfactsheet
-You've used 14 entries,
+You've used 15 entries,
             2118 wiz_defined-function locations,
-            568 strings with 5756 characters,
-and the built_in function-call counts, 3221 in all, are:
-= -- 309
-> -- 98
+            572 strings with 5836 characters,
+and the built_in function-call counts, 3425 in all, are:
+= -- 328
+> -- 105
 < -- 0
-+ -- 44
-- -- 28
-* -- 145
-:= -- 537
-add.period$ -- 43
-call.type$ -- 14
-change.case$ -- 55
++ -- 47
+- -- 30
+* -- 150
+:= -- 571
+add.period$ -- 46
+call.type$ -- 15
+change.case$ -- 59
 chr.to.int$ -- 0
-cite$ -- 15
-duplicate$ -- 120
-empty$ -- 326
-format.name$ -- 28
-if$ -- 695
+cite$ -- 16
+duplicate$ -- 127
+empty$ -- 348
+format.name$ -- 30
+if$ -- 740
 int.to.chr$ -- 0
-int.to.str$ -- 14
+int.to.str$ -- 15
 missing$ -- 7
-newline$ -- 74
-num.names$ -- 26
-pop$ -- 99
+newline$ -- 79
+num.names$ -- 28
+pop$ -- 107
 preamble$ -- 1
-purify$ -- 42
+purify$ -- 45
 quote$ -- 0
-skip$ -- 95
+skip$ -- 103
 stack$ -- 0
-substring$ -- 145
-swap$ -- 14
+substring$ -- 150
+swap$ -- 15
 text.length$ -- 0
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 52
+type$ -- 56
 warning$ -- 1
-while$ -- 30
-width$ -- 16
-write$ -- 148
+while$ -- 32
+width$ -- 17
+write$ -- 157
 (There were 9 warnings)
